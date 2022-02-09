@@ -31,7 +31,7 @@ type Props = {
 
 export default function SchedulePage({ allStages }: Props) {
   const meta = {
-    title: 'Schedule - Virtual Event Starter Kit',
+    title: 'Ory Summit 2022 - Schedule',
     description: META_DESCRIPTION
   };
 
