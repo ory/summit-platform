@@ -39,7 +39,7 @@ export const COPYRIGHT_HOLDER = process.env.NEXT_PUBLIC_COPYRIGHT_HOLDER;
 
 export const CODE_OF_CONDUCT =
   'https://www.ory.sh/code-of-conduct/';
-export const REPO = 'https://github.com/ory/summit';
+export const REPO = 'https://github.com/ory/';
 export const SAMPLE_TICKET_NUMBER = 666;
 export const NAVIGATION = [
   {
