@@ -19,16 +19,18 @@ export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN || new URL(SITE_U
 export const TWITTER_USER_NAME = 'orycorp';
 export const BRAND_NAME = 'Ory';
 export const SITE_NAME_MULTILINE = ['Ory', 'Summit'];
-export const SITE_NAME = 'Ory Summit';
+export const SITE_NAME = 'Ory Summit 2022';
 export const META_DESCRIPTION =
-  'A description of the Ory Summit 2022, TBD.';
+  'The Ory Summit is a developer conference around cloud identity infrastructure focused on but not limited to authentication, authorization, access control and security.';
 export const SITE_DESCRIPTION =
   'An interactive online experience by the community, free for everyone.';
-export const DATE = 'September 27, 2022';
-export const SHORT_DATE = 'Sep 27 - 9:00am PST';
-export const FULL_DATE = 'Sep 27th 9am Pacific Time (GMT-7)';
+export const DATE = 'October 27-28, 2022';
+export const SHORT_DATE = 'Oct 27-28 - 9:00am PST';
+export const FULL_DATE = 'Oct 28th 9am Pacific Time (GMT-7)';
 export const TWEET_TEXT = META_DESCRIPTION;
 export const COOKIE = 'user-id';
+ 
+
 
 // Remove process.env.NEXT_PUBLIC_... below and replace them with
 // strings containing your own privacy policy URL and copyright holder name
@@ -75,3 +77,6 @@ export const NAVIGATION = [
 ];
 
 export type TicketGenerationState = 'default' | 'loading';
+
+
+
