@@ -39,7 +39,7 @@ export const COPYRIGHT_HOLDER = process.env.NEXT_PUBLIC_COPYRIGHT_HOLDER;
 
 export const CODE_OF_CONDUCT =
   'https://www.ory.sh/code-of-conduct/';
-export const REPO = 'https://github.com/ory/summit';
+export const REPO = 'https://github.com/vinckr/ory-events';
 export const SAMPLE_TICKET_NUMBER = 666;
 export const NAVIGATION = [
   {
@@ -53,10 +53,6 @@ export const NAVIGATION = [
   {
     name: 'Stage B',
     route: '/stage/b'
-  },
-  {
-    name: 'Stage C',
-    route: '/stage/c'
   },
   {
     name: 'Schedule',
