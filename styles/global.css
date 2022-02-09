@@ -55,7 +55,7 @@
   --secondary-color: #8a8f98;
   --sidebar: #0e0e10;
   --header-height: 72px;
-  --brand: #845ef7;
+  --brand: #6c9eff;
 }
 
 html {
@@ -95,7 +95,7 @@ body {
 html,
 body {
   color: #fff;
-  background-color: #111;
+  background-color: rgb(17, 17, 17);
 }
 ::selection {
   background-color: #0070f3;
