@@ -47,11 +47,11 @@ export const NAVIGATION = [
     route: '/stage/main'
   },
   {
-    name: 'Stage A',
+    name: 'Tutorials',
     route: '/stage/a'
   },
   {
-    name: 'Stage B',
+    name: 'Hackathon',
     route: '/stage/b'
   },
   {
@@ -63,7 +63,7 @@ export const NAVIGATION = [
     route: '/speakers'
   },
   {
-    name: 'Expo',
+    name: 'Sponsors',
     route: '/expo'
   },
   {
