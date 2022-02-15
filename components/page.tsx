@@ -22,7 +22,7 @@ import { SITE_NAME, SITE_URL, TWITTER_USER_NAME } from '@lib/constants';
 
 type Meta = {
   title: string | null;
-  description: string | null;
+  description: string | React.ReactElement | null;
   image?: string | null;
   url?: string | null;
 };
