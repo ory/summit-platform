@@ -44,14 +44,25 @@ export default function Footer() {
           rights reserved.
         </div>
         <div className={styles['footer-center-group']}>
-          <p className={styles['footer-paragraph']}>
+        <p className={styles['footer-paragraph']}>
             <a
-              href={REPO}
+              href={'https://docs.google.com/forms/d/e/1FAIpQLSf2snB40oxVOTUWbYW1iEr3iIFzVXgQM70u2hBGiKASt2AH5A/viewform'}
               className={styles['footer-link']}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Source Code
+              View the Call for Papers
+            </a>
+          </p>
+          <div className={styles['footer-separator']} />
+          <p className={styles['footer-paragraph']}>
+            <a
+              href={'https://twitter.com/OryCorp'}
+              className={styles['footer-link']}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Twitter
             </a>
           </p>
           <div className={styles['footer-separator']} />
@@ -75,7 +86,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Legal
+                  Privacy
                 </a>
               </p>
             </>

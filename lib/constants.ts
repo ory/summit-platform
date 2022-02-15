@@ -34,8 +34,8 @@ export const COOKIE = 'user-id';
 
 // Remove process.env.NEXT_PUBLIC_... below and replace them with
 // strings containing your own privacy policy URL and copyright holder name
-export const LEGAL_URL = process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL;
-export const COPYRIGHT_HOLDER = process.env.NEXT_PUBLIC_COPYRIGHT_HOLDER;
+export const LEGAL_URL = 'https://www.ory.sh/privacy/';
+export const COPYRIGHT_HOLDER = 'Ory';
 
 export const CODE_OF_CONDUCT =
   'https://www.ory.sh/code-of-conduct/';
