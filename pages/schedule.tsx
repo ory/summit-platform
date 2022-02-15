@@ -32,7 +32,7 @@ type Props = {
 export default function SchedulePage({ allStages }: Props) {
   const meta = {
     title: 'Ory Summit 2022 - Schedule',
-    description: 'Ory Summit 2022 - Schedule - coming soon! View the Call for Papers.'
+    description: 'Ory Summit 2022 - Schedule - coming soon! View the Call for Papers: https://forms.gle/UA1ey1Uw8j3jxaQw6'
   };
 
   return (
