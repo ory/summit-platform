@@ -22,6 +22,7 @@ import ConfContainer from './conf-container';
 import Hero from './hero';
 import Form from './form';
 import LearnMore from './learn-more';
+import style from './background.module.css';
 
 type Props = {
   defaultUserData: UserData;
@@ -46,22 +47,24 @@ export default function Conf({
       }}
     >
       <Layout>
-        <ConfContainer>
-          {pageState === 'registration' && !sharePage ? (
-            <>
-              <Hero />
-              <Form />
-              <LearnMore />
-            </>
-          ) : (
-            <Ticket
-              username={userData.username}
-              name={userData.name}
-              ticketNumber={userData.ticketNumber}
-              sharePage={sharePage}
-            />
-          )}
-        </ConfContainer>
+        <div className={style.bg}>
+          <ConfContainer>
+            {pageState === 'registration' && !sharePage ? (
+              <>
+                <Hero />
+                <Form />
+                <LearnMore />
+              </>
+            ) : (
+              <Ticket
+                username={userData.username}
+                name={userData.name}
+                ticketNumber={userData.ticketNumber}
+                sharePage={sharePage}
+              />
+            )}
+          </ConfContainer>
+        </div>
       </Layout>
     </ConfDataContext.Provider>
   );

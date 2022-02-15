@@ -1,7 +1,7 @@
 {
-  "name": "Virtual Event Starter Kit",
-  "short_name": "Virtual Event Starter Kit",
-  "description": "Virtual Event Starter Kit -> https://demo.vercel.events",
+  "name": "Ory Summit 2022",
+  "short_name": "Ory Summit 22",
+  "description": "The Virtual Venue for Ory Summit 2022",
   "display": "standalone",
   "start_url": "/",
   "theme_color": "#fff",
@@ -14,9 +14,9 @@
       "sizes": "192x192"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "/icon-310x310.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "310x310"
     }
   ]
 }
