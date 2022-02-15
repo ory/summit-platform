@@ -82,7 +82,7 @@ export default function JobsGrid({ jobs }: Props) {
               rel="noopener noreferrer"
               className={styles.button}
             >
-              <span>Speak to the team live on</span>
+              <span>Speak to the team on</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
