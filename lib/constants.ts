@@ -21,9 +21,9 @@ export const BRAND_NAME = 'Ory';
 export const SITE_NAME_MULTILINE = ['Ory', 'Summit'];
 export const SITE_NAME = 'Ory Summit 2022';
 export const META_DESCRIPTION =
-  'The Ory Summit is a developer conference around cloud identity infrastructure focused on but not limited to authentication, authorization, access control and security.';
+  'The Ory Summit is a developer conference around cloud identity infrastructure focused on but not limited to authentication, authorization, access control and cloud security.';
 export const SITE_DESCRIPTION =
-  'An interactive online experience by the community, free for everyone.';
+  'The future of identity infrastructure by the Ory community, free for everyone.';
 export const DATE = 'October 27-28, 2022';
 export const SHORT_DATE = 'Oct 27-28 - 9:00am PST';
 export const FULL_DATE = 'Oct 28th 9am Pacific Time (GMT-7)';
