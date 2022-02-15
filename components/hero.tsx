@@ -50,7 +50,7 @@ export default function Hero() {
         <p>{DATE}</p>
         <div className={styles['description-separator']} />
         <p>
-          <strong>Online & In Munich </strong>
+          <strong>Online & Munich, Germany </strong>
         </p>
       </div>
     </div>
