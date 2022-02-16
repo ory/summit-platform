@@ -51,7 +51,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-            Present at the Ory Summit 2022 ->  Call for Papers
+            Present at the Ory Summit - View Call for Papers
             </a>
           </p>
           <div className={styles['footer-separator']} />
