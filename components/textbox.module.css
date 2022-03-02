@@ -17,8 +17,9 @@
 .textbox {
   margin: auto;
   padding: 0 var(--space-4x);
-  max-width: 60%;
+  max-width: 80%;
 }
+
 
 @media (min-width: 768px) {
   .container {
