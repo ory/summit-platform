@@ -51,11 +51,11 @@
   --accents-7: #333333;
   --accents-8: #111111;
 
-  --gray: #252729;
-  --secondary-color: #8a8f98;
+  --secondary-color: #d8ddfd;
+  --link-color:#8b98f9;
   --sidebar: #0e0e10;
-  --header-height: 72px;
-  --brand: #6c9eff;
+  --header-height: 64px;
+  --brand: #3d53f5;
 }
 
 html {
@@ -115,7 +115,7 @@ h3 {
 a {
   text-decoration: none;
   transition: color 0.2s ease;
-  color: var(--secondary-color);
+  color: var(--link-color);
 }
 
 iframe {
