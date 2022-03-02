@@ -33,16 +33,15 @@ type Props = {
 export default function WelcomePage({ allStages }: Props) {
   const meta = {
     title: 'Ory Summit 2022 - Welcome',
-    description: 'Welcome'
   };
 
   return (
     <Page meta={meta}>
       <Layout>
+      <Header hero="Welcome to Ory Summit 2022" />
         <ConfContainer>
           <Textbox>
             <div className="textbox">
-              <h2>Learn more about the Ory Summit</h2>
               <p>
                 Ory Summit is a developer conference around cloud identity infrastructure focused on
                 but not limited to authentication, authorization, access control and security. A
@@ -85,7 +84,8 @@ export default function WelcomePage({ allStages }: Props) {
                   </ul>
                 </li>
               </ul>
-              <h2>Present at the Ory Summit</h2>
+              <div className="quote">
+              <h2 >Present at the Ory Summit</h2>
               <h4>
                 To learn more and submit your abstract, please click on the following link:{' '}
                 <p>
@@ -95,6 +95,7 @@ export default function WelcomePage({ allStages }: Props) {
                   </a>
                 </p>
               </h4>
+              </div>
               <p>
                 For any inquiries regarding the programm, please contact:{' '}
                 <a href="mailto:summit@ory.sh">summit@ory.sh</a>
