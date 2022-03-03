@@ -71,13 +71,11 @@ export default function WelcomePage({ allStages }: Props) {
                   better and more effective with shipping code and features
                 </li>
                 <li>
-                  <strong>Concept Talks -</strong> tell us more about a topic, such as:
-                  <p>
+                  <strong>Concept Talks -</strong> tell us more about a topic, such as
                     Authorization & Authentication, Open Source Maintainership, Supply Chain, JWT or
                     Cookies, Multi-factor authentication, Resilient and scalable architecture,
-                    Backend & Data Security, Business & Innovation, Other related topics, dont
+                    Backend & Data Security, Business & Innovation, other related topics. Dont
                     hesitate to submit your abstract!
-                  </p>
                 </li>
               </ul>
               <div className="quote">
