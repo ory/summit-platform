@@ -32,7 +32,7 @@ type Props = {
 export default function Jobs({ jobs }: Props) {
   const meta = {
     title: 'Ory Summit 2022 - Jobs',
-    description: META_DESCRIPTION
+    description: 'We are looking for talented, creative people to build the future of Ory!'
   };
 
   return (
