@@ -72,9 +72,9 @@ export default function WelcomePage({ allStages }: Props) {
                 </li>
                 <li>
                   <strong>Concept Talks -</strong> tell us more about a topic, such as
-                    Authorization & Authentication, Open Source Maintainership, Supply Chain, JWT or
-                    Cookies, Multi-factor authentication, Resilient and scalable architecture,
-                    Backend & Data Security, Business & Innovation, other related topics. Dont
+                    authorization & authentication, open source maintainership, supply chain, JWT or
+                    cookies, multi-factor authentication, resilient and scalable architecture,
+                    backend & data security, business & innovation, other related topics. Don't
                     hesitate to submit your abstract!
                 </li>
               </ul>
