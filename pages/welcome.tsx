@@ -32,13 +32,13 @@ type Props = {
 
 export default function WelcomePage({ allStages }: Props) {
   const meta = {
-    title: 'Ory Summit 2022 - Welcome',
+    title: 'Ory Summit 2022 - Welcome'
   };
 
   return (
     <Page meta={meta}>
       <Layout>
-      <Header hero="Welcome to Ory Summit 2022" />
+        <Header hero="Welcome to Ory Summit 2022" />
         <ConfContainer>
           <Textbox>
             <div className="textbox">
@@ -71,30 +71,26 @@ export default function WelcomePage({ allStages }: Props) {
                   better and more effective with shipping code and features
                 </li>
                 <li>
-                  <strong>Concept Talks -</strong> tell us more about a topic, such as
-                  <ul>
-                    <li>Authorization & Authentication</li>
-                    <li>Open Source Maintainership</li>
-                    <li>Supply Chain </li>
-                    <li> JWT or Cookies </li>
-                    <li> Multi-factor authentication </li>
-                    <li>Resilient and scalable architecture </li> <li>Backend & Data Security </li>
-                    <li>Business & Innovation </li>
-                    <li>Other related topics, dont hesitate to submit your abstract!</li>
-                  </ul>
+                  <strong>Concept Talks -</strong> tell us more about a topic, such as:
+                  <p>
+                    Authorization & Authentication, Open Source Maintainership, Supply Chain, JWT or
+                    Cookies, Multi-factor authentication, Resilient and scalable architecture,
+                    Backend & Data Security, Business & Innovation, Other related topics, dont
+                    hesitate to submit your abstract!
+                  </p>
                 </li>
               </ul>
               <div className="quote">
-              <h2 >Present at the Ory Summit</h2>
-              <h4>
-                To learn more and submit your abstract, please click on the following link:{' '}
-                <p>
-                  {' '}
-                  <a href="https://forms.gle/UA1ey1Uw8j3jxaQw6" rel="nofollow">
-                    Ory Summit 2022 Call For Papers
-                  </a>
-                </p>
-              </h4>
+                <h2>Present at the Ory Summit</h2>
+                <h4>
+                  To learn more and submit your abstract, please click on the following link:{' '}
+                  <p>
+                    {' '}
+                    <a href="https://forms.gle/UA1ey1Uw8j3jxaQw6" rel="nofollow">
+                      Ory Summit 2022 Call For Papers
+                    </a>
+                  </p>
+                </h4>
               </div>
               <p>
                 For any inquiries regarding the programm, please contact:{' '}
