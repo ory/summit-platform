@@ -36,7 +36,7 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
       return res.status(401).json({
         error: {
           code: 'not_registered',
-          message: 'This user is not registered'
+          message: 'This user is not signed up'
         }
       });
     }
