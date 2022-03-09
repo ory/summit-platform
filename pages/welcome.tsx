@@ -43,10 +43,10 @@ export default function WelcomePage({ allStages }: Props) {
           <Textbox>
             <div className="textbox">
               <p>
-                Ory Summit is a developer conference around cloud identity infrastructure focused on
-                but not limited to authentication, authorization, access control and security. A
-                global, free, and hybrid conference for the whole Ory Community - users, developers,
-                maintainers, contributors, customers, and partners.
+                Ory Summit is a global, free and hybrid conference around cloud identity
+                infrastructure focused on but not limited to authentication, authorization, access
+                control and security for the whole Ory Community - users, developers, maintainers,
+                contributors, customers, and partners.
               </p>
               <h2>Topics of interest</h2>
               <p>
@@ -71,11 +71,11 @@ export default function WelcomePage({ allStages }: Props) {
                   better and more effective with shipping code and features
                 </li>
                 <li>
-                  <strong>Concept Talks -</strong> tell us more about a topic, such as
-                    authorization & authentication, open source maintainership, supply chain, JWT or
-                    cookies, multi-factor authentication, resilient and scalable architecture,
-                    backend & data security, business & innovation, other related topics. Don't
-                    hesitate to submit your abstract!
+                  <strong>Concept Talks -</strong> tell us more about a topic, such as authorization
+                  & authentication, open source maintainership, supply chain, JWT or cookies,
+                  multi-factor authentication, resilient and scalable architecture, backend & data
+                  security, business & innovation, other related topics. Don't hesitate to submit
+                  your abstract!
                 </li>
               </ul>
               <div className="quote">
