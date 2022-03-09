@@ -22,7 +22,7 @@ import { REPO } from '@lib/constants';
 export default function LearnMore() {
   return (
     <div className={cn(styleUtils.appear, styleUtils['appear-fifth'], styles.contact)}>
-      Ory Summit 2022 is a global, free, and hybrid conference for developers
+      Ory Summit 2022 is a free and hybrid conference for developers
     </div>
   );
 }
