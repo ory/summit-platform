@@ -43,43 +43,38 @@ export default function WelcomePage({ allStages }: Props) {
           <Textbox>
             <div className="textbox">
               <p>
-                Ory Summit is a global, free and hybrid conference around cloud identity
-                infrastructure focused on but not limited to authentication, authorization, access
+                Ory Summit is a global, free and hybrid conference around identity
+                management focused on but not limited to authentication, authorization, access
                 control and security for the whole Ory Community - users, developers, maintainers,
                 contributors, customers, and partners.
               </p>
               <h2>Topics of interest</h2>
-              <p>
-                The sessions will provide various levels of learning and deep-dive technical topics
-                covering:
-              </p>
               <ul>
                 <li>
-                  <strong>Ory implementation -</strong> tell us about how you implemented Ory
-                  software into your application/project
+                  <strong>Ory implementation -</strong> learn about how Ory was implemented 
+                  software into an application/project
                 </li>
                 <li>
-                  <strong>Ecosystem & Integration -</strong>tell us how you're using Ory with third
+                  <strong>Ecosystem & Integration -</strong> learn about using Ory with third
                   party solutions
                 </li>
                 <li>
-                  <strong>Community Talks -</strong> tell us about your experiences being part of
+                  <strong>Community Talks -</strong> learn about our members experiences being part of
                   the Ory Community
                 </li>
                 <li>
-                  <strong>Teams & Workflow -</strong> tell us how Ory is making your software teams
+                  <strong>Teams & Workflow -</strong> learn about how Ory is making software teams
                   better and more effective with shipping code and features
                 </li>
                 <li>
-                  <strong>Concept Talks -</strong> tell us more about a topic, such as authorization
+                  <strong>Concept Talks -</strong> learn more about a topic, such as authorization
                   & authentication, open source maintainership, supply chain, JWT or cookies,
                   multi-factor authentication, resilient and scalable architecture, backend & data
-                  security, business & innovation, other related topics. Don't hesitate to submit
-                  your abstract!
+                  security, business & innovation, other related topics.
                 </li>
               </ul>
               <div className="quote">
-                <h2>Present at the Ory Summit</h2>
+                <h2>Present at Ory Summit</h2>
                 <h4>
                   To learn more and submit your abstract, please click on the following link:{' '}
                   <p>
@@ -90,15 +85,7 @@ export default function WelcomePage({ allStages }: Props) {
                   </p>
                 </h4>
               </div>
-              <p>
-                For any inquiries regarding the programm, please contact:{' '}
-                <a href="mailto:summit@ory.sh">summit@ory.sh</a>
-              </p>
-              <p>
-                For all general inquiries, please contact:{' '}
-                <a href="mailto:office@ory.sh">office@ory.sh</a>
-              </p>
-              <h2>Attend the Ory Summit</h2>
+              <h2>Attend Ory Summit</h2>
               <ul>
                 <li>Code, code, code and more code. Get examples and answers from the experts.</li>
                 <li>Learn about cloud security best practices.</li>
@@ -113,6 +100,10 @@ export default function WelcomePage({ allStages }: Props) {
                   products and solutions.
                 </li>
               </ul>
+              <p>
+                For all general inquiries, please contact:{' '}
+                <a href="mailto:office@ory.sh">office@ory.sh</a>
+              </p>
             </div>
           </Textbox>
         </ConfContainer>
