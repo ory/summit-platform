@@ -89,7 +89,7 @@
 }
 
 .input-label {
-  background-color: var(--gray);
+  background-color: #33373c;
   border-radius: var(--space-2x);
   border: 1px solid transparent;
   transition: border-color 0.2s ease, background-color 0.2s ease;
