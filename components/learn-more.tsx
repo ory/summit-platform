@@ -21,8 +21,6 @@ import { REPO } from '@lib/constants';
 
 export default function LearnMore() {
   return (
-    <div className={cn(styleUtils.appear, styleUtils['appear-fifth'], styles.contact)}>
-      Ory Summit 2022 - a global, free and hybrid conference around identity management
-    </div>
+<div></div>
   );
 }

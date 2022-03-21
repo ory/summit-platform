@@ -38,6 +38,15 @@
   color: #fff;
 }
 
+.infosmall {
+  font-size: 20px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
 .description {
   font-weight: 400;
   font-size: 20px;

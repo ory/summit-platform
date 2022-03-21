@@ -21,7 +21,6 @@ import Layout from './layout';
 import ConfContainer from './conf-container';
 import Hero from './hero';
 import Form from './form';
-import LearnMore from './learn-more';
 import style from './background.module.css';
 
 type Props = {
@@ -52,7 +51,6 @@ export default function Conf({
             {pageState === 'registration' && !sharePage ? (
               <>
                 <Hero />
-                <LearnMore />
                 <Form />
               </>
             ) : (
