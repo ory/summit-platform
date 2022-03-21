@@ -22,30 +22,10 @@ import { BRAND_NAME, DATE, SITE_DESCRIPTION } from '@lib/constants';
 export default function Hero() {
   return (
     <div className={styles.wrapper}>
-      <h2
-        className={cn(
-          styleUtils.appear,
-          styleUtils['appear-third'],
-          styleUtils['show-on-mobile'],
-          styles.description
-        )}
-      >
-        {SITE_DESCRIPTION}
-      </h2>
       <h1 className={cn(styleUtils.appear, styleUtils['appear-third'], styles.hero)}>
         {BRAND_NAME} Summit 2022
         <br className={styleUtils['show-on-desktop']} />
       </h1>
-      <h2
-        className={cn(
-          styleUtils.appear,
-          styleUtils['appear-third'],
-          styleUtils['show-on-tablet'],
-          styles.description
-        )}
-      >
-        {SITE_DESCRIPTION}
-      </h2>
       <div className={cn(styleUtils.appear, styleUtils['appear-fourth'], styles.info)}>
         <p>{DATE}</p>
         <div className={styles['description-separator']} />
