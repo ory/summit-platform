@@ -45,7 +45,7 @@ export default function Footer() {
         <div className={styles['footer-center-group']}>
         <p className={styles['footer-paragraph']}>
             <a
-              href={'https://docs.google.com/forms/d/e/1FAIpQLSf2snB40oxVOTUWbYW1iEr3iIFzVXgQM70u2hBGiKASt2AH5A/viewform'}
+              href={'https://sessionize.com/ory-summit/'}
               className={styles['footer-link']}
               target="_blank"
               rel="noopener noreferrer"
