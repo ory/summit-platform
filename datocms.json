@@ -1,10 +1,10 @@
 {
-  "name": "Virtual Event Starter Kit",
-  "description": "Fully customizable starter kit for your virtual event.",
+  "name": "Ory Summit 2022",
+  "description": "The future of identity infrastructure by the Ory community, free for everyone.",
   "previewImage": "https://demo.vercel.events/twitter-card.png",
-  "datocmsProjectId": "37685",
+  "datocmsProjectId": "59566",
   "deploymentType": "vercel",
   "buildCommand": "npm run build",
   "datocmsApiTokenEnvName": "DATOCMS_READ_ONLY_API_TOKEN",
-  "livePreviewUrl": "https://demo.vercel.events/"
+  "livePreviewUrl": "https://ory-events.vercel.app/"
 }
