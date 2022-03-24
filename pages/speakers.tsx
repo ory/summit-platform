@@ -20,6 +20,7 @@ import Page from '@components/page';
 import SpeakersGrid from '@components/speakers-grid';
 import Layout from '@components/layout';
 import Header from '@components/header';
+import Textbox from '@components/textbox';
 
 import { getAllSpeakers } from '@lib/cms-api';
 import { Speaker } from '@lib/types';
@@ -38,6 +39,13 @@ export default function Speakers({ speakers }: Props) {
     <Page meta={meta}>
       <Layout>
         <Header hero="Speakers" description={meta.description} />
+<Textbox>
+        <div className="quote">
+                <h2><u><a href="https://sessionize.com/ory-summit/" rel="nofollow">
+                Interested in presenting at Ory Summit 2022? Visit the Call for Papers!
+                    </a></u></h2>
+              </div>
+              </Textbox>
         <SpeakersGrid speakers={speakers} />
       </Layout>
     </Page>
