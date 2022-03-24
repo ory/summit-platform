@@ -27,7 +27,9 @@ export default function Hero() {
         <br className={styleUtils['show-on-desktop']} />
       </h1>
       <div className={cn(styleUtils.appear, styleUtils['appear-fourth'], styles.info)}>
-        <p>{DATE}</p>
+        <p>
+          <strong>{DATE}</strong>
+        </p>
         <div className={styles['description-separator']} />
         <p>
           <strong>Online & Munich, Germany </strong>
@@ -35,10 +37,8 @@ export default function Hero() {
         <br className={styleUtils['show-on-desktop']} />
       </div>
       <div className={cn(styleUtils.appear, styleUtils['appear-fifth'], styles.infosmall)}>
-      <p>
-      A global, free and hybrid developer conference around identity management.
-    </p>
-    </div>
+        <p>A global, free and hybrid developer conference around identity management.</p>
+      </div>
     </div>
   );
 }
