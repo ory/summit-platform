@@ -22,15 +22,7 @@ import Header from '@components/header';
 import ConfContainer from '@components/conf-container';
 import Textbox from '@components/textbox';
 
-import { getAllStages } from '@lib/cms-api';
-import { Stage } from '@lib/types';
-import { META_DESCRIPTION } from '@lib/constants';
-
-type Props = {
-  allStages: Stage[];
-};
-
-export default function WelcomePage({ allStages }: Props) {
+export default function WelcomePage({ }: Props) {
   const meta = {
     title: 'Ory Summit 2022 - Welcome'
   };
@@ -38,87 +30,56 @@ export default function WelcomePage({ allStages }: Props) {
   return (
     <Page meta={meta}>
       <Layout>
-        <Header hero="Welcome to Ory Summit 2022" />
         <ConfContainer>
           <Textbox>
-            <div className="textbox">
+          <h1>Welcome to Ory Summit 2022</h1>
               <p>
                 Ory Summit is a global, free and hybrid conference around identity
                 management focused on but not limited to authentication, authorization, access
                 control and security for the whole Ory Community - users, developers, maintainers,
-                contributors, customers, and partners.
+                contributors, and partners.
               </p>
-              <h2>Topics of interest</h2>
+              <h2>Explore the themes</h2>
               <ul>
                 <li>
-                  <strong>Ory implementation -</strong> learn about how Ory was implemented 
-                  software into an application/project
+                  <strong>Ory implementation -</strong> how to implemented Ory into an application/project
                 </li>
                 <li>
-                  <strong>Ecosystem & Integration -</strong> learn about using Ory with third
+                  <strong>Ecosystem & Integration -</strong> how to use Ory with third
                   party solutions
                 </li>
                 <li>
-                  <strong>Community Talks -</strong> learn about our members experiences being part of
-                  the Ory Community
+                  <strong>Community Talks -</strong> learn from Ory Community members
                 </li>
                 <li>
-                  <strong>Teams & Workflow -</strong> learn about how Ory is making software teams
-                  better and more effective with shipping code and features
+                  <strong>Teams & Workflow -</strong> how Ory is making software teams more effective
                 </li>
                 <li>
-                  <strong>Concept Talks -</strong> learn more about a topic, such as authorization
-                  & authentication, open source maintainership, supply chain, JWT or cookies,
-                  multi-factor authentication, resilient and scalable architecture, backend & data
-                  security, business & innovation, other related topics.
+                  <strong>Concept Talks -</strong> authorization & authentication, open source, cloud architecture & security, and more.
                 </li>
               </ul>
+              <br/>
               <div className="quote">
-                <h2>Present at Ory Summit</h2>
-                <h4>
-                  To learn more and submit your abstract, please click on the following link:{' '}
-                  <p>
-                    {' '}
-                    <a href="https://forms.gle/UA1ey1Uw8j3jxaQw6" rel="nofollow">
-                      Ory Summit 2022 Call For Papers
-                    </a>
-                  </p>
-                </h4>
+                <h2><u><a href="https://sessionize.com/ory-summit/" rel="nofollow">
+                Click here to present at Ory Summit 2022!
+                    </a></u></h2>
               </div>
+              <br/>
               <h2>Attend Ory Summit</h2>
               <ul>
-                <li>Code, code, code and more code. Get examples and answers from the experts.</li>
-                <li>Learn about cloud security best practices.</li>
-                <li>Get inspired by tech pioneers and industry leaders.</li>
+                <li>Code examples and answers from the experts</li>
+                <li>Expand your network</li>
+                <li>Learn about cloud security best practices</li>
+                <li>Get inspired by tech pioneers and industry leaders</li>
                 <li>Level up your skills by engaging in tech talks delivered by proven experts.</li>
-                <li>
-                  Network & meet with like-minded peers from around the world and share your
-                  experiences.
-                </li>
-                <li>
-                  Expand your network via virtual events: find new partners, clients, employers,
-                  products and solutions.
-                </li>
               </ul>
               <p>
                 For all general inquiries, please contact:{' '}
                 <a href="mailto:office@ory.sh">office@ory.sh</a>
               </p>
-            </div>
           </Textbox>
         </ConfContainer>
       </Layout>
     </Page>
   );
 }
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allStages = await getAllStages();
-
-  return {
-    props: {
-      allStages
-    },
-    revalidate: 60
-  };
-};
