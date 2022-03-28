@@ -39,14 +39,18 @@ export default function Speakers({ speakers }: Props) {
     <Page meta={meta}>
       <Layout>
         <Header hero="Speakers" description={meta.description} />
-<Textbox>
-        <div className="quote">
-                <h2><u><a href="https://sessionize.com/ory-summit/" rel="nofollow">
-                Interested in presenting at Ory Summit 2022? Visit the Call for Papers!
-                    </a></u></h2>
-              </div>
-              </Textbox>
         <SpeakersGrid speakers={speakers} />
+        <Textbox>
+          <div className="quote">
+            <h2>
+              <u>
+                <a href="https://sessionize.com/ory-summit/" rel="nofollow">
+                  Interested in presenting at Ory Summit 2022? Visit the Call for Papers!
+                </a>
+              </u>
+            </h2>
+          </div>
+        </Textbox>
       </Layout>
     </Page>
   );
