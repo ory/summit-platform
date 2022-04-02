@@ -18,7 +18,7 @@ import cn from 'classnames';
 import styles from './footer.module.css';
 import { COPYRIGHT_HOLDER, SITE_NAME, CODE_OF_CONDUCT, LEGAL_URL, REPO } from '@lib/constants';
 
-export function HostedByVercel() {
+export function HostedByOry() {
   return (
     <a
       href="https://vercel.com"
@@ -35,7 +35,7 @@ export default function Footer() {
     <footer className={cn(styles.footer)}>
       <div className={styles['footer-legal']}>
         <div className={styles['footer-hostedby']}>
-          <HostedByVercel />
+          <HostedByOry />
           <div className={styles['footer-separator']} />
         </div>
         <div className={styles['footer-copyright']}>
