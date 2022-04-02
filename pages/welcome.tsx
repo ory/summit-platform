@@ -30,9 +30,8 @@
    return (
      <Page meta={meta}>
        <Layout>
+       <Header hero="Welcome to Ory Summit 2022" />
          <ConfContainer>
-           <Textbox>
-           <h1>Welcome to Ory Summit 2022</h1>
                <p>
                  Ory Summit is a global, free and hybrid conference around identity
                  management focused on but not limited to authentication, authorization, access
@@ -78,7 +77,6 @@
                  For all general inquiries, please contact:{' '}
                  <a href="mailto:office@ory.sh">office@ory.sh</a>
                </p>
-           </Textbox>
          </ConfContainer>
        </Layout>
      </Page>
