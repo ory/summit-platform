@@ -38,14 +38,14 @@ export default function Speakers({ speakers }: Props) {
   return (
     <Page meta={meta}>
       <Layout>
-        <Header hero="Speakers" description={meta.description} />
+        <Header hero="Speakers" />
         <SpeakersGrid speakers={speakers} />
         <Textbox>
           <div className="quote">
             <h2>
               <u>
                 <a href="https://sessionize.com/ory-summit/" rel="nofollow">
-                  Interested in presenting at Ory Summit 2022? Visit the Call for Papers!
+                Submit your abstract and present at Ory Summit 2022!
                 </a>
               </u>
             </h2>
