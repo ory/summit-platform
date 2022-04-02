@@ -37,7 +37,7 @@ export default function Hero() {
         <br className={styleUtils['show-on-desktop']} />
       </div>
       <div className={cn(styleUtils.appear, styleUtils['appear-fifth'], styles.infosmall)}>
-        <p>A global, free and hybrid developer conference around identity management.</p>
+        <p>A free developer conference around open source identity management.</p>
       </div>
     </div>
   );
