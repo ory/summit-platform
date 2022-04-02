@@ -50,11 +50,11 @@
 }
 
 .input::placeholder {
-  color: var(--secondary-color);
+  color: black;
 }
 
 .input-label {
-  background-color: #33373c;
+  background-color: #c589cc;
   border-radius: var(--space-2x);
   border: 1px solid transparent;
   transition: border-color 0.2s ease, background-color 0.2s ease;
@@ -62,7 +62,7 @@
 }
 
 .input-label.focused {
-  background-color: #33373c;
+  background-color: #763b7d;
 }
 
 .input-label.error {
@@ -104,7 +104,7 @@
   letter-spacing: -0.02em;
   outline: none;
   font-weight: 500;
-  color: white;
+  color: black;
   transition: background-color 0.2s ease, color 0.2s ease;
   display: inline-flex;
   align-items: center;
