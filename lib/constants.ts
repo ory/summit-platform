@@ -24,9 +24,9 @@ export const META_DESCRIPTION =
   'The Ory Summit is a developer conference around identity management focused on authentication, authorization, access control and cloud security.';
 export const SITE_DESCRIPTION =
   'The future of identity infrastructure by the Ory community, free for everyone.';
-export const DATE = 'October 27, 2022';
-export const SHORT_DATE = 'Oct 27 2022 - 11:00am CET';
-export const FULL_DATE = 'Oct 27th 9am Central European Time (GMT+2)';
+export const DATE = 'October 20, 2022';
+export const SHORT_DATE = 'Oct 20 2022 - 11:00am CET';
+export const FULL_DATE = 'Oct 20th 9am Central European Time (GMT+2)';
 export const TWEET_TEXT = META_DESCRIPTION;
 export const COOKIE = 'user-id';
  
