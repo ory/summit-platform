@@ -32,13 +32,14 @@ type Props = {
 export default function SchedulePage({ allStages }: Props) {
   const meta = {
     title: 'Ory Summit 2022 - Schedule',
-    description: 'Coming soon!'
+    description: 'Review the schedule for Ory Summit 2022'
   };
 
   return (
     <Page meta={meta}>
       <Layout>
         <Header hero="Schedule" description={meta.description} />
+        <Schedule allStages={allStages} />^
       </Layout>
     </Page>
   );
