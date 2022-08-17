@@ -44,7 +44,7 @@ async function fetchCmsAPI(query: string, { variables }: { variables?: Record<st
 export async function getAllSpeakers(): Promise<Speaker[]> {
   const data = await fetchCmsAPI(`
     {
-      allSpeakers(first: 100, orderBy: _createdAt_ASC) {
+      allSpeakers(first: 100, orderBy: name_ASC) {
         name
         bio
         title

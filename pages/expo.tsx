@@ -31,7 +31,7 @@ type Props = {
 
 export default function ExpoPage({ sponsors }: Props) {
   const meta = {
-    title: 'Ory Summit 2022 - Expo',
+    title: 'Ory Summit 2022',
     description: META_DESCRIPTION
   };
 
