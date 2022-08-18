@@ -29,22 +29,23 @@ export const SHORT_DATE = 'Oct 20 2022 - 11:00am CET';
 export const TIME = '11am Central European Time (GMT+2)';
 export const TWEET_TEXT = META_DESCRIPTION;
 export const COOKIE = 'user-id';
- 
-
 
 // Remove process.env.NEXT_PUBLIC_... below and replace them with
 // strings containing your own privacy policy URL and copyright holder name
 export const LEGAL_URL = 'https://www.ory.sh/privacy/';
 export const COPYRIGHT_HOLDER = 'Ory';
 
-export const CODE_OF_CONDUCT =
-  'https://www.ory.sh/code-of-conduct/';
+export const CODE_OF_CONDUCT = 'https://www.ory.sh/code-of-conduct/';
 export const REPO = 'https://github.com/ory/';
 export const SAMPLE_TICKET_NUMBER = 666;
 export const NAVIGATION = [
   {
     name: 'Welcome',
     route: '/welcome'
+  },
+  {
+    name: 'Main Stage',
+    route: '/stage/main'
   },
   {
     name: 'Schedule',
@@ -61,6 +62,3 @@ export const NAVIGATION = [
 ];
 
 export type TicketGenerationState = 'default' | 'loading';
-
-
-
