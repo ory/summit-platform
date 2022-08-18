@@ -67,7 +67,7 @@
   }
 
   .row {
-    margin: 0 var(--space-8x) 0 0;
+    margin: 0 var(--space-8x) 0 var(--space-8x);
     flex-direction: row;
     padding: var(--space-8x) 0;
   }
