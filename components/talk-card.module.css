@@ -15,11 +15,11 @@
  */
 
 .talk {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .time {
-  color: var(--secondary-color);
+  color: var(--accents-2);
   margin: 0 0 var(--space-2x);
 }
 
@@ -27,14 +27,17 @@
   color: inherit;
   display: block;
   border-radius: var(--space-2x);
-  min-width: var(--talk-card-width, 270px);
-  max-width: var(--talk-card-width, 270px);
+  min-width: var(--talk-card-width, 400px);
+  max-width: var(--talk-card-width, 400px);
+  min-height: var(--talk-card-width, 120px);
+  max-height: var(--talk-card-width, 120px);
   padding: 1px;
   background-clip: content-box, border-box;
   background-image: linear-gradient(#111111, #111111), linear-gradient(to right, #333333, #333333);
 }
 .card:hover {
-  background-image: linear-gradient(#111111, #111111), linear-gradient(to right, #aaa, #aaa);
+  background-image: linear-gradient(#111111, #111111),
+    linear-gradient(to right, var(--brand), var(--brand));
 }
 
 .is-live {
@@ -47,12 +50,13 @@
 }
 
 .title {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 500;
   color: #e5e5e5;
   margin: 0;
   line-height: 1.4;
   width: 100%;
+  color: var(--secondary-color);
 }
 
 .speaker {
@@ -65,12 +69,11 @@
   font-size: 14px;
   font-weight: normal;
   margin: 0;
-  color: var(--secondary-color);
 }
 
 .avatar {
-  height: 24px;
-  width: 24px;
+  height: 36px;
+  width: 36px;
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
