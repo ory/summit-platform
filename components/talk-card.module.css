@@ -47,9 +47,13 @@
 
 .card-body {
   padding: var(--space-4x);
+  display: grid;
+  grid-template-rows: 40px 65px;
+  grid-template-areas: 'title speaker';
 }
 
 .title {
+  grid-area: title;
   font-size: 18px;
   font-weight: 500;
   color: #e5e5e5;
@@ -60,6 +64,9 @@
 }
 
 .speaker {
+  grid-area: speaker;
+  grid-column-start: 1;
+  grid-row-start: 2;
   display: flex;
   align-items: center;
   margin-top: var(--space-2x);
