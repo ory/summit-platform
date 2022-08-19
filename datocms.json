@@ -6,5 +6,5 @@
   "deploymentType": "vercel",
   "buildCommand": "npm run build",
   "datocmsApiTokenEnvName": "DATOCMS_READ_ONLY_API_TOKEN",
-  "livePreviewUrl": "https://ory-events.vercel.app/"
+  "livePreviewUrl": "https://summit.ory.sh/"
 }

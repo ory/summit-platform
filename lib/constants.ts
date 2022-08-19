@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-export const SITE_URL = 'https://ory-events.vercel.app/';
+export const SITE_URL = 'https://summit.ory.sh/';
 export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN || new URL(SITE_URL).origin;
 export const TWITTER_USER_NAME = 'orycorp';
 export const BRAND_NAME = 'Ory';
@@ -25,8 +25,8 @@ export const META_DESCRIPTION =
 export const SITE_DESCRIPTION =
   'The future of identity infrastructure by the Ory community, free for everyone.';
 export const DATE = 'October 20, 2022';
-export const SHORT_DATE = 'Oct 20 2022 - 11:00am CET';
-export const TIME = '11am Central European Time (GMT+2)';
+export const SHORT_DATE = 'Oct 20 2022 - 10:00am CET';
+export const TIME = '10am Central European Time (GMT+2)';
 export const TWEET_TEXT = META_DESCRIPTION;
 export const COOKIE = 'user-id';
 
