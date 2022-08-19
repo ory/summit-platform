@@ -28,9 +28,9 @@ function StageRow({ stage }: { stage: Stage }) {
 
   return (
     <div key={stage.name} className={styles.row}>
-      <h3 className={cn(styles['stage-name'], styles[stage.slug])}>
-        <span>{stage.name}</span>
-      </h3>
+      {/*       <h3 className={cn(styles['stage-name'], styles[stage.slug])}> 
+      <span>{stage.name}</span>
+      </h3>*/}
       <div className={cn(styles.talks, styles[stage.slug])}>
         {Object.keys(timeBlocks).map((startTime: string) => (
           <div key={startTime}>
