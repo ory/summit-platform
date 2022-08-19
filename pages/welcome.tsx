@@ -20,16 +20,17 @@ import Page from '@components/page';
 import Layout from '@components/layout';
 import Header from '@components/header';
 import ConfContainer from '@components/conf-container';
-import Textbox from '@components/textbox';
+import { META_DESCRIPTION } from '@lib/constants';
 import { DATE, TIME } from '@lib/constants';
 
 export default function WelcomePage({}) {
   const meta = {
-    title: 'Ory Summit 2022 - Welcome'
+    title: 'Ory Summit 2022 - Welcome',
+    description: META_DESCRIPTION
   };
 
   return (
-    <Page meta={meta}>
+    <Page meta={meta} fullViewport>
       <Layout>
         <Header hero="Welcome to Ory Summit 2022" />
         <ConfContainer>
