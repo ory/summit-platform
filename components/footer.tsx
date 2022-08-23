@@ -25,8 +25,7 @@ export function HostedByOry() {
       className={cn(styles['footer-link'], styles['footer-logo'])}
       target="_blank"
       rel="noopener noreferrer"
-    >
-    </a>
+    ></a>
   );
 }
 
@@ -43,14 +42,14 @@ export default function Footer() {
           rights reserved.
         </div>
         <div className={styles['footer-center-group']}>
-        <p className={styles['footer-paragraph']}>
+          <p className={styles['footer-paragraph']}>
             <a
-              href={'https://sessionize.com/ory-summit/'}
+              href={'https://slack.ory.sh/'}
               className={styles['footer-link']}
               target="_blank"
               rel="noopener noreferrer"
             >
-            View Call for Papers
+              Join the chat 🚀
             </a>
           </p>
           <div className={styles['footer-separator']} />
@@ -61,7 +60,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Contact us!
+              Email us
             </a>
           </p>
           <div className={styles['footer-separator']} />
@@ -73,6 +72,17 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               Twitter
+            </a>
+          </p>
+          <div className={styles['footer-separator']} />
+          <p className={styles['footer-paragraph']}>
+            <a
+              href={'https://www.linkedin.com/company/ory-corp'}
+              className={styles['footer-link']}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Linkedin
             </a>
           </p>
           <div className={styles['footer-separator']} />
