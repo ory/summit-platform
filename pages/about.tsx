@@ -23,16 +23,16 @@ import ConfContainer from '@components/conf-container';
 import { META_DESCRIPTION } from '@lib/constants';
 import { DATE, TIME } from '@lib/constants';
 
-export default function WelcomePage({}) {
+export default function AboutPage({}) {
   const meta = {
-    title: 'Ory Summit 2022 - Welcome',
+    title: 'Ory Summit 2022 - About',
     description: META_DESCRIPTION
   };
 
   return (
     <Page meta={meta} fullViewport>
       <Layout>
-        <Header hero="Welcome to Ory Summit 2022" />
+        <Header hero="What is Ory Summit 2022" />
         <ConfContainer>
           <p>
             Ory Summit is a global, free and hybrid conference around identity management focused on
@@ -63,10 +63,10 @@ export default function WelcomePage({}) {
           </ul>
           <br />
 
-          <h2>Attend Ory Summit</h2>
+          <h2>Why Ory Summit</h2>
           <ul>
             <li>Code examples and answers from the experts</li>
-            <li>Expand your network</li>
+            <li>Expand your network and get in touch with Ory engineers</li>
             <li>Learn about cloud security best practices</li>
             <li>Get inspired by tech pioneers and industry leaders</li>
             <li>Level up your skills by engaging in tech talks delivered by proven experts.</li>

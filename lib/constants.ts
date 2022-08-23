@@ -40,8 +40,8 @@ export const REPO = 'https://github.com/ory/';
 export const SAMPLE_TICKET_NUMBER = 666;
 export const NAVIGATION = [
   {
-    name: 'Welcome',
-    route: '/welcome'
+    name: 'About',
+    route: '/about'
   },
   {
     name: 'Main Stage',
@@ -54,10 +54,6 @@ export const NAVIGATION = [
   {
     name: 'Speakers',
     route: '/speakers'
-  },
-  {
-    name: 'Jobs',
-    route: '/jobs'
   }
 ];
 
