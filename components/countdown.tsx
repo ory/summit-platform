@@ -3,16 +3,16 @@ import styles from './countdown.module.css';
 import { SHORT_DATE } from '@lib/constants';
 
 type Countdown = {
-  seconds: number;
-  days: number;
-  minutes: number;
-  hours: number;
+  seconds?: number;
+  days?: number;
+  minutes?: number;
+  hours?: number;
 };
 
 function Countdown({ seconds, days, minutes, hours }: Countdown) {
   const calculateTimeLeft = () => {
     const difference = +new Date('2022-10-20T10:00:00') - +new Date();
-    let timeLeft = {};
+    let timeLeft: Countdown = {};
 
     if (difference > 0) {
       timeLeft = {
@@ -45,9 +45,9 @@ function Countdown({ seconds, days, minutes, hours }: Countdown) {
             <span>{timeLeft.hours}</span>
             <span> hours - </span>
             <span>{timeLeft.minutes}</span>
-            <span> m - </span>
+            <span>m - </span>
             <span>{timeLeft.seconds}</span>
-            <span> s</span>
+            <span>s</span>
           </p>
         ) : (
           <p>Ory Summit is live 🥳, go watch the sessions!</p>
