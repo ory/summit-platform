@@ -23,6 +23,8 @@ import Hero from './hero';
 import Form from './form';
 import style from './background.module.css';
 import Countdown from './countdown';
+import styleUtils from './utils.module.css';
+import cn from 'classnames';
 
 type Props = {
   defaultUserData: UserData;
@@ -63,7 +65,9 @@ export default function Conf({
               />
             )}
           </ConfContainer>
-          <Countdown />
+          <div className={cn(styleUtils.appear, styleUtils['appear-fifth'])}>
+            <Countdown />
+          </div>
         </div>
       </Layout>
     </ConfDataContext.Provider>
