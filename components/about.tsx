@@ -43,8 +43,8 @@ export default function About() {
           <li> You attend the event live in the Ory Headquarters in Munich, Germany.</li>
         </ul>
         Due to limited space in the venue, please send us an{' '}
-        <a href="mailto:office@ory.sh">email</a> or{' '}
-        <a href="https://forms.gle/mZS9ZxfqcAMvdPkv9">fill out this form</a> if you would like to
+        <a href="mailto:office@ory.sh?subject=I want to attend Ory Summit 2022 in-person">email</a>{' '}
+        or <a href="https://forms.gle/mZS9ZxfqcAMvdPkv9">fill out this form</a> if you would like to
         attend the event live in Munich.
       </p>
       <h2>Why Ory Summit</h2>
