@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './countdown.module.css';
-import { DATE, TIME } from '@lib/constants';
+import { SHORT_DATE } from '@lib/constants';
 
 type Countdown = {
   seconds: number;
@@ -35,22 +35,19 @@ function Countdown({ seconds, days, minutes, hours }: Countdown) {
   });
 
   return (
-    <div>
-      <br />
-      <p className={styles.infotiny}>
-        Starts at: {DATE} / {TIME}
-      </p>
+    <div className={styles.wrapper}>
+      <p className={styles.infotiny}>Starts: {SHORT_DATE}</p>
       <div className={styles.infosmall}>
         {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
           <p>
-            <span>{timeLeft.days}</span>
-            <span> Days - </span>
+            <span>Countdown: {timeLeft.days}</span>
+            <span> days - </span>
             <span>{timeLeft.hours}</span>
-            <span> Hours - </span>
+            <span> hours - </span>
             <span>{timeLeft.minutes}</span>
-            <span> Minutes - </span>
+            <span> m - </span>
             <span>{timeLeft.seconds}</span>
-            <span> Seconds left until Ory Summit!</span>
+            <span> s</span>
           </p>
         ) : (
           <p>Ory Summit is live 🥳, go watch the sessions!</p>

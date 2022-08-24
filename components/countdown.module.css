@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
+.wrapper {
+  text-align: center;
+  margin: auto;
+  max-width: 700px;
+  color: #ff7aaa;
+}
+
 .infosmall {
   font-weight: 666;
   font-size: 20px;
-  line-height: 1.4;
-  text-align: center;
-  margin: auto;
-  max-width: 700px;
 }
 
 .infotiny {
-  font-weight: 222;
+  font-weight: 555;
   font-size: 14px;
   line-height: 0.5;
-  text-align: center;
-  margin: auto;
-  max-width: 700px;
 }
