@@ -51,11 +51,12 @@
   --accents-7: #333333;
   --accents-8: #111111;
 
-  --secondary-color: #aa93ff;
+  --secondary-color: #c46ef5;
   --link-color: #685eef;
   --sidebar: #0e0e10;
-  --header-height: 64px;
   --brand: #401ebf;
+  --brand-dark: #2a1dbf;
+  --header-height: 64px;
 }
 
 html {
