@@ -39,7 +39,11 @@ export default function About() {
       <p>
         There are two options to attend the Ory Summit 2022:
         <ul>
-          <li> You can watch the sessions live online at summit.ory.sh</li>
+          <li>
+            {' '}
+            You can watch the sessions live online at the{' '}
+            <a href="./stage/main">summit.ory.sh Main Stage</a>
+          </li>
           <li> You attend the event live in the Ory Headquarters in Munich, Germany.</li>
         </ul>
         Due to limited space in the venue, please send us an{' '}
