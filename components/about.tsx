@@ -19,10 +19,10 @@ export default function About() {
       <h2>The themes</h2>
       <ul>
         <li>
-          <strong>Ory implementation -</strong> how to implemented Ory into an application/project
+          <strong>Ory implementation -</strong> how to implement Ory into an application/project
         </li>
         <li>
-          <strong>Ecosystem & Integration -</strong> how to use Ory with third party solutions
+          <strong>Ecosystem & Integration -</strong> how to use Ory with third-party solutions
         </li>
         <li>
           <strong>Community Talks -</strong> learn from Ory Community members
