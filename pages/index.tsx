@@ -20,8 +20,7 @@ import { SkipNavContent } from '@reach/skip-nav';
 import Page from '@components/page';
 import ConfContent from '@components/index';
 import { META_DESCRIPTION } from '@lib/constants';
-
-
+import Countdown from '@components/countdown';
 
 export default function Conf() {
   const { query } = useRouter();
