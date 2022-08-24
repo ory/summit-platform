@@ -1,6 +1,6 @@
 .wrapper {
   padding-top: var(--space-4x);
-  max-width: 50%;
+  max-width: 950px;
   background-color: rgb(0 0 0 / 0.6);
   border-radius: 25px;
 }
