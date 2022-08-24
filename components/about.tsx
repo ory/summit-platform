@@ -6,12 +6,12 @@ export default function About() {
   return (
     <div className={styles.wrapper}>
       <p>
-        Ory Summit is a global, free and hybrid conference around identity management for the Ory
-        Community - users, developers, maintainers, contributors, and partners and everyone else who
-        is passionate about the future of cloud networking.
+        Ory Summit is a global, free, and hybrid conference around identity management for the Ory
+        Community - users, developers, contributors, partners, and everyone else who is passionate
+        about the future of cloud networking.
       </p>
       <p>
-        Topics are focused on but not limited to authentication, authorization, access control and
+        Topics are focused on but not limited to authentication, authorization, access control, and
         security.
       </p>
       <h2 className={styles.infosmall}>{DATE}</h2>
