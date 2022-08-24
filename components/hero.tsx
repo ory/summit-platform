@@ -34,7 +34,6 @@ export default function Hero() {
         <p>
           <strong>Online & Munich, Germany </strong>
         </p>
-        <br className={styleUtils['show-on-desktop']} />
       </div>
       <div className={cn(styleUtils.appear, styleUtils['appear-fifth'], styles.infosmall)}>
         <p>A free developer conference around open source identity management</p>
