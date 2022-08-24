@@ -22,6 +22,7 @@ import ConfContainer from './conf-container';
 import Hero from './hero';
 import Form from './form';
 import style from './background.module.css';
+import Countdown from './countdown';
 
 type Props = {
   defaultUserData: UserData;
@@ -62,6 +63,7 @@ export default function Conf({
               />
             )}
           </ConfContainer>
+          <Countdown />
         </div>
       </Layout>
     </ConfDataContext.Provider>
