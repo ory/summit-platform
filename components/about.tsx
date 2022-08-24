@@ -6,12 +6,12 @@ export default function About() {
   return (
     <div className={styles.wrapper}>
       <p>
-        Ory Summit is a global, free and hybrid conference around identity management for the Ory
-        Community - users, developers, maintainers, contributors, and partners and everyone else who
-        is passionate about the future of cloud networking.
+        Ory Summit is a global, free, and hybrid conference around identity management for the Ory
+        Community - users, developers, contributors, partners, and everyone else who is passionate
+        about the future of cloud networking.
       </p>
       <p>
-        Topics are focused on but not limited to authentication, authorization, access control and
+        Topics are focused on but not limited to authentication, authorization, access control, and
         security.
       </p>
       <h2 className={styles.infosmall}>{DATE}</h2>
@@ -39,7 +39,11 @@ export default function About() {
       <p>
         There are two options to attend the Ory Summit 2022:
         <ul>
-          <li> You can watch the sessions live online at summit.ory.sh</li>
+          <li>
+            {' '}
+            You can watch the sessions live online at the{' '}
+            <a href="./stage/main">summit.ory.sh Main Stage</a>
+          </li>
           <li> You attend the event live in the Ory Headquarters in Munich, Germany.</li>
         </ul>
         Due to limited space in the venue, please send us an{' '}
