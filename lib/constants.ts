@@ -23,7 +23,7 @@ export const SITE_NAME = 'Ory Summit 2022';
 export const META_DESCRIPTION =
   'The Ory Summit is a developer conference around end-to-end security focused on authentication, authorization, access control and cloud security.';
 export const SITE_DESCRIPTION =
-  'The future of end-to-end eecurity and identity infrastructure by the Ory community, free for everyone.';
+  'The future of end-to-end security and identity infrastructure by the Ory community, free for everyone.';
 export const DATE = 'October 20, 2022';
 export const SHORT_DATE = 'Oct 20 2022 - 10:00am CET';
 export const TIME = '10am Central European Time (GMT+2)';
