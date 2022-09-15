@@ -37,14 +37,13 @@ export default function About() {
       </ul>
       <h2>How Can I Attend?</h2>
       <p>
-        There are two options to attend the Ory Summit 2022:
+        There are two options to attend Ory Summit 2022:
         <ul>
           <li>
             {' '}
-            You can watch the sessions live online at the{' '}
-            <a href="./stage/main">summit.ory.sh Main Stage</a>
+            Watch the sessions live online at <a href="./stage/main">summit.ory.sh</a>
           </li>
-          <li> You attend the event live in the Ory Headquarters in Munich, Germany.</li>
+          <li>Attend the event live in the Ory Headquarters in Munich, Germany.</li>
         </ul>
         Due to limited space in the venue, please send us an{' '}
         <a href="mailto:office@ory.sh?subject=I want to attend Ory Summit 2022 in-person">email</a>{' '}
