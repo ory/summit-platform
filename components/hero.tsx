@@ -36,7 +36,7 @@ export default function Hero() {
         </p>
       </div>
       <div className={cn(styleUtils.appear, styleUtils['appear-fifth'], styles.infosmall)}>
-        <p>A free developer conference around open source identity management</p>
+        <p>The End-to-End Security Conference</p>
       </div>
     </div>
   );
