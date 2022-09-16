@@ -5,16 +5,15 @@ import styles from './venue.module.css';
 export default function Venue() {
   return (
     <div className={styles.wrapper}>
-      <p>You can attend Ory Summit in person in Munich, Germany this year 🎉</p>
+      <p>You can attend Ory Summit in person in one of Europe's emerging tech hubs - Munich! 🎉</p>
       <p>
-        If you want to join <a href="https://forms.gle/mZS9ZxfqcAMvdPkv9">fill out this form</a> if
-        you would like to attend the event in Munich.
+        If you want to join{' '}
+        <a href="https://share-eu1.hsforms.com/1JJOxdq5jQ9qSwS2ZrCAYfQextgn">fill out this form</a>{' '}
+        to attend the event in Munich.
       </p>
       <p>
-        Ory Summit 2022 takes place in one of Europe's emerging tech hubs - Munich! Enjoy a vibrant
-        city where innovation, technology and rich cultural life come together - right in the heart
-        of Europe. The event is hosted at the Ory Germany Headquarters in the "House of
-        Communication" in the eastern district of Haidhausen.
+        The event is hosted at the Ory Germany Headquarters in the "House of Communication" in the
+        eastern district of Haidhausen.
       </p>
       <p>
         Right next to the Ostbahnhof (Munich East) train station:
@@ -29,6 +28,13 @@ export default function Venue() {
           <li>approx. 30 minutes by S-Bahn (city commuter train) from Munich Airport </li>
           <li>2 minutes by car from the Mittlerer Ring ring road </li>
         </ul>
+      </p>
+      <p>
+        The bavarian infection protection laws apply{' '}
+        <a href="https://www.munich.travel/en/topics/events-in-munich/covid-current-information-about-your-visit-to-munich">
+          - more information here
+        </a>
+        .
       </p>
       <div className={styles.info}>
         <ul>
