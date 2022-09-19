@@ -54,6 +54,10 @@ export const NAVIGATION = [
   {
     name: 'Speakers',
     route: '/speakers'
+  },
+  {
+    name: 'Venue',
+    route: '/venue'
   }
 ];
 
