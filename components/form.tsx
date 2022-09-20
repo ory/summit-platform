@@ -176,8 +176,8 @@ export default function Form({ sharePage }: Props) {
             onChange={e => setEmail(e.target.value)}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
-            placeholder="Enter email to register for free"
-            aria-label="Your email to register for free"
+            placeholder="Enter email to sign up for free"
+            aria-label="Your email to sign up for free"
             required
           />
         </label>
@@ -186,7 +186,7 @@ export default function Form({ sharePage }: Props) {
           className={cn(styles.submit, styles.register, styles[formState])}
           disabled={formState === 'loading'}
         >
-          {formState === 'loading' ? <LoadingDots size={4} /> : <>Sign Up</>}
+          {formState === 'loading' ? <LoadingDots size={4} /> : <>Sign Up*</>}
         </button>
       </div>
       <Captcha ref={captchaRef} onVerify={handleRegister} />

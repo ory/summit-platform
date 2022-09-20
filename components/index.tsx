@@ -23,6 +23,7 @@ import Hero from './hero';
 import Form from './form';
 import style from './background.module.css';
 import Countdown from './countdown';
+import Consent from './consent';
 import styleUtils from './utils.module.css';
 import cn from 'classnames';
 
@@ -66,6 +67,7 @@ export default function Conf({
             )}
           </ConfContainer>
           <div className={cn(styleUtils.appear, styleUtils['appear-fifth'])}>
+            <Consent />
             <Countdown />
           </div>
         </div>
