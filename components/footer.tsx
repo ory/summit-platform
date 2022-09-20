@@ -60,7 +60,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Email us
+              Contact
             </a>
           </p>
           <div className={styles['footer-separator']} />
@@ -96,6 +96,18 @@ export default function Footer() {
               Code of Conduct
             </a>
           </p>
+          <div className={styles['footer-separator']} />
+          <p className={styles['footer-paragraph']}>
+            <a
+              href={'https://www.ory.sh/tos/'}
+              className={styles['footer-link']}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Terms of Service
+            </a>
+          </p>
+
           {LEGAL_URL && (
             <>
               <div className={styles['footer-separator']} />
