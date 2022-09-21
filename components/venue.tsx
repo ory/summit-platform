@@ -46,7 +46,14 @@ export default function Venue() {
         <div>
           <img
             className={styles.contentimg}
-            src="./building.png"
+            src="./office1.png"
+            alt="House of Communication building"
+          />
+        </div>
+        <div>
+          <img
+            className={styles.contentimg}
+            src="./office2.png"
             alt="House of Communication building"
           />
         </div>
