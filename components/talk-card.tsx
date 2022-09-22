@@ -75,7 +75,7 @@ export default function TalkCard({ talk: { title, speaker, start, end }, showTim
                 ))}
               </div>
               <h5 className={styles.name}>
-                {speaker.length === 1 ? speaker[0].name : `${speaker.length} speakers`}
+                {speaker.length > 1 ? `${speaker.length} speakers` : speaker[0]?.name}
               </h5>
             </div>
           </div>
