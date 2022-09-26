@@ -1,10 +1,12 @@
 import { DATE, TIME } from '@lib/constants';
 import styleUtils from './utils.module.css';
 import styles from './about.module.css';
+import Header from "@components/header";
 
 export default function About() {
   return (
     <div className={styles.wrapper}>
+        <Header hero="What is Ory Summit 2022" />
       <p>
         Ory Summit is a global, hybrid conference around open source based end-to-end security and
         zero trust solutions for the Ory Community - customers, developers, maintainers,
