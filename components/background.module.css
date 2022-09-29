@@ -1,14 +1,34 @@
 .bg {
-  /* The image used */
-  background-image: url('../public/summit.png');
+    padding: var(--space-8x);
+    border-right: var(--space) solid var(--tone-1);
+    background-color: #1111;
+}
 
-  /* Full height */
-  height: 100%;
+.split {
+    display: flex;
+    height: 100%;
+}
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.artwork {
+    flex-grow: 1;
+    background-image: url('../public/artwork_full.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-  background-color: #1111;
+@media (max-width: 640px) {
+    .split {
+        flex-direction: column;
+    }
+
+    .bg {
+        padding: var(--space-8x);
+        border-right: none;
+        background-color: #1111;
+    }
+
+    .artwork {
+        visibility: hidden;
+    }
 }
