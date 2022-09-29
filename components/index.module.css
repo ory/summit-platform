@@ -1,0 +1,11 @@
+.wrapperbox {
+    background: var(--gradient-1);
+    padding: var(--space-4x);
+    width: fit-content;
+}
+
+@media (max-width: 640px) {
+    .wrapperbox {
+        width: 100%;
+    }
+}
