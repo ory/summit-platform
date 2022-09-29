@@ -36,14 +36,13 @@ function Countdown({ seconds, days, minutes, hours }: Countdown) {
 
   return (
     <div className={styles.wrapper}>
-      <p className={styles.infotiny}>Starts: {SHORT_DATE}</p>
-      <div className={styles.infosmall}>
+      <div className={styles.countdown}>
         {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
           <p>
-            <span>Countdown: {timeLeft.days}</span>
-            <span> days - </span>
+            <span>{timeLeft.days}</span>
+            <span>d - </span>
             <span>{timeLeft.hours}</span>
-            <span> hours - </span>
+            <span>h - </span>
             <span>{timeLeft.minutes}</span>
             <span>m - </span>
             <span>{timeLeft.seconds}</span>

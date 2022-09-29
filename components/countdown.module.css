@@ -15,18 +15,33 @@
  */
 
 .wrapper {
-  text-align: center;
-  margin: auto;
-  max-width: 700px;
+  padding: 0 var(--space-4x);
+  margin: var(--space-12x) auto;
 }
 
-.infosmall {
-  font-weight: 666;
-  font-size: 20px;
+.countdown {
+  color: var(--base-black);
+  font-weight: 800;
+  font-size: 32px;
+  letter-spacing: -1px;
 }
 
-.infotiny {
-  font-weight: 555;
-  font-size: 14px;
-  line-height: 0.5;
+
+@media (max-width: 768px) {
+  .countdown {
+    font-size: var(--lg-title);
+  }
+  .wrapper {
+    padding: 0 var(--space-2x);
+  }
 }
+
+@media (max-width: 640px) {
+  .countdown {
+    font-size: var(--md-title);
+  }
+  .wrapper {
+    padding: 0 var(--space-2x);
+  }
+}
+
