@@ -29,6 +29,7 @@ export const SHORT_DATE = 'Oct 20 2022 - 10:00am CET';
 export const TIME = '10am Central European Time (GMT+2)';
 export const TWEET_TEXT = META_DESCRIPTION;
 export const COOKIE = 'user-id';
+export const TAGLINE  = 'The End-to-End Security Conference';
 
 // Remove process.env.NEXT_PUBLIC_... below and replace them with
 // strings containing your own privacy policy URL and copyright holder name
