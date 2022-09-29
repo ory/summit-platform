@@ -17,22 +17,24 @@
 .footer {
   margin: 0 auto;
   width: 100%;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: var(--xs-title);
+  line-height: 150%;
+  letter-spacing: -0.5px;
   display: flex;
   justify-content: center;
   color: var(--secondary-color);
+  border-top: var(--space) solid var(--tone-2);
   z-index: 2;
 }
 
 .footer-link {
-  color: var(--secondary-color);
-  font-size: 12px;
+  color: var(--accents-2);
+  font-weight: 800;
   transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-  color: #fff;
+  color: var(--tone-3);
 }
 
 .footer-logo :global(svg) {
@@ -42,6 +44,7 @@
 }
 
 .footer-legal {
+  color: var(--base-white);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -85,8 +88,8 @@
   .footer-separator {
     margin: 0 10px;
     height: var(--space-4x);
-    width: 1px;
-    background: var(--secondary-color);
+    width: 2px;
+    background: var(--tone-1);
     display: block;
   }
 }

@@ -49,7 +49,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Join the chat 🚀
+              🚀 Join the chat
             </a>
           </p>
           <div className={styles['footer-separator']} />
