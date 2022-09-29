@@ -17,7 +17,7 @@
 .nav-overlay {
   position: fixed;
   z-index: 100;
-  top: 72px;
+  top: 64px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -56,7 +56,6 @@
 
 .button {
   margin: 0;
-  margin-right: var(--space-4x);
   background: none;
   border: none;
   cursor: pointer;
