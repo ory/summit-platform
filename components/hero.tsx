@@ -17,27 +17,26 @@
 import cn from 'classnames';
 import styleUtils from './utils.module.css';
 import styles from './hero.module.css';
-import { BRAND_NAME, DATE, SITE_DESCRIPTION } from '@lib/constants';
+import { SHORT_DATE, TAGLINE} from '@lib/constants';
+
+
 
 export default function Hero() {
-  return (
-    <div className={styles.wrapper}>
-      <h1 className={cn(styleUtils.appear, styleUtils['appear-third'], styles.hero)}>
-        {BRAND_NAME} Summit 2022
-        <br className={styleUtils['show-on-desktop']} />
-      </h1>
-      <div className={cn(styleUtils.appear, styleUtils['appear-fourth'], styles.info)}>
-        <p>
-          <strong>{DATE}</strong>
-        </p>
-        <div className={styles['description-separator']} />
-        <p>
-          <strong>Online & Munich, Germany </strong>
-        </p>
-      </div>
-      <div className={cn(styleUtils.appear, styleUtils['appear-fifth'], styles.infosmall)}>
-        <p>The End-to-End Security Conference</p>
-      </div>
-    </div>
-  );
+    return (
+        <div className={cn(styles.hero, styleUtils.appear, styleUtils['appear-second'])}>
+            <div className={cn(styles.herocontainer)}>
+                <div className={styles.logocontainer}>
+                    <img src={"./ory_summit.png"} alt={"Ory Summit 2022 Logo"}/>
+                </div>
+                <div className={styles.infocontainer}>
+                    <div className={cn(styles.taglinecontainer,)}>
+                        <div>{TAGLINE}</div>
+                    </div>
+                    <div className={cn(styles.datecontainer)}>
+                        <div>{SHORT_DATE}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
