@@ -1,0 +1,103 @@
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.background {
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+}
+
+.full {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header {
+    padding: 0 var(--space-8x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--sidebar);
+    border-bottom: var(--space) solid var(--tone-3);
+    height: var(--header-height);
+    z-index: 2;
+}
+
+.header-logos {
+    display: flex;
+    align-items: center;
+}
+
+
+.tabs {
+    display: none;
+}
+
+@media screen and (min-width: 1032px) {
+    .tabs {
+        display: flex;
+    }
+
+    .tabs > a:nth-child(2),
+    .tabs > a:nth-child(3),
+    .tabs > a:nth-child(4) {
+        display: inline-flex;
+    }
+}
+
+.tab {
+    padding: var(--space-4x);
+    font-size: var(--xs-title);
+    color: var(--base-white);
+    font-weight: 800;
+
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tab:hover,
+.tab:focus,
+.tab:active {
+    color: var(--tone-3)
+}
+
+.tab-active {
+    color: #fff;
+    background: linear-gradient(90deg, var(--tone-3), var(--tone-1)) left bottom transparent no-repeat;
+    background-size: 100% 4px;
+}
+
+.logo {
+    display: flex;
+    height: 32px;
+    width: auto;
+}

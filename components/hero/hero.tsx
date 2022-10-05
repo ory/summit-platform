@@ -15,7 +15,7 @@
  */
 
 import cn from 'classnames';
-import styleUtils from './utils.module.css';
+import styleUtils from '../utils.module.css';
 import styles from './hero.module.css';
 import { SHORT_DATE, TAGLINE} from '@lib/constants';
 

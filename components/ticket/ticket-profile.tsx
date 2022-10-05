@@ -17,7 +17,7 @@
 import { TicketGenerationState } from '@lib/constants';
 import GithubIcon from '@components/icons/icon-github';
 import cn from 'classnames';
-import IconAvatar from './icons/icon-avatar';
+import IconAvatar from '../icons/icon-avatar';
 import styles from './ticket-profile.module.css';
 
 type Props = {

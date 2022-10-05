@@ -14,39 +14,36 @@
  * limitations under the License.
  */
 
+.descriptionwrapper {
+  max-width: 560px;
+}
+
 .hero {
-  font-size: 52px;
+  font-size: 48px;
   line-height: 1.15;
   letter-spacing: -0.05em;
   font-weight: 700;
   margin: 0;
-  text-align: center;
 }
 
 @media (min-width: 768px) {
   .hero {
-    font-size: 100px;
+    font-size: 48px;
     line-height: 1;
     font-weight: 800;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+
   }
 }
 
 .description {
   font-size: 20px;
   line-height: 1.4;
-  color: var(--secondary-color);
-  text-align: center;
-  margin: 30px auto;
-  max-width: 350px;
+  color: var(--base-black);
 }
 
 @media (min-width: 768px) {
   .description {
     font-size: 24px;
-    max-width: 415px;
   }
 }
 
@@ -143,9 +140,9 @@
 }
 
 @media (min-width: 1200px) {
-  .ticket-layout {
-    grid-template-columns: 1fr 1fr;
-  }
+  /*.ticket-layout {*/
+  /*  grid-template-columns: 1fr 1fr;*/
+  /*}*/
   .hero {
     font-size: var(--space-16x);
     text-align: left;

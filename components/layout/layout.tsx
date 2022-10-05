@@ -20,9 +20,9 @@ import { useRouter } from 'next/router';
 import { SkipNavContent } from '@reach/skip-nav';
 import { NAVIGATION } from '@lib/constants';
 import styles from './layout.module.css';
-import SummitLogo from './icons/icon-summit-logo';
-import MobileMenu from './mobile-menu';
-import Footer, { HostedByOry } from './footer';
+import SummitLogo from '../icons/icon-summit-logo';
+import MobileMenu from '../navigation/mobile-menu';
+import Footer from '../navigation/footer';
 
 type Props = {
   children: React.ReactNode;
@@ -62,7 +62,6 @@ export default function Layout({ children, className, hideNav, layoutStyles }: P
             </div>
             <div className={cn(styles['header-right'])}>
               <MobileMenu key={router.asPath} />
-              <HostedByOry />
             </div>
           </header>
         )}

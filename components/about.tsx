@@ -1,7 +1,6 @@
 import { DATE, TIME } from '@lib/constants';
-import styleUtils from './utils.module.css';
 import styles from './about.module.css';
-import Header from "@components/header";
+import Header from "@components/layout/header";
 
 export default function About() {
   return (

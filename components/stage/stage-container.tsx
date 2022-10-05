@@ -19,9 +19,9 @@ import cn from 'classnames';
 import { Stage } from '@lib/types';
 import useLoginStatus from '@lib/hooks/use-login-status';
 import styles from './stage-container.module.css';
-import styleUtils from './utils.module.css';
-import ScheduleSidebar from './schedule-sidebar';
-import ConfEntry from './conf-entry';
+import styleUtils from '../utils.module.css';
+import ScheduleSidebar from '../schedule/schedule-sidebar';
+import ConfEntry from '../conf-entry';
 
 type Props = {
   stage: Stage;

@@ -22,13 +22,13 @@ import { TicketGenerationState } from '@lib/constants';
 import isMobileOrTablet from '@lib/is-mobile-or-tablet';
 import { scrollTo } from '@lib/smooth-scroll';
 import styles from './ticket.module.css';
-import styleUtils from './utils.module.css';
+import styleUtils from '../utils.module.css';
 import TicketForm from './ticket-form';
 import TicketVisual from './ticket-visual';
 import TicketActions from './ticket-actions';
 import TicketCopy from './ticket-copy';
 import { DATE, SITE_NAME } from '@lib/constants';
-import Form from './form';
+import Form from '../form/form';
 
 type Props = {
   username: UserData['username'];
@@ -67,7 +67,7 @@ export default function Ticket({ username, name, ticketNumber, sharePage }: Prop
         [styles['ticket-share-layout']]: sharePage
       })}
     >
-      <div ref={divRef}>
+      <div className={styles.descriptionwrapper} ref={divRef}>
         <div className={styles['ticket-text']}>
           <h2 className={cn(styles.hero, styleUtils.appear, styleUtils['appear-first'])}>
             {sharePage ? (
@@ -89,8 +89,7 @@ export default function Ticket({ username, name, ticketNumber, sharePage }: Prop
               </>
             ) : (
               <>
-                Generate a unique ticket image with <br className={styleUtils['hide-on-mobile']} />
-                your GitHub profile.
+                Generate a unique ticket image with your GitHub profile.
               </>
             )}
           </p>

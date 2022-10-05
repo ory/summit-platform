@@ -22,8 +22,8 @@ import CheckIcon from '@components/icons/icon-check';
 import { REPO, SITE_ORIGIN, TicketGenerationState } from '@lib/constants';
 import isMobileOrTablet from '@lib/is-mobile-or-tablet';
 import useConfData from '@lib/hooks/use-conf-data';
-import LoadingDots from './loading-dots';
-import formStyles from './form.module.css';
+import LoadingDots from '../miscellaneous/loading-dots';
+import formStyles from '../form/form.module.css';
 import ticketFormStyles from './ticket-form.module.css';
 import { saveGithubToken } from '@lib/user-api';
 import { GitHubOAuthData } from '@lib/types';
@@ -205,12 +205,11 @@ export default function Form({ defaultUsername = '', setTicketGenerationState }:
             'Only public info will be used.'
           ) : (
             <>
-              GitHub OAuth app is required.{' '}
+              GitHub OAuth app is required -{' '}
               <a
                 href={`${REPO}#authentication`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={ticketFormStyles['learn-more']}
               >
                 Learn more.
               </a>

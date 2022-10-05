@@ -1,5 +1,5 @@
 import { DATE, TIME } from '@lib/constants';
-import styleUtils from './utils.module.css';
+import styleUtils from '../utils.module.css';
 import styles from './venue.module.css';
 
 export default function Venue() {

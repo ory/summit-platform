@@ -16,11 +16,11 @@
 
 import { GetStaticProps } from 'next';
 
-import Page from '@components/page';
-import SpeakersGrid from '@components/speakers-grid';
-import Layout from '@components/layout';
-import Header from '@components/header';
-import Textbox from '@components/textbox';
+import Page from '@components/layout/page';
+import SpeakersGrid from '@components/speakers/speakers-grid';
+import Layout from '@components/layout/layout';
+import Header from '@components/layout/header';
+import Textbox from '@components/speakers/textbox';
 
 import { getAllSpeakers } from '@lib/cms-api';
 import { Speaker } from '@lib/types';

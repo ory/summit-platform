@@ -16,10 +16,10 @@
 
 import { GetStaticProps } from 'next';
 
-import Page from '@components/page';
-import Layout from '@components/layout';
-import Header from '@components/header';
-import ConfContainer from '@components/conf-container';
+import Page from '@components/layout/page';
+import Layout from '@components/layout/layout';
+import Header from '@components/layout/header';
+import ConfContainer from '@components/container/conf-container';
 import { META_DESCRIPTION } from '@lib/constants';
 import style from '../components/background.module.css';
 import About from '@components/about';
@@ -34,7 +34,7 @@ export default function AboutPage({}) {
     <Page meta={meta} fullViewport>
       <Layout>
         <div className={style.bg}>
-          <Header hero="What is Ory Summit 2022" />
+
           <ConfContainer>
             <About />
           </ConfContainer>
