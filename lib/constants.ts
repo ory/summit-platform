@@ -25,8 +25,8 @@ export const META_DESCRIPTION =
 export const SITE_DESCRIPTION =
   'The future of end-to-end security and identity infrastructure by the Ory community, free for everyone.';
 export const DATE = 'October 20, 2022';
-export const SHORT_DATE = 'Oct 20 2022 - 10:00am CET';
-export const TIME = '10am Central European Time (GMT+2)';
+export const SHORT_DATE = 'Oct 20 2022 - 09:30am CET';
+export const TIME = '9.30am Central European Time (GMT+2)';
 export const TWEET_TEXT = META_DESCRIPTION;
 export const COOKIE = 'user-id';
 

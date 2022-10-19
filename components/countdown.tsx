@@ -11,7 +11,7 @@ type Countdown = {
 
 function Countdown({ seconds, days, minutes, hours }: Countdown) {
   const calculateTimeLeft = () => {
-    const difference = +new Date('2022-10-20T10:00:00') - +new Date();
+    const difference = +new Date('2022-10-20T09:30:00') - +new Date();
     let timeLeft: Countdown = {};
 
     if (difference > 0) {
