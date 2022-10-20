@@ -20,7 +20,7 @@ export default function About() {
       <h2>The themes</h2>
       <ul>
         <li>
-          <strong>Ory Cloud -</strong>How to improve any application with best in class security
+          <strong>Ory Network -</strong>How to improve any application with best in class security
           from Ory
         </li>
         <li>
@@ -53,7 +53,7 @@ export default function About() {
       </p>
       <h2>Why Ory Summit</h2>
       <ul>
-        <li>Learn about Ory Cloud security best practices</li>
+        <li>Learn about Ory Network security best practices</li>
         <li>Listen to tech pioneers and industry leaders</li>
         <li>Level up your skills by engaging in tech talks delivered by proven experts.</li>
         <li>Expand your network</li>
