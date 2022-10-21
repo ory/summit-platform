@@ -50,7 +50,10 @@ function Countdown({ seconds, days, minutes, hours }: Countdown) {
             <span>s</span>
           </p>
         ) : (
-          <p>Ory Summit is live 🥳, go watch the sessions!</p>
+          <p>
+            Thanks for tuning in, we had a blast! Recordings of all talks and sessions will be
+            released soon!
+          </p>
         )}
       </div>
     </div>
