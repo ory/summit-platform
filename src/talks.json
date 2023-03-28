@@ -1,0 +1,29 @@
+[
+  {
+    "time": "9:30am – 9:40am",
+    "title": "Introduction",
+    "slug": "aeneas",
+    "speaker": "Aeneas Rekkas",
+    "company": "Acme",
+    "position": "CEO",
+    "synopsis": "Sometext"
+  },
+  {
+    "time": "9:40am – 9:50am",
+    "title": "Introduction",
+    "slug": "thomas",
+    "speaker": "Thomas Curran",
+    "company": "Acme",
+    "position": "CEO",
+    "synopsis": "Sometext"
+  },
+  {
+    "time": "9:50am – 10:00am",
+    "title": "Introduction",
+    "slug": "patrik",
+    "speaker": "Patrik Neu",
+    "company": "Acme",
+    "position": "CEO",
+    "synopsis": "Sometext"
+  }
+]

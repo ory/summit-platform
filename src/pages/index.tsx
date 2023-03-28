@@ -1,29 +1,25 @@
-import useToSession from "@/hooks/useToSession";
-import Link from "next/link";
-import Header from "@/components/Header";
-import Navigation from "@/components/Navigation";
-import Layout from "@/components/Layout";
-import Hero from "@/components/Hero";
+import React from "react";
+import Navbar from "../components/Navbar";
+import EmailSignup from "../components/EmailSignup";
+import CountdownComponent from "../components/Countdown";
+import Footer from "../components/Footer";
 
-const title = "Ory Showcase - Landing Page";
-
-export default function Home() {
-  const user = useToSession();
+const Home = () => {
   return (
-    <>
-      <Header title={title} />
-      <Layout>
-        <Navigation session={user.session} logoutUrl={user.logoutUrl} />
-        <Hero session={user.session} />
-        <div className="grid gap-8 max-w-5xl grid-cols-[repeat(auto-fill,minmax(300px,350px))] justify-between items-center">
-          <div className="p-2 md:p-4">
-            <h3 className="font-medium mb-3">Disclaimer</h3>
-            <p className="m-0 opacity-60 text-sm leading-6 max-w-prose">
-              This is a demo application, do not enter sensitive information.
-            </p>
-          </div>
-        </div>
-      </Layout>
-    </>
+    <div
+      className="flex flex-col min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url(/summit.png)" }}
+    >
+      <Navbar />
+      <main className="flex flex-col flex-grow justify-center px-4 py-8 space-y-8 text-center text-white">
+        <h1 className="text-5xl">Ory Summit 2023</h1>
+        <h2 className="text-2xl">Date and Place</h2>
+        <EmailSignup />
+        <CountdownComponent />
+      </main>
+      <Footer />
+    </div>
   );
-}
+};
+
+export default Home;

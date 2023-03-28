@@ -1,15 +1,18 @@
+import React from "react";
+
 const Footer = () => {
   return (
-    <>
-      <footer className="py-2">
-        <div className="container mx-auto flex justify-between items-center">
-          <p className=" text-sm">© 2023 Your Company. All rights reserved.</p>
-          <a href="#" className=" text-sm hover:text-gray-700">
-            About
-          </a>
-        </div>
-      </footer>
-    </>
+    <footer className="flex items-center justify-between p-4 bg-blue-500">
+      <div className="text-white">&copy; 2023 Ory Summit</div>
+      <div className="space-x-4">
+        <a href="/terms" className="text-white hover:text-blue-300">
+          Terms of Service
+        </a>
+        <a href="/privacy" className="text-white hover:text-blue-300">
+          Privacy Policy
+        </a>
+      </div>
+    </footer>
   );
 };
 
