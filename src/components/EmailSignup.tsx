@@ -21,9 +21,9 @@ const EmailSignup = () => {
       >
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="Enter email to get your ticket"
           {...register("email", { required: true })}
-          className="p-2 border-2 border-gray-400 focus:border-blue-500"
+          className="p-2 border-2 border-gray-400 focus:border-blue-800 w-64"
         />
         <div className="flex items-center">
           <input
@@ -32,12 +32,12 @@ const EmailSignup = () => {
             className="w-4 h-4 text-blue-500"
           />
           <label htmlFor="agreeMarketing" className="ml-2">
-            Agree to receive marketing emails
+            Also sign up to the Ory Newsletter
           </label>
         </div>
         <button
           type="submit"
-          className="p-2 bg-blue-500 text-white hover:bg-blue-400"
+          className="p-2 bg-black text-white hover:bg-blue-800"
         >
           Submit
         </button>

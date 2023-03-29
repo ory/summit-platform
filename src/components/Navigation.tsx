@@ -1,29 +1,47 @@
+import React from "react";
 import Link from "next/link";
-import styles from "@/styles/Home.module.css";
 
 const basePath = process.env.NEXT_PUBLIC_ORY_SDK_URL;
 
 const Navigation = ({ session = null, logoutUrl = null }) => {
   return (
-    <>
-      <div className="w-full flex justify-between items-center gap-2">
-        <p className="p-4 text-xs font-mono bg-opacity-50 border border-opacity-30 rounded">
-          Hello{" "}
-          {session?.identity.traits.name
-            ? session.identity.traits.name
-            : "friend"}
-          , great to see you 🤗
-        </p>
-        <div>
-          <Link
-            href={
-              logoutUrl ? basePath + "/ui/settings" : basePath + "/ui/login"
-            }
-            className="p-2 md:p-4 bg-transparent border-b border-purple-400"
-          >
-            {session ? "Settings" : "Login"}
-          </Link>
+    <div className="flex items-center justify-between bg-black">
+      <div className="flex items-center justify-between">
+        <img src="/icon-196x196.png" alt="Logo" className="h-8" />
+        <div className="p-4">
+          <p className="p-2 text-xs font-mono bg-opacity-50 border border-opacity-30 rounded">
+            Hello{" "}
+            {session?.identity.traits.name
+              ? session.identity.traits.name
+              : "friend"}
+            , great to see you 🤗
+          </p>
         </div>
+      </div>
+      <div className="space-x-8 text-white text-xl">
+        <a className="hover:text-blue-300" href="/">
+          Home
+        </a>
+        <a className="hover:text-blue-300" href="/about">
+          About
+        </a>
+        <a className="hover:text-blue-300" href="/schedule">
+          Schedule
+        </a>
+        <a className="hover:text-blue-300" href="/speakers">
+          Speakers
+        </a>
+        <a className="hover:text-blue-300" href="/venue">
+          Venue
+        </a>
+      </div>
+      <div className="hover:text-blue-300">
+        <Link
+          href={logoutUrl ? basePath + "/ui/settings" : basePath + "/ui/login"}
+          className="p-2 md:p-4"
+        >
+          {session ? "Settings" : "Login"}
+        </Link>
         {logoutUrl && (
           <div>
             <Link
@@ -35,7 +53,7 @@ const Navigation = ({ session = null, logoutUrl = null }) => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

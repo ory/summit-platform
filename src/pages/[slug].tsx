@@ -1,13 +1,13 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import talks from "../talks.json";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import talks from "@/talks.json";
 
 const TalkPage = ({ talk }) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      <Navigation />
       <main className="flex-grow p-4">
         <h1 className="text-4xl mb-4">{talk.speaker}</h1>
         <img

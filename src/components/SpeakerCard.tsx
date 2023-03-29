@@ -8,7 +8,9 @@ const SpeakerCard = ({ talk }) => {
         alt={talk.speaker}
         className="w-full h-48 object-cover"
       />
-      <h3 className="text-xl font-semibold">{talk.speaker}</h3>
+      <a href={`/${talk.slug}`}>
+        <h3 className="text-xl font-semibold">{talk.speaker}</h3>
+      </a>
       <p>{talk.position}</p>
       <p>{talk.company}</p>
     </div>

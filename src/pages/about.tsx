@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const About = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      <Navigation />
       <main className="flex-grow p-4">
         <h1 className="text-4xl mb-4">About Ory Summit 2023</h1>
         <p>

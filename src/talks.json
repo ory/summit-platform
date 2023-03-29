@@ -1,29 +1,29 @@
 [
   {
     "time": "9:30am – 9:40am",
-    "title": "Introduction",
-    "slug": "aeneas",
-    "speaker": "Aeneas Rekkas",
-    "company": "Acme",
+    "title": "Keynote",
+    "slug": "thomas",
+    "speaker": "Thomas Curran",
+    "company": "Ory",
     "position": "CEO",
-    "synopsis": "Sometext"
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
   },
   {
     "time": "9:40am – 9:50am",
-    "title": "Introduction",
-    "slug": "thomas",
-    "speaker": "Thomas Curran",
-    "company": "Acme",
-    "position": "CEO",
-    "synopsis": "Sometext"
+    "title": "Ory Network",
+    "slug": "aeneas",
+    "speaker": "Aeneas Rekkas",
+    "company": "Ory",
+    "position": "CTO",
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
   },
   {
     "time": "9:50am – 10:00am",
-    "title": "Introduction",
+    "title": "Ory Permissions",
     "slug": "patrik",
     "speaker": "Patrik Neu",
-    "company": "Acme",
+    "company": "Ory",
     "position": "CEO",
-    "synopsis": "Sometext"
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
   }
 ]
