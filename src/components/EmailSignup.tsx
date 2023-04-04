@@ -5,7 +5,7 @@ type FormData = {
   email: string;
   agreeMarketing: boolean;
 };
-
+const ORY_SDK_URL = process.env.NEXT_PUBLIC_ORY_SDK_URL;
 const ORY_PAT = process.env.NEXT_PUBLIC_ORY_PAT;
 console.log(ORY_PAT);
 const EmailSignup = () => {
@@ -13,7 +13,7 @@ const EmailSignup = () => {
   const onSubmit = (data: FormData) => {
     const email = data.email; // assuming the input field name is 'email'
 
-    fetch("https://login.vinckr.com/admin/identities", {
+    fetch(`${ORY_SDK_URL}` + `/admin/identities`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${ORY_PAT}`,
