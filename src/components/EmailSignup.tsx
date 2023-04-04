@@ -16,7 +16,7 @@ const EmailSignup = () => {
     fetch("https://login.vinckr.com/admin/identities", {
       method: "POST",
       headers: {
-        Authorization: "Bearer ${ORY_PAT}",
+        Authorization: `Bearer ${ORY_PAT}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
