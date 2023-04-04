@@ -8,6 +8,7 @@ type FormData = {
 const ORY_SDK_URL = process.env.NEXT_PUBLIC_ORY_SDK_URL;
 const ORY_PAT = process.env.NEXT_PUBLIC_ORY_PAT;
 console.log(ORY_PAT);
+console.log(`${ORY_SDK_URL}` + `/admin/identities`);
 const EmailSignup = () => {
   const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = (data: FormData) => {
