@@ -20,12 +20,12 @@ const Ticket = () => {
       });
 
       // Placeholder: Call the CRM service API with the extra form data
-      if (inPerson) {
-        await fetch("https://crm-service-api.com/add-extra-info", {
-          method: "POST",
-          body: new URLSearchParams(new FormData(event.target)),
-        });
-      }
+      // if (inPerson) {
+      //   await fetch("https://crm-service-api.com/add-extra-info", {
+      //     method: "POST",
+      //     body: new URLSearchParams(new FormData(event.target)),
+      //   });
+      // }
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
