@@ -27,7 +27,7 @@ const EmailSignup = () => {
       }),
     })
       .then((response) => {
-        // Handle response here
+        console.log(JSON.stringify(response.json()));
       })
       .catch((error) => {
         // Handle error here
@@ -60,7 +60,7 @@ const EmailSignup = () => {
           type="submit"
           className="p-2 bg-black text-white hover:bg-blue-800"
         >
-          Submit
+          Get your free ticket
         </button>
       </form>
     </div>
