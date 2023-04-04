@@ -13,22 +13,19 @@ const EmailSignup = () => {
   const onSubmit = (data: FormData) => {
     const email = data.email; // assuming the input field name is 'email'
 
-    fetch(
-      "https://practical-swirles-whg26u2ofh.projects.oryapis.com/admin/identities",
-      {
-        method: "POST",
-        headers: {
-          Authorization: "Bearer ${ORY_PAT}",
-          "Content-Type": "application/json",
+    fetch("https://login.vinckr.com/admin/identities", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer ${ORY_PAT}",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        schema_id: "preset://email",
+        traits: {
+          email: email,
         },
-        body: JSON.stringify({
-          schema_id: "preset://email",
-          traits: {
-            email: email,
-          },
-        }),
-      }
-    )
+      }),
+    })
       .then((response) => {
         // Handle response here
       })
