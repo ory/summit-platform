@@ -7,7 +7,7 @@ type FormData = {
 };
 
 const ORY_PAT = process.env.ORY_PAT;
-
+console.log(ORY_PAT);
 const EmailSignup = () => {
   const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = (data: FormData) => {
