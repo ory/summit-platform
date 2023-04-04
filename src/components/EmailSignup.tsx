@@ -6,11 +6,35 @@ type FormData = {
   agreeMarketing: boolean;
 };
 
+const ORY_PAT = process.env.NEXT_PUBLIC_ORY_PAT;
+
 const EmailSignup = () => {
   const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = (data: FormData) => {
-    console.log(data);
-    // Add middleware and API call here
+    const email = data.email; // assuming the input field name is 'email'
+
+    fetch(
+      "https://practical-swirles-whg26u2ofh.projects.oryapis.com/admin/identities",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer ${ORY_PAT}",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          schema_id: "preset://email",
+          traits: {
+            email: email,
+          },
+        }),
+      }
+    )
+      .then((response) => {
+        // Handle response here
+      })
+      .catch((error) => {
+        // Handle error here
+      });
   };
 
   return (

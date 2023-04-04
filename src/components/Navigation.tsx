@@ -19,21 +19,21 @@ const Navigation = ({ session = null, logoutUrl = null }) => {
         </div>
       </div>
       <div className="space-x-8 text-white text-xl">
-        <a className="hover:text-blue-300" href="/">
+        <Link className="hover:text-blue-300" href="/">
           Home
-        </a>
-        <a className="hover:text-blue-300" href="/about">
+        </Link>
+        <Link className="hover:text-blue-300" href="/about">
           About
-        </a>
-        <a className="hover:text-blue-300" href="/schedule">
+        </Link>
+        <Link className="hover:text-blue-300" href="/schedule">
           Schedule
-        </a>
-        <a className="hover:text-blue-300" href="/speakers">
+        </Link>
+        <Link className="hover:text-blue-300" href="/speakers">
           Speakers
-        </a>
-        <a className="hover:text-blue-300" href="/venue">
+        </Link>
+        <Link className="hover:text-blue-300" href="/venue">
           Venue
-        </a>
+        </Link>
       </div>
       <div className="hover:text-blue-300">
         <Link
