@@ -6,7 +6,7 @@ type FormData = {
   agreeMarketing: boolean;
 };
 
-const ORY_PAT = process.env.NEXT_PUBLIC_ORY_PAT;
+const ORY_PAT = process.env.ORY_PAT;
 
 const EmailSignup = () => {
   const { register, handleSubmit } = useForm<FormData>();
