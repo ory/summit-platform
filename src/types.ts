@@ -13,3 +13,13 @@ export interface AuthContextValue {
   logoutUrl: string;
   isAuthenticated: boolean;
 }
+
+export interface Talk {
+  time: number;
+  title: string;
+  slug: string;
+  speaker: string;
+  company: string;
+  position: string;
+  synopsis: string;
+}

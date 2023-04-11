@@ -3,8 +3,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TalkCard from "@/components/TalkCard";
 import talks from "@/talks.json";
+import { NextPage } from "next";
 
-const Schedule = () => {
+const Schedule: NextPage = () => {
   return (
     <div className="flex flex-col min-h-screen text-gray-600">
       <Navigation />

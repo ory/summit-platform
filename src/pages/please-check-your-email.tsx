@@ -1,8 +1,9 @@
 import React from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { NextPage } from "next";
 
-const About = () => {
+const CheckEmail: NextPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
@@ -16,4 +17,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default CheckEmail;

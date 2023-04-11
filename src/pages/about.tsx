@@ -1,8 +1,9 @@
 import React from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { NextPage } from "next";
 
-const About = () => {
+const About: NextPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />

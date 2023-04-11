@@ -14,7 +14,6 @@ const EmailSignup = () => {
   const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = (data: FormData) => {
     const email = data.email; // assuming the input field name is 'email'
-
     fetch(`${ORY_SDK_URL}` + `/admin/identities`, {
       method: "POST",
       headers: {

@@ -3,8 +3,13 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import talks from "@/talks.json";
+import { Talk } from "@/types";
 
-const TalkPage = ({ talk }) => {
+interface TalkPageProps {
+  talk: Talk;
+}
+
+const TalkPage = ({ talk }: TalkPageProps) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />

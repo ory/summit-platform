@@ -42,6 +42,8 @@ const Navigation = ({ session = null, logoutUrl = null }) => {
         >
           {session ? "Settings" : "Login"}
         </Link>
+      </div>
+      <div>
         {logoutUrl && (
           <div>
             <Link

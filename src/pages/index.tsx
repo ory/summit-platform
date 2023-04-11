@@ -4,8 +4,9 @@ import EmailSignup from "@/components/EmailSignup";
 import CountdownComponent from "@/components/Countdown";
 import Footer from "@/components/Footer";
 import useToSession from "@/hooks/useToSession";
+import { NextPage } from "next";
 
-const Home = () => {
+const Home: NextPage = () => {
   const user = useToSession();
   return (
     <div
