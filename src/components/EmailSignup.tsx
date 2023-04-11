@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 
 type FormData = {
   email: string;
@@ -8,8 +9,8 @@ type FormData = {
 
 const ORY_SDK_URL = process.env.NEXT_PUBLIC_ORY_SDK_URL;
 const ORY_PAT = process.env.NEXT_PUBLIC_ORY_PAT;
-
 const EmailSignup = () => {
+  const router = useRouter();
   const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = (data: FormData) => {
     const email = data.email; // assuming the input field name is 'email'
@@ -29,9 +30,11 @@ const EmailSignup = () => {
     })
       .then((response) => {
         console.log("Response:", response);
+        router.push("/ticket");
       })
       .catch((error) => {
         //If there is a status conflict code 409, the identity already exists and we can just redirect to log in
+        router.push(ORY_SDK_URL + "/ui/login");
         console.error("Error:", error);
       });
   };
