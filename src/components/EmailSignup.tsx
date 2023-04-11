@@ -8,11 +8,11 @@ const EmailSignup = () => {
 
   const createIdentity = async (email) => {
     const response = await fetch(
-      `${process.env.ORY_SDK_URL}/admin/identities`,
+      `${process.env.NEXT_PUBLIC_ORY_SDK_URL}/admin/identities`,
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.ORY_PAT}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_ORY_PAT}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
