@@ -18,7 +18,7 @@ const Venue = () => {
       >
         <Auth>
           <div className="flex flex-col min-h-screen">
-            <Navigation />
+            <Navigation session={user.session} logoutUrl={user.logoutUrl} />
             <main className="flex-grow p-4">
               <h1 className="text-4xl mb-4">Venue</h1>
               <p>

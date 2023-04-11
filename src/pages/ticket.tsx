@@ -45,7 +45,7 @@ const Ticket = () => {
         }}
       >
         <Auth>
-          <Navigation />
+          <Navigation session={user.session} logoutUrl={user.logoutUrl} />
           <main className="flex-grow p-4">
             <h1 className="text-4xl mb-4">Your Ticket</h1>
             <p>Your ticket ID: {user.session.identity.id}</p>
