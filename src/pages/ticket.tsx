@@ -8,7 +8,7 @@ import Auth from "@/components/Auth";
 const Ticket = () => {
   const user = useAuth();
   const [name, setName] = useState("");
-  const [identity, setIdentity] = useState({ uuid: "your-uuid" });
+  const [identity] = useState({ id: user.session.identity.id });
   const [inPerson, setInPerson] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const ORY_SDK_URL = process.env.NEXT_PUBLIC_ORY_SDK_URL;
@@ -18,12 +18,11 @@ const Ticket = () => {
     setSubmitting(true);
     try {
       // Placeholder: Call the auth service API to add the name to the identity
-      await fetch(`${ORY_SDK_URL}`, {
-        method: "POST",
-        body: JSON.stringify({ uuid: identity.uuid, name }),
-        headers: { "Content-Type": "application/json" },
-      });
-
+      // await fetch(`${ORY_SDK_URL}`, {
+      //   method: "POST",
+      //   body: JSON.stringify({ id: identity.id, name }),
+      //   headers: { "Content-Type": "application/json" },
+      // });
       // Placeholder: Call the CRM service API with the extra form data
       // if (inPerson) {
       //   await fetch("https://crm-service-api.com/add-extra-info", {
@@ -51,7 +50,7 @@ const Ticket = () => {
           <Navigation />
           <main className="flex-grow p-4">
             <h1 className="text-4xl mb-4">Your Ticket</h1>
-            <p>Your ticket ID: {identity.uuid}</p>
+            <p>Your ticket ID: {identity.id}</p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-4">
               <input
