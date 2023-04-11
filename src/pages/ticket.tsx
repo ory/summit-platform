@@ -11,31 +11,30 @@ const Ticket = () => {
   const [identity] = useState({ id: user.session.identity.id });
   const [inPerson, setInPerson] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const ORY_SDK_URL = process.env.NEXT_PUBLIC_ORY_SDK_URL;
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setSubmitting(true);
-    try {
-      // Placeholder: Call the auth service API to add the name to the identity
-      // await fetch(`${ORY_SDK_URL}`, {
-      //   method: "POST",
-      //   body: JSON.stringify({ id: identity.id, name }),
-      //   headers: { "Content-Type": "application/json" },
-      // });
-      // Placeholder: Call the CRM service API with the extra form data
-      // if (inPerson) {
-      //   await fetch("https://crm-service-api.com/add-extra-info", {
-      //     method: "POST",
-      //     body: new URLSearchParams(new FormData(event.target)),
-      //   });
-      // }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  //  const handleSubmit = async (event) => {
+  //    event.preventDefault();
+  //    setSubmitting(true);
+  //    try {
+  // Placeholder: Call the auth service API to add the name to the identity
+  // await fetch(`${ORY_SDK_URL}`, {
+  //   method: "POST",
+  //   body: JSON.stringify({ id: identity.id, name }),
+  //   headers: { "Content-Type": "application/json" },
+  // });
+  // Placeholder: Call the CRM service API with the extra form data
+  // if (inPerson) {
+  //   await fetch("https://crm-service-api.com/add-extra-info", {
+  //     method: "POST",
+  //     body: new URLSearchParams(new FormData(event.target)),
+  //   });
+  // }
+  //    } catch (error) {
+  //      console.error("Error submitting form:", error);
+  //    } finally {
+  //      setSubmitting(false);
+  //    }
+  //  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -52,7 +51,7 @@ const Ticket = () => {
             <h1 className="text-4xl mb-4">Your Ticket</h1>
             <p>Your ticket ID: {identity.id}</p>
 
-            <form onSubmit={handleSubmit} className="mt-8 space-y-4">
+            <form className="mt-8 space-y-4">
               <input
                 type="text"
                 placeholder="Enter your name"
