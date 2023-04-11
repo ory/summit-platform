@@ -55,7 +55,7 @@ const EmailSignup = () => {
           type="email"
           id="email"
           name="email"
-          placeholder="Enter email to get your ticket"
+          placeholder="Enter email to sign up or log in"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
