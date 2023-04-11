@@ -30,7 +30,7 @@ const EmailSignup = () => {
     })
       .then((response) => {
         console.log("Response:", response);
-        router.push("/ticket");
+        router.push("/please-check-your-email");
       })
       .catch((error) => {
         //If there is a status conflict code 409, the identity already exists and we can just redirect to log in

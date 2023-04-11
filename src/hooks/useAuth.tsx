@@ -28,7 +28,7 @@ const useAuth = () => {
           setLogoutUrl(data.logout_url);
         });
       } catch {
-        router.push(basePath + "/ui/login");
+        router.push("./");
       }
     };
     fetchSession();

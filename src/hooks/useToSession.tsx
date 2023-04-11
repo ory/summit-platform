@@ -20,11 +20,20 @@ const useToSession = () => {
 
   useEffect(() => {
     const fetchSession = async () => {
-      const response = await ory.toSession();
-      setSession(response.data);
-      ory.createBrowserLogoutFlow().then(({ data }) => {
-        setLogoutUrl(data.logout_url);
-      });
+      try {
+        const response = await ory.toSession();
+        if (response.status === 200 && response.data) {
+          // Redirect to /ticket if session exists
+          router.push("/ticket");
+        } else {
+          setSession(response.data);
+          ory.createBrowserLogoutFlow().then(({ data }) => {
+            setLogoutUrl(data.logout_url);
+          });
+        }
+      } catch (error) {
+        console.log("Error fetching session");
+      }
     };
     fetchSession();
   }, [router]);
