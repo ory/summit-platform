@@ -26,59 +26,6 @@ const Ticket = () => {
           <main className="flex-grow p-4">
             <h1 className="text-4xl mb-4">Your Ticket</h1>
             <TicketCard session={user.session} />
-            <form className="mt-8 space-y-4">
-              <input
-                type="text"
-                placeholder="Enter your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className="p-2 border-2 border-gray-400 focus:border-blue-500"
-              />
-
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={inPerson}
-                  onChange={(e) => setInPerson(e.target.checked)}
-                  className="w-4 h-4 text-blue-500"
-                />
-                <label htmlFor="inPerson" className="ml-2">
-                  I want to attend the event in person
-                </label>
-              </div>
-
-              {inPerson && (
-                <div className="space-y-4">
-                  <input
-                    type="text"
-                    name="company"
-                    placeholder="Company"
-                    className="p-2 border-2 border-gray-400 focus:border-blue-500"
-                  />
-                  <input
-                    type="text"
-                    name="title"
-                    placeholder="Title"
-                    className="p-2 border-2 border-gray-400 focus:border-blue-500"
-                  />
-                  <input
-                    type="text"
-                    name="source"
-                    placeholder="How did you learn about us?"
-                    className="p-2 border-2 border-gray-400 focus:border-blue-500"
-                  />
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={submitting}
-                className="p-2 bg-blue-500 text-white hover:bg-blue-400"
-              >
-                {submitting ? "Submitting..." : "Submit"}
-              </button>
-            </form>
           </main>
           <Footer />
         </Auth>
