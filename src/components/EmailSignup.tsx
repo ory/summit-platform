@@ -59,7 +59,7 @@ const EmailSignup = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="p-2 border-2 border-gray-400 focus:border-blue-800 w-64 rounded-2xl"
+          className="p-2 border-2 border-gray-400 focus:border-blue-800 rounded-2xl flex-grow"
         />
         <div className="flex items-center">
           <input type="checkbox" className="w-4 h-4 text-blue-500" />
