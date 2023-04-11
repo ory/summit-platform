@@ -8,7 +8,7 @@ import Auth from "@/components/Auth";
 const Ticket = () => {
   const user = useAuth();
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <AuthContext.Provider
         value={{
           session: user.session,
@@ -17,14 +17,16 @@ const Ticket = () => {
         }}
       >
         <Auth>
-          <Navigation session={user.session} logoutUrl={user.logoutUrl} />
-          <main className="flex-grow p-4">
-            <h1 className="text-4xl mb-4">Your Ticket</h1>
-          </main>
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Navigation session={user.session} logoutUrl={user.logoutUrl} />
+            <main className="flex-grow p-4">
+              <h1 className="text-4xl mb-4">Your Ticket</h1>
+            </main>
+            <Footer />
+          </div>
         </Auth>
       </AuthContext.Provider>
-    </div>
+    </>
   );
 };
 
