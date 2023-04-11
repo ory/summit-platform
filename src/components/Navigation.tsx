@@ -16,9 +16,9 @@ const Navigation = ({ session = null, logoutUrl = null }) => {
         <Link className="hover:text-blue-300" href="/about">
           About
         </Link>
-        <Link className="hover:text-blue-300" href="/">
-          Schedule & Speakers (coming soon)
-        </Link>
+        <span className="hover:text-blue-300" href="/">
+          Schedule & Speakers coming soon
+        </span>
       </div>
       <div>
         {logoutUrl && (
