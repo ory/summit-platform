@@ -5,10 +5,10 @@ type FormData = {
   email: string;
   agreeMarketing: boolean;
 };
+
 const ORY_SDK_URL = process.env.NEXT_PUBLIC_ORY_SDK_URL;
 const ORY_PAT = process.env.NEXT_PUBLIC_ORY_PAT;
-console.log(ORY_PAT);
-console.log(`${ORY_SDK_URL}` + `/admin/identities`);
+
 const EmailSignup = () => {
   const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = (data: FormData) => {
@@ -28,10 +28,11 @@ const EmailSignup = () => {
       }),
     })
       .then((response) => {
-        console.log(JSON.stringify(response.json()));
+        console.log("Response:", response);
       })
       .catch((error) => {
-        // Handle error here
+        //If there is a status conflict code 409, the identity already exists and we can just redirect to log in
+        console.error("Error:", error);
       });
   };
 

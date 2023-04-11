@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import useToSession from "@/hooks/useToSession";
 
 const Home = () => {
-  //const user = useToSession();
+  const user = useToSession();
   return (
     <div
       className="flex flex-col min-h-screen bg-cover bg-center"
