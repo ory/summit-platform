@@ -1,20 +1,50 @@
 import { useState } from "react";
 import { fetchRecoveryLink } from "../utils";
+import { useRouter } from "next/router";
 
 const EmailSignup = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
+
+  const createIdentity = async (email) => {
+    const response = await fetch(
+      `${process.env.ORY_SDK_URL}/admin/identities`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.ORY_PAT}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          schema_id: "preset://email",
+          traits: {
+            email: email,
+          },
+        }),
+      }
+    );
+
+    return response;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const result = await fetchRecoveryLink(email);
+    const identityResponse = await createIdentity(email);
 
-    if (result) {
-      // handle success
-      console.log("Recovery link sent successfully");
+    if (identityResponse.status === 409 || identityResponse.ok) {
+      const result = await fetchRecoveryLink(email);
+      if (result) {
+        // handle success
+        console.log("Recovery link sent successfully");
+        router.push("/please-check-your-email");
+      } else {
+        // handle error
+        console.error("Error sending recovery link");
+      }
     } else {
-      // handle error
-      console.error("Error sending recovery link");
+      // handle identity creation error
+      console.error("Error creating identity");
     }
   };
 
