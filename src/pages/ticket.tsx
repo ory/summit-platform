@@ -10,7 +10,7 @@ const Ticket = () => {
   const [name, setName] = useState("");
   const [identity] = useState({ id: user.session.identity.id });
   const [inPerson, setInPerson] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+  const [submitting] = useState(false);
 
   //  const handleSubmit = async (event) => {
   //    event.preventDefault();
