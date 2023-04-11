@@ -12,30 +12,6 @@ const Ticket = () => {
   const [inPerson, setInPerson] = useState(false);
   const [submitting] = useState(false);
 
-  //  const handleSubmit = async (event) => {
-  //    event.preventDefault();
-  //    setSubmitting(true);
-  //    try {
-  // Placeholder: Call the auth service API to add the name to the identity
-  // await fetch(`${ORY_SDK_URL}`, {
-  //   method: "POST",
-  //   body: JSON.stringify({ id: identity.id, name }),
-  //   headers: { "Content-Type": "application/json" },
-  // });
-  // Placeholder: Call the CRM service API with the extra form data
-  // if (inPerson) {
-  //   await fetch("https://crm-service-api.com/add-extra-info", {
-  //     method: "POST",
-  //     body: new URLSearchParams(new FormData(event.target)),
-  //   });
-  // }
-  //    } catch (error) {
-  //      console.error("Error submitting form:", error);
-  //    } finally {
-  //      setSubmitting(false);
-  //    }
-  //  };
-
   return (
     <div className="flex flex-col min-h-screen">
       <AuthContext.Provider
