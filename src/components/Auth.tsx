@@ -1,11 +1,6 @@
 import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "@/contexts/AuthContext";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
 
 const Auth = ({ children }) => {
   const { isAuthenticated, logoutUrl, session } = useContext(AuthContext);
