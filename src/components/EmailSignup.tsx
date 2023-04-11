@@ -49,18 +49,32 @@ const EmailSignup = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <button type="submit">Send Recovery Link</button>
-    </form>
+    <div className="flex justify-center">
+      <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter email to get your ticket"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="p-2 border-2 border-gray-400 focus:border-blue-800 w-64 rounded-2xl"
+        />
+        <div className="flex items-center">
+          <input type="checkbox" className="w-4 h-4 text-blue-500" />
+          <label htmlFor="agreeMarketing" className="ml-2">
+            Also sign up to the Ory Newsletter
+          </label>
+        </div>
+        <button
+          type="submit"
+          className="p-2 bg-black text-white hover:bg-blue-800"
+        >
+          Get your free ticket
+        </button>
+      </form>
+    </div>
   );
 };
 
