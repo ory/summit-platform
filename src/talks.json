@@ -1,7 +1,7 @@
 [
   {
     "time": "9:30am – 9:40am",
-    "title": "Keynote",
+    "title": "TBA",
     "slug": "thomas",
     "speaker": "Thomas Curran",
     "company": "Ory",
@@ -10,7 +10,7 @@
   },
   {
     "time": "9:40am – 9:50am",
-    "title": "Ory Network",
+    "title": "TBA",
     "slug": "aeneas",
     "speaker": "Aeneas Rekkas",
     "company": "Ory",
@@ -19,11 +19,66 @@
   },
   {
     "time": "9:50am – 10:00am",
-    "title": "Ory Permissions",
+    "title": "TBA",
     "slug": "patrik",
     "speaker": "Patrik Neu",
     "company": "Ory",
+    "position": "Head of Keto",
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
+  },
+  {
+    "time": "9:30am – 9:40am",
+    "title": "TBA",
+    "slug": "thomas",
+    "speaker": "Thomas Curran",
+    "company": "Ory",
     "position": "CEO",
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
+  },
+  {
+    "time": "9:40am – 9:50am",
+    "title": "TBA",
+    "slug": "aeneas",
+    "speaker": "Aeneas Rekkas",
+    "company": "Ory",
+    "position": "CTO",
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
+  },
+  {
+    "time": "9:50am – 10:00am",
+    "title": "TBA",
+    "slug": "patrik",
+    "speaker": "Patrik Neu",
+    "company": "Ory",
+    "position": "Head of Keto",
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
+  },
+
+  {
+    "time": "9:30am – 9:40am",
+    "title": "TBA",
+    "slug": "thomas",
+    "speaker": "Thomas Curran",
+    "company": "Ory",
+    "position": "CEO",
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
+  },
+  {
+    "time": "9:40am – 9:50am",
+    "title": "TBA",
+    "slug": "aeneas",
+    "speaker": "Aeneas Rekkas",
+    "company": "Ory",
+    "position": "CTO",
+    "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
+  },
+  {
+    "time": "9:50am – 10:00am",
+    "title": "TBA",
+    "slug": "patrik",
+    "speaker": "Patrik Neu",
+    "company": "Ory",
+    "position": "Head of Keto",
     "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor ipsum quis nisi placerat, quis suscipit justo lobortis. Maecenas ultricies tortor in turpis bibendum, id eleifend nisi accumsan."
   }
 ]

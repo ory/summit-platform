@@ -11,16 +11,13 @@ const Navigation = ({ session = null, logoutUrl = null }) => {
       </div>
       <div className="space-x-8 text-white text-xl">
         <Link className="hover:text-blue-300" href="/">
-          Home
+          Get your Ticket
         </Link>
         <Link className="hover:text-blue-300" href="/about">
           About
         </Link>
-        <Link className="hover:text-blue-300" href="/schedule">
-          Schedule
-        </Link>
-        <Link className="hover:text-blue-300" href="/speakers">
-          Speakers
+        <Link className="hover:text-blue-300" href="/">
+          Schedule & Speakers (coming soon)
         </Link>
       </div>
       <div>
