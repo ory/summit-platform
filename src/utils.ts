@@ -28,7 +28,7 @@ const fetchRecoveryLink = async (email) => {
           Cookie: cookies,
         },
         body: JSON.stringify({
-          method: "code",
+          method: "link",
           email: email,
           csrf_token: csrfToken,
         }),
