@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
 const CheckEmail: NextPage = () => {
   return (

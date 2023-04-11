@@ -5,7 +5,7 @@ import useAuth from "@/hooks/useAuth";
 import { AuthContext } from "@/contexts/AuthContext";
 import Auth from "@/components/Auth";
 import TicketCard from "@/components/TicketCard";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
 const Ticket: NextPage = () => {
   const user = useAuth();

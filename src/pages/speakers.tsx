@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SpeakerCard from "@/components/SpeakerCard";
 import talks from "@/talks.json";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
 const Speakers: NextPage = () => {
   return (

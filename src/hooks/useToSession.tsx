@@ -1,17 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Configuration, FrontendApi, Session } from "@ory/client";
-
-const basePath = process.env.NEXT_PUBLIC_ORY_SDK_URL;
-
-const ory = new FrontendApi(
-  new Configuration({
-    basePath: basePath,
-    baseOptions: {
-      withCredentials: true,
-    },
-  })
-);
+import { Session } from "@ory/client";
+import ory from "../pkg/sdk";
 
 const useToSession = () => {
   const router = useRouter();

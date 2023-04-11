@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import useAuth from "@/hooks/useAuth";
 import { AuthContext } from "@/contexts/AuthContext";
 import Auth from "@/components/Auth";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
 const Venue: NextPage = () => {
   const user = useAuth();
