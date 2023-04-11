@@ -6,6 +6,7 @@ import { AuthContext } from "@/contexts/AuthContext";
 import Auth from "@/components/Auth";
 import TicketCard from "@/components/TicketCard";
 import type { NextPage } from "next";
+import Link from "next/link";
 
 const Ticket: NextPage = () => {
   const user = useAuth();
@@ -81,6 +82,11 @@ const Ticket: NextPage = () => {
                   {submitting ? "Submitting..." : "Submit"}
                 </button>
               </form>
+              <div>
+                <Link className="hover:text-blue-300" href="/venue">
+                  Learn more about the venue
+                </Link>
+              </div>
             </main>
             <Footer />
           </div>

@@ -59,7 +59,7 @@ const EmailSignup = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="p-2 border-2 border-gray-400 focus:border-blue-800 rounded-2xl flex-grow"
+          className="p-2 border-2 border-gray-400 focus:border-blue-800 rounded flex-grow"
         />
         <div className="flex items-center">
           <input type="checkbox" className="w-4 h-4 text-blue-500" />
@@ -69,7 +69,7 @@ const EmailSignup = () => {
         </div>
         <button
           type="submit"
-          className="p-2 bg-black text-white hover:bg-blue-800"
+          className="p-2 bg-black text-white hover:bg-blue-800 rounded"
         >
           Get your free ticket
         </button>
