@@ -8,7 +8,6 @@ import Auth from "@/components/Auth";
 const Ticket = () => {
   const user = useAuth();
   const [name, setName] = useState("");
-  const [identity] = useState({ id: user.session.identity.id });
   const [inPerson, setInPerson] = useState(false);
   const [submitting] = useState(false);
 
@@ -49,7 +48,7 @@ const Ticket = () => {
           <Navigation />
           <main className="flex-grow p-4">
             <h1 className="text-4xl mb-4">Your Ticket</h1>
-            <p>Your ticket ID: {identity.id}</p>
+            <p>Your ticket ID: {user.session.identity.id}</p>
 
             <form className="mt-8 space-y-4">
               <input
