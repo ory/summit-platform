@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import useAuth from "@/hooks/useAuth";
@@ -8,10 +8,6 @@ import TicketCard from "@/components/TicketCard";
 
 const Ticket = () => {
   const user = useAuth();
-  const [name, setName] = useState("");
-  const [inPerson, setInPerson] = useState(false);
-  const [submitting] = useState(false);
-
   return (
     <div className="flex flex-col min-h-screen">
       <AuthContext.Provider

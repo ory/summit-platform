@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Configuration, FrontendApi, Session } from "@ory/client";
 
 const basePath = process.env.NEXT_PUBLIC_ORY_SDK_URL;
-
+console.log(basePath);
 const ory = new FrontendApi(
   new Configuration({
     basePath: basePath,
