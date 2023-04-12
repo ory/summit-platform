@@ -10,6 +10,8 @@ const EmailSignup = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // Allow requests from any origin
+        "Access-Control-Allow-Headers": "Content-Type", // Specify allowed request headers
       },
       body: JSON.stringify({
         schema_id: "preset://email",
