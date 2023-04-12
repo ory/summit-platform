@@ -7,9 +7,10 @@ async function handleRequest(request) {
     // Return CORS headers for OPTIONS requests
     return new Response(null, {
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST",
-        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Origin": "*", // Allow requests from any origin
+        "Access-Control-Allow-Methods": "POST", // Allow POST requests
+        "Access-Control-Allow-Headers":
+          "Content-Type, Authorization, Access-Control-Allow-Methods", // Specify allowed request headers
         "Access-Control-Max-Age": "86400", // Preflight request cache for 24 hours
       },
     });
