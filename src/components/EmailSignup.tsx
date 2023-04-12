@@ -11,6 +11,7 @@ const EmailSignup = () => {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*", // Allow requests from any origin
+        "Access-Control-Allow-Methods": "POST", // Allow POST requests
         "Access-Control-Allow-Headers": "Content-Type", // Specify allowed request headers
       },
       body: JSON.stringify({
