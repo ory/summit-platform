@@ -5,24 +5,19 @@ import { useRouter } from "next/router";
 const EmailSignup = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
-
   const createIdentity = async (email) => {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_ORY_SDK_URL}/admin/identities`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_ORY_PAT}`,
-          "Content-Type": "application/json",
+    const response = await fetch(`${process.env.NEXT_PUBLIC_WORKER_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        schema_id: "preset://email",
+        traits: {
+          email: email,
         },
-        body: JSON.stringify({
-          schema_id: "preset://email",
-          traits: {
-            email: email,
-          },
-        }),
-      }
-    );
+      }),
+    });
 
     return response;
   };
