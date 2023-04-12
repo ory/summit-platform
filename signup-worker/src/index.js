@@ -3,7 +3,17 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest(request) {
-  if (request.method === "POST") {
+  if (request.method === "OPTIONS") {
+    // Return CORS headers for OPTIONS requests
+    return new Response(null, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Max-Age": "86400", // Preflight request cache for 24 hours
+      },
+    });
+  } else if (request.method === "POST") {
     const body = await request.json();
     const email = body.email;
     //const agreeMarketing = json.get("agreeMarketing");
