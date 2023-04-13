@@ -75,7 +75,7 @@ const Ticket: NextPage = () => {
                 Please sign up here if you want to attend in person. No further
                 sign up is needed to watch the livestream.
               </p>
-              <form className="mt-8 space-y-4">
+              <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
                 <input
                   type="text"
                   placeholder="Enter your name"
@@ -87,20 +87,23 @@ const Ticket: NextPage = () => {
                 <div className="space-y-4">
                   <input
                     type="text"
-                    name="company"
                     placeholder="Company"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
                     className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                   />
                   <input
                     type="text"
-                    name="title"
                     placeholder="Title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                   />
                   <input
                     type="text"
-                    name="source"
                     placeholder="How did you learn about us?"
+                    value={source}
+                    onChange={(e) => setSource(e.target.value)}
                     className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                   />
                 </div>
