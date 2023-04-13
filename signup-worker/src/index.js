@@ -19,12 +19,12 @@ async function handleRequest(request) {
     // Create a new account in Ory Network
     const createIdentity = async () => {
       const response = await fetch(
-        `${env.NEXT_PUBLIC_ORY_SDK_URL}/admin/identities`,
+        `${NEXT_PUBLIC_ORY_SDK_URL}/admin/identities`,
         {
           method: "POST",
           body: JSON.stringify(body),
           headers: {
-            Authorization: `Bearer ${env.NEXT_PUBLIC_ORY_PAT}`,
+            Authorization: `Bearer ${NEXT_PUBLIC_ORY_PAT}`,
             "Content-Type": "application/json",
           },
         }
