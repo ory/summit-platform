@@ -28,7 +28,11 @@ const Ticket: NextPage = () => {
             <main className="flex-grow p-4">
               <h1 className="text-4xl mb-4">Your Ticket</h1>
               <TicketCard session={user.session} />
-
+              <h2>Do you want to attend the event in person?</h2>
+              <p>
+                Please sign up here if you want to attend in person. No further
+                sign up is needed to watch the livestream.
+              </p>
               <form className="mt-8 space-y-4">
                 <input
                   type="text"
@@ -38,18 +42,6 @@ const Ticket: NextPage = () => {
                   required
                   className="p-2 border-2 border-gray-400 focus:border-blue-500"
                 />
-
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={inPerson}
-                    onChange={(e) => setInPerson(e.target.checked)}
-                    className="w-4 h-4 text-blue-500"
-                  />
-                  <label htmlFor="inPerson" className="ml-2">
-                    I want to attend the event in person
-                  </label>
-                </div>
 
                 {inPerson && (
                   <div className="space-y-4">
