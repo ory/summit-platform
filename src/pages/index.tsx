@@ -9,10 +9,7 @@ import type { NextPage } from "next";
 const Home: NextPage = () => {
   const user = useToSession();
   return (
-    <div
-      className="flex flex-col min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url(/summit.png)" }}
-    >
+    <div className="flex flex-col min-h-screen bg-cover bg-center">
       <Navigation session={user.session} logoutUrl={user.logoutUrl} />{" "}
       <main className="flex flex-col flex-grow justify-center px-4 py-8 space-y-8 text-center text-white">
         <h1 className="text-5xl shadow-outline">Ory Summit 2023</h1>
