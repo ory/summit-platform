@@ -40,7 +40,7 @@ const Ticket: NextPage = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="p-2 border-2 border-gray-400 focus:border-blue-500"
+                  className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                 />
 
                 {inPerson && (
@@ -49,19 +49,19 @@ const Ticket: NextPage = () => {
                       type="text"
                       name="company"
                       placeholder="Company"
-                      className="p-2 border-2 border-gray-400 focus:border-blue-500"
+                      className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                     />
                     <input
                       type="text"
                       name="title"
                       placeholder="Title"
-                      className="p-2 border-2 border-gray-400 focus:border-blue-500"
+                      className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                     />
                     <input
                       type="text"
                       name="source"
                       placeholder="How did you learn about us?"
-                      className="p-2 border-2 border-gray-400 focus:border-blue-500"
+                      className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                     />
                   </div>
                 )}
@@ -69,7 +69,7 @@ const Ticket: NextPage = () => {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="p-2 bg-blue-500 text-white hover:bg-blue-400"
+                  className="p-2 bg-blue-500 text-white hover:bg-blue-400 block"
                 >
                   {submitting ? "Submitting..." : "Submit"}
                 </button>
