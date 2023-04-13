@@ -16,10 +16,10 @@ const Ticket: NextPage = () => {
   const [source, setSource] = useState("");
   const [submitting, setSubmitting] = useState(false);
   // Function to handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-  }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSubmitting(true);
+
   // Create an object with the data to send
   const formData = {
     name,
@@ -27,6 +27,31 @@ const Ticket: NextPage = () => {
     title,
     source,
   };
+
+  // Make a POST request to the Zapier webhook URL with the form data
+  try {
+    const response = await fetch("https://hooks.zapier.com/hooks/catch/9251446/337lifu/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      // Handle success
+      console.log("Form data sent successfully.");
+    } else {
+      // Handle error
+      console.error("Failed to send form data.");
+    }
+  } catch (error) {
+    // Handle error
+    console.error("Failed to send form data.", error);
+  }
+
+  setSubmitting(false);
+};
     return (
       <>
         <AuthContext.Provider
