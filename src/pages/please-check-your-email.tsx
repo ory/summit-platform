@@ -9,7 +9,7 @@ const CheckEmail: NextPage = () => {
       <Navigation />
       <main className="flex-grow p-4">
         <h1 className="text-4xl mb-4 m-auto text-center">
-          Please check your email for a link to login with!
+          Please check your email for a link to confirm your account and log in!
         </h1>
       </main>
       <Footer />

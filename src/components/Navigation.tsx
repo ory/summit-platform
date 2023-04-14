@@ -7,7 +7,7 @@ const Navigation = ({ logoutUrl = null }) => {
   return (
     <>
       <div className="flex items-center p-4 justify-center">
-        <div className="mr-8">
+        <div className="mr-16">
           <svg
             width="48"
             height="24"
@@ -42,20 +42,20 @@ const Navigation = ({ logoutUrl = null }) => {
             ></path>
           </svg>
         </div>
-        <div className="space-x-16 text-white text-xl">
-          <Link className="hover:text-blue-300" href="/">
+        <div className="text-[#c46ef5] space-x-16 text-xl ">
+          <Link className="hover:text-white" href="/">
             Get your Ticket
           </Link>
-          <Link className="hover:text-blue-300" href="/about">
+          <Link className="hover:text-white" href="/about">
             About
           </Link>
-          <Link className="hover:text-blue-300" href="/schedule">
+          <Link className="hover:text-white" href="/schedule">
             Schedule
           </Link>
-          <Link className="hover:text-blue-300" href="/speakers">
+          <Link className="hover:text-white" href="/speakers">
             Speakers
-          </Link>{" "}
-          <Link className="hover:text-blue-300" href="/venue">
+          </Link>
+          <Link className="hover:text-white" href="/venue">
             Venue
           </Link>
         </div>

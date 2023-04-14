@@ -50,17 +50,14 @@ const EmailSignup = () => {
           type="email"
           id="email"
           name="email"
-          placeholder="Enter email to sign up or log in"
+          placeholder="Enter email to sign up"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="p-2 border-2 border-gray-400 focus:border-blue-800 rounded flex-grow"
+          className="p-2 border-2 border-gray-400 focus:border-blue-800 rounded"
         />
-        <div className="flex items-center">
-          <input type="checkbox" className="w-4 h-4 text-blue-500" />
-          <label htmlFor="agreeMarketing" className="ml-2">
-            Also sign up to the Ory Newsletter
-          </label>
+        <div className="items-center text-sm">
+          By signing up you agree to receive communications from Ory
         </div>
         <button
           type="submit"
