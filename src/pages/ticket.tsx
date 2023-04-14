@@ -34,9 +34,6 @@ const Ticket: NextPage = () => {
         "https://hooks.zapier.com/hooks/catch/9251446/337lifu/",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
           body: JSON.stringify(formData),
         }
       );
