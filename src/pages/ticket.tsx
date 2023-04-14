@@ -11,7 +11,7 @@ import Link from "next/link";
 const Ticket: NextPage = () => {
   const user = useAuth();
   const [name, setName] = useState("");
-  const id = user.session.identity.id;
+  const id = user?.session?.identity?.id;
   const [company, setCompany] = useState("");
   const [title, setTitle] = useState("");
   const [submitting, setSubmitting] = useState(false);
