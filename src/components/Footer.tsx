@@ -5,6 +5,12 @@ const Footer = () => {
     <footer className="flex items-center justify-between p-4 bg-black">
       <div className="text-white">&copy; 2023 Ory Summit</div>
       <div className="space-x-4">
+        <a
+          href="https://forms.gle/Bhh86qhh4hCek4Eg8"
+          className="text-white hover:text-blue-300"
+        >
+          Call for Papers
+        </a>
         <a href="https://ory.sh/tos" className="text-white hover:text-blue-300">
           Join the chat 🚀
         </a>
