@@ -4,11 +4,13 @@ import Footer from "@/components/Footer";
 import type { NextPage } from "next";
 import Link from "next/link";
 import YouTubeVideo from "@/components/YoutubeVideo";
+import useToSession from "@/hooks/useToSession";
 
 const About: NextPage = () => {
+  const user = useToSession();
   return (
     <div className="flex flex-col min-h-screen">
-      <Navigation />
+      <Navigation logoutUrl={user.logoutUrl} />
       <main className="p-4 max-w-2xl space-x-8 m-auto">
         <p className="text-4xl mb-4">Ory Summit 2023</p>
         <p className="text-xl ">Save the date: November 9, 2023</p>
