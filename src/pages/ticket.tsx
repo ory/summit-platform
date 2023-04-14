@@ -67,11 +67,14 @@ const Ticket: NextPage = () => {
             <main className="flex-grow p-4">
               <h1 className="text-4xl mb-4">Your Ticket</h1>
               <TicketCard session={user.session} />
-              <h2>Do you want to attend the event in person?</h2>
-              <p>
-                Please sign up here if you want to attend in person. No further
-                sign up is needed to watch the livestream.
+              <p className="text-lg">
+                Attend Ory Summit 2023 at the Ory office in Munich, Germany!
               </p>
+              <p>
+                Please sign up here if you want to attend in person at the Ory
+                office.
+              </p>
+              <p>No further sign up is needed to watch the livestream.</p>
               <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
                 <input
                   type="text"
