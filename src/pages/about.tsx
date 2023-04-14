@@ -3,43 +3,54 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import type { NextPage } from "next";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YoutubeVideo";
 
 const About: NextPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex-grow p-4 max-w-2xl text-lg space-x-8 ">
-        <h1 className="text-4xl mb-4">About Ory Summit 2023</h1>
-        <p className="text-xl p-4">Ready to elevate your digital security?</p>
+      <main className="p-4 max-w-2xl space-x-8 m-auto">
+        <p className="text-4xl mb-4">Ory Summit 2023</p>
+        <p className="text-xl ">Save the date: November 9, 2023</p>
+        <br />
         <p className="mb-4">
-          Look no further - Ory has got you covered! Set your calendars for
-          November 9, 2023, and join us at the Ory Summit 2023 for an
-          unforgettable experience, either watching online or live at the House
-          of Communication in Munich&apos;s hip Werksviertel.
+          Building on the growing popularity Ory Summit is going to take place
+          for the third time at the House of Communication in Munich&apos;s
+          trendy Werksviertel and online on 9 November 2023. Its theme:
+          &quot;Securing the digital world&quot;.
         </p>
-        <p className="mb-4">
-          <h4>Topics include:</h4>
-          <ul>
-            <li>- Ory use cases</li>
-            <li>- Experience with Ory Network</li>
-            <li>- Zero trust</li>
-            <li>- Identity management</li>
-            <li>- Authentication</li>
-            <li>- Authorization</li>
-            <li>- Cloud security</li>
-          </ul>
-        </p>
-        <p className="mb-4">
-          Secure your spot at Ory Summit 2023 and connect with like-minded
-          aficionados, learn from the best in the biz, and be part of the
-          conversation that&apos;s shaping the future of our digital landscape.
-        </p>
-        <p className="text-xl p-4">
-          Enter your email on the{" "}
-          <Link className="hover:text-blue-300 text-blue-500" href="/venue">
-            main page
+        <br />
+        <p>
+          Requests for proposals can be submitted{" "}
+          <Link
+            className="hover:text-blue-300 text-blue-500"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeYt-jELjwCdW219Q8QonfTR4wYkTLZLNIcK8tKPoHJS4DMgw/viewform?usp=sf_link"
+          >
+            here
           </Link>{" "}
-          for your <b>free</b> ticket, and we&apos;ll see you there!
+          until Sunday, May 28, 2023.
+        </p>
+        <p>
+          For inquiries please contact{" "}
+          <Link
+            className="hover:text-blue-300 text-blue-500"
+            href="mailto:office@ory.sh"
+          >
+            office@ory.sh
+          </Link>
+        </p>{" "}
+        <br />
+        <YouTubeVideo />
+        <p>
+          Presentations and videos of last year&apos;s speeches can be found{" "}
+          {""}
+          <Link
+            className="hover:text-blue-300 text-blue-500"
+            href="https://www.ory.sh/summit/2022/"
+          >
+            here
+          </Link>
+          .
         </p>
       </main>
       <Footer />

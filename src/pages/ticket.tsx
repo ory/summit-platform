@@ -63,8 +63,8 @@ const Ticket: NextPage = () => {
       >
         <Auth>
           <div className="flex flex-col min-h-screen">
-            <Navigation session={user.session} logoutUrl={user.logoutUrl} />
-            <main className="flex-grow p-4">
+            <Navigation logoutUrl={user.logoutUrl} />
+            <main className="p-4 max-w-2xl space-x-8 m-auto">
               <h1 className="text-4xl mb-4">Your Ticket</h1>
               <TicketCard session={user.session} />
               <p className="text-lg">
@@ -110,11 +110,6 @@ const Ticket: NextPage = () => {
                   {submitting ? "Submitting..." : "Submit"}
                 </button>
               </form>
-              <div>
-                <Link className="hover:text-blue-300" href="/venue">
-                  Learn more about the venue
-                </Link>
-              </div>
             </main>
             <Footer />
           </div>
