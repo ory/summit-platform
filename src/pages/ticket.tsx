@@ -11,9 +11,9 @@ import Link from "next/link";
 const Ticket: NextPage = () => {
   const user = useAuth();
   const [name, setName] = useState("");
+  const id = user.session.identity.id;
   const [company, setCompany] = useState("");
   const [title, setTitle] = useState("");
-  const [source, setSource] = useState("");
   const [submitting, setSubmitting] = useState(false);
   // Function to handle form submission
   const handleSubmit = async (e) => {
@@ -22,10 +22,10 @@ const Ticket: NextPage = () => {
 
     // Create an object with the data to send
     const formData = {
+      id,
       name,
       company,
       title,
-      source,
     };
 
     // Make a POST request to the Zapier webhook URL with the form data
@@ -87,6 +87,7 @@ const Ticket: NextPage = () => {
                     placeholder="Company"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
+                    required
                     className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                   />
                   <input
@@ -94,13 +95,7 @@ const Ticket: NextPage = () => {
                     placeholder="Title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
-                  />
-                  <input
-                    type="text"
-                    placeholder="How did you learn about us?"
-                    value={source}
-                    onChange={(e) => setSource(e.target.value)}
+                    required
                     className="p-2 border-2 border-gray-400 focus:border-blue-500 block"
                   />
                 </div>
