@@ -13,8 +13,8 @@ const useToSession = () => {
       try {
         const response = await ory.toSession();
         if (response.status === 200 && response.data) {
-          // Redirect to /ticket if session exists
-          router.push("/ticket");
+          // Redirect to /about if session exists
+          router.push("/about");
         } else {
           setSession(response.data);
           ory.createBrowserLogoutFlow().then(({ data }) => {
