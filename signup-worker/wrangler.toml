@@ -1,5 +1,0 @@
-name = "signup-worker"
-main = "src/index.js"
-compatibility_date = "2023-03-29"
-[vars]
-NEXT_PUBLIC_ORY_SDK_URL = "https://login.vinckr.com"
