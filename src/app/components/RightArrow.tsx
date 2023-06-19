@@ -1,11 +1,17 @@
 type RightArrowProps = {
   className?: string
+  width?: number
+  height?: number
 }
 
-export const RightArrow = ({ className }) => (
+export const RightArrow = ({
+  className,
+  width = 17,
+  height = 14,
+}: RightArrowProps) => (
   <svg
-    width="17"
-    height="14"
+    width={width}
+    height={height}
     viewBox="0 0 15 9"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -6,7 +6,7 @@ import { Wrapper } from "./components/Wrapper"
 export const Footer = () => (
   <footer
     className={classNames(
-      "w-full border-t border-blue-500 px-6 py-2 font-mono text-sm leading-none dark:border-rose-500",
+      "w-full border-t border-blue-500 px-6 py-2 text-sm leading-none dark:border-rose-500",
       "sm:px-12 xl:px-24",
     )}
   >

@@ -20,11 +20,9 @@ export const Navigation = () => (
         <div className="col-span-full flex">
           <div>
             <Link href="/" className="flex items-center gap-[2px]">
-              <Logo className="" />
-              <span className="font-mono text-blue-500 dark:text-rose-500">
-                /
-              </span>
-              <span className="font-mono">summit-23</span>
+              <Logo />
+              <span className="text-blue-500 dark:text-rose-500">/</span>
+              <span>summit-23</span>
             </Link>
           </div>
           <div className="flex-1"></div>
