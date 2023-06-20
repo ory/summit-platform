@@ -2,6 +2,7 @@ import classNames from "classnames"
 import Link from "next/link"
 import { Button } from "./components/Button"
 import { Container } from "./components/Container"
+import { dividerStyles } from "./components/DividerStyles"
 import { Logo } from "./components/Logo"
 import { RightArrow } from "./components/RightArrow"
 import { Wrapper } from "./components/Wrapper"
@@ -11,8 +12,7 @@ export const Navigation = () => (
     className={classNames(
       "relative flex items-stretch justify-center px-6 text-lg leading-tight",
       "sm:px-12 xl:px-24",
-      "before:absolute before:bottom-0 before:left-0 before:block before:h-[1px] before:w-6 before:bg-blue-500 dark:before:bg-rose-500",
-      "after:absolute after:bottom-0 after:right-0 after:block after:h-[1px] after:w-6 after:bg-blue-500 dark:after:bg-rose-500",
+      dividerStyles,
     )}
   >
     <Container className="max-w-[1344px] flex-1">
