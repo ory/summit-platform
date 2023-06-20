@@ -1,6 +1,6 @@
 import { Banner } from "./components/Banner"
 import { Container } from "./components/Container"
-import { Countdown } from "./components/Countdown"
+import Countdown from "./components/Countdown"
 import { Wrapper } from "./components/Wrapper"
 import { summitStartingDate } from "./startingDate"
 

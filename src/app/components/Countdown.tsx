@@ -1,6 +1,7 @@
 "use client"
 
 import classNames from "classnames"
+import dynamic from "next/dynamic"
 import { useEffect, useState } from "react"
 import { RightArrow } from "./RightArrow"
 
@@ -26,7 +27,7 @@ const getDelta = (targetDate: string) => {
 
 const toTwoDigits = (n: number) => n.toString().padStart(2, "0")
 
-export const Countdown = ({ className, targetDate }: CountdownProps) => {
+const Countdown = ({ className, targetDate }: CountdownProps) => {
   const [{ days, hours, minutes, seconds }, setDelta] = useState(
     getDelta(targetDate),
   )
@@ -60,3 +61,5 @@ export const Countdown = ({ className, targetDate }: CountdownProps) => {
     </div>
   )
 }
+
+export default dynamic(() => Promise.resolve(Countdown), { ssr: false })
