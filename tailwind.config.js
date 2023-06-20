@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
+const colors = require("tailwindcss/colors")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -16,10 +17,23 @@ module.exports = {
       fontFamily: {
         mono: ["Jetbrains Mono", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        keto: colors.teal,
+        kratos: colors.orange,
+        hydra: colors.rose,
+        oauthkeeper: colors.pink,
+        info: colors.sky,
+        succes: colors.green,
+        warning: colors.yellow,
+        error: colors.red,
+      },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@headlessui/tailwindcss"),
+  ],
 }

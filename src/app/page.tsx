@@ -6,9 +6,11 @@ import { Content } from "./components/Content"
 import Countdown from "./components/Countdown"
 import { dividerStyles } from "./components/DividerStyles"
 import { Wrapper } from "./components/Wrapper"
+import { getSession } from "./ory/getSession"
 import { summitStartingDate } from "./startingDate"
 
-export default function Page() {
+export default async function Page() {
+  const session = await getSession()
   return (
     <main
       className={classNames(
