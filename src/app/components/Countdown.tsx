@@ -45,7 +45,7 @@ const Countdown = ({ className, targetDate }: CountdownProps) => {
         className,
       )}
     >
-      <div className="absolute -ml-6 flex h-full items-center">
+      <div className="absolute -ml-6 flex items-center">
         <RightArrow
           width={15}
           height={12}

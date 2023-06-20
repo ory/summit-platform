@@ -14,7 +14,7 @@ export const Banner = ({
       className,
     )}
   >
-    <div className="absolute -ml-9 flex h-full items-center">
+    <div className="absolute -ml-9 flex items-center">
       <RightArrow
         width={15}
         height={12}
