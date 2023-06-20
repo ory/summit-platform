@@ -24,11 +24,13 @@ export const Navigation = async () => {
         <Wrapper className="py-2">
           <div className="col-span-full flex">
             <div>
-              <Link href="/" className="flex items-center gap-[2px]">
-                <Logo />
+              <div className="flex items-center gap-[2px]">
+                <a href={process.env.ORY_WEB_URL} target="_blank">
+                  <Logo />
+                </a>
                 <span className="text-blue-500 dark:text-rose-500">/</span>
-                <span>summit-23</span>
-              </Link>
+                <Link href="/">summit-23</Link>
+              </div>
             </div>
             <div className="flex-1"></div>
             <div className="flex shrink-0 items-center gap-4">
