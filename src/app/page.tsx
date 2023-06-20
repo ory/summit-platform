@@ -1,16 +1,14 @@
 import classNames from "classnames"
 import { Banner } from "./components/Banner"
-import { Button } from "./components/Button"
 import { Container } from "./components/Container"
 import { Content } from "./components/Content"
 import Countdown from "./components/Countdown"
 import { dividerStyles } from "./components/DividerStyles"
+import { GetTicketButton } from "./components/GetTicketButton"
 import { Wrapper } from "./components/Wrapper"
-import { getSession } from "./ory/getSession"
 import { summitStartingDate } from "./startingDate"
 
 export default async function Page() {
-  const session = await getSession()
   return (
     <main
       className={classNames(
@@ -33,7 +31,7 @@ export default async function Page() {
                 discuss the most important internet economy trends.
               </p>
             </div>
-            <Button className="self-start">Get your ticket</Button>
+            <GetTicketButton className="self-start" />
             <Countdown targetDate={summitStartingDate} />
           </Content>
         </Wrapper>
