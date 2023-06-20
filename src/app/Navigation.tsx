@@ -42,7 +42,11 @@ export const Navigation = async () => {
                   Get your ticket
                 </span>
               </Button>
-              {session && <UserMenu />}
+              {session && (
+                <Suspense fallback={null}>
+                  <UserMenu />
+                </Suspense>
+              )}
             </div>
           </div>
         </Wrapper>

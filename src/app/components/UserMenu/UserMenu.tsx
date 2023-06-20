@@ -18,7 +18,12 @@ type UserMenuProps = {
 export default async function UserMenu({
   openingButtonClassName,
 }: UserMenuProps) {
-  const session = await getSession()
+  const [session, projectId, plan] = await Promise.all([
+    getSession(),
+    getCurrentProjectId(),
+    getSubscriptionPlan(),
+  ])
+  const nextPlanName = getNextPlanName(plan)
 
   if (!session) {
     return undefined
@@ -33,10 +38,6 @@ export default async function UserMenu({
     .join("")
   const email = session.identity.traits.email ?? "unknown"
   // const logout = useLogout()
-
-  const projectId = await getCurrentProjectId()
-  const plan = await getSubscriptionPlan()
-  const nextPlanName = getNextPlanName(plan)
 
   return (
     <Menu
