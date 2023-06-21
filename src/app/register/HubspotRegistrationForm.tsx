@@ -21,7 +21,7 @@ const createForm = (afterSubmitted: () => void) => {
       ;(window as any).hbspt.forms.create({
         region: "eu1",
         portalId: "25092455",
-        formId: "2969f97f-e83f-4c66-843b-12ad35b17133",
+        formId: "0395fe81-1e41-4a5f-97f9-2704a385a05b",
         target: `#${registrationFormId}`,
         onFormSubmitted: afterSubmitted,
       })

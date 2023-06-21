@@ -21,11 +21,21 @@ export default function SeeYouSoon() {
           <Content className="col-span-full max-w-[420px]">
             <div className="flex flex-col gap-4 md:gap-6">
               <h1 className="text-4xl font-medium uppercase leading-tight">
-                See you soon!
+                You are all set for now!
               </h1>
               <p>
-                We{"'"}ll be in touch shortly with more information. Keep an eye
-                on your emails!
+                We have received your information and we appreciate your
+                interest.
+              </p>
+              <p>
+                We will make sure to promptly inform you as soon as we have more
+                updates and news to share on the Ory Summit 2023.
+              </p>
+              <p>
+                In the meantime you can browse through the event highlights and
+                talks from{" "}
+                <a href="https://www.ory.sh/summit/2022/">Ory Summit 2022</a> to
+                get a taste of what's in store for our upcoming conference.
               </p>
             </div>
             <Button className="self-start" as={Link} href="/">

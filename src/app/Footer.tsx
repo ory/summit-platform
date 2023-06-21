@@ -15,7 +15,6 @@ export const Footer = () => (
         <div className="col-span-full flex flex-col justify-between gap-8 md:flex-row">
           <span>
             <span className="text-blue-500 dark:text-rose-500">©</span> 2023 Ory
-            Corp
           </span>
           <ul className="flex flex-col gap-4 md:flex-row">
             <li>
@@ -24,7 +23,7 @@ export const Footer = () => (
               </LinkItem>
             </li>
             <li>
-              <LinkItem as="a" href="">
+              <LinkItem as="a" href="https://slack.ory.sh/" target="_blank">
                 Slack
               </LinkItem>
             </li>
@@ -34,7 +33,7 @@ export const Footer = () => (
               </LinkItem>
             </li>
             <li>
-              <LinkItem as="a" href="">
+              <LinkItem as="a" href="https://ory.sh/privacy" target="_blank">
                 Privacy
               </LinkItem>
             </li>
