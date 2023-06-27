@@ -12,7 +12,8 @@
     @apply text-4xl font-medium uppercase leading-tight;
   }
 
-  input {
+  input,
+  textarea {
     @apply dark:bg-indigo-900 dark:placeholder:text-slate-400;
 
     &[type="checkbox"],
