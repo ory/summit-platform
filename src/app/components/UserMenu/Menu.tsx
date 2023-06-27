@@ -25,7 +25,7 @@ export const Menu = ({
   popupClassName,
 }: PropsWithChildren<MenuProps>) => {
   const [referenceElement, setReferenceElement] =
-    useState<HTMLDivElement | null>(null)
+    useState<HTMLButtonElement | null>(null)
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(
     null,
   )

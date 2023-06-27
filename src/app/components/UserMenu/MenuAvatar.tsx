@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import classNames from "classnames"
-import { ElementType, forwardRef, ReactElement } from "react"
+import { ElementType, forwardRef, ReactNode } from "react"
 
 // Copied from console v2
 
@@ -23,7 +23,7 @@ export type MenuAvatarProps<C extends ElementType> =
 
 export const MenuAvatar: <C extends ElementType = "div">(
   props: MenuAvatarProps<C>,
-) => ReactElement | null = forwardRef(
+) => ReactNode | null = forwardRef(
   <C extends ElementType = "div">(
     {
       size = "base",
