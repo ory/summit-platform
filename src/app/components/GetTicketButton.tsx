@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { getSession } from "../ory/getSession"
 import { Button } from "./Button"
+import { ButtonWithRedirectTo } from "./ButtonWithRedirectTo"
 import { RightArrow } from "./RightArrow"
 
 type GetTicketButtonProps = {
@@ -24,12 +25,12 @@ export const GetTicketButton = async ({ className }: GetTicketButtonProps) => {
       {getTicketButtonContent}
     </Button>
   ) : (
-    <Button
+    <ButtonWithRedirectTo
       as="a"
       className={className}
-      href={`${process.env.ORY_CONSOLE_URL}/login?redirect_to=https://google.com`}
+      href={`${process.env.ORY_CONSOLE_URL}/login`}
     >
       {getTicketButtonContent}
-    </Button>
+    </ButtonWithRedirectTo>
   )
 }
