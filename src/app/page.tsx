@@ -1,4 +1,5 @@
 import classNames from "classnames"
+import { AnimatedMountains } from "./components/AnimatedMountains"
 import { Banner } from "./components/Banner"
 import { Container } from "./components/Container"
 import { Content } from "./components/Content"
@@ -16,8 +17,9 @@ export default async function Page() {
         "flex flex-1 flex-col items-center justify-end p-6 sm:p-12 md:justify-start md:py-24 lg:p-24",
       )}
     >
-      <Container className="w-full max-w-[1344px]">
-        <Wrapper>
+      <AnimatedMountains />
+      <Container className="w-full max-w-[1344px] flex-1">
+        <Wrapper className="xl:max-h-600px xl:max-h-[648px]">
           <Content className="col-span-full max-w-[420px]">
             <Banner>Speak at ory/summit-23</Banner>
             <div className="flex flex-col gap-4 md:gap-6">
