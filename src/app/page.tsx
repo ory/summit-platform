@@ -19,7 +19,7 @@ export default async function Page() {
       <Container className="w-full max-w-[1344px]">
         <Wrapper>
           <Content className="col-span-full max-w-[420px]">
-            <Banner>Speak at ory/summit23</Banner>
+            <Banner>Speak at ory/summit-23</Banner>
             <div className="flex flex-col gap-4 md:gap-6">
               <h1 className="text-4xl font-medium uppercase leading-tight">
                 Ory Summit
