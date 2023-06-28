@@ -41,7 +41,7 @@ export const MenuAvatar: <C extends ElementType = "div">(
       <Component
         tabIndex={0}
         className={classNames(
-          "inline-flex items-center justify-center rounded-full bg-indigo-500 ring-1 ring-white ",
+          "inline-flex items-center justify-center rounded-full bg-indigo-500 font-normal ring-1 ring-white ",
           as === "button" &&
             "hover:bg-indigo-400 focus:bg-indigo-500 focus:outline focus:outline-1 focus:outline-offset-1 focus:outline-cyan-300",
           avatarSize[size],

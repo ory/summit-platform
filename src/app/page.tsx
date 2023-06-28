@@ -19,7 +19,7 @@ export default async function Page() {
     >
       <AnimatedMountains />
       <Container className="w-full max-w-[1344px] flex-1">
-        <Wrapper className="xl:max-h-600px xl:max-h-[648px]">
+        <Wrapper className="xl:max-h-600px max-xl:items-start max-md:items-end xl:max-h-[648px]">
           <Content className="col-span-full max-w-[420px]">
             <Banner>Speak at ory/summit-23</Banner>
             <div className="flex flex-col gap-4 md:gap-6">

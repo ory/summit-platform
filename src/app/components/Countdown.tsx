@@ -41,7 +41,7 @@ const Countdown = ({ className, targetDate }: CountdownProps) => {
   return (
     <div
       className={classNames(
-        "flex max-w-max items-center text-4xl leading-tight",
+        "flex max-w-max items-center text-4xl font-normal leading-tight",
         className,
       )}
     >
