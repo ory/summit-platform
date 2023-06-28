@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
+import Script from "next/script"
 import { useEffect } from "react"
 import "./HubspotRegistrationForm.scss"
 
@@ -45,12 +46,12 @@ export const HubspotRegistrationForm = ({
   return (
     <>
       <div id={registrationFormId} className={className} />
-      <script
+      <Script
         charSet="utf-8"
         type="text/javascript"
         src="https://js-eu1.hsforms.net/forms/embed/v2.js"
-        defer
-      ></script>
+        strategy="afterInteractive"
+      ></Script>
     </>
   )
 }
