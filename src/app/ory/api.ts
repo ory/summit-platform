@@ -1,4 +1,5 @@
 import { FrontendApi, Configuration, ProjectApi } from "@ory/client"
+import "server-only"
 
 export const frontendApi = new FrontendApi(
   new Configuration({

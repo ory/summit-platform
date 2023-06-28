@@ -1,6 +1,7 @@
 // Copyright © 2023 Ory Corp
 // SPDX-License-Identifier: Apache-2.0
 import { Subscription, SubscriptionCurrentIntervalEnum } from "@ory/client"
+import "server-only"
 
 export enum Plan {
   Dev = "Dev@0",

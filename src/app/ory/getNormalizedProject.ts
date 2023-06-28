@@ -1,5 +1,6 @@
 import { NormalizedProject } from "@ory/client"
 import { headers } from "next/headers"
+import "server-only"
 import { getCurrentProjectId } from "./getCurrentProjectId"
 
 export const getNormalizedProject = async (): Promise<

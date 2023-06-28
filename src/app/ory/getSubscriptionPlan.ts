@@ -1,5 +1,6 @@
 import { Subscription } from "@ory/client"
 import { headers } from "next/headers"
+import "server-only"
 import { getPlanFromSubscription, Plan } from "./SubscriptionPlan"
 import { getNormalizedProject } from "./getNormalizedProject"
 

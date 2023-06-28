@@ -1,4 +1,5 @@
 import { headers } from "next/headers"
+import "server-only"
 import { frontendApi as oryFrontendApi } from "./api"
 
 export const getSession = async () => {

@@ -1,4 +1,5 @@
 import { headers } from "next/headers"
+import "server-only"
 import { oryProjectApi } from "./api"
 
 export const getCurrentProjectId = async () => {

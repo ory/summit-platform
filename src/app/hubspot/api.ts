@@ -1,4 +1,5 @@
 import { Client } from "@hubspot/api-client"
+import "server-only"
 import { getSession } from "../ory/getSession"
 import { HubspotLegacyProfile } from "./hubspotModels"
 
@@ -69,8 +70,8 @@ export const getRegistrationData = async () => {
       },
       next: {
         // Enable caching only for a single page being built
-        revalidate: 1
-      }
+        revalidate: 1,
+      },
     },
   )
 
