@@ -1,10 +1,18 @@
 import classNames from "classnames"
+import { redirect } from "next/navigation"
 import { Container } from "../components/Container"
 import { dividerStyles } from "../components/DividerStyles"
 import { Wrapper } from "../components/Wrapper"
+import { getIsRegistered } from "../hubspot/api"
 import { HubspotRegistrationForm } from "./HubspotRegistrationForm"
 
-export default function RegistrationPage() {
+export default async function RegistrationPage() {
+  const isRegistered = await getIsRegistered()
+
+  if (isRegistered) {
+    redirect("/see-you-soon")
+  }
+
   return (
     <main
       className={classNames(

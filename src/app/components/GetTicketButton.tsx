@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { getIsRegistered } from "../hubspot/api"
 import { getSession } from "../ory/getSession"
 import { Button } from "./Button"
 import { ButtonWithRedirectTo } from "./ButtonWithRedirectTo"
@@ -10,6 +11,11 @@ type GetTicketButtonProps = {
 
 export const GetTicketButton = async ({ className }: GetTicketButtonProps) => {
   const session = await getSession()
+  const isRegistered = await getIsRegistered()
+
+  if (isRegistered) {
+    return null
+  }
 
   const getTicketButtonContent = (
     <>
