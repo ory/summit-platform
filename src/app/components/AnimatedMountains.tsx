@@ -32,6 +32,7 @@ export const AnimatedMountains = () => {
       : "https://prod.spline.design/u35vYWZpi4Z0ei5Y/scene.splinecode"
 
   return (
+    // Trigger redeploy
     <>
       <Spline
         scene={scene}
