@@ -1,13 +1,15 @@
+"use client"
+
+import { useIsRegistered } from "@/hooks/useRegistration"
 import classNames from "classnames"
 import { redirect } from "next/navigation"
 import { Container } from "../components/Container"
 import { dividerStyles } from "../components/DividerStyles"
 import { Wrapper } from "../components/Wrapper"
-import { getIsRegistered } from "../hubspot/api"
 import { HubspotRegistrationForm } from "./HubspotRegistrationForm"
 
-export default async function RegistrationPage() {
-  const isRegistered = await getIsRegistered()
+export default function RegistrationPage() {
+  const { data: isRegistered } = useIsRegistered()
 
   if (isRegistered) {
     redirect("/see-you-soon")
