@@ -1,8 +1,11 @@
-'use client'
+"use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 
-export const useMatchesMediaQuery = (query: string, defaultValue = false): boolean => {
+export const useMatchesMediaQuery = (
+  query: string,
+  defaultValue = false,
+): boolean => {
   const [matches, setMatches] = useState<boolean>(defaultValue)
 
   useEffect(() => {
