@@ -36,7 +36,7 @@ export const BackgroundMountains = () => {
         height={1080}
         src={src}
         alt=""
-        loading="lazy"
+        loading="eager"
         quality={80}
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />

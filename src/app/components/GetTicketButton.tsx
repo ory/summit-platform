@@ -37,8 +37,8 @@ export const GetTicketButton = ({ className }: GetTicketButtonProps) => {
       {getTicketButtonContent}
     </Button>
   ) : (
-    <a className={className} href={loginUrl}>
+    <Button as={"a"} className={className} href={loginUrl}>
       {getTicketButtonContent}
-    </a>
+    </Button>
   )
 }
