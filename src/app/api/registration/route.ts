@@ -19,5 +19,9 @@ export const GET = async (request: Request) => {
   const { hubspotContactId, ...userFacingRegistrationData } =
     internalRegistrationData
 
-  return NextResponse.json(userFacingRegistrationData)
+  return NextResponse.json(userFacingRegistrationData, {
+    headers: {
+      'Cache-Control': 'public, s-maxage=86400'
+    }
+  })
 }
