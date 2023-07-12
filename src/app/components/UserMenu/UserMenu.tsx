@@ -1,7 +1,10 @@
+"use client"
+
 import { getNextPlanName, Plan } from "@/app/ory/SubscriptionPlan"
 import { getCurrentProjectId } from "@/app/ory/getCurrentProjectId"
 import { getSubscriptionPlan } from "@/app/ory/getSubscriptionPlan"
 import classNames from "classnames"
+import useSWR from "swr"
 import { ArrowRight } from "tabler-icons-react"
 import { getSession } from "../../ory/getSession"
 import { Menu } from "./Menu"
@@ -15,15 +18,14 @@ type UserMenuProps = {
   openingButtonClassName?: string
 }
 
-export default async function UserMenu({
-  openingButtonClassName,
-}: UserMenuProps) {
-  const [session, projectId, plan] = await Promise.all([
-    getSession(),
-    getCurrentProjectId(),
-    getSubscriptionPlan(),
-  ])
-  const nextPlanName = getNextPlanName(plan)
+export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
+  const { data: session } = useSWR("session", getSession)
+
+  // const [projectId, plan] = await Promise.all([
+  //   getCurrentProjectId(),
+  //   getSubscriptionPlan(),
+  // ])
+  // const nextPlanName = getNextPlanName(plan)
 
   if (!session) {
     return undefined
@@ -49,31 +51,34 @@ export default async function UserMenu({
       <MenuItem icon={"ExternalLink"} href={process.env.ORY_WEB_URL}>
         Ory Homepage
       </MenuItem>
-      <MenuItem icon={"LayoutDashboard"} href={process.env.ORY_CONSOLE_URL}>
+      <MenuItem
+        icon={"LayoutDashboard"}
+        href={process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}
+      >
         Console
       </MenuItem>
-      {projectId && (
+      {/* {projectId && (
         <MenuItem
           icon={"UserPlus"}
-          href={`${process.env.ORY_CONSOLE_URL}/projects/${projectId}/settings`}
+          href={`${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/projects/${projectId}/settings`}
         >
           Add Collaborators
         </MenuItem>
-      )}
+      )} */}
       <MenuItem
         icon={"Adjustments"}
-        href={`${process.env.ORY_CONSOLE_URL}/settings`}
+        href={`${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/settings`}
       >
         Account settings
       </MenuItem>
       <MenuDivider />
-      {nextPlanName && projectId && (
+      {/* {nextPlanName && projectId && (
         <>
           <MenuButtonItem
             href={
               plan === Plan.Scale
                 ? `${process.env.ORY_WEB_URL}/contact/`
-                : `${process.env.ORY_CONSOLE_URL}/projects/${projectId}/billing`
+                : `${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/projects/${projectId}/billing`
             }
           >
             <span>Upgrade to {nextPlanName}</span>
@@ -81,11 +86,11 @@ export default async function UserMenu({
           </MenuButtonItem>
           <MenuDivider />
         </>
-      )}
+      )} */}
       <MenuItem
         icon={"Logout"}
         type="danger"
-        href={`${process.env.ORY_CONSOLE_URL}/logout?return_to=https://summit.console.ory:8080`}
+        href={`${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/logout?return_to=https://summit.console.ory:8080`}
       >
         Logout
       </MenuItem>
