@@ -1,9 +1,8 @@
 import { FrontendApi, Configuration, ProjectApi } from "@ory/client"
-import "server-only"
 
 export const frontendApi = new FrontendApi(
   new Configuration({
-    basePath: process.env.ORY_PROJECTS_URL,
+    basePath: process.env.NEXT_PUBLIC_ORY_PROJECTS_URL,
     baseOptions: {
       withCredentials: true,
     },

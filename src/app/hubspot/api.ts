@@ -1,6 +1,5 @@
 import { Client } from "@hubspot/api-client"
 import "server-only"
-import { getSession } from "../ory/getSession"
 import { HubspotLegacyProfile } from "./hubspotModels"
 
 export const hubspotClient = new Client({
@@ -52,10 +51,7 @@ const hubspotLegacyProfileToSummitData = (
   return undefined
 }
 
-export const getRegistrationData = async () => {
-  const session = await getSession()
-  const email: string = session?.identity.traits.email
-
+export const getRegistrationData = async (email: string) => {
   if (!email) {
     return undefined
   }
@@ -85,6 +81,6 @@ export const getRegistrationData = async () => {
   return registrationData
 }
 
-export const getIsRegistered = async () => {
-  return (await getRegistrationData()) !== undefined
+export const getIsRegistered = async (email: string) => {
+  return (await getRegistrationData(email)) !== undefined
 }

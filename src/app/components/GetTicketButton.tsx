@@ -1,6 +1,8 @@
+"use client"
+
+import { useIsRegistered } from "@/hooks/useRegistration"
+import { useSession } from "@/hooks/useSession"
 import Link from "next/link"
-import { getIsRegistered } from "../hubspot/api"
-import { getSession } from "../ory/getSession"
 import { Button } from "./Button"
 import { ButtonWithRedirectTo } from "./ButtonWithRedirectTo"
 import { RightArrow } from "./RightArrow"
@@ -9,9 +11,9 @@ type GetTicketButtonProps = {
   className?: string
 }
 
-export const GetTicketButton = async ({ className }: GetTicketButtonProps) => {
-  const session = await getSession()
-  const isRegistered = await getIsRegistered()
+export const GetTicketButton = ({ className }: GetTicketButtonProps) => {
+  const { data: session } = useSession()
+  const { data: isRegistered } = useIsRegistered()
 
   if (isRegistered) {
     return null
@@ -34,7 +36,7 @@ export const GetTicketButton = async ({ className }: GetTicketButtonProps) => {
     <ButtonWithRedirectTo
       as="a"
       className={className}
-      href={`${process.env.ORY_CONSOLE_URL}/login`}
+      href={`${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/login`}
     >
       {getTicketButtonContent}
     </ButtonWithRedirectTo>
