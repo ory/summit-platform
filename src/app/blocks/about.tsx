@@ -4,17 +4,13 @@ import { Content } from "../components/Content"
 import { Overline } from "../components/Overline"
 import { Wrapper } from "../components/Wrapper"
 
-type ReasonCardProps = {
+type InfoCardProps = {
   statValue: string
   statTitle: string
   statDescription: string
 }
 
-const ReasonCard = ({
-  statValue,
-  statTitle,
-  statDescription,
-}: ReasonCardProps) => (
+const InfoCard = ({ statValue, statTitle, statDescription }: InfoCardProps) => (
   <div className="flex flex-col gap-1 bg-rose-100 p-6 dark:bg-indigo-900">
     <em className="text-4xl font-bold not-italic leading-normal text-blue-500 dark:text-rose-500">
       {statValue}
@@ -50,27 +46,31 @@ export const About = () => {
           </div>
         </Content>
       </Wrapper>
-      <div className="col-span-full grid grid-cols-1 gap-8 sm:grid-cols-2 xl:col-span-1">
-        <ReasonCard
-          statValue="10+"
-          statTitle="Keynotes & product roadmap sessions"
-          statDescription="Hear the latest product news from HashiCorp executives and experts."
-        />
-        <ReasonCard
-          statValue="10+"
-          statTitle="Keynotes & product roadmap sessions"
-          statDescription="Hear the latest product news from HashiCorp executives and experts."
-        />
-        <ReasonCard
-          statValue="10+"
-          statTitle="Keynotes & product roadmap sessions"
-          statDescription="Hear the latest product news from HashiCorp executives and experts."
-        />
-        <ReasonCard
-          statValue="10+"
-          statTitle="Keynotes & product roadmap sessions"
-          statDescription="Hear the latest product news from HashiCorp executives and experts."
-        />
+      <div className="col-span-full flex gap-8 xl:col-span-1">
+        <div className="flex flex-1 flex-col gap-8">
+          <InfoCard
+            statValue="10+"
+            statTitle="Keynotes & product roadmap sessions"
+            statDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iste quo doloremque provident quasi labore debitis, ut tenetur sapiente, voluptas praesentium odio earum cupiditate. Natus asperiores laborum hic libero consectetur."
+          />
+          <InfoCard
+            statValue="10+"
+            statTitle="Keynotes & product roadmap sessions"
+            statDescription="Hear the latest product news from HashiCorp executives and experts."
+          />
+        </div>
+        <div className="flex flex-1 flex-col gap-8">
+          <InfoCard
+            statValue="10+"
+            statTitle="Keynotes & product roadmap sessions"
+            statDescription="Hear the latest product news from HashiCorp executives and experts."
+          />
+          <InfoCard
+            statValue="10+"
+            statTitle="Keynotes & product roadmap sessions"
+            statDescription="Hear the latest product news from HashiCorp executives and experts."
+          />
+        </div>
       </div>
     </Container>
   )
