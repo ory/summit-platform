@@ -1,15 +1,11 @@
 "use client"
 
-import { getNextPlanName, Plan } from "@/app/ory/SubscriptionPlan"
-import { getCurrentProjectId } from "@/app/ory/getCurrentProjectId"
-import { getSubscriptionPlan } from "@/app/ory/getSubscriptionPlan"
+import { useWithRedirect } from "@/hooks/useWithRedirect"
 import classNames from "classnames"
 import useSWR from "swr"
-import { ArrowRight } from "tabler-icons-react"
 import { getSession } from "../../ory/getSession"
 import { Menu } from "./Menu"
 import { MenuAvatar } from "./MenuAvatar"
-import { MenuButtonItem } from "./MenuButtonItem"
 import { MenuDivider } from "./MenuDivider"
 import { MenuItem } from "./MenuItem"
 import { MenuUser } from "./MenuUser"
@@ -20,6 +16,9 @@ type UserMenuProps = {
 
 export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
   const { data: session } = useSWR("session", getSession)
+  const logoutUrl = useWithRedirect(
+    `${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/logout`,
+  )
 
   // const [projectId, plan] = await Promise.all([
   //   getCurrentProjectId(),
@@ -39,7 +38,6 @@ export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
     .map((s) => s[0].toUpperCase())
     .join("")
   const email = session.identity.traits.email ?? "unknown"
-  // const logout = useLogout()
 
   return (
     <Menu
@@ -87,11 +85,7 @@ export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
           <MenuDivider />
         </>
       )} */}
-      <MenuItem
-        icon={"Logout"}
-        type="danger"
-        href={`${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/logout?return_to=https://summit.console.ory:8080`}
-      >
+      <MenuItem icon={"Logout"} type="danger" href={logoutUrl}>
         Logout
       </MenuItem>
     </Menu>

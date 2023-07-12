@@ -2,9 +2,9 @@
 
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useSession } from "@/hooks/useSession"
+import { useWithRedirect } from "@/hooks/useWithRedirect"
 import Link from "next/link"
 import { Button } from "./Button"
-import { ButtonWithRedirectTo } from "./ButtonWithRedirectTo"
 import { RightArrow } from "./RightArrow"
 
 type GetTicketButtonProps = {
@@ -14,6 +14,10 @@ type GetTicketButtonProps = {
 export const GetTicketButton = ({ className }: GetTicketButtonProps) => {
   const { data: session } = useSession()
   const { data: isRegistered } = useIsRegistered()
+  const loginUrl = useWithRedirect(
+    `${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/login`,
+    "redirectTo",
+  )
 
   if (isRegistered) {
     return null
@@ -33,12 +37,8 @@ export const GetTicketButton = ({ className }: GetTicketButtonProps) => {
       {getTicketButtonContent}
     </Button>
   ) : (
-    <ButtonWithRedirectTo
-      as="a"
-      className={className}
-      href={`${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/login`}
-    >
+    <a className={className} href={loginUrl}>
       {getTicketButtonContent}
-    </ButtonWithRedirectTo>
+    </a>
   )
 }
