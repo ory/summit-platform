@@ -1,5 +1,6 @@
 import classNames from "classnames"
 import { About } from "./blocks/about"
+import { BackgroundMountains } from "./components/BackgroundMountains"
 import { Banner } from "./components/Banner"
 import { Container } from "./components/Container"
 import { Content } from "./components/Content"
@@ -25,6 +26,7 @@ export default async function Page() {
           "min-h-[calc(100vh-68px-1px)]",
         )}
       >
+        <BackgroundMountains />
         <Container className="min-h-full w-full max-w-[1344px] flex-1">
           <Wrapper className="xl:max-h-600px max-xl:items-start max-md:items-end xl:max-h-[648px]">
             <Content className="col-span-full max-w-[420px]">
