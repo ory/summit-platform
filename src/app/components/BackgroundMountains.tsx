@@ -6,7 +6,7 @@ import {
 } from "@/hooks/useMatchesMediaQuery"
 import Image from "next/image"
 import { PropsWithChildren, useEffect, useState } from "react"
-import { match } from "ts-pattern"
+import { match, P } from "ts-pattern"
 
 const ClientSideOnly = ({ children }: PropsWithChildren) => {
   const [isInClient, setIsInClient] = useState(false)
@@ -23,10 +23,10 @@ export const BackgroundMountains = () => {
   const prefersReducedMotion = usePrefersReducedMotion()
 
   const src = match([theme, prefersReducedMotion])
-    .with(["light", false], () => "/background-light-animated.webp")
-    .with(["dark", false], () => "/background-dark-animated.webp")
-    .with(["light", true], () => "/background-light-still.webp")
-    .with(["dark", true], () => "/background-dark-still.webp")
+    // .with(["light", false], () => "/background-light-animated.webp")
+    // .with(["dark", false], () => "/background-dark-animated.webp")
+    .with(["light", P._], () => "/background-light-still.webp")
+    .with(["dark", P._], () => "/background-dark-still.webp")
     .exhaustive()
 
   return (
