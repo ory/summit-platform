@@ -32,13 +32,12 @@ export const About = () => {
             <Overline>summit-23</Overline>
             <div className="flex flex-col gap-4 md:gap-6">
               <h2 className="text-3xl font-medium uppercase leading-tight md:text-4xl">
-                Why attend?
+              Securing the digital world
               </h2>
               <p className="text-base font-normal leading-tight">
-                Join engineers, devops teams, thought leaders, and executives
+                Join engineers, security experts, thought leaders, open source maintainers, and executives
                 from around the world for a of day of conversations on the
-                future Ory. Register now for your pass to hands-on learning,
-                certifications, product news, and more.
+                future of Ory. Register now for your pass to presentations, interactive sessions, technical deep dives, product news, and more.
               </p>
             </div>
             {/* <ArrowButton href="https://ory.sh">FAQ</ArrowButton> */}
@@ -48,26 +47,27 @@ export const About = () => {
       <div className="col-span-full flex gap-8 xl:col-span-1">
         <div className="flex flex-1 flex-col gap-8">
           <InfoCard
-            statValue="10+"
-            statTitle="Keynotes & product roadmap sessions"
-            statDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iste quo doloremque provident quasi labore debitis, ut tenetur sapiente, voluptas praesentium odio earum cupiditate. Natus asperiores laborum hic libero consectetur."
+            statValue="🤓"
+            statTitle="How can I attend?"
+            statDescription="You can attend Ory Summit 2023 in person at the Ory Headquarters in Munich, Germany or watch the sessions online at summit.ory.sh."
           />
-          <InfoCard
-            statValue="10+"
-            statTitle="Keynotes & product roadmap sessions"
-            statDescription="Hear the latest product news from HashiCorp executives and experts."
-          />
+      <InfoCard
+            statValue="🙌"
+            statTitle="When and where?"
+            statDescription="Ory Summit 2023 will take place at the House of Communication in Munich's trendy Werksviertel on 9 November 2023."
+          />  
         </div>
         <div className="flex flex-1 flex-col gap-8">
+            <InfoCard
+          statValue="🤩"
+          statTitle="Why attend Ory Summit?"
+          statDescription="At Ory Summit 2023, you can enhance your understanding of Ory Network security best practices, gain insights from tech pioneers and industry leaders, improve your skills through engaging tech talks by experts, expand your professional network, and have a great time with the Ory team."
+        />
           <InfoCard
-            statValue="10+"
-            statTitle="Keynotes & product roadmap sessions"
-            statDescription="Hear the latest product news from HashiCorp executives and experts."
-          />
-          <InfoCard
-            statValue="10+"
-            statTitle="Keynotes & product roadmap sessions"
-            statDescription="Hear the latest product news from HashiCorp executives and experts."
+            statValue="🫶"
+            statTitle="What can I expect?"
+            statDescription="
+            The themes at Ory Summit 2023 include leveraging Ory Network for top-notch application security, integrating with third-party solutions and ID migration, enhancing software team productivity, and concept talks covering various topics such as authorization, authentication, open source, compliance, and of course security."
           />
         </div>
       </div>
