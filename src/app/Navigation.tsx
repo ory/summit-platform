@@ -24,7 +24,7 @@ export const Navigation = async () => {
                   <Logo />
                 </a>
                 <span className="text-blue-500 dark:text-rose-500">/</span>
-                <Link href="/">summit-23-test</Link>
+                <Link href="/">summit-23</Link>
               </div>
             </div>
             <div className="flex-1"></div>

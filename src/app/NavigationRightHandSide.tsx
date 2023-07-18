@@ -37,7 +37,7 @@ export const NavigationRightHandSide = () => {
       ) : (
         <div className="text-base font-normal leading-tight">
           <span className="">9th Nov, 23</span>
-          <span className="hidden md:inline-block">
+          <span className="hidden sm:inline-block">
             <span className="text-blue-500 dark:text-rose-500">
               &nbsp;-&nbsp;
             </span>

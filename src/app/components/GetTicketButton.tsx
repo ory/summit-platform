@@ -23,10 +23,11 @@ export const GetTicketButton = ({ className, id }: GetTicketButtonProps) => {
 
   const getTicketButtonContent = (
     <>
-      <RightArrow label="Get your ticket" className="md:hidden" />
+      <RightArrow className="md:hidden" />
       <span className="hidden text-sm leading-none md:inline-block">
         Get your ticket
       </span>
+      <span className="text-sm leading-none md:hidden">Ticket</span>
     </>
   )
 
