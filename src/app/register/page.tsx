@@ -11,11 +11,11 @@ import { Wrapper } from "../components/Wrapper"
 import { HubspotRegistrationForm } from "./HubspotRegistrationForm"
 
 export default function RegistrationPage() {
-  const { data: session } = useSession()
+  const { data: session, isLoading: sessionIsLoading } = useSession()
   const { data: isRegistered } = useIsRegistered()
   const loginUrl = useLoginUrl()
 
-  if (!session?.active) {
+  if (!sessionIsLoading && !session?.active) {
     redirect(loginUrl)
   }
 
