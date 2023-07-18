@@ -18,7 +18,11 @@ export const Footer = () => (
           </span>
           <ul className="flex flex-col gap-4 md:flex-row">
             <li>
-              <LinkItem as="a" href="">
+              <LinkItem
+                as="a"
+                target="_blank"
+                href="https://docs.google.com/forms/d/11UeyJE59djiaA21Llsa9jxe2Z3VCRdJU0saa6cNixyc/edit"
+              >
                 Call for Papers
               </LinkItem>
             </li>

@@ -1,14 +1,19 @@
 import classNames from "classnames"
-import { PropsWithChildren } from "react"
+import Link from "next/link"
+import { ComponentProps, PropsWithChildren } from "react"
 import { RightArrow } from "./RightArrow"
 
-type BannerProps = { className?: string }
+type BannerProps = { className?: string; href: string } & ComponentProps<
+  typeof Link
+>
 
 export const Banner = ({
   className,
   children,
+  ...linkProps
 }: PropsWithChildren<BannerProps>) => (
-  <div
+  <Link
+    {...linkProps}
     className={classNames(
       "flex max-w-max items-center border border-current px-3 py-1 text-sm",
       className,
@@ -22,5 +27,5 @@ export const Banner = ({
       />
     </div>
     {children}
-  </div>
+  </Link>
 )

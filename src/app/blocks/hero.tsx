@@ -19,7 +19,12 @@ export function Hero() {
       <Container className="min-h-full w-full max-w-[1344px] flex-1">
         <Wrapper className="xl:max-h-600px max-xl:items-start max-md:items-end xl:max-h-[648px]">
           <Content className="col-span-full max-w-[420px]">
-            <Banner>Speak at ory/summit-23</Banner>
+            <Banner
+              target="_blank"
+              href="https://docs.google.com/forms/d/11UeyJE59djiaA21Llsa9jxe2Z3VCRdJU0saa6cNixyc/edit"
+            >
+              Speak at ory/summit-23
+            </Banner>
             <div className="flex flex-col gap-4 md:gap-6">
               <h1 className="text-4xl font-medium uppercase leading-tight">
                 {!isRegistered ? (
