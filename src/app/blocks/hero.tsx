@@ -9,6 +9,7 @@ import Countdown from "../components/Countdown"
 import { GetTicketButton } from "../components/GetTicketButton"
 import { Wrapper } from "../components/Wrapper"
 import { summitStartingDate } from "../startingDate"
+import { HERO_GET_TICKET_BUTTON_ID } from "./heroGetTicketButtonId"
 
 export function Hero() {
   const { data: isRegistered } = useIsRegistered()
@@ -42,7 +43,10 @@ export function Hero() {
                 discuss the most important internet economy trends.
               </p>
             </div>
-            <GetTicketButton className="self-start" />
+            <GetTicketButton
+              className="self-start"
+              id={HERO_GET_TICKET_BUTTON_ID}
+            />
             <Countdown targetDate={summitStartingDate} />
           </Content>
         </Wrapper>

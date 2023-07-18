@@ -43,7 +43,10 @@ export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
       button={<MenuAvatar text={initials} as="button" />}
     >
       <MenuUser name={name} initials={initials} email={email} />
-      <MenuItem icon={"ExternalLink"} href={process.env.ORY_WEB_URL}>
+      <MenuItem
+        icon={"ExternalLink"}
+        href={process.env.NEXT_PUBLIC_ORY_WEB_URL}
+      >
         Ory Homepage
       </MenuItem>
       <MenuItem
@@ -72,7 +75,7 @@ export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
           <MenuButtonItem
             href={
               plan === Plan.Scale
-                ? `${process.env.ORY_WEB_URL}/contact/`
+                ? `${process.env.NEXT_PUBLIC_ORY_WEB_URL}/contact/`
                 : `${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/projects/${projectId}/billing`
             }
           >

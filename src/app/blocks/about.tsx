@@ -10,7 +10,7 @@ type InfoCardProps = {
 }
 
 const InfoCard = ({ statValue, statTitle, statDescription }: InfoCardProps) => (
-  <div className="flex flex-col gap-1 bg-rose-100 p-6 dark:bg-indigo-900">
+  <div className="flex flex-col gap-1 bg-gray-50  p-6 dark:bg-indigo-900">
     <em className="text-4xl font-bold not-italic leading-normal text-blue-500 dark:text-rose-500">
       {statValue}
     </em>

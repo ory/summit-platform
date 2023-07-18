@@ -9,9 +9,10 @@ import { RightArrow } from "./RightArrow"
 
 type GetTicketButtonProps = {
   className?: string
+  id?: string
 }
 
-export const GetTicketButton = ({ className }: GetTicketButtonProps) => {
+export const GetTicketButton = ({ className, id }: GetTicketButtonProps) => {
   const { data: session } = useSession()
   const { data: isRegistered } = useIsRegistered()
   const loginUrl = useLoginUrl()
@@ -30,11 +31,11 @@ export const GetTicketButton = ({ className }: GetTicketButtonProps) => {
   )
 
   return session ? (
-    <Button as={Link} href="/register" className={className}>
+    <Button as={Link} id={id} href="/register" className={className}>
       {getTicketButtonContent}
     </Button>
   ) : (
-    <Button as={"a"} className={className} href={loginUrl}>
+    <Button as={"a"} id={id} className={className} href={loginUrl}>
       {getTicketButtonContent}
     </Button>
   )
