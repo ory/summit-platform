@@ -42,7 +42,7 @@ export const About = () => {
                 certifications, product news, and more.
               </p>
             </div>
-            <ArrowButton href="https://ory.sh">FAQ</ArrowButton>
+            {/* <ArrowButton href="https://ory.sh">FAQ</ArrowButton> */}
           </div>
         </Content>
       </Wrapper>
