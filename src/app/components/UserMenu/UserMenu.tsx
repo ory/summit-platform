@@ -1,10 +1,8 @@
 "use client"
 
 import { useLogoutUrl } from "@/hooks/useLogoutUrl"
-import { useWithRedirect } from "@/hooks/useWithRedirect"
+import { useSession } from "@/hooks/useSession"
 import classNames from "classnames"
-import useSWR from "swr"
-import { getSession } from "../../ory/getSession"
 import { Menu } from "./Menu"
 import { MenuAvatar } from "./MenuAvatar"
 import { MenuDivider } from "./MenuDivider"
@@ -16,7 +14,7 @@ type UserMenuProps = {
 }
 
 export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
-  const { data: session } = useSWR("session", getSession)
+  const { data: session } = useSession()
   const { data: logoutUrl } = useLogoutUrl()
 
   // const [projectId, plan] = await Promise.all([

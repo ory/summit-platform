@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation'
 import { useComputeInClient } from './useComputeInClient'
-import useSWR from 'swr'
+import useSWRImmutable from 'swr/immutable'
 import { getLogoutUrl } from '@/app/ory/getLogoutUrl'
 import { useSession } from './useSession'
 
@@ -11,5 +11,5 @@ export const useLogoutUrl = () => {
   ])
   const { data: session } = useSession()
 
-  return useSWR(`logout-${currentUrl}-${session}`, () => getLogoutUrl(currentUrl))
+  return useSWRImmutable(session?.active ? `logout-${currentUrl}-${session.id}` : null, () => getLogoutUrl(currentUrl))
 }

@@ -1,4 +1,4 @@
-import useSWR from "swr"
+import useSWRImmutable from "swr/immutable"
 import { useSession } from "./useSession"
 
 export const useRegistration = () => {
@@ -13,8 +13,16 @@ export const useRegistration = () => {
     isLoading: isRegistrationLoading,
     data: registration,
     error: registrationError,
-  } = useSWR(email ? `registration-${email}` : null, () =>
-    fetch(`/api/registration?email=${email}`).then((res) => res.json()),
+  } = useSWRImmutable(email ? `registration-${email}` : null, () =>
+    fetch(`/api/registration?email=${email}qweradsf`).then((res) => res.json()),
+    {
+      onErrorRetry: (error) => {
+        // Never retry on 404 as this is a valid result that will only change after user action
+        if (error.status === 404) {
+          return
+        }
+      }
+    }
   )
 
   return {
