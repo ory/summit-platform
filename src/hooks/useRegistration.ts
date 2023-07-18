@@ -13,6 +13,7 @@ export const useRegistration = () => {
     isLoading: isRegistrationLoading,
     data: registration,
     error: registrationError,
+    mutate: mutateRegistration
   } = useSWRImmutable(email ? `registration-${email}` : null, () =>
     fetch(`/api/registration?email=${email}`).then((res) => res.json()),
     {
@@ -28,6 +29,7 @@ export const useRegistration = () => {
   return {
     isLoading: isSessionLoading || isRegistrationLoading,
     data: registration,
+    mutate: mutateRegistration,
   }
 }
 

@@ -1,8 +1,9 @@
 "use client"
 
+import { useRegistration } from "@/hooks/useRegistration"
 import { useRouter } from "next/navigation"
 import Script from "next/script"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import "./HubspotRegistrationForm.scss"
 
 const registrationFormId = "ory-summit-hubspot-registration-form"
@@ -36,11 +37,18 @@ export const HubspotRegistrationForm = ({
   className,
 }: HubspotRegistrationFormProps) => {
   const router = useRouter()
+  const { mutate: mutateRegistration } = useRegistration()
+
+  const mutateRegistrationRef = useRef(mutateRegistration)
+  mutateRegistrationRef.current = mutateRegistration
+
   useEffect(() => {
     const afterSubmitted = () => {
+      mutateRegistrationRef.current()
       router.push("see-you-soon")
     }
     createForm(afterSubmitted)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router])
 
   return (
