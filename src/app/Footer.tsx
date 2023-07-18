@@ -32,7 +32,29 @@ export const Footer = () => (
               </LinkItem>
             </li>
             <li>
-              <LinkItem as="a" href="">
+              <LinkItem
+                as="a"
+                href="https://www.linkedin.com/company/ory-corp/"
+                target="_blank"
+              >
+                LinkedIn
+              </LinkItem>
+            </li>
+            <li>
+              <LinkItem
+                as="a"
+                href="https://twitter.com/OryCorp"
+                target="_blank"
+              >
+                Twitter
+              </LinkItem>
+            </li>
+            <li>
+              <LinkItem
+                as="a"
+                href="https://www.ory.sh/contact/"
+                target="_blank"
+              >
                 Contact
               </LinkItem>
             </li>
@@ -42,8 +64,21 @@ export const Footer = () => (
               </LinkItem>
             </li>
             <li>
-              <LinkItem as="a" href="">
+              <LinkItem
+                as="a"
+                href="https://www.ory.sh/code-of-conduct/"
+                target="_blank"
+              >
                 Conduct
+              </LinkItem>
+            </li>
+            <li>
+              <LinkItem
+                as="a"
+                href="https://www.ory.sh/code-of-conduct/"
+                target="_blank"
+              >
+                TOS
               </LinkItem>
             </li>
           </ul>
