@@ -23,7 +23,7 @@ export const GetTicketButton = ({ className, id }: GetTicketButtonProps) => {
 
   const getTicketButtonContent = (
     <>
-      <RightArrow className="md:hidden" />
+      <RightArrow label="Get your ticket" className="md:hidden" />
       <span className="hidden text-sm leading-none md:inline-block">
         Get your ticket
       </span>
