@@ -16,7 +16,7 @@ export const GetTicketButton = ({ className }: GetTicketButtonProps) => {
   const { data: isRegistered } = useIsRegistered()
   const loginUrl = useWithRedirect(
     `${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/login`,
-    "redirectTo",
+    "returnTo",
   )
 
   if (isRegistered) {
