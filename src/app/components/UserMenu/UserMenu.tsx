@@ -1,5 +1,6 @@
 "use client"
 
+import { useLogoutUrl } from "@/hooks/useLogoutUrl"
 import { useWithRedirect } from "@/hooks/useWithRedirect"
 import classNames from "classnames"
 import useSWR from "swr"
@@ -16,9 +17,7 @@ type UserMenuProps = {
 
 export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
   const { data: session } = useSWR("session", getSession)
-  const logoutUrl = useWithRedirect(
-    `${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/logout`,
-  )
+  const { data: logoutUrl } = useLogoutUrl()
 
   // const [projectId, plan] = await Promise.all([
   //   getCurrentProjectId(),
