@@ -1,8 +1,8 @@
 "use client"
 
+import { useLoginUrl } from "@/hooks/useLoginUrl"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useSession } from "@/hooks/useSession"
-import { useWithRedirect } from "@/hooks/useWithRedirect"
 import Link from "next/link"
 import { Button } from "./Button"
 import { RightArrow } from "./RightArrow"
@@ -14,10 +14,7 @@ type GetTicketButtonProps = {
 export const GetTicketButton = ({ className }: GetTicketButtonProps) => {
   const { data: session } = useSession()
   const { data: isRegistered } = useIsRegistered()
-  const loginUrl = useWithRedirect(
-    `${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/login`,
-    "returnTo",
-  )
+  const loginUrl = useLoginUrl()
 
   if (isRegistered) {
     return null

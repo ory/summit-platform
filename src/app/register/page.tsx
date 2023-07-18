@@ -1,6 +1,8 @@
 "use client"
 
+import { useLoginUrl } from "@/hooks/useLoginUrl"
 import { useIsRegistered } from "@/hooks/useRegistration"
+import { useSession } from "@/hooks/useSession"
 import classNames from "classnames"
 import { redirect } from "next/navigation"
 import { Container } from "../components/Container"
@@ -9,7 +11,13 @@ import { Wrapper } from "../components/Wrapper"
 import { HubspotRegistrationForm } from "./HubspotRegistrationForm"
 
 export default function RegistrationPage() {
+  const { data: session } = useSession()
   const { data: isRegistered } = useIsRegistered()
+  const loginUrl = useLoginUrl()
+
+  if (!session?.active) {
+    redirect(loginUrl)
+  }
 
   if (isRegistered) {
     redirect("/see-you-soon")
