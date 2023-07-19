@@ -23,8 +23,12 @@ export const Navigation = async () => {
                 <a href={process.env.NEXT_PUBLIC_ORY_WEB_URL} target="_blank">
                   <Logo />
                 </a>
-                <span className="text-blue-500 dark:text-rose-500">/</span>
-                <Link href="/">summit-23</Link>
+                <span className="text-blue-500 dark:text-rose-500 max-sm:hidden">
+                  /
+                </span>
+                <Link href="/" className="max-sm:hidden">
+                  summit-23
+                </Link>
               </div>
             </div>
             <div className="flex-1"></div>
