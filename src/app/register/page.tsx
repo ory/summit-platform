@@ -3,7 +3,7 @@
 import { useLoginUrl } from "@/hooks/useLoginUrl"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useSession } from "@/hooks/useSession"
-import { cn } from '@/utils/cn'
+import { cn } from "@/utils/cn"
 import { redirect } from "next/navigation"
 import { Container } from "../components/Container"
 import { dividerStyles } from "../components/DividerStyles"

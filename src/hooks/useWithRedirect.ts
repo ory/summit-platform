@@ -1,7 +1,11 @@
-import { usePathname } from 'next/navigation'
-import { useComputeInClient } from './useComputeInClient'
+import { usePathname } from "next/navigation"
+import { useComputeInClient } from "./useComputeInClient"
 
-export const useWithRedirect = (href: string, redirectUrlKey = 'return_to', targetUrl?: string) => {
+export const useWithRedirect = (
+  href: string,
+  redirectUrlKey = "return_to",
+  targetUrl?: string,
+) => {
   const path = usePathname()
   const currentUrl = useComputeInClient(() => window?.location?.href, "", [
     path,

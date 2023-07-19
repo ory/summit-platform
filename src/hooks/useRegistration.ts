@@ -13,17 +13,18 @@ export const useRegistration = () => {
     isLoading: isRegistrationLoading,
     data: registration,
     error: registrationError,
-    mutate: mutateRegistration
-  } = useSWRImmutable(email ? `registration-${email}` : null, () =>
-    fetch(`/api/registration?email=${email}`).then((res) => res.json()),
+    mutate: mutateRegistration,
+  } = useSWRImmutable(
+    email ? `registration-${email}` : null,
+    () => fetch(`/api/registration?email=${email}`).then((res) => res.json()),
     {
       onErrorRetry: (error) => {
         // Never retry on 404 as this is a valid result that will only change after user action
         if (error.status === 404) {
           return
         }
-      }
-    }
+      },
+    },
   )
 
   return {

@@ -1,4 +1,4 @@
-import { cn } from '@/utils/cn'
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 import { PropsWithChildren } from "react"
 
@@ -15,10 +15,7 @@ export const LinkItem = <C extends "a" | typeof Link = "a">({
   const Component: any = as ?? "a"
   return (
     <Component
-      className={cn(
-        "hover:text-blue-500 dark:hover:text-rose-500",
-        className,
-      )}
+      className={cn("hover:text-blue-500 dark:hover:text-rose-500", className)}
       {...rest}
     >
       {children}

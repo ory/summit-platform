@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from '@/utils/cn'
+import { cn } from "@/utils/cn"
 import { Menu as HMenu } from "@headlessui/react"
 import { Fragment, PropsWithChildren } from "react"
 

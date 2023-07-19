@@ -21,7 +21,7 @@ export const GET = async (request: Request) => {
 
   return NextResponse.json(userFacingRegistrationData, {
     headers: {
-      'Cache-Control': 'public, s-maxage=86400'
-    }
+      "Cache-Control": "public, s-maxage=86400",
+    },
   })
 }

@@ -9,10 +9,14 @@ export const hubspotClient = new Client({
 const FIRST_TIME_ATTENDEE = "first_time_attendee_" // yes or no
 const ATTENDANCE_LOCATION = "i_m_attending" // in-person or online
 const REGISTRATION_TYPE = "registering_as" // individual or business
-const INTERESTED_IN = "what_information_or_questions_would_you_like_covered_at_this_summit_" // free text input
+const INTERESTED_IN =
+  "what_information_or_questions_would_you_like_covered_at_this_summit_" // free text input
 
 const hubspotSummitProperties = [
-  FIRST_TIME_ATTENDEE, ATTENDANCE_LOCATION, REGISTRATION_TYPE, INTERESTED_IN
+  FIRST_TIME_ATTENDEE,
+  ATTENDANCE_LOCATION,
+  REGISTRATION_TYPE,
+  INTERESTED_IN,
 ] as const
 
 enum AttencanceLocation {
@@ -41,7 +45,8 @@ const hubspotLegacyProfileToSummitData = (
     return {
       hubspotContactId: profile.vid,
       firstTimeAttendee: props[FIRST_TIME_ATTENDEE]?.value === "Yes",
-      attendanceLocation: props[ATTENDANCE_LOCATION]?.value as AttencanceLocation,
+      attendanceLocation: props[ATTENDANCE_LOCATION]
+        ?.value as AttencanceLocation,
       registeringAs: props[REGISTRATION_TYPE]?.value as RegistrationType,
       interestedIn: props[INTERESTED_IN]?.value,
     }

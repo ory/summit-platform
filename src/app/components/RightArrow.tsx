@@ -9,7 +9,7 @@ export const RightArrow = ({
   className,
   width = 17,
   height = 14,
-  label
+  label,
 }: RightArrowProps) => (
   <svg
     width={width}

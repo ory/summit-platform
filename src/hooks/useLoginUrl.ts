@@ -1,5 +1,5 @@
-import { useComputeInClient } from './useComputeInClient'
-import { useWithRedirect } from './useWithRedirect'
+import { useComputeInClient } from "./useComputeInClient"
+import { useWithRedirect } from "./useWithRedirect"
 
 export const useLoginUrl = () => {
   const targetUrl = useComputeInClient(

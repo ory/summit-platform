@@ -6,7 +6,7 @@ import {
 } from "@/hooks/useMatchesMediaQuery"
 import Image from "next/image"
 import { PropsWithChildren, useEffect, useState } from "react"
-import { match, P } from "ts-pattern"
+import { P, match } from "ts-pattern"
 
 const ClientSideOnly = ({ children }: PropsWithChildren) => {
   const [isInClient, setIsInClient] = useState(false)
