@@ -12,11 +12,11 @@ export const Footer = () => (
   >
     <Container className="mx-auto max-w-[1344px]">
       <Wrapper>
-        <div className="col-span-full flex flex-col justify-between gap-8 md:flex-row">
+        <div className="col-span-full flex flex-col justify-between gap-8 lg:flex-row">
           <span>
             <span className="text-blue-500 dark:text-rose-500">©</span> 2023 Ory
           </span>
-          <ul className="flex flex-col gap-4 md:flex-row">
+          <ul className="flex flex-col gap-4 lg:flex-row">
             <li>
               <LinkItem
                 as="a"

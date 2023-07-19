@@ -10,7 +10,7 @@ type InfoCardProps = {
 }
 
 const InfoCard = ({ statValue, statTitle, statDescription }: InfoCardProps) => (
-  <div className="flex flex-col gap-1 bg-gray-50  p-6 dark:bg-indigo-900">
+  <div className="flex flex-col gap-1 bg-gray-100  p-6 dark:bg-indigo-900">
     <em className="text-4xl font-bold not-italic leading-normal text-blue-500 dark:text-rose-500">
       {statValue}
     </em>
@@ -46,7 +46,7 @@ export const About = () => {
           </div>
         </Content>
       </Wrapper>
-      <div className="col-span-full flex gap-8 xl:col-span-1">
+      <div className="col-span-full flex flex-col gap-8 sm:flex-row xl:col-span-1">
         <div className="flex flex-1 flex-col gap-8">
           <InfoCard
             statValue="📍"
