@@ -6,11 +6,13 @@ export const hubspotClient = new Client({
   accessToken: process.env.HUBSPOT_API_KEY,
 })
 
+const FIRST_TIME_ATTENDEE = "first_time_attendee_" // yes or no
+const ATTENDANCE_LOCATION = "i_m_attending" // in-person or online
+const REGISTRATION_TYPE = "registering_as" // individual or business
+const INTERESTED_IN = "what_information_or_questions_would_you_like_covered_at_this_summit_" // free text input
+
 const hubspotSummitProperties = [
-  "first_time_attendee_",
-  "i_m_attending",
-  "registering_as",
-  "what_information_or_questions_would_you_like_covered_at_this_summit_",
+  FIRST_TIME_ATTENDEE, ATTENDANCE_LOCATION, REGISTRATION_TYPE, INTERESTED_IN
 ] as const
 
 enum AttencanceLocation {
@@ -38,13 +40,10 @@ const hubspotLegacyProfileToSummitData = (
     const props = profile.properties
     return {
       hubspotContactId: profile.vid,
-      firstTimeAttendee: props["first_time_attendee_"]?.value === "Yes",
-      attendanceLocation: props["i_m_attending"]?.value as AttencanceLocation,
-      registeringAs: props["registering_as"]?.value as RegistrationType,
-      interestedIn:
-        props[
-          "what_information_or_questions_would_you_like_covered_at_this_summit_"
-        ]?.value,
+      firstTimeAttendee: props[FIRST_TIME_ATTENDEE]?.value === "Yes",
+      attendanceLocation: props[ATTENDANCE_LOCATION]?.value as AttencanceLocation,
+      registeringAs: props[REGISTRATION_TYPE]?.value as RegistrationType,
+      interestedIn: props[INTERESTED_IN]?.value,
     }
   }
 
