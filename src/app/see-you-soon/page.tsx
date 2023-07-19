@@ -32,10 +32,15 @@ export default function SeeYouSoon() {
                 to share on the Ory Summit 2023.
               </p>
               <p>
-                In the meantime, you can browse through the event highlights and
-                talks from{" "}
-                <a href="https://www.ory.sh/summit/2022/">Ory Summit 2022</a> to
-                get a taste of what{"'"}s in store for our upcoming conference.
+                In the meantime, you can browse through the{" "}
+                <a
+                  className="text-blue-500 dark:text-rose-500"
+                  href="https://www.ory.sh/summit/2022/"
+                >
+                  event highlights and talks from Ory Summit 2022
+                </a>{" "}
+                to get a taste of what{"'"}s in store for our upcoming
+                conference.
               </p>
             </div>
             <Button className="self-start" as={Link} href="/">
