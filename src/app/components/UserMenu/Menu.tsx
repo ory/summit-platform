@@ -1,8 +1,6 @@
 "use client"
 
 import { cn } from "@/utils/cn"
-
-/* eslint-disable react/display-name */
 import { Menu as HMenu } from "@headlessui/react"
 import { PropsWithChildren, ReactNode, useState } from "react"
 import { usePopper } from "react-popper"
