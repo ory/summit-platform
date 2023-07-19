@@ -1,3 +1,7 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+const colors = require("tailwindcss/colors")
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -9,10 +13,18 @@ module.exports = {
   ],
   purge: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: ["Jetbrains Mono", ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
-};
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("@headlessui/tailwindcss"),
+  ],
+}
