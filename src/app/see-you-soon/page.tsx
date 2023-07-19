@@ -33,7 +33,11 @@ export default function SeeYouSoon() {
               </p>
               <p>
                 In the meantime, you can browse through the{" "}
-                <a className="underline" href="https://www.ory.sh/summit/2022/">
+                <a
+                  className="underline"
+                  target="_blank"
+                  href="https://www.ory.sh/summit/2022/"
+                >
                   event highlights and talks from Ory Summit 2022
                 </a>{" "}
                 to get a taste of what{"'"}s in store for our upcoming
