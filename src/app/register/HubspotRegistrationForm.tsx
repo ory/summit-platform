@@ -43,12 +43,15 @@ const createForm = (afterSubmitted: () => void, session: Session) => {
 
           if (emailInput) {
             emailInput.value = email
+            emailInput.dispatchEvent(new Event("input"))
           }
           if (firstNameInput) {
             firstNameInput.value = firstNames
+            firstNameInput.dispatchEvent(new Event("input"))
           }
           if (lastNameInput) {
             lastNameInput.value = lastName ?? ""
+            lastNameInput.dispatchEvent(new Event("input"))
           }
         },
       })
