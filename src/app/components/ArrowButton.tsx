@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import { PropsWithChildren } from "react"
 import { RightArrow } from "./RightArrow"
 
@@ -13,7 +13,7 @@ export const ArrowButton = ({
   href,
 }: PropsWithChildren<ArrowButtonProps>) => (
   <a
-    className={classNames(
+    className={cn(
       "flex max-w-max items-center bg-blue-500 p-1 text-sm leading-normal text-white dark:bg-rose-500 dark:text-gray-900",
       className,
     )}

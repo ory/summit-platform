@@ -1,11 +1,11 @@
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import { Container } from "./components/Container"
 import { LinkItem } from "./components/LinkItem"
 import { Wrapper } from "./components/Wrapper"
 
 export const Footer = () => (
   <footer
-    className={classNames(
+    className={cn(
       "w-full border-t border-blue-500 px-6 py-2 text-sm leading-none dark:border-rose-500",
       "sm:px-12 xl:px-24",
     )}

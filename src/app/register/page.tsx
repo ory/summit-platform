@@ -3,7 +3,7 @@
 import { useLoginUrl } from "@/hooks/useLoginUrl"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useSession } from "@/hooks/useSession"
-import classNames from "classnames"
+import { cn } from '@/utils/cn'
 import { redirect } from "next/navigation"
 import { Container } from "../components/Container"
 import { dividerStyles } from "../components/DividerStyles"
@@ -25,7 +25,7 @@ export default function RegistrationPage() {
 
   return (
     <main
-      className={classNames(
+      className={cn(
         dividerStyles,
         "flex flex-1 flex-col items-center justify-end p-6 sm:p-12 md:justify-start md:py-24 lg:p-24",
       )}

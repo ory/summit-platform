@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import { About } from "./blocks/about"
 import { Hero } from "./blocks/hero"
 import { dividerStyles } from "./components/DividerStyles"
@@ -7,9 +7,9 @@ export default function Page() {
   const paddingClassnames = "p-6 sm:p-12 md:py-24 lg:p-24"
 
   return (
-    <main className={classNames("flex flex-1 flex-col")}>
+    <main className={cn("flex flex-1 flex-col")}>
       <div
-        className={classNames(
+        className={cn(
           dividerStyles,
           paddingClassnames,
           "flex flex-col items-center justify-end md:justify-start",
@@ -19,11 +19,7 @@ export default function Page() {
         <Hero />
       </div>
       <div
-        className={classNames(
-          paddingClassnames,
-          dividerStyles,
-          "flex justify-center",
-        )}
+        className={cn(paddingClassnames, dividerStyles, "flex justify-center")}
       >
         <About />
       </div>

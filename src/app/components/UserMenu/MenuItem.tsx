@@ -1,7 +1,7 @@
 "use client"
 
+import { cn } from '@/utils/cn'
 import { Menu as HMenu } from "@headlessui/react"
-import classNames from "classnames"
 import { Fragment, PropsWithChildren } from "react"
 import {
   Adjustments,
@@ -75,7 +75,7 @@ export const MenuItem = ({
       <HMenu.Item as={Fragment}>
         <a
           href={href}
-          className={classNames(
+          className={cn(
             "group flex cursor-pointer items-center justify-between px-4 py-2 ui-active:bg-gray-50 ui-disabled:cursor-not-allowed ui-disabled:text-gray-300",
             textColor[type],
             className,
@@ -92,7 +92,7 @@ export const MenuItem = ({
     <HMenu.Item
       as={Component}
       disabled={disabled}
-      className={classNames(
+      className={cn(
         "group flex w-full cursor-pointer items-center justify-between px-4 py-2 ui-active:bg-gray-50 ui-disabled:cursor-not-allowed ui-disabled:text-gray-300",
         textColor[type],
         className,

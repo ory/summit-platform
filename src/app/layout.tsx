@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import { JetBrains_Mono } from "next/font/google"
 import { Footer } from "./Footer"
 import { Navigation } from "./Navigation"
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={classNames(
+        className={cn(
           "bg-white font-light text-gray-900 accent-blue-500 dark:bg-indigo-950 dark:text-white dark:accent-rose-500",
           jetbrainsMono.className,
         )}

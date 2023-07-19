@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 import { Button } from "../components/Button"
 import { Container } from "../components/Container"
@@ -11,7 +11,7 @@ import { summitStartingDate } from "../startingDate"
 export default function SeeYouSoon() {
   return (
     <main
-      className={classNames(
+      className={cn(
         dividerStyles,
         "flex flex-1 flex-col items-center justify-end p-6 sm:p-12 md:justify-start md:py-24 lg:p-24",
       )}

@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import Link from "next/link"
 import { NavigationRightHandSide } from "./NavigationRightHandSide"
 import { Container } from "./components/Container"
@@ -9,7 +9,7 @@ import { Wrapper } from "./components/Wrapper"
 export const Navigation = async () => {
   return (
     <nav
-      className={classNames(
+      className={cn(
         "sticky top-0 z-10 flex items-stretch justify-center bg-white px-6 text-lg leading-tight dark:bg-indigo-950",
         "sm:px-12 xl:px-24",
         dividerStyles,

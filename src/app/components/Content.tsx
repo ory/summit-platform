@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import { PropsWithChildren } from "react"
 
 type ContentProps = {
@@ -9,5 +9,5 @@ export const Content = ({
   className,
   children,
 }: PropsWithChildren<ContentProps>) => (
-  <div className={classNames(className, "flex flex-col gap-8")}>{children}</div>
+  <div className={cn(className, "flex flex-col gap-8")}>{children}</div>
 )

@@ -2,7 +2,7 @@
 
 import { useLogoutUrl } from "@/hooks/useLogoutUrl"
 import { useSession } from "@/hooks/useSession"
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import { Menu } from "./Menu"
 import { MenuAvatar } from "./MenuAvatar"
 import { MenuDivider } from "./MenuDivider"
@@ -38,7 +38,7 @@ export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
 
   return (
     <Menu
-      openingButtonClassName={classNames("font-sans", openingButtonClassName)}
+      openingButtonClassName={cn("font-sans", openingButtonClassName)}
       popupClassName="font-sans"
       button={<MenuAvatar text={initials} as="button" />}
     >

@@ -1,8 +1,9 @@
 "use client"
 
+import { cn } from "@/utils/cn"
+
 /* eslint-disable react/display-name */
 import { Menu as HMenu } from "@headlessui/react"
-import classNames from "classnames"
 import { PropsWithChildren, ReactNode, useState } from "react"
 import { usePopper } from "react-popper"
 
@@ -52,7 +53,7 @@ export const Menu = ({
       </HMenu.Button>
       <HMenu.Items
         ref={setPopperElement}
-        className={classNames(
+        className={cn(
           "absolute z-40 min-w-[300px] overflow-hidden rounded-lg bg-white py-2 shadow-xl ring-1 ring-gray-200",
           popupClassName,
         )}

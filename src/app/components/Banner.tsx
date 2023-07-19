@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import { cn } from '@/utils/cn'
 import Link from "next/link"
 import { ComponentProps, PropsWithChildren } from "react"
 import { RightArrow } from "./RightArrow"
@@ -14,7 +14,7 @@ export const Banner = ({
 }: PropsWithChildren<BannerProps>) => (
   <Link
     {...linkProps}
-    className={classNames(
+    className={cn(
       "flex max-w-max items-center border border-current px-3 py-1 text-sm",
       className,
     )}

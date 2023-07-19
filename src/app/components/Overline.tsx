@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import { PropsWithChildren } from "react"
 
 type OverlineProps = {
@@ -11,7 +11,7 @@ export const Overline = ({
 }: PropsWithChildren<OverlineProps>) => {
   return (
     <div
-      className={classNames(
+      className={cn(
         "flex py-1 text-sm font-medium leading-none text-blue-500 dark:text-rose-500",
         className,
       )}

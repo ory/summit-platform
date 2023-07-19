@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import classNames from "classnames"
+import { cn } from "@/utils/cn"
 import { ElementType, forwardRef, ReactNode } from "react"
 
 // Copied from console v2
@@ -40,7 +40,7 @@ export const MenuAvatar: <C extends ElementType = "div">(
     return (
       <Component
         tabIndex={0}
-        className={classNames(
+        className={cn(
           "inline-flex items-center justify-center rounded-full bg-indigo-500 font-normal ring-1 ring-white ",
           as === "button" &&
             "hover:bg-indigo-400 focus:bg-indigo-500 focus:outline focus:outline-1 focus:outline-offset-1 focus:outline-cyan-300",

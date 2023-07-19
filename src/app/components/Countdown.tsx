@@ -1,6 +1,6 @@
 "use client"
 
-import classNames from "classnames"
+import { cn } from '@/utils/cn'
 import dynamic from "next/dynamic"
 import { useEffect, useState } from "react"
 import { RightArrow } from "./RightArrow"
@@ -40,7 +40,7 @@ const Countdown = ({ className, targetDate }: CountdownProps) => {
 
   return (
     <div
-      className={classNames(
+      className={cn(
         "flex max-w-max items-center text-4xl font-normal leading-tight",
         className,
       )}
