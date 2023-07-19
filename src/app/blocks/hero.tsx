@@ -39,8 +39,9 @@ export function Hero() {
                 )}
               </h1>
               <p>
-                The Ory Summit brings together business leaders and builders to
-                discuss the most important internet economy trends.
+                A one-day conference around open source end-to-end security and
+                zero trust solutions for the Ory Community - customers,
+                developers, maintainers, and partners.
               </p>
             </div>
             <GetTicketButton
