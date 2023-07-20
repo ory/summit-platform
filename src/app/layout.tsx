@@ -2,9 +2,8 @@ import { cn } from "@/utils/cn"
 import { JetBrains_Mono } from "next/font/google"
 import { Footer } from "./Footer"
 import { Navigation } from "./Navigation"
+import "./matomo"
 import "./globals.css"
-import './matomo'
-
 
 export const metadata = {
   title: {
@@ -16,7 +15,6 @@ export const metadata = {
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 })
-
 
 export default function RootLayout({ children }) {
   return (

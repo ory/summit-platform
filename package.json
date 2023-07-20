@@ -40,6 +40,7 @@
     "react-youtube": "10.1.0",
     "sass": "1.64.0",
     "server-only": "0.0.1",
+    "sharp": "0.32.3",
     "swr": "2.2.0",
     "tabler-icons-react": "1.56.0",
     "tailwind-merge": "1.14.0",

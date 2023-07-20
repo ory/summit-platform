@@ -12,7 +12,7 @@ export default function Page() {
         className={cn(
           dividerStyles,
           paddingClassnames,
-          "flex flex-col items-center justify-end md:justify-start",
+          "relative flex flex-col items-center justify-end md:justify-start",
           "min-h-[calc(100vh-68px-1px)]",
         )}
       >
