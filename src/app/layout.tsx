@@ -3,16 +3,20 @@ import { JetBrains_Mono } from "next/font/google"
 import { Footer } from "./Footer"
 import { Navigation } from "./Navigation"
 import "./globals.css"
+import './matomo'
+
 
 export const metadata = {
   title: {
     default: "Ory Summit 2023",
+    template: "%s | Ory Summit 2023",
   },
 }
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 })
+
 
 export default function RootLayout({ children }) {
   return (
