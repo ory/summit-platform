@@ -23,8 +23,8 @@ export const BackgroundMountains = () => {
   const prefersReducedMotion = usePrefersReducedMotion()
 
   const src = match([theme, prefersReducedMotion])
-    // .with(["light", false], () => "/background-light-animated.webp")
-    // .with(["dark", false], () => "/background-dark-animated.webp")
+    .with(["light", false], () => "/background-light-animated.webp")
+    .with(["dark", false], () => "/background-dark-animated.webp")
     .with(["light", P._], () => "/background-light-still.webp")
     .with(["dark", P._], () => "/background-dark-still.webp")
     .exhaustive()
