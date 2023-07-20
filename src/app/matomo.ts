@@ -10,5 +10,6 @@ if (MATOMO_URL && MATOMO_SITE_ID) {
     url: MATOMO_URL,
     siteId: MATOMO_SITE_ID,
     phpTrackerFile: "np.php",
+    jsTrackerFile: "js/np.min.js",
   })
 }
