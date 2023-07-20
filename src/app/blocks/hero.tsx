@@ -1,7 +1,7 @@
 "use client"
 
 import { useIsRegistered } from "@/hooks/useRegistration"
-import { BackgroundMountains } from "../components/BackgroundMountains"
+import BackgroundMountains from "../components/BackgroundMountains"
 import { Banner } from "../components/Banner"
 import { Container } from "../components/Container"
 import { Content } from "../components/Content"

@@ -6,6 +6,7 @@ import {
   usePreferredColorScheme,
   usePrefersReducedMotion,
 } from "@/hooks/useMatchesMediaQuery"
+import dynamic from "next/dynamic"
 import { PropsWithChildren, useEffect, useState } from "react"
 import { P, match } from "ts-pattern"
 
@@ -42,7 +43,7 @@ export const BackgroundMountains = () => {
           muted
           loop
           preload="none"
-          className="h-full select-none object-cover"
+          className="h-full w-full select-none object-cover"
           poster={placeholder.src}
         >
           <source src={src} type="video/mp4" />
@@ -51,3 +52,7 @@ export const BackgroundMountains = () => {
     </ClientSideOnly>
   )
 }
+
+export default dynamic(() => Promise.resolve(BackgroundMountains), {
+  ssr: false,
+})
