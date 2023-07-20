@@ -35,9 +35,10 @@ export const BackgroundMountains = () => {
 
   return (
     <ClientSideOnly>
-      <div className="absolute inset-0 h-full w-full object-fill">
+      <div className="absolute -inset-y-[1px] inset-x-0 h-full w-full overflow-hidden object-fill">
         <video
           autoPlay
+          playsInline
           muted
           loop
           preload="none"
