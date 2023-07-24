@@ -10,6 +10,8 @@ export const metadata = {
     default: "Ory Summit 2023",
     template: "%s | Ory Summit 2023",
   },
+  description:
+    "A one-day conference around open source end-to-end security and zero trust solutions for the Ory Community - customers, developers, maintainers, and partners.",
 }
 
 const jetbrainsMono = JetBrains_Mono({
