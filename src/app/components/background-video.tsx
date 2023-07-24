@@ -44,6 +44,7 @@ export const BackgroundVideo = () => {
           loop
           preload="none"
           className="h-full w-full select-none object-cover"
+          role="presentation"
           poster={placeholder.src}
         >
           <source src={src} type="video/webm" />

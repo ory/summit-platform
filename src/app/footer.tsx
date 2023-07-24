@@ -59,7 +59,12 @@ export const Footer = () => (
               </LinkItem>
             </li>
             <li>
-              <LinkItem as="a" href="https://ory.sh/privacy" target="_blank">
+              <LinkItem
+                as="a"
+                href="https://ory.sh/privacy"
+                target="_blank"
+                aria-label="Ory Homepage"
+              >
                 Privacy
               </LinkItem>
             </li>
