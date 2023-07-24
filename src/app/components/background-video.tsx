@@ -20,7 +20,7 @@ const ClientSideOnly = ({ children }: PropsWithChildren) => {
   return isInClient ? <>{children}</> : null
 }
 
-export const BackgroundMountains = () => {
+export const BackgroundVideo = () => {
   const theme = usePreferredColorScheme()
   const prefersReducedMotion = usePrefersReducedMotion()
 
@@ -30,8 +30,8 @@ export const BackgroundMountains = () => {
     .exhaustive()
 
   const src = match([theme, prefersReducedMotion])
-    .with(["light", P._], () => "/background-light-animated.mp4")
-    .with(["dark", P._], () => "/background-dark-animated.mp4")
+    .with(["light", P._], () => "/background-light-animated.webm")
+    .with(["dark", P._], () => "/background-dark-animated.webm")
     .exhaustive()
 
   return (
@@ -46,13 +46,13 @@ export const BackgroundMountains = () => {
           className="h-full w-full select-none object-cover"
           poster={placeholder.src}
         >
-          <source src={src} type="video/mp4" />
+          <source src={src} type="video/webm" />
         </video>
       </div>
     </ClientSideOnly>
   )
 }
 
-export default dynamic(() => Promise.resolve(BackgroundMountains), {
+export default dynamic(() => Promise.resolve(BackgroundVideo), {
   ssr: false,
 })
