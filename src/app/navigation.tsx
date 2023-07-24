@@ -20,7 +20,11 @@ export const Navigation = async () => {
           <div className="col-span-full flex">
             <div>
               <div className="flex items-center gap-[2px]">
-                <a href={process.env.NEXT_PUBLIC_ORY_WEB_URL} target="_blank">
+                <a
+                  href={process.env.NEXT_PUBLIC_ORY_WEB_URL}
+                  target="_blank"
+                  aria-label="Ory Homepage"
+                >
                   <Logo />
                 </a>
                 <span className="text-blue-500 dark:text-rose-500 max-sm:hidden">
