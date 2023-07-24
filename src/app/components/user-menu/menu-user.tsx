@@ -2,7 +2,7 @@
 
 import { Menu as HMenu } from "@headlessui/react"
 import { Fragment } from "react"
-import { MenuAvatar } from "./MenuAvatar"
+import { MenuAvatar } from "./menu-avatar"
 
 type MenuUserProps = {
   name: string

@@ -1,7 +1,7 @@
-import { Container } from "../components/Container"
-import { Content } from "../components/Content"
-import { Overline } from "../components/Overline"
-import { Wrapper } from "../components/Wrapper"
+import { Container } from "../components/container"
+import { Content } from "../components/content"
+import { Overline } from "../components/overline"
+import { Wrapper } from "../components/wrapper"
 
 type InfoCardProps = {
   statValue: string

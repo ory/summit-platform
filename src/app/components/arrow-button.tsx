@@ -1,6 +1,6 @@
 import { cn } from "@/utils/cn"
 import { PropsWithChildren } from "react"
-import { RightArrow } from "./RightArrow"
+import { RightArrow } from "./right-arrow"
 
 type ArrowButtonProps = {
   className?: string

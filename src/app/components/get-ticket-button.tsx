@@ -4,8 +4,8 @@ import { useLoginUrl } from "@/hooks/useLoginUrl"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useSession } from "@/hooks/useSession"
 import Link from "next/link"
-import { Button } from "./Button"
-import { RightArrow } from "./RightArrow"
+import { Button } from "./button"
+import { RightArrow } from "./right-arrow"
 
 type GetTicketButtonProps = {
   className?: string

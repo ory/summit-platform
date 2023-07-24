@@ -3,7 +3,7 @@
 import { cn } from "@/utils/cn"
 import dynamic from "next/dynamic"
 import { useEffect, useState } from "react"
-import { RightArrow } from "./RightArrow"
+import { RightArrow } from "./right-arrow"
 
 type CountdownProps = {
   className?: string

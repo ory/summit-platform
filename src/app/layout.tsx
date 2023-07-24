@@ -1,8 +1,8 @@
 import { cn } from "@/utils/cn"
 import { JetBrains_Mono } from "next/font/google"
-import { Footer } from "./Footer"
-import { Navigation } from "./Navigation"
+import { Footer } from "./footer"
 import "./matomo"
+import { Navigation } from "./navigation"
 import "./globals.css"
 
 export const metadata = {

@@ -1,10 +1,10 @@
 import { cn } from "@/utils/cn"
 import Link from "next/link"
-import { NavigationRightHandSide } from "./NavigationRightHandSide"
-import { Container } from "./components/Container"
-import { dividerStyles } from "./components/DividerStyles"
-import { Logo } from "./components/Logo"
-import { Wrapper } from "./components/Wrapper"
+import { Container } from "./components/container"
+import { dividerStyles } from "./components/dividerStyles"
+import { Logo } from "./components/logo"
+import { Wrapper } from "./components/wrapper"
+import { NavigationRightHandSide } from "./navigation-right"
 
 export const Navigation = async () => {
   return (

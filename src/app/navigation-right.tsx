@@ -1,10 +1,10 @@
 "use client"
 
-import { useIsRegistered, useRegistration } from "@/hooks/useRegistration"
+import { useIsRegistered } from "@/hooks/useRegistration"
 import { useEffect, useRef, useState } from "react"
 import { HERO_GET_TICKET_BUTTON_ID } from "./blocks/heroGetTicketButtonId"
-import { GetTicketButton } from "./components/GetTicketButton"
-import UserMenu from "./components/UserMenu/UserMenu"
+import { GetTicketButton } from "./components/get-ticket-button"
+import UserMenu from "./components/user-menu/user-menu"
 
 export const NavigationRightHandSide = () => {
   const { data: isRegistered } = useIsRegistered()

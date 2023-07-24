@@ -6,7 +6,7 @@ import { Session } from "@ory/client"
 import { useRouter } from "next/navigation"
 import Script from "next/script"
 import { useEffect, useRef, useState } from "react"
-import "./HubspotRegistrationForm.scss"
+import "./hubspot-registration-form.scss"
 
 const registrationFormId = "ory-summit-hubspot-registration-form"
 

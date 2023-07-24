@@ -1,7 +1,7 @@
 import { cn } from "@/utils/cn"
 import Link from "next/link"
 import { ComponentProps, PropsWithChildren } from "react"
-import { RightArrow } from "./RightArrow"
+import { RightArrow } from "./right-arrow"
 
 type BannerProps = { className?: string; href: string } & ComponentProps<
   typeof Link

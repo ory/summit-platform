@@ -1,7 +1,7 @@
 import { cn } from "@/utils/cn"
 import { About } from "./blocks/about"
 import { Hero } from "./blocks/hero"
-import { dividerStyles } from "./components/DividerStyles"
+import { dividerStyles } from "./components/dividerStyles"
 
 export default function Page() {
   const paddingClassnames = "p-6 sm:p-12 md:py-24 lg:p-24"

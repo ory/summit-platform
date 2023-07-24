@@ -3,11 +3,11 @@
 import { useLogoutUrl } from "@/hooks/useLogoutUrl"
 import { useSession } from "@/hooks/useSession"
 import { cn } from "@/utils/cn"
-import { Menu } from "./Menu"
-import { MenuAvatar } from "./MenuAvatar"
-import { MenuDivider } from "./MenuDivider"
-import { MenuItem } from "./MenuItem"
-import { MenuUser } from "./MenuUser"
+import { Menu } from "./menu"
+import { MenuAvatar } from "./menu-avatar"
+import { MenuDivider } from "./menu-divider"
+import { MenuItem } from "./menu-item"
+import { MenuUser } from "./menu-user"
 
 type UserMenuProps = {
   openingButtonClassName?: string
