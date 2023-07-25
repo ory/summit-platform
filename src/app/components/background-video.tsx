@@ -8,7 +8,7 @@ import {
 } from "@/hooks/useMatchesMediaQuery"
 import dynamic from "next/dynamic"
 import { PropsWithChildren, useEffect, useState } from "react"
-import { P, match } from "ts-pattern"
+import { match } from "ts-pattern"
 
 const ClientSideOnly = ({ children }: PropsWithChildren) => {
   const [isInClient, setIsInClient] = useState(false)
@@ -24,14 +24,15 @@ export const BackgroundVideo = () => {
   const theme = usePreferredColorScheme()
   const prefersReducedMotion = usePrefersReducedMotion()
 
-  const placeholder = match([theme, prefersReducedMotion])
-    .with(["light", P._], () => bgLightStill)
-    .with(["dark", P._], () => bgDarkStill)
-    .exhaustive()
-
-  const src = match([theme, prefersReducedMotion])
-    .with(["light", P._], () => "/background-light-animated.webm")
-    .with(["dark", P._], () => "/background-dark-animated.webm")
+  const [placeholder, src] = match(theme)
+    .with(
+      "light",
+      () => [bgLightStill, "/background-light-animated.webm"] as const,
+    )
+    .with(
+      "dark",
+      () => [bgDarkStill, "/background-dark-animated.webm"] as const,
+    )
     .exhaustive()
 
   return (
@@ -47,7 +48,7 @@ export const BackgroundVideo = () => {
           role="presentation"
           poster={placeholder.src}
         >
-          <source src={src} type="video/webm" />
+          {!prefersReducedMotion && <source src={src} type="video/webm" />}
         </video>
       </div>
     </ClientSideOnly>
