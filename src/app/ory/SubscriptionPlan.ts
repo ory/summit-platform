@@ -1,7 +1,6 @@
 // Copyright © 2023 Ory Corp
 // SPDX-License-Identifier: Apache-2.0
 import { Subscription, SubscriptionCurrentIntervalEnum } from "@ory/client"
-import "server-only"
 
 export enum Plan {
   Dev = "Dev@0",
@@ -34,8 +33,8 @@ export const getPlanFromSubscription = (
       sub.current_plan === Plan.Essentials
         ? Plan.Essentials
         : sub.current_plan === Plan.Scale
-        ? Plan.Scale
-        : Plan.Dev,
+          ? Plan.Scale
+          : Plan.Dev,
     isAnnualBilling:
       sub.current_interval === SubscriptionCurrentIntervalEnum.Yearly,
   }

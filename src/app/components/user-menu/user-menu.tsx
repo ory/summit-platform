@@ -1,10 +1,15 @@
 "use client"
 
+import { Plan, getNextPlanName } from "@/app/ory/SubscriptionPlan"
+import { useCurrentProjectId } from "@/hooks/useCurrentProjectId"
 import { useLogoutUrl } from "@/hooks/useLogoutUrl"
 import { useSession } from "@/hooks/useSession"
+import { useSubscriptionPlan } from "@/hooks/useSubscription"
 import { cn } from "@/utils/cn"
+import { ArrowRight } from "tabler-icons-react"
 import { Menu } from "./menu"
 import { MenuAvatar } from "./menu-avatar"
+import { MenuButtonItem } from "./menu-button-item"
 import { MenuDivider } from "./menu-divider"
 import { MenuItem } from "./menu-item"
 import { MenuUser } from "./menu-user"
@@ -16,12 +21,10 @@ type UserMenuProps = {
 export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
   const { data: session } = useSession()
   const { data: logoutUrl } = useLogoutUrl()
+  const { data: projectId } = useCurrentProjectId()
+  const { data: subscriptionPlan } = useSubscriptionPlan()
 
-  // const [projectId, plan] = await Promise.all([
-  //   getCurrentProjectId(),
-  //   getSubscriptionPlan(),
-  // ])
-  // const nextPlanName = getNextPlanName(plan)
+  const nextPlanName = getNextPlanName(subscriptionPlan)
 
   if (!session) {
     return undefined
@@ -55,14 +58,14 @@ export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
       >
         Console
       </MenuItem>
-      {/* {projectId && (
+      {projectId && (
         <MenuItem
           icon={"UserPlus"}
           href={`${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/projects/${projectId}/settings`}
         >
           Add Collaborators
         </MenuItem>
-      )} */}
+      )}
       <MenuItem
         icon={"Adjustments"}
         href={`${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/settings`}
@@ -70,11 +73,11 @@ export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
         Account settings
       </MenuItem>
       <MenuDivider />
-      {/* {nextPlanName && projectId && (
+      {nextPlanName && projectId && (
         <>
           <MenuButtonItem
             href={
-              plan === Plan.Scale
+              subscriptionPlan === Plan.Scale
                 ? `${process.env.NEXT_PUBLIC_ORY_WEB_URL}/contact/`
                 : `${process.env.NEXT_PUBLIC_ORY_CONSOLE_URL}/projects/${projectId}/billing`
             }
@@ -84,7 +87,7 @@ export default function UserMenu({ openingButtonClassName }: UserMenuProps) {
           </MenuButtonItem>
           <MenuDivider />
         </>
-      )} */}
+      )}
       <MenuItem icon={"Logout"} type="danger" href={logoutUrl}>
         Logout
       </MenuItem>

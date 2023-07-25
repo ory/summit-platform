@@ -11,7 +11,7 @@ export const frontendApi = new FrontendApi(
 
 export const oryProjectApi = new ProjectApi(
   new Configuration({
-    basePath: process.env.ORY_API_URL,
+    basePath: process.env.NEXT_PUBLIC_ORY_API_URL,
     baseOptions: {
       withCredentials: true,
     },
