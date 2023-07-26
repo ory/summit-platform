@@ -23,7 +23,7 @@ export const Footer = () => (
                 target="_blank"
                 href="https://docs.google.com/forms/d/11UeyJE59djiaA21Llsa9jxe2Z3VCRdJU0saa6cNixyc/edit"
               >
-                Call for Papers
+                Call for Speakers
               </LinkItem>
             </li>
             <li>
@@ -59,11 +59,7 @@ export const Footer = () => (
               </LinkItem>
             </li>
             <li>
-              <LinkItem
-                as="a"
-                href="https://ory.sh/privacy"
-                target="_blank"
-              >
+              <LinkItem as="a" href="https://ory.sh/privacy" target="_blank">
                 Privacy
               </LinkItem>
             </li>
