@@ -11,14 +11,12 @@ type InfoCardProps = {
 
 const InfoCard = ({ statValue, statTitle, statDescription }: InfoCardProps) => (
   <div className="flex flex-col gap-1 bg-gray-100  p-6 dark:bg-indigo-900">
-    <em className="text-4xl font-bold not-italic leading-normal text-blue-500 dark:text-rose-500">
+    <em className="text-4xl font-bold not-italic text-blue-500 dark:text-rose-500">
       {statValue}
     </em>
     <div className="flex flex-col gap-2">
-      <em className="text-base font-bold not-italic leading-tight">
-        {statTitle}
-      </em>
-      <p className="font-normal leading-tight">{statDescription}</p>
+      <em className="text-base font-bold not-italic">{statTitle}</em>
+      <p>{statDescription}</p>
     </div>
   </div>
 )
@@ -34,7 +32,7 @@ export const About = () => {
               <h2 className="text-3xl font-medium uppercase leading-tight md:text-4xl">
                 Securing the digital world
               </h2>
-              <p className="text-base font-normal leading-tight">
+              <p>
                 Join engineers, security experts, thought leaders, open source
                 maintainers, and executives from around the world for a of day
                 of conversations on the future of Ory. Register now for your
