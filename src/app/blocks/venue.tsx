@@ -7,8 +7,8 @@ import Image from "next/image"
 import mapImage from "../../assets/map.webp"
 
 export const Venue = () => (
-  <div className="flex min-h-screen flex-col">
-    <div className="relative aspect-square w-full border-b border-b-blue-500 dark:border-b-rose-500">
+  <div className="grid h-screen grid-rows-2 xl:grid-cols-2 xl:grid-rows-1">
+    <div className="relative w-full border-b border-b-blue-500 dark:border-b-rose-500 xl:col-start-2">
       <div className="h-full w-full mix-blend-darken invert dark:mix-blend-lighten dark:invert-0">
         <Image
           src={mapImage}
@@ -18,13 +18,13 @@ export const Venue = () => (
         <div className="absolute inset-0 bg-blue-500 mix-blend-multiply invert dark:bg-[#F5538D] dark:invert-0"></div>
       </div>
     </div>
-    <div className="flex grow content-end p-6">
+    <div className="flex grow content-end p-6 sm:p-12 md:py-24 lg:p-24 xl:row-start-1">
       <Container className="w-full max-w-[1344px] flex-1">
-        <Wrapper className="content-end">
-          <Content className="col-span-full flex flex-col gap-y-2">
+        <Wrapper className="content-end xl:content-start">
+          <Content className="col-span-full flex flex-col gap-y-2 xl:h-[600px] xl:justify-center 2xl:h-[648px]">
             <Overline href="#venue">location</Overline>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-4xl font-medium uppercase leading-tight">
+            <div className="flex flex-col gap-4 md:gap-6">
+              <h2 className="text-4xl font-medium uppercase leading-tight md:text-5xl md:leading-tight">
                 The venue
               </h2>
               <address className="text-base not-italic leading-tight">
