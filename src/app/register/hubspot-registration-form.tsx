@@ -60,7 +60,7 @@ const createForm = (afterSubmitted: () => void, session: Session) => {
             const input = form.querySelector<HTMLInputElement>(
               `[name="${formName}"]`,
             )
-            if (input) {
+            if (input && value) {
               input.value = value ?? ""
               input.dispatchEvent(new Event("input"))
             }
