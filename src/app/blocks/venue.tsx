@@ -4,15 +4,20 @@ import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
 import { Wrapper } from "@/app/components/wrapper"
 import Image from "next/image"
-import venueLight from "../../assets/venue-light.webp"
+import mapImage from "../../assets/map.webp"
 
 export const Venue = () => (
   <div className="flex min-h-screen flex-col">
-    <Image
-      src={venueLight}
-      alt=""
-      className="aspect-square w-full border-b border-b-blue-500 object-cover object-center"
-    />
+    <div className="relative aspect-square w-full border-b border-b-blue-500 dark:border-b-rose-500">
+      <div className="h-full w-full mix-blend-darken invert dark:mix-blend-lighten dark:invert-0">
+        <Image
+          src={mapImage}
+          alt=""
+          className="h-full w-full bg-black object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-blue-500 mix-blend-multiply invert dark:bg-[#F5538D] dark:invert-0"></div>
+      </div>
+    </div>
     <div className="flex grow content-end p-6">
       <Container className="w-full max-w-[1344px] flex-1">
         <Wrapper className="content-end">
