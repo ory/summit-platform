@@ -46,7 +46,7 @@ export default function Page() {
       >
         <About />
       </div>
-      <div className={cn(dividerStyles)}>
+      <div className={cn(dividerStyles)} id="venue">
         <Venue />
       </div>
     </main>
