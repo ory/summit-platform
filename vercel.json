@@ -16,6 +16,11 @@
       "permanent": false
     },
     {
+      "source": "/speakers",
+      "destination": "/#speakers",
+      "permanent": false
+    },
+    {
       "source": "/stage/main",
       "destination": "/",
       "permanent": false
