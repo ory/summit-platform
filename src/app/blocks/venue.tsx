@@ -15,9 +15,9 @@ export const Venue = () => (
     />
     <div className="flex grow content-end p-6">
       <Container className="w-full max-w-[1344px] flex-1">
-        <Wrapper className="">
-          <Content className="col-span-full flex flex-col content-end gap-y-2">
-            <Overline>location</Overline>
+        <Wrapper className="content-end">
+          <Content className="col-span-full flex flex-col gap-y-2">
+            <Overline href="#venue">location</Overline>
             <div className="flex flex-col gap-4">
               <h2 className="text-4xl font-medium uppercase leading-tight">
                 The venue
