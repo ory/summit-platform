@@ -8,6 +8,14 @@ import mapImage from "../../assets/map.webp"
 
 export const Venue = () => (
   <div className="grid h-screen grid-rows-2 xl:grid-cols-2 xl:grid-rows-1">
+    {/*
+        The image is expected to be white on transparent. In that case, the CSS
+        is able to map the white to any given color.
+        Due to how it works, we need to distinguish between target colors that are
+        lighter than the background and target colors that are darker than the
+        background (they require either mapping to black + target color -> lighten
+        or white + target color -> darken).
+     */}
     <div className="relative w-full border-b border-b-blue-500 dark:border-b-rose-500 xl:col-start-2">
       <div className="h-full w-full mix-blend-darken invert dark:mix-blend-lighten dark:invert-0">
         <Image
@@ -18,6 +26,7 @@ export const Venue = () => (
         <div className="absolute inset-0 bg-blue-500 mix-blend-multiply invert dark:bg-[#F5538D] dark:invert-0"></div>
       </div>
     </div>
+
     <div className="flex grow content-end p-6 sm:p-12 md:py-24 lg:p-24 xl:row-start-1">
       <Container className="w-full max-w-[1344px] flex-1">
         <Wrapper className="content-end xl:content-start">
