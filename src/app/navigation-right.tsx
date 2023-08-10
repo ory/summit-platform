@@ -1,5 +1,6 @@
 "use client"
 
+import { ThemeToggleIcon } from "@/assets/icon/ThemeToggleIcon"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useTheme } from "next-themes"
 import { useCallback, useEffect, useRef, useState } from "react"
@@ -13,6 +14,7 @@ export const NavigationRightHandSide = () => {
   const [isBeneathGetTicketButton, setIsBeneathGetTicketButton] =
     useState(false)
   const { setTheme, theme } = useTheme()
+  const oppositeTheme = theme === "dark" ? "light" : "dark"
 
   useEffect(() => {
     const onScroll = () => {
@@ -33,8 +35,8 @@ export const NavigationRightHandSide = () => {
   }, [])
 
   const toggleTheme = useCallback(() => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }, [setTheme, theme])
+    setTheme(oppositeTheme)
+  }, [oppositeTheme, setTheme])
 
   return (
     <div ref={navRef} className="flex shrink-0 items-center gap-4">
@@ -51,7 +53,9 @@ export const NavigationRightHandSide = () => {
           </span>
         </div>
       )}
-      <button onClick={toggleTheme}>Toggle theme</button>
+      <button onClick={toggleTheme}>
+        <ThemeToggleIcon aria-label={`Switch to ${oppositeTheme} mode`} />
+      </button>
       <UserMenu />
     </div>
   )
