@@ -29,30 +29,42 @@ const createForm = (afterSubmitted: () => void, session: Session) => {
         target: `#${registrationFormId}`,
         onFormSubmitted: afterSubmitted,
         onFormReady: (form: HTMLFormElement) => {
-          const emailInput =
-            form.querySelector<HTMLInputElement>('[name="email"]')
-          const firstNameInput =
-            form.querySelector<HTMLInputElement>('[name="firstname"]')
-          const lastNameInput =
-            form.querySelector<HTMLInputElement>('[name="lastname"]')
           const { email, name }: { email: string; name: string } =
             session.identity.traits
           const names = name.split(" ")
-          const lastName = names.at(-1)
-          const firstNames = names.slice(0, -1).join(" ")
 
-          if (emailInput) {
-            emailInput.value = email
-            emailInput.dispatchEvent(new Event("input"))
-          }
-          if (firstNameInput) {
-            firstNameInput.value = firstNames
-            firstNameInput.dispatchEvent(new Event("input"))
-          }
-          if (lastNameInput) {
-            lastNameInput.value = lastName ?? ""
-            lastNameInput.dispatchEvent(new Event("input"))
-          }
+          const prefillDescriptors = [
+            {
+              formName: "email",
+              value: email,
+            },
+            {
+              formName: "firstname",
+              value: names.slice(0, -1).join(" "),
+            },
+            {
+              formName: "lastname",
+              value: names.at(-1),
+            },
+            {
+              formName: "company",
+              value: session.identity.traits.details?.company,
+            },
+            {
+              formName: "jobtitle",
+              value: session.identity.traits.details?.jobtitle,
+            },
+          ]
+
+          prefillDescriptors.forEach(({ formName, value }) => {
+            const input = form.querySelector<HTMLInputElement>(
+              `[name="${formName}"]`,
+            )
+            if (input && value) {
+              input.value = value ?? ""
+              input.dispatchEvent(new Event("input"))
+            }
+          })
         },
       })
     },
