@@ -1,3 +1,4 @@
+import { Speakers } from "@/app/blocks/speakers"
 import { Venue } from "@/app/blocks/venue"
 import bgDarkStill from "@/assets/background-dark-still.webp"
 import bgLightStill from "@/assets/background-light-still.webp"
@@ -45,6 +46,16 @@ export default function Page() {
         id="about"
       >
         <About />
+      </div>
+      <div
+        id="speakers"
+        className={cn(
+          paddingClassnames,
+          dividerStyles,
+          "flex justify-center py-32",
+        )}
+      >
+        <Speakers />
       </div>
       <div className={cn(dividerStyles, "relative isolate")} id="venue">
         <Venue />
