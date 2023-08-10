@@ -1,7 +1,8 @@
 "use client"
 
 import { useIsRegistered } from "@/hooks/useRegistration"
-import { useEffect, useRef, useState } from "react"
+import { useTheme } from "next-themes"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { HERO_GET_TICKET_BUTTON_ID } from "./blocks/heroGetTicketButtonId"
 import { GetTicketButton } from "./components/get-ticket-button"
 import UserMenu from "./components/user-menu/user-menu"
@@ -11,6 +12,7 @@ export const NavigationRightHandSide = () => {
   const navRef = useRef<HTMLDivElement>(null)
   const [isBeneathGetTicketButton, setIsBeneathGetTicketButton] =
     useState(false)
+  const { setTheme, theme } = useTheme()
 
   useEffect(() => {
     const onScroll = () => {
@@ -30,6 +32,10 @@ export const NavigationRightHandSide = () => {
     return () => document.removeEventListener("scroll", onScroll)
   }, [])
 
+  const toggleTheme = useCallback(() => {
+    setTheme(theme === "dark" ? "light" : "dark")
+  }, [setTheme, theme])
+
   return (
     <div ref={navRef} className="flex shrink-0 items-center gap-4">
       {!isRegistered && isBeneathGetTicketButton ? (
@@ -45,6 +51,7 @@ export const NavigationRightHandSide = () => {
           </span>
         </div>
       )}
+      <button onClick={toggleTheme}>Toggle theme</button>
       <UserMenu />
     </div>
   )

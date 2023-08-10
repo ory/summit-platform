@@ -15,10 +15,6 @@ export const useMatchesMediaQuery = (
   return matches
 }
 
-export const usePreferredColorScheme = () => {
-  return useMatchesMediaQuery("(prefers-color-scheme: dark)") ? "dark" : "light"
-}
-
 export const usePrefersReducedMotion = () => {
   return useMatchesMediaQuery("(prefers-reduced-motion: reduce)", true)
 }
