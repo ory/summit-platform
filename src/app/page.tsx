@@ -20,6 +20,7 @@ export default function Page() {
       </div>
       <div
         className={cn(paddingClassnames, dividerStyles, "flex justify-center")}
+        id="about"
       >
         <About />
       </div>

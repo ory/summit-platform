@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/#about",
+      "permanent": false
+    },
+    {
+      "source": "/venue",
+      "destination": "/#venue",
+      "permanent": false
+    },
+    {
+      "source": "/schedule",
+      "destination": "/#agenda",
+      "permanent": false
+    },
+    {
+      "source": "/speakers",
+      "destination": "/#speakers",
+      "permanent": false
+    },
+    {
+      "source": "/stage/main",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
+}
