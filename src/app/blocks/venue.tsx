@@ -22,6 +22,7 @@ export const Venue = () => (
           src={venueMap}
           alt=""
           className="h-full w-full bg-black object-cover object-center"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-blue-500 mix-blend-multiply invert dark:bg-[#F5538D] dark:invert-0"></div>
       </div>
