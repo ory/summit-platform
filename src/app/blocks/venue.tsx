@@ -4,7 +4,7 @@ import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
 import { Wrapper } from "@/app/components/wrapper"
 import Image from "next/image"
-import mapImage from "../../assets/map.webp"
+import venueMap from "../../../public/venue-map.webp"
 
 export const Venue = () => (
   <div className="grid h-screen grid-rows-2 xl:grid-cols-2 xl:grid-rows-1">
@@ -19,7 +19,7 @@ export const Venue = () => (
     <div className="relative w-full border-b border-b-blue-500 dark:border-b-rose-500 xl:col-start-2">
       <div className="h-full w-full mix-blend-darken invert dark:mix-blend-lighten dark:invert-0">
         <Image
-          src={mapImage}
+          src={venueMap}
           alt=""
           className="h-full w-full bg-black object-cover object-center"
         />
