@@ -1,6 +1,6 @@
 "use client"
 
-import { ThemeToggleIcon } from "@/assets/icon/ThemeToggleIcon"
+import { ThemeToggleIcon } from "@/assets/icon/theme-toggle-icon"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useTheme } from "next-themes"
 import { useCallback, useEffect, useRef, useState } from "react"
