@@ -31,7 +31,26 @@ export const BackgroundVideo = () => {
     .otherwise(() => [bgLightStill, "/background-light-animated.webm"] as const)
 
   useEffect(() => {
-    videoRef.current?.load()
+    if (videoRef.current) {
+      // Attempt to re-instate video playback state after theme switch
+      const beforeLoad = Date.now()
+      videoRef.current.pause()
+      const oldVideoTime = videoRef.current.currentTime
+      videoRef.current.load()
+      videoRef.current.addEventListener(
+        "canplay",
+        () => {
+          const afterLoad = Date.now()
+          // If loading took too long, don't reset as it would look like a glitch from
+          // the fallback image
+          const shouldReinstateVideoTime = afterLoad - beforeLoad < 500
+          if (videoRef.current && shouldReinstateVideoTime) {
+            videoRef.current.currentTime = oldVideoTime
+          }
+        },
+        { once: true },
+      )
+    }
   }, [src])
 
   return (
