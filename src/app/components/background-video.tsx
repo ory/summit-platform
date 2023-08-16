@@ -19,7 +19,7 @@ const ClientSideOnly = ({ children }: PropsWithChildren) => {
 }
 
 export const BackgroundVideo = () => {
-  const { theme } = useTheme()
+  const { resolvedTheme: theme } = useTheme()
   const prefersReducedMotion = usePrefersReducedMotion()
   const videoRef = useRef<HTMLVideoElement>(null)
 
