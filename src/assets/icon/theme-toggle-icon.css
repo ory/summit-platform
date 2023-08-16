@@ -1,0 +1,19 @@
+.dark .theme-toggle-bottom {
+  d: path("M16 24L16 24");
+}
+
+.dark .theme-toggle-top {
+  d: path("M16 8L16 8");
+}
+
+.dark .theme-toggle-left {
+  d: path("M8 16H8");
+}
+
+.dark .theme-toggle-top-left {
+  d: path("M10.34 10.35L10.34 10.35");
+}
+
+.dark .theme-toggle-bottom-left {
+  d: path("M10.34 21.66L10.34 21.66");
+}

@@ -1,3 +1,4 @@
+import { Providers } from "@/app/providers"
 import { cn } from "@/utils/cn"
 import { JetBrains_Mono } from "next/font/google"
 import { Footer } from "./footer"
@@ -20,18 +21,23 @@ const jetbrainsMono = JetBrains_Mono({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    // next-themes causes hydration warnings because it may change the theme instantly in the client.
+    // This issue is expected and currently (2023-08-10) there doesn't seem to be a better option than
+    // suppressing it. https://github.com/pacocoursey/next-themes/issues/152#issuecomment-1664694281
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "bg-white font-light text-gray-900 accent-blue-500 dark:bg-indigo-950 dark:text-white dark:accent-rose-500",
           jetbrainsMono.className,
         )}
       >
-        <div className="flex min-h-screen flex-col">
-          <Navigation />
-          {children}
-        </div>
-        <Footer />
+        <Providers>
+          <div className="flex min-h-screen flex-col">
+            <Navigation />
+            {children}
+          </div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

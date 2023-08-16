@@ -10,9 +10,11 @@ export const Navigation = async () => {
   return (
     <nav
       className={cn(
-        "sticky top-0 z-10 flex items-stretch justify-center bg-white px-6 text-lg leading-tight dark:bg-indigo-950",
+        "top-0 z-10 flex items-stretch justify-center bg-white px-6 text-lg leading-tight dark:bg-indigo-950",
         "sm:px-12 xl:px-24",
         dividerStyles,
+        // would be overridden by divider styles otherwise
+        "sticky",
       )}
     >
       <Container className="max-w-[1344px] flex-1">
