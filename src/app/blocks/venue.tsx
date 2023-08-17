@@ -26,7 +26,7 @@ export const Venue = () => (
       >
         <Image
           src={venueMap}
-          alt=""
+          alt="View the location on Google Maps"
           className="h-full w-full bg-black object-cover object-center"
           sizes="100vw"
         />
