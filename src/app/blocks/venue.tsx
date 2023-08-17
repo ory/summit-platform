@@ -6,6 +6,8 @@ import { Wrapper } from "@/app/components/wrapper"
 import Image from "next/image"
 import venueMap from "../../../public/venue-map.webp"
 
+const googleMapsLink = "https://goo.gl/maps/TApBM2cJ282X8smy6"
+
 export const Venue = () => (
   <div className="grid h-screen grid-rows-2 xl:grid-cols-2 xl:grid-rows-1">
     {/*
@@ -17,7 +19,11 @@ export const Venue = () => (
         or white + target color -> darken).
      */}
     <div className="relative w-full border-b border-b-blue-500 dark:border-b-rose-500 xl:col-start-2">
-      <div className="h-full w-full mix-blend-darken invert dark:mix-blend-lighten dark:invert-0">
+      <a
+        className="h-full w-full mix-blend-darken invert dark:mix-blend-lighten dark:invert-0"
+        href={googleMapsLink}
+        target="_blank"
+      >
         <Image
           src={venueMap}
           alt=""
@@ -25,7 +31,7 @@ export const Venue = () => (
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-blue-500 mix-blend-multiply invert dark:bg-[#F5538D] dark:invert-0"></div>
-      </div>
+      </a>
     </div>
 
     <div className="flex grow content-end p-6 sm:p-12 md:py-24 lg:p-24 xl:row-start-1">
@@ -46,7 +52,7 @@ export const Venue = () => (
                 &nbsp;
               </address>
             </div>
-            <ArrowButton href="https://maps.google.com">
+            <ArrowButton href={googleMapsLink} target="_blank">
               Get directions
             </ArrowButton>
           </Content>
