@@ -27,7 +27,7 @@ export const metadata = {
 }
 
 export default function Page() {
-  const paddingClassnames = "p-6 sm:p-12 md:py-24 lg:p-24"
+  const paddingClassnames = "p-[--ory-global-padding] md:py-24"
 
   return (
     <main className={cn("flex flex-1 flex-col")}>

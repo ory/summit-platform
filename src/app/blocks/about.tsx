@@ -33,7 +33,7 @@ const InfoCard = ({ StatIcon, statTitle, statDescription }: InfoCardProps) => (
 
 export const About = () => {
   return (
-    <Container className="w-full max-w-[1344px] flex-1 md:gap-y-24 xl:grid-cols-2">
+    <Container className="w-full max-w-[--ory-max-content-width] flex-1 md:gap-y-24 xl:grid-cols-2">
       <Wrapper className="content-start max-md:items-end xl:col-span-1">
         <Content className="col-span-full max-w-[420px]">
           <div className="flex flex-col gap-2">

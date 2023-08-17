@@ -17,7 +17,7 @@ export const Navigation = async () => {
         "sticky",
       )}
     >
-      <Container className="max-w-[1344px] flex-1">
+      <Container className="max-w-[--ory-max-content-width] flex-1">
         <Wrapper className="py-2">
           <div className="col-span-full flex">
             <div>

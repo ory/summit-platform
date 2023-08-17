@@ -12,7 +12,8 @@ export const Container = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-6 p-2 md:grid-cols-12",
+        "[--ory-container-padding:8px]",
+        "grid grid-cols-6 p-[--ory-container-padding] md:grid-cols-12",
         "gap-x-6 gap-y-16 lg:gap-x-8 lg:gap-y-24",
         className,
       )}

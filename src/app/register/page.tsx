@@ -30,7 +30,7 @@ export default function RegistrationPage() {
         "flex flex-1 flex-col items-center justify-end p-6 sm:p-12 md:justify-start md:py-24 lg:p-24",
       )}
     >
-      <Container className="w-full max-w-[1344px]">
+      <Container className="w-full max-w-[--ory-max-content-width]">
         <Wrapper>
           <HubspotRegistrationForm className="col-span-full" />
         </Wrapper>

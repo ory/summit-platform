@@ -46,7 +46,7 @@ export const Venue = () => (
         "xl:grid-cols-1 xl:justify-items-center",
       )}
     >
-      <Container className="row-start-2 h-full w-full max-w-[1344px] flex-1 shrink pt-6 sm:pt-12 md:pt-24 xl:row-start-auto xl:pt-0">
+      <Container className="row-start-2 h-full w-full max-w-[--ory-max-content-width] flex-1 shrink pt-6 sm:pt-12 md:pt-24 xl:row-start-auto xl:pt-0">
         <Wrapper className="content-end xl:content-start">
           <Content className="col-span-full flex flex-col gap-y-2 xl:h-[600px] xl:justify-center 2xl:h-[648px]">
             <Overline href="#venue">location</Overline>
