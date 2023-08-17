@@ -8,36 +8,40 @@ import { cn } from "@/utils/cn"
 import Image from "next/image"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { match } from "ts-pattern"
-import testPortrait from "../../assets/test-portrait.jpg"
+import aeneas from "../../assets/aeneas.png"
+import johnOry from "../../assets/john.jpg"
+import johnPrivate from "../../assets/john.png"
 
 const speakers = [
   {
     name: "{name}",
     position: "{expert}",
+    profilePicture: johnPrivate,
   },
   {
     name: "{name}",
     position: "{expert}",
+    profilePicture: johnOry,
   },
   {
     name: "{name}",
     position: "{expert}",
+    profilePicture: aeneas,
   },
   {
     name: "{name}",
     position: "{expert}",
+    profilePicture: johnPrivate,
   },
   {
     name: "{name}",
     position: "{expert}",
+    profilePicture: johnOry,
   },
   {
     name: "{name}",
     position: "{expert}",
-  },
-  {
-    name: "{name}",
-    position: "{expert}",
+    profilePicture: aeneas,
   },
 ]
 
@@ -144,7 +148,7 @@ export const Speakers = () => {
             <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900">
               <div className="absolute inset-0 bg-gray-300" />
               <Image
-                src={testPortrait}
+                src={speaker.profilePicture}
                 alt={`Profile picture of ${speaker.name}`}
                 sizes="(min-width: 1px) 272px"
                 className="absolute inset-0 bg-blue-500 object-cover mix-blend-normal"
