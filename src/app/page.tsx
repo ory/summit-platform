@@ -1,3 +1,4 @@
+import { Venue } from "@/app/blocks/venue"
 import bgDarkStill from "@/assets/background-dark-still.webp"
 import bgLightStill from "@/assets/background-light-still.webp"
 import { cn } from "@/utils/cn"
@@ -44,6 +45,9 @@ export default function Page() {
         id="about"
       >
         <About />
+      </div>
+      <div className={cn(dividerStyles)} id="venue">
+        <Venue />
       </div>
     </main>
   )
