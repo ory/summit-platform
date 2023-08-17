@@ -27,6 +27,18 @@ const speakers = [
     name: "{name}",
     position: "{expert}",
   },
+  {
+    name: "{name}",
+    position: "{expert}",
+  },
+  {
+    name: "{name}",
+    position: "{expert}",
+  },
+  {
+    name: "{name}",
+    position: "{expert}",
+  },
 ]
 
 export const Speakers = () => {
@@ -86,12 +98,12 @@ export const Speakers = () => {
   }, [speakersContainerRef.current])
 
   return (
-    <Container className="max-w-[--ory-max-content-width]">
+    <Container className="max-w-[--ory-max-content-width] gap-y-24">
       <Wrapper>
-        <Content className="col-span-full">
-          <div className="flex flex-col gap-2">
+        <Content className="col-span-full sm:flex-row sm:items-end sm:gap-16">
+          <div className="flex flex-grow flex-col gap-2">
             <Overline href="#speakers">speakers</Overline>
-            <h2 className="text-3xl font-medium uppercase leading-tight">
+            <h2 className="text-3xl font-medium uppercase leading-tight md:text-4xl md:leading-tight">
               The lineup 2023
             </h2>
           </div>
@@ -119,7 +131,7 @@ export const Speakers = () => {
         ref={speakersContainerRef}
         className={cn(
           // width should overrule right padding -> subtract it manually from screen width
-          "[--total-padding:calc(var(--ory-container-padding)+var(--ory-global-padding))]",
+          "[--total-padding:calc(max(var(--ory-container-padding)+var(--ory-global-padding),(100vw-var(--ory-max-content-width))/2))]",
           "w-[calc(100vw-var(--total-padding))]",
           "relative col-span-full flex snap-x snap-mandatory gap-4 overflow-auto",
         )}
@@ -127,13 +139,14 @@ export const Speakers = () => {
         {speakers.map((speaker, index) => (
           <li
             key={index}
-            className="flex h-[531px] w-[312px] snap-start flex-col justify-between bg-gray-100 p-8 last:mr-[--total-padding] dark:bg-indigo-900"
+            className="flex h-[531px] w-[312px] shrink-0 snap-start flex-col justify-between bg-gray-100 p-8 last:mr-[--total-padding] dark:bg-indigo-900 md:w-[353px] lg:w-[400px]"
           >
             <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900">
               <div className="absolute inset-0 bg-gray-300" />
               <Image
                 src={testPortrait}
                 alt={`Profile picture of ${speaker.name}`}
+                sizes="(min-width: 1px) 272px"
                 className="absolute inset-0 bg-blue-500 object-cover mix-blend-normal"
               />
               <div className="absolute inset-0 bg-blue-500 mix-blend-screen dark:bg-rose-500" />

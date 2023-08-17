@@ -52,7 +52,7 @@ export default function Page() {
         className={cn(
           paddingClassnames,
           dividerStyles,
-          "flex justify-center py-32",
+          "flex justify-center py-32 md:py-32 lg:py-32 lg:[--ory-global-padding:6rem]",
         )}
       >
         <Speakers />
