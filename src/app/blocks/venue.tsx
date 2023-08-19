@@ -47,8 +47,8 @@ export const Venue = () => (
               </h2>
               <address className="text-base not-italic leading-tight">
                 Ory Corp <br />
-                August-Everding-Str 8 <br />
-                80346 München <br />
+                August-Everding-Str 25 <br />
+                81671 München <br />
                 <br />
                 [the summit is on 4th floor] <br />
                 &nbsp;
