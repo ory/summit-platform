@@ -46,7 +46,10 @@ export default function Page() {
       >
         <About />
       </div>
-      <div className={cn(dividerStyles, "relative h-screen")} id="venue">
+      <div
+        className={cn(dividerStyles, "relative isolate h-screen")}
+        id="venue"
+      >
         <Venue />
       </div>
     </main>
