@@ -3,14 +3,17 @@ import { Container } from "@/app/components/container"
 import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
 import { Wrapper } from "@/app/components/wrapper"
+import { cn } from "@/utils/cn"
 import Image from "next/image"
 import venueMap from "../../../public/venue-map.webp"
 
 const googleMapsLink = "https://goo.gl/maps/TApBM2cJ282X8smy6"
 
+const gridSetup = "grid grid-rows-2 xl:grid-cols-2 xl:grid-rows-1"
+
 export const Venue = () => (
   <>
-    <div className="absolute inset-0 grid grid-rows-2 xl:grid-cols-2 xl:grid-rows-1">
+    <div className={cn("absolute inset-0", gridSetup)}>
       {/*
           The image is expected to be white on transparent. In that case, the CSS
           is able to map the white to any given color.
@@ -36,8 +39,14 @@ export const Venue = () => (
       </div>
     </div>
 
-    <div className="relative z-10 flex h-full items-end justify-center p-6 sm:p-12 md:py-24 lg:py-24 xl:items-start xl:px-24">
-      <Container className="w-full max-w-[1344px] flex-1 shrink">
+    <div
+      className={cn(
+        "relative z-10 flex h-full min-h-screen p-6 sm:p-12 md:py-24 lg:py-24 xl:items-start xl:px-24",
+        gridSetup,
+        "xl:grid-cols-1 xl:justify-items-center",
+      )}
+    >
+      <Container className="row-start-2 h-full w-full max-w-[1344px] flex-1 shrink pt-6 sm:pt-12 md:pt-24 xl:row-start-auto xl:pt-0">
         <Wrapper className="content-end xl:content-start">
           <Content className="col-span-full flex flex-col gap-y-2 xl:h-[600px] xl:justify-center 2xl:h-[648px]">
             <Overline href="#venue">location</Overline>
