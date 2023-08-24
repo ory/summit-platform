@@ -14,7 +14,7 @@ export const GET = async (request: Request) => {
   // (considered enough of a secret for this purpose, as opposed to email)
   // then gets verified email address from identity and uses that to query hubspot.
   const { searchParams } = new URL(request.url)
-  const identityId = searchParams.get("identityId")
+  const identityId = searchParams.get("identity_id")
 
   const identity = await getIdentityById(identityId)
   if (!identity) {

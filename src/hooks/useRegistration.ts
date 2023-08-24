@@ -21,7 +21,7 @@ export const useRegistration = () => {
   } = useSWRImmutable(
     identityId ? `registration-${identityId}` : null,
     () =>
-      fetch(`/api/registration?identityId=${identityId}`).then((res) =>
+      fetch(`/api/registration?identity_id=${identityId}`).then((res) =>
         res.json(),
       ),
     {
