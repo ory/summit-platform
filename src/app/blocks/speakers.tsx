@@ -102,7 +102,7 @@ export const Speakers = () => {
   }, [speakersContainerRef.current])
 
   return (
-    <Container className="max-w-[--ory-max-content-width] gap-y-24">
+    <Container className="w-full max-w-[--ory-max-content-width] gap-y-24 @container">
       <Wrapper>
         <Content className="col-span-full sm:flex-row sm:items-end sm:gap-16">
           <div className="flex flex-grow flex-col gap-2">
@@ -143,7 +143,7 @@ export const Speakers = () => {
         {speakers.map((speaker, index) => (
           <li
             key={index}
-            className="flex h-[531px] w-[312px] shrink-0 snap-start flex-col justify-between bg-gray-100 p-8 last:mr-[--total-padding] dark:bg-indigo-900 md:w-[353px] lg:w-[400px]"
+            className="flex h-[531px] w-[calc((100cqw-16px*(var(--num-of-cards)-1))/var(--num-of-cards))] shrink-0 snap-start flex-col justify-between bg-gray-100 p-8 [--num-of-cards:1] last:mr-[--total-padding] dark:bg-indigo-900 sm:[--num-of-cards:2] xl:[--num-of-cards:3]"
           >
             <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900">
               <div className="absolute inset-0 bg-gray-300" />
