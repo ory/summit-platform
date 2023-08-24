@@ -1,14 +1,14 @@
 /**
  * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...index]]/page.tsx` route
  */
+import { defineConfig, InferSchemaValues } from "@sanity-typed/types"
 import { visionTool } from "@sanity/vision"
-import { defineConfig } from "sanity"
 import { deskTool } from "sanity/desk"
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from "./sanity/env"
 import { schema } from "./sanity/schema"
 
-export default defineConfig({
+const config = defineConfig({
   basePath: "/studio",
   projectId,
   dataset,
@@ -21,3 +21,6 @@ export default defineConfig({
     visionTool({ defaultApiVersion: apiVersion }),
   ],
 })
+export default config
+
+export type SanityValues = InferSchemaValues<typeof config>
