@@ -3,48 +3,12 @@
 import { Container } from "@/app/components/container"
 import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
+import { SpeakerCard } from "@/app/components/speaker-card"
 import { Wrapper } from "@/app/components/wrapper"
 import { useSpeakers } from "@/hooks/useSpeakers"
 import { cn } from "@/utils/cn"
-import Image from "next/image"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { match } from "ts-pattern"
-import aeneas from "../../assets/aeneas.png"
-import johnOry from "../../assets/john.jpg"
-import johnPrivate from "../../assets/john.png"
-
-const speakers = [
-  {
-    name: "{name}",
-    position: "{expert}",
-    profilePicture: johnPrivate,
-  },
-  {
-    name: "{name}",
-    position: "{expert}",
-    profilePicture: johnOry,
-  },
-  {
-    name: "{name}",
-    position: "{expert}",
-    profilePicture: aeneas,
-  },
-  {
-    name: "{name}",
-    position: "{expert}",
-    profilePicture: johnPrivate,
-  },
-  {
-    name: "{name}",
-    position: "{expert}",
-    profilePicture: johnOry,
-  },
-  {
-    name: "{name}",
-    position: "{expert}",
-    profilePicture: aeneas,
-  },
-]
 
 export const Speakers = () => {
   const speakersContainerRef = useRef<HTMLUListElement>(null)
@@ -143,27 +107,9 @@ export const Speakers = () => {
         )}
       >
         {cmsSpeakers?.map((speaker) => (
-          <li
-            key={speaker._id}
-            className="flex h-[531px] w-[calc((100cqw-16px*(var(--num-of-cards)-1))/var(--num-of-cards))] shrink-0 snap-start flex-col justify-between bg-gray-100 p-8 [--num-of-cards:1] last:mr-[--total-padding] dark:bg-indigo-900 sm:[--num-of-cards:2] xl:[--num-of-cards:3]"
-          >
-            <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900">
-              <div className="absolute inset-0 bg-gray-300" />
-              <Image
-                src={johnOry}
-                alt={`Profile picture of ${speaker.name}`}
-                sizes="(min-width: 1px) 272px"
-                className="absolute inset-0 bg-blue-500 object-cover mix-blend-normal"
-              />
-              <div className="absolute inset-0 bg-blue-500 mix-blend-screen dark:bg-rose-500" />
-            </div>
-            <div className="h-[114px]">
-              <p className="flex flex-col gap-2 leading-normal">
-                <span className="text-2xl font-bold">{speaker.name}</span>
-                <span className="text=xl">{speaker.position}</span>
-              </p>
-            </div>
-          </li>
+          // Will hopefully be fixed by https://github.com/saiichihashimoto/sanity-typed/issues/242
+          // @ts-ignore
+          <SpeakerCard key={speaker._id} {...speaker} />
         ))}
       </ul>
     </Container>

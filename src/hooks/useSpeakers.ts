@@ -9,6 +9,11 @@ export const useSpeakers = () =>
   _id,
   name,
   position,
-  profilePicture,
+  profilePicture {
+    asset->{
+      ...,
+      metadata,
+    }
+  },
 }`),
   )
