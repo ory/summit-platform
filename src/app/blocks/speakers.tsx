@@ -4,6 +4,7 @@ import { Container } from "@/app/components/container"
 import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
 import { Wrapper } from "@/app/components/wrapper"
+import { useSpeakers } from "@/hooks/useSpeakers"
 import { cn } from "@/utils/cn"
 import Image from "next/image"
 import { useCallback, useEffect, useRef, useState } from "react"
@@ -47,6 +48,7 @@ const speakers = [
 
 export const Speakers = () => {
   const speakersContainerRef = useRef<HTMLUListElement>(null)
+  const { data: cmsSpeakers } = useSpeakers()
   const useScroller = (direction: "left" | "right") =>
     useCallback(() => {
       const speakersContainer = speakersContainerRef.current
@@ -140,15 +142,15 @@ export const Speakers = () => {
           "relative col-span-full flex snap-x snap-mandatory gap-4 overflow-auto scrollbar-none",
         )}
       >
-        {speakers.map((speaker, index) => (
+        {cmsSpeakers?.map((speaker) => (
           <li
-            key={index}
+            key={speaker._id}
             className="flex h-[531px] w-[calc((100cqw-16px*(var(--num-of-cards)-1))/var(--num-of-cards))] shrink-0 snap-start flex-col justify-between bg-gray-100 p-8 [--num-of-cards:1] last:mr-[--total-padding] dark:bg-indigo-900 sm:[--num-of-cards:2] xl:[--num-of-cards:3]"
           >
             <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900">
               <div className="absolute inset-0 bg-gray-300" />
               <Image
-                src={speaker.profilePicture}
+                src={johnOry}
                 alt={`Profile picture of ${speaker.name}`}
                 sizes="(min-width: 1px) 272px"
                 className="absolute inset-0 bg-blue-500 object-cover mix-blend-normal"

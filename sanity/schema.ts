@@ -7,13 +7,18 @@ const speakerSchema = defineType({
   fields: [
     defineField({
       name: "name",
-      type: "string",
       title: "Name",
+      type: "string",
     }),
     defineField({
       name: "position",
-      type: "string",
       title: "Position",
+      type: "string",
+    }),
+    defineField({
+      name: "profilePicture",
+      title: "Profile Picture",
+      type: "image",
     }),
   ],
 })
