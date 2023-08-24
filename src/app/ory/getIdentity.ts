@@ -1,4 +1,4 @@
-import { identityApi } from "@/app/ory/api"
+import { identityApi } from "@/app/ory/backendApi"
 import { Identity } from "@ory/client"
 
 export const getIdentityById = async (

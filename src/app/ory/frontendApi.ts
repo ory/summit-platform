@@ -1,9 +1,4 @@
-import {
-  Configuration,
-  FrontendApi,
-  IdentityApi,
-  ProjectApi,
-} from "@ory/client"
+import { Configuration, FrontendApi, ProjectApi } from "@ory/client"
 
 export const frontendApi = new FrontendApi(
   new Configuration({
@@ -11,13 +6,6 @@ export const frontendApi = new FrontendApi(
     baseOptions: {
       withCredentials: true,
     },
-  }),
-)
-
-export const identityApi = new IdentityApi(
-  new Configuration({
-    basePath: process.env.NEXT_PUBLIC_ORY_PROJECTS_URL,
-    accessToken: process.env.ORY_API_KEY,
   }),
 )
 

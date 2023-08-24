@@ -1,4 +1,4 @@
-import { oryProjectApi } from "./api"
+import { oryProjectApi } from "./frontendApi"
 
 export const getCurrentProjectId = async () => {
   try {
