@@ -23,5 +23,6 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),
     require("@headlessui/tailwindcss"),
+    require("tailwind-scrollbar"),
   ],
 }

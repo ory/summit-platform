@@ -137,7 +137,7 @@ export const Speakers = () => {
           // width should overrule right padding -> subtract it manually from screen width
           "[--total-padding:calc(max(var(--ory-container-padding)+var(--ory-global-padding),(100vw-var(--ory-max-content-width))/2))]",
           "w-[calc(100vw-var(--total-padding))]",
-          "relative col-span-full flex snap-x snap-mandatory gap-4 overflow-auto",
+          "relative col-span-full flex snap-x snap-mandatory gap-4 overflow-auto scrollbar-none",
         )}
       >
         {speakers.map((speaker, index) => (
