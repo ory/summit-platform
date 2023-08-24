@@ -29,7 +29,7 @@ enum RegistrationType {
   INDIVIDUAL = "an Individual",
 }
 
-type RegistrationData = {
+export type RegistrationData = {
   hubspotContactId: number
   firstTimeAttendee: boolean
   attendanceLocation: AttencanceLocation
@@ -80,9 +80,7 @@ export const getRegistrationData = async (email: string) => {
   }
 
   const hubspotlegacyProfile: HubspotLegacyProfile = await response.json()
-  const registrationData =
-    hubspotLegacyProfileToSummitData(hubspotlegacyProfile)
-  return registrationData
+  return hubspotLegacyProfileToSummitData(hubspotlegacyProfile)
 }
 
 export const getIsRegistered = async (email: string) => {
