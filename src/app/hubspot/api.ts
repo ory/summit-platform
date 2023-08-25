@@ -1,9 +1,10 @@
 import { Client } from "@hubspot/api-client"
+// server-only due to hubspot API key
 import "server-only"
 import { HubspotLegacyProfile } from "./hubspotModels"
 
 export const hubspotClient = new Client({
-  accessToken: process.env.HUBSPOT_API_KEY,
+  accessToken: process.env.CONFIDENTIAL_HUBSPOT_API_KEY,
 })
 
 const FIRST_TIME_ATTENDEE = "first_time_attendee_" // yes or no
@@ -29,7 +30,7 @@ enum RegistrationType {
   INDIVIDUAL = "an Individual",
 }
 
-type RegistrationData = {
+export type RegistrationData = {
   hubspotContactId: number
   firstTimeAttendee: boolean
   attendanceLocation: AttencanceLocation
@@ -66,7 +67,7 @@ export const getRegistrationData = async (email: string) => {
       .join("&")}`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.HUBSPOT_API_KEY}`,
+        Authorization: `Bearer ${process.env.CONFIDENTIAL_HUBSPOT_API_KEY}`,
       },
       next: {
         // Enable caching only for a single page being built
@@ -80,9 +81,7 @@ export const getRegistrationData = async (email: string) => {
   }
 
   const hubspotlegacyProfile: HubspotLegacyProfile = await response.json()
-  const registrationData =
-    hubspotLegacyProfileToSummitData(hubspotlegacyProfile)
-  return registrationData
+  return hubspotLegacyProfileToSummitData(hubspotlegacyProfile)
 }
 
 export const getIsRegistered = async (email: string) => {

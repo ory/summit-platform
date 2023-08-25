@@ -1,4 +1,4 @@
-import { FrontendApi, Configuration, ProjectApi } from "@ory/client"
+import { Configuration, FrontendApi, ProjectApi } from "@ory/client"
 
 export const frontendApi = new FrontendApi(
   new Configuration({

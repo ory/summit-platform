@@ -1,4 +1,4 @@
-import { frontendApi as oryFrontendApi } from "./api"
+import { frontendApi as oryFrontendApi } from "./frontendApi"
 
 export const getSession = async () => {
   try {
