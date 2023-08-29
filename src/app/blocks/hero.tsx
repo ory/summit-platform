@@ -37,9 +37,9 @@ export function Hero() {
               )}
             </h1>
             <p>
-              A one-day conference around open source end-to-end security and
-              zero trust solutions for the Ory Community - customers,
-              developers, maintainers, and partners.
+              A global, one-day conference around first party data, privacy,
+              application authorisation, identity, authentication, end-to-end
+              security based on zero trust principles.
             </p>
           </div>
           <GetTicketButton
