@@ -58,9 +58,6 @@ export const Venue = () => (
                 Ory Corp <br />
                 August-Everding-Str 25 <br />
                 81671 München <br />
-                <br />
-                [the summit is on 4th floor] <br />
-                &nbsp;
               </address>
             </div>
             <ArrowButton href={googleMapsLink} target="_blank">
