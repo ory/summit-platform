@@ -9,16 +9,19 @@ const speakerSchema = defineType({
       name: "name",
       title: "Name",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "position",
       title: "Position",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "profilePicture",
       title: "Profile Picture",
       type: "image",
+      validation: (Rule) => Rule.required(),
     }),
   ],
 })
