@@ -16,7 +16,7 @@ export const SpeakerCard = ({
 
   return (
     <li className="flex h-[531px] w-[calc((100cqw-16px*(var(--num-of-cards)-1))/var(--num-of-cards))] shrink-0 snap-start flex-col justify-between bg-gray-100 p-8 [--num-of-cards:1] last:mr-[--total-padding] dark:bg-indigo-900 sm:[--num-of-cards:2] xl:[--num-of-cards:3]">
-      <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900">
+      <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900 dark:border-white">
         <div className="absolute inset-0 bg-gray-300" />
         <Image
           {...profileImageProps}

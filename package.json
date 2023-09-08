@@ -43,6 +43,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "7.45.2",
     "react-icons": "4.10.1",
+    "react-markdown": "^8.0.7",
     "react-popper": "2.3.0",
     "react-use-event-handler": "1.0.0",
     "react-youtube": "10.1.0",

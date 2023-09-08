@@ -3,7 +3,8 @@
 import { ThemeProvider } from "next-themes"
 import { PropsWithChildren } from "react"
 import { SWRConfig } from "swr"
-import { Speaker, Talk } from "../../../sanity.config"
+import { Talk } from "../../../sanity/lib/client"
+import { Speaker } from "../../../sanity.config"
 
 export const Providers = ({
   children,

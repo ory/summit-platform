@@ -18,6 +18,13 @@ const speakerSchema = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "description",
+      title: "Description",
+      // Type casting needed to help type inference as 'markdown' comes from a plugin
+      type: "markdown" as "text",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "profilePicture",
       title: "Profile Picture",
       type: "image",
@@ -40,7 +47,8 @@ const talkSchema = defineType({
     defineField({
       name: "summary",
       title: "Summary",
-      type: "markdown",
+      // Type casting needed to help type inference as 'markdown' comes from a plugin
+      type: "markdown" as "text",
       validation: (Rule) => Rule.required(),
     }),
     defineField({

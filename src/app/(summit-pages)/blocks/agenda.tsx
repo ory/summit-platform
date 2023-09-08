@@ -5,12 +5,16 @@ import { ArrowButton } from "@/app/components/arrow-button"
 import { Container } from "@/app/components/container"
 import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
+import { TalksDialog } from "@/app/components/talks-dialog"
 import { Wrapper } from "@/app/components/wrapper"
 import { useTalks } from "@/hooks/useTalks"
 import { SanityImageSource } from "@sanity/asset-utils"
+import { useState } from "react"
 
 export const Agenda = () => {
   const { data: talks } = useTalks()
+  const [selectedTalkIndex, setSelectedTalkIndex] = useState<number>()
+  const selectedTalk = talks?.[selectedTalkIndex ?? -1]
 
   return (
     <Container className="w-full max-w-[--ory-max-content-width] gap-y-16 @container md:gap-y-24">
@@ -25,13 +29,14 @@ export const Agenda = () => {
         </Content>
       </Wrapper>
       <ul className="col-span-full">
-        {talks?.map((talk) => {
+        {talks?.map((talk, talkIndex) => {
           const start = new Date(talk.startTime)
 
           return (
             <li
               key={talk._id}
               className="group cursor-pointer border-b border-solid border-blue-500 px-2 py-8 first:border-t hover:bg-gray-50 dark:border-rose-500 dark:hover:bg-indigo-950"
+              onClick={() => setSelectedTalkIndex(talkIndex)}
             >
               <article className="grid grid-cols-[max-content,1fr] gap-x-8 gap-y-4">
                 <time
@@ -64,6 +69,14 @@ export const Agenda = () => {
           )
         })}
       </ul>
+      <TalksDialog
+        talks={selectedTalk && [selectedTalk]}
+        onClose={() => setSelectedTalkIndex(undefined)}
+        prevItemDisabled={selectedTalkIndex === 0}
+        nextItemDisabled={selectedTalkIndex === (talks?.length ?? NaN) - 1}
+        onSelectNextItem={() => setSelectedTalkIndex(selectedTalkIndex! + 1)}
+        onSelectPrevItem={() => setSelectedTalkIndex(selectedTalkIndex! - 1)}
+      />
     </Container>
   )
 }

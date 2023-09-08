@@ -28,4 +28,3 @@ export default config
 export type SanityValues = InferSchemaValues<typeof config>
 
 export type Speaker = SanityValues["speaker"]
-export type Talk = SanityValues["talk"]
