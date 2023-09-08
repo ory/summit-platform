@@ -23,14 +23,16 @@ export const Speakers = () => {
       }
 
       const children = Array.from(speakersContainer.children) as HTMLElement[]
+      const leftPadding = children.at(1)?.offsetLeft ?? NaN
+      const currScrollOffset = speakersContainer.scrollLeft + leftPadding
       const target = match(direction)
         .with("left", () =>
           children
             // Reverse to search from right to left
-            .findLast((el) => el.offsetLeft < speakersContainer.scrollLeft),
+            .findLast((el) => el.offsetLeft < currScrollOffset),
         )
         .with("right", () =>
-          children.find((el) => el.offsetLeft > speakersContainer.scrollLeft),
+          children.find((el) => el.offsetLeft > currScrollOffset),
         )
         .exhaustive()
 
