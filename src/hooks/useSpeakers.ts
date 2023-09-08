@@ -1,7 +1,6 @@
 "use client"
 
 import useSWR from "swr"
-import { client } from "../../sanity/lib/client"
+import { getSpeakers } from "../../sanity/lib/client"
 
-export const useSpeakers = () =>
-  useSWR("speakers", async () => client.fetch(`*[_type == "speaker"]`))
+export const useSpeakers = () => useSWR("speakers", getSpeakers)

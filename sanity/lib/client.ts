@@ -9,3 +9,5 @@ export const client = createClient<SanityValues>()({
   useCdn,
   withCredentials: true,
 })
+
+export const getSpeakers = async () => client.fetch(`*[_type == "speaker"]`)
