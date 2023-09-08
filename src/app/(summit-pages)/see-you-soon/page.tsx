@@ -1,11 +1,11 @@
 import { cn } from "@/utils/cn"
 import Link from "next/link"
-import { Button } from "../components/button"
-import { Container } from "../components/container"
-import { Content } from "../components/content"
-import Countdown from "../components/countdown"
-import { dividerStyles } from "../components/dividerStyles"
-import { Wrapper } from "../components/wrapper"
+import { Button } from "../../components/button"
+import { Container } from "../../components/container"
+import { Content } from "../../components/content"
+import Countdown from "../../components/countdown"
+import { dividerStyles } from "../../components/dividerStyles"
+import { Wrapper } from "../../components/wrapper"
 import { summitStartingDate } from "../startingDate"
 
 export default function SeeYouSoon() {

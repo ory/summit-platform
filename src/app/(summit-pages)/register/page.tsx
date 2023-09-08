@@ -5,9 +5,9 @@ import { useIsRegistered } from "@/hooks/useRegistration"
 import { useSession } from "@/hooks/useSession"
 import { cn } from "@/utils/cn"
 import { redirect } from "next/navigation"
-import { Container } from "../components/container"
-import { dividerStyles } from "../components/dividerStyles"
-import { Wrapper } from "../components/wrapper"
+import { Container } from "../../components/container"
+import { dividerStyles } from "../../components/dividerStyles"
+import { Wrapper } from "../../components/wrapper"
 import { HubspotRegistrationForm } from "./hubspot-registration-form"
 
 export default function RegistrationPage() {

@@ -5,7 +5,7 @@ import { Overline } from "@/app/components/overline"
 import { Wrapper } from "@/app/components/wrapper"
 import { cn } from "@/utils/cn"
 import Image from "next/image"
-import venueMap from "../../../public/venue-map.webp"
+import venueMap from "../../../../public/venue-map.webp"
 
 const googleMapsLink = "https://goo.gl/maps/TApBM2cJ282X8smy6"
 

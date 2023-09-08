@@ -1,19 +1,7 @@
-import { Providers } from "@/app/providers"
 import { cn } from "@/utils/cn"
 import { JetBrains_Mono } from "next/font/google"
-import { Footer } from "./footer"
 import "./matomo"
-import { Navigation } from "./navigation"
 import "./globals.css"
-
-export const metadata = {
-  title: {
-    default: "Ory Summit 2023",
-    template: "%s | Ory Summit 2023",
-  },
-  description:
-    "A global, one-day conference around first party data, privacy, application authorisation, identity, authentication, end-to-end security based on zero trust principles.",
-}
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -33,13 +21,7 @@ export default function RootLayout({ children }) {
           jetbrainsMono.className,
         )}
       >
-        <Providers>
-          <div className="flex min-h-screen flex-col">
-            <Navigation />
-            {children}
-          </div>
-          <Footer />
-        </Providers>
+        {children}
       </body>
     </html>
   )

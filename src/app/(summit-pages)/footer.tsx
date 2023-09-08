@@ -1,7 +1,7 @@
 import { cn } from "@/utils/cn"
-import { Container } from "./components/container"
-import { LinkItem } from "./components/link-item"
-import { Wrapper } from "./components/wrapper"
+import { Container } from "../components/container"
+import { LinkItem } from "../components/link-item"
+import { Wrapper } from "../components/wrapper"
 
 export const Footer = () => (
   <footer

@@ -2,10 +2,10 @@ import CalendarPinIcon from "@/assets/icon/CalendarPinIcon"
 import MountainIcon from "@/assets/icon/MountainIcon"
 import RocketIcon from "@/assets/icon/RocketIcon"
 import SunriseIcon from "@/assets/icon/SunriseIcon"
-import { Container } from "../components/container"
-import { Content } from "../components/content"
-import { Overline } from "../components/overline"
-import { Wrapper } from "../components/wrapper"
+import { Container } from "../../components/container"
+import { Content } from "../../components/content"
+import { Overline } from "../../components/overline"
+import { Wrapper } from "../../components/wrapper"
 
 type StatIcon =
   | typeof SunriseIcon

@@ -1,9 +1,9 @@
 import { cn } from "@/utils/cn"
 import Link from "next/link"
-import { Container } from "./components/container"
-import { dividerStyles } from "./components/dividerStyles"
-import { Logo } from "./components/logo"
-import { Wrapper } from "./components/wrapper"
+import { Container } from "../components/container"
+import { dividerStyles } from "../components/dividerStyles"
+import { Logo } from "../components/logo"
+import { Wrapper } from "../components/wrapper"
 import { NavigationRightHandSide } from "./navigation-right"
 
 export const Navigation = async () => {

@@ -1,12 +1,12 @@
 "use client"
 
 import { useIsRegistered } from "@/hooks/useRegistration"
-import BackgroundMountains from "../components/background-video"
-import { Banner } from "../components/banner"
-import { Container } from "../components/container"
-import { Content } from "../components/content"
-import Countdown from "../components/countdown"
-import { GetTicketButton } from "../components/get-ticket-button"
+import BackgroundMountains from "../../components/background-video"
+import { Banner } from "../../components/banner"
+import { Container } from "../../components/container"
+import { Content } from "../../components/content"
+import Countdown from "../../components/countdown"
+import { GetTicketButton } from "../../components/get-ticket-button"
 import { summitStartingDate } from "../startingDate"
 import { HERO_GET_TICKET_BUTTON_ID } from "./heroGetTicketButtonId"
 

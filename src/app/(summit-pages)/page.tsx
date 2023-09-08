@@ -1,12 +1,12 @@
-import { Speakers } from "@/app/blocks/speakers"
-import { Venue } from "@/app/blocks/venue"
+import { Speakers } from "@/app/(summit-pages)/blocks/speakers"
+import { Venue } from "@/app/(summit-pages)/blocks/venue"
 import bgDarkStill from "@/assets/background-dark-still.webp"
 import bgLightStill from "@/assets/background-light-still.webp"
 import { cn } from "@/utils/cn"
 import { IconDescriptor } from "next/dist/lib/metadata/types/metadata-types"
+import { dividerStyles } from "../components/dividerStyles"
 import { About } from "./blocks/about"
 import { Hero } from "./blocks/hero"
-import { dividerStyles } from "./components/dividerStyles"
 
 // Instruct browser to preload both background images to make theme switches smoother
 export const metadata = {
