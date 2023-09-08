@@ -102,15 +102,20 @@ export const Speakers = () => {
         className={cn(
           // width should overrule right padding -> subtract it manually from screen width
           "[--total-padding:calc(max(var(--ory-container-padding)+var(--ory-global-padding),(100vw-var(--ory-max-content-width))/2))]",
-          "w-[calc(100vw-var(--total-padding))]",
+          "-ml-[--total-padding] [scroll-padding-inline:--total-padding]",
+          "w-[calc(100%+2*var(--total-padding))]",
           "relative col-span-full flex snap-x snap-mandatory gap-4 overflow-auto scrollbar-none",
         )}
       >
+        {/*/!* effectively adds left padding back, accounting for flex gap *!/*/}
+        <li className="w-[calc(var(--total-padding)-1rem)] shrink-0 grow-0 snap-start" />
         {cmsSpeakers?.map((speaker) => (
           // Will hopefully be fixed by https://github.com/saiichihashimoto/sanity-typed/issues/242
           // @ts-ignore
           <SpeakerCard key={speaker._id} {...speaker} />
         ))}
+        {/* effectively adds right padding back, accounting for flex gap */}
+        <li className="w-[calc(var(--total-padding)-1rem)] shrink-0 grow-0 snap-start" />
       </ul>
     </Container>
   )
