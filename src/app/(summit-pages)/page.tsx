@@ -1,3 +1,4 @@
+import { Agenda } from "@/app/(summit-pages)/blocks/agenda"
 import { Speakers } from "@/app/(summit-pages)/blocks/speakers"
 import { Venue } from "@/app/(summit-pages)/blocks/venue"
 import bgDarkStill from "@/assets/background-dark-still.webp"
@@ -56,6 +57,17 @@ export default function Page() {
         )}
       >
         <Speakers />
+      </div>
+      <div
+        id="agenda"
+        className={cn(
+          paddingClassnames,
+          dividerStyles,
+          "flex justify-center py-16",
+          "bg-gray-100 dark:bg-indigo-900",
+        )}
+      >
+        <Agenda />
       </div>
       <div className={cn(dividerStyles, "relative isolate")} id="venue">
         <Venue />

@@ -17,8 +17,6 @@ export const useCdn =
     "Missing environment variable: NEXT_PUBLIC_PRODUCTION",
   ).toLowerCase() !== "false"
 
-console.log({ useCdn })
-
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {
     throw new Error(errorMessage)

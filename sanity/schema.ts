@@ -38,6 +38,12 @@ const talkSchema = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "summary",
+      title: "Summary",
+      type: "markdown",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "speakers",
       title: "Speakers",
       type: "array",
