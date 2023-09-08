@@ -1,4 +1,4 @@
-import { defineField, defineType } from "@sanity-typed/types"
+import { defineArrayMember, defineField, defineType } from "@sanity-typed/types"
 
 const speakerSchema = defineType({
   name: "speaker",
@@ -26,6 +26,40 @@ const speakerSchema = defineType({
   ],
 })
 
+const talkSchema = defineType({
+  name: "talk",
+  type: "document",
+  title: "Talks",
+  fields: [
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "speakers",
+      title: "Speakers",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "reference",
+          to: [{ type: "speaker" } as const],
+        }),
+      ],
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
+      name: "startTime",
+      title: "Starting time",
+      type: "datetime",
+      // two hours before Munich time
+      initialValue: "2023-11-09T10:00:00.000Z",
+      validation: (Rule) => Rule.required(),
+    }),
+  ],
+})
+
 export const schema = {
-  types: [speakerSchema],
+  types: [speakerSchema, talkSchema],
 }
