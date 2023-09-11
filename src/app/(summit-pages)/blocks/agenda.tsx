@@ -1,7 +1,6 @@
 "use client"
 
 import { SanityImage } from "@/app/components/SanityImage"
-import { ArrowButton } from "@/app/components/arrow-button"
 import { Container } from "@/app/components/container"
 import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
@@ -24,8 +23,6 @@ export const Agenda = () => {
           <h2 className="text-3xl font-medium uppercase leading-tight md:text-4xl">
             The talks
           </h2>
-          {/* TODO: change URL */}
-          <ArrowButton href="https://google.com">download PDF</ArrowButton>
         </Content>
       </Wrapper>
       <ul className="col-span-full">
