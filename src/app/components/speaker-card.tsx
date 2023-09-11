@@ -1,4 +1,3 @@
-import { cn } from "@/utils/cn"
 import { SanityImageSource } from "@sanity/asset-utils"
 import { useNextSanityImage } from "next-sanity-image"
 import Image from "next/image"
@@ -22,7 +21,7 @@ export const SpeakerCard = ({
       <button
         onClick={onClick}
         disabled={onClick === undefined}
-        className="flex h-full w-full flex-col justify-between bg-gray-100 p-8 text-start dark:bg-indigo-900"
+        className="flex h-full w-full flex-col justify-between border border-transparent bg-gray-100 p-8 text-start hover:border-blue-500 hover:bg-gray-50 dark:bg-indigo-900 dark:hover:border-rose-500 dark:hover:bg-indigo-950"
       >
         <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900 dark:border-white">
           <div className="absolute inset-0 bg-gray-300" />

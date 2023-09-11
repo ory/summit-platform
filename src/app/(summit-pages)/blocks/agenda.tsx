@@ -13,7 +13,10 @@ import { useState } from "react"
 export const Agenda = () => {
   const { data: talks } = useTalks()
   const [selectedTalkIndex, setSelectedTalkIndex] = useState<number>()
+  const selectedTalkIndexOrNan = selectedTalkIndex ?? NaN
   const selectedTalk = talks?.[selectedTalkIndex ?? -1]
+  const prevTalkTitle = talks?.[selectedTalkIndexOrNan - 1]?.title
+  const nextTalkTitle = talks?.[selectedTalkIndexOrNan + 1]?.title
 
   return (
     <Container className="w-full max-w-[--ory-max-content-width] gap-y-16 @container md:gap-y-24">
@@ -73,8 +76,8 @@ export const Agenda = () => {
       <TalksDialog
         talks={selectedTalk && [selectedTalk]}
         onClose={() => setSelectedTalkIndex(undefined)}
-        prevItemDisabled={selectedTalkIndex === 0}
-        nextItemDisabled={selectedTalkIndex === (talks?.length ?? NaN) - 1}
+        prevItemTitle={prevTalkTitle}
+        nextItemTitle={nextTalkTitle}
         onSelectNextItem={() => setSelectedTalkIndex(selectedTalkIndex! + 1)}
         onSelectPrevItem={() => setSelectedTalkIndex(selectedTalkIndex! - 1)}
       />

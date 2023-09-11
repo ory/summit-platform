@@ -24,6 +24,10 @@ export const Speakers = () => {
       ? talksBySpeakerId[selectedSpeaker?._id ?? ""]
       : undefined
 
+  const selectedSpeakerIndexOrNan = selectedSpeakerIndex ?? NaN
+  const prevSpeakerName = speakers?.[selectedSpeakerIndexOrNan - 1]?.name
+  const nextSpeakerName = speakers?.[selectedSpeakerIndexOrNan + 1]?.name
+
   const useScroller = (direction: "left" | "right") =>
     useCallback(() => {
       const speakersContainer = speakersContainerRef.current
@@ -138,10 +142,8 @@ export const Speakers = () => {
         talks={selectedTalks}
         selectedSpeaker={selectedSpeaker}
         onClose={() => setSelectedSpeakerIndex(undefined)}
-        prevItemDisabled={selectedSpeakerIndex === 0}
-        nextItemDisabled={
-          selectedSpeakerIndex === (speakers?.length ?? NaN) - 1
-        }
+        prevItemTitle={prevSpeakerName}
+        nextItemTitle={nextSpeakerName}
         onSelectPrevItem={() =>
           setSelectedSpeakerIndex(selectedSpeakerIndex! - 1)
         }
