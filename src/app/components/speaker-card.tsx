@@ -40,6 +40,9 @@ export const SpeakerCard = ({
             <span className="text=xl">{position}</span>
           </p>
         </div>
+        <span className="sr-only">
+          Click to view details about {name} and their talks
+        </span>
       </button>
     </li>
   )

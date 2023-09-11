@@ -122,11 +122,14 @@ export const TalksDialog = ({
                 >
                   <div>
                     <time
-                      dateTime={talk.startTime}
+                      dateTime={start.toString()}
+                      aria-label={start.toString()}
                       className="inline-block border border-blue-500 bg-rose-50 p-1 text-xl font-bold leading-normal dark:border-rose-500 dark:bg-indigo-900"
                     >
-                      {start.getHours().toString().padStart(2, "0")}:
-                      {start.getMinutes().toString().padStart(2, "0")}
+                      <span aria-hidden>
+                        {start.getHours().toString().padStart(2, "0")}:
+                        {start.getMinutes().toString().padStart(2, "0")}
+                      </span>
                     </time>
                   </div>
                   <div className="flex flex-col gap-8">
@@ -134,7 +137,7 @@ export const TalksDialog = ({
                       {talk.title}
                     </h3>
                     <address>
-                      <ul className="flex flex-col gap-2">
+                      <ul className="flex flex-col gap-2" aria-label="Speakers">
                         {talk.speakers.map((speaker) => (
                           <li
                             key={speaker._id}
@@ -145,7 +148,8 @@ export const TalksDialog = ({
                                 speaker.profilePicture as SanityImageSource
                               }
                               sizes="(min-width: 1px) 24px"
-                              alt={`Profile picture of ${speaker.name}`}
+                              alt=""
+                              aria-hidden
                               className="aspect-square w-6 rounded-full border border-gray-900 object-cover dark:border-white"
                             />
                             {speaker.name}, {speaker.position}
@@ -186,7 +190,8 @@ export const TalksDialog = ({
                           speaker.profilePicture as SanityImageSource
                         }
                         sizes="(min-width: 1px) 64px"
-                        alt={`Profile picture of ${speaker.name}`}
+                        alt=""
+                        aria-hidden
                         className="absolute inset-0 bg-blue-500 object-cover mix-blend-normal"
                       />
                       <div className="absolute inset-0 bg-blue-500 mix-blend-screen dark:bg-rose-500" />

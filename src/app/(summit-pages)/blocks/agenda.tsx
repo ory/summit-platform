@@ -40,15 +40,18 @@ export const Agenda = () => {
             >
               <article className="grid grid-cols-[max-content,1fr] gap-x-8 gap-y-4">
                 <time
-                  dateTime={talk.startTime}
+                  dateTime={start.toString()}
+                  aria-label={start.toString()}
                   className="self-start border border-blue-500 bg-rose-50 p-1 dark:border-rose-500 dark:bg-transparent"
                 >
-                  {start.getHours().toString().padStart(2, "0")}:
-                  {start.getMinutes().toString().padStart(2, "0")}
+                  <span aria-hidden>
+                    {start.getHours().toString().padStart(2, "0")}:
+                    {start.getMinutes().toString().padStart(2, "0")}
+                  </span>
                 </time>
                 <h3 className="self-center leading-tight">{talk.title}</h3>
                 <address className="col-start-2">
-                  <ul className="flex flex-col gap-1">
+                  <ul className="flex flex-col gap-1" aria-label="Speakers">
                     {talk.speakers.map((speaker) => (
                       <li key={speaker._id} className="flex items-center gap-4">
                         <SanityImage
@@ -56,7 +59,8 @@ export const Agenda = () => {
                             speaker.profilePicture as SanityImageSource
                           }
                           sizes="(min-width: 1px) 24px"
-                          alt={`Profile picture of ${speaker.name}`}
+                          alt=""
+                          aria-hidden
                           className="aspect-square w-6 rounded-full border border-gray-900 object-cover dark:border-white"
                         />
                         {speaker.name}

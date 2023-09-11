@@ -12,7 +12,11 @@ export const Overline = ({
   className,
   href,
 }: PropsWithChildren<OverlineProps>) => {
-  const poundSign = <span className="absolute -ml-4 flex items-center">#</span>
+  const poundSign = (
+    <span className="absolute -ml-4 flex items-center" aria-hidden>
+      #
+    </span>
+  )
   const overlineClasses = cn(
     "flex py-1 text-sm font-medium leading-none text-blue-500 dark:text-rose-500",
     className,

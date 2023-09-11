@@ -22,7 +22,10 @@ type InfoCardProps = {
 const InfoCard = ({ StatIcon, statTitle, statDescription }: InfoCardProps) => (
   <div className="flex flex-col gap-1 bg-gray-100  p-6 dark:bg-indigo-900">
     <em className="mb-4 text-4xl font-bold not-italic leading-normal text-blue-500 dark:text-rose-500">
-      <StatIcon className="h-12 w-12 fill-none stroke-blue-500 stroke-2 dark:stroke-rose-500" />
+      <StatIcon
+        className="h-12 w-12 fill-none stroke-blue-500 stroke-2 dark:stroke-rose-500"
+        aria-hidden
+      />
     </em>
     <div className="flex flex-col gap-2">
       <em className="text-base font-bold not-italic">{statTitle}</em>
