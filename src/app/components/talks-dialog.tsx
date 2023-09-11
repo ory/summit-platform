@@ -1,16 +1,19 @@
 import { SanityImage } from "@/app/components/SanityImage"
 import { dividerStyles } from "@/app/components/dividerStyles"
+import { getSpeakersFromTalks } from "@/hooks/useTalks"
 import { cn } from "@/utils/cn"
 import { Dialog } from "@headlessui/react"
 import { SanityImageSource } from "@sanity/asset-utils"
 import { useRef } from "react"
 import ReactMarkdown from "react-markdown"
+import { match } from "ts-pattern"
 import { Talk } from "../../../sanity/lib/client"
 import { Speaker } from "../../../sanity.config"
 
 type PropTypes = {
   onClose: () => void
   talks?: Talk[]
+  selectedSpeaker?: Speaker
   prevItemDisabled: boolean
   nextItemDisabled: boolean
   onSelectPrevItem: () => void
@@ -24,28 +27,24 @@ const customProse = "prose dark:text-white"
 
 export const TalksDialog = ({
   talks,
+  selectedSpeaker,
   onClose,
   prevItemDisabled,
   nextItemDisabled,
   onSelectPrevItem,
   onSelectNextItem,
 }: PropTypes) => {
-  const speakersMap =
-    talks?.reduce(
-      (allSpeakers, talk) => ({
-        ...allSpeakers,
-        ...talk.speakers.reduce(
-          (talkSpeakers, curr) => ({
-            ...talkSpeakers,
-            [curr._id]: curr,
-          }),
-          {} as Record<string, Speaker>,
+  const speakersFromTalks: Speaker[] = talks ? getSpeakersFromTalks(talks) : []
+  const speakers = selectedSpeaker
+    ? [
+        selectedSpeaker,
+        ...speakersFromTalks.filter(
+          (speaker) => speaker._id !== selectedSpeaker._id,
         ),
-      }),
-      {} as Record<string, Speaker>,
-    ) ?? {}
-  const speakers: Speaker[] = Object.values(speakersMap)
+      ]
+    : speakersFromTalks
   const dialogRef = useRef<HTMLDivElement>(null)
+  const elementType = selectedSpeaker ? "Speaker" : "Agenda Item"
 
   const withScrollReset = (fn: () => void) => () => {
     dialogRef.current?.scrollTo({
@@ -55,7 +54,10 @@ export const TalksDialog = ({
   }
 
   return (
-    <Dialog open={(talks?.length ?? 0) > 0} onClose={onClose}>
+    <Dialog
+      open={(talks?.length ?? 0) > 0 || selectedSpeaker !== undefined}
+      onClose={onClose}
+    >
       <div className="fixed inset-0 z-50 bg-black/30" aria-hidden="true" />
       <div className="fixed inset-0 z-50 flex w-screen flex-col items-center justify-center px-6 py-16 sm:px-12 md:py-24 lg:px-24">
         <Dialog.Panel
@@ -83,25 +85,33 @@ export const TalksDialog = ({
             </svg>
           </button>
           <Dialog.Title className="sr-only">
-            Details about the talks
-            <ul>
-              {talks?.map((talk) => {
-                const speakerNames = talk.speakers.map(
-                  (speaker) => speaker.name,
-                )
-                const firstSpeakers = speakerNames.slice(0, -1)
-                const lastSpeaker = speakerNames.at(-1)
-                const speakersList = [
-                  firstSpeakers.join(", "),
-                  lastSpeaker,
-                ].join(" and ")
-                return (
-                  <li key={talk._id}>
-                    &quot;{talk.title}&quot; by {speakersList}
-                  </li>
-                )
-              })}
-            </ul>
+            {match(selectedSpeaker)
+              .with(undefined, () => (
+                <>
+                  Details about the talks
+                  <ul>
+                    {talks?.map((talk) => {
+                      const speakerNames = talk.speakers.map(
+                        (speaker) => speaker.name,
+                      )
+                      const firstSpeakers = speakerNames.slice(0, -1)
+                      const lastSpeaker = speakerNames.at(-1)
+                      const speakersList = [
+                        firstSpeakers.join(", "),
+                        lastSpeaker,
+                      ].join(" and ")
+                      return (
+                        <li key={talk._id}>
+                          &quot;{talk.title}&quot; by {speakersList}
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </>
+              ))
+              .otherwise((selectedSpeaker) => (
+                <>Details about {selectedSpeaker.name}</>
+              ))}
           </Dialog.Title>
           {talks?.map((talk) => {
             const start = new Date(talk.startTime)
@@ -221,7 +231,7 @@ export const TalksDialog = ({
               >
                 &lt;-
               </span>
-              Previous Agenda Item
+              Previous {elementType}
             </button>
             <button
               className="group flex flex-col items-end gap-2 p-2"
@@ -234,7 +244,7 @@ export const TalksDialog = ({
               >
                 -&gt;
               </span>
-              Next Agenda Item
+              Next {elementType}
             </button>
           </div>
         </Dialog.Panel>
