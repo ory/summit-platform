@@ -41,6 +41,19 @@ const speakerSchema = defineType({
       type: "image",
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: "twitterHandle",
+      title: "Twitter handle",
+      type: "string",
+      validation: (Rule) =>
+        Rule.regex(
+          /^[^@]/,
+          // For some reason, this function is typed to expect only 1 parameter
+          // when, in reality and according to JSDocs, it expects 1-3
+          // @ts-ignore
+          "The user name must be entered without the preceding @",
+        ),
+    }),
   ],
 })
 

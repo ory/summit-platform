@@ -32,15 +32,21 @@ type PropTypes = {
   prevItemLink?: string
   nextItemLink?: string
 }
-// TODO: add socials
 
 const sectionLayout =
   "grid grid-cols-1 gap-4 lg:grid-cols-[272px,1fr] lg:items-start"
 const sectionPadding = "px-4 py-6 sm:px-16 sm:py-12"
 const customProse = "prose dark:prose-invert"
 
-const getReadableSpeakerList = (talk: Talk) => {
-  const speakerNames = talk.speakers.map((speaker) => speaker.name)
+const getReadableSpeakerList = (talk: Talk, media?: "twitter") => {
+  const speakerNames = talk.speakers.map(
+    (speaker) =>
+      match(media)
+        .with("twitter", () =>
+          speaker.twitterHandle ? `@${speaker.twitterHandle}` : undefined,
+        )
+        .otherwise(() => undefined) ?? speaker.name,
+  )
   const firstSpeakers = speakerNames.slice(0, -1)
   const lastSpeaker = speakerNames.at(-1)
   return [firstSpeakers.join(", "), lastSpeaker].join(" and ")
@@ -219,13 +225,20 @@ export const TalksDialog = () => {
             </Dialog.Title>
             {talks?.map((talk) => {
               const start = new Date(talk.startTime)
-              const shareToSocialMediaMessage = `Check out this talk on "${
+
+              const getShareMessageForMedia = (
+                media?: "twitter",
+              ) => `Check out this talk on "${
                 talk.title
               }" that will be held by ${getReadableSpeakerList(
                 talk,
-              )} at Ory Summit 2023
+                media,
+              )} at ${match(media)
+                .with("twitter", () => "@OryCorp")
+                .otherwise(() => "Ory")} Summit 2023
 
 ${getPermalinkFromTalk(talk)}`
+
               return (
                 <article key={talk._id} className="flex flex-col">
                   <section
@@ -282,24 +295,46 @@ ${getPermalinkFromTalk(talk)}`
                       </h3>
                       <ul className="flex gap-2">
                         <li>
-                          <TwitterIcon className="fill-blue-500" aria-hidden />
-                          <span className="sr-only">Share on Twitter</span>
+                          <Link
+                            href={`https://x.com/intent/tweet?text=${encodeURIComponent(
+                              getShareMessageForMedia("twitter"),
+                            )}`}
+                            target="_blank"
+                          >
+                            <TwitterIcon
+                              className="fill-blue-500"
+                              aria-hidden
+                            />
+                            <span className="sr-only">Share on Twitter</span>
+                          </Link>
                         </li>
                         <li>
-                          <LinkedinIcon className="fill-blue-500" aria-hidden />
-                          <span className="sr-only">Share on LinkedIn</span>
+                          <Link
+                            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                              getPermalinkFromTalk(talk),
+                            )}`}
+                            target="_blank"
+                          >
+                            <LinkedinIcon
+                              className="fill-blue-500"
+                              aria-hidden
+                            />
+                            <span className="sr-only">Share on LinkedIn</span>
+                          </Link>
                         </li>
                         <li>
-                          <button
-                            onClick={() =>
-                              copyToClipboard(shareToSocialMediaMessage)
-                            }
+                          <a
+                            href={getPermalinkFromTalk(talk)}
+                            onClick={(event) => {
+                              event.preventDefault()
+                              copyToClipboard(getShareMessageForMedia())
+                            }}
                           >
                             <LinkIcon className="fill-blue-500" aria-hidden />
                             <span className="sr-only">
                               Copy link to clipboard
                             </span>
-                          </button>
+                          </a>
                         </li>
                       </ul>
                     </div>
