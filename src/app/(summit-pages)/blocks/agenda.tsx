@@ -4,19 +4,25 @@ import { SanityImage } from "@/app/components/SanityImage"
 import { Container } from "@/app/components/container"
 import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
-import { TalksDialog } from "@/app/components/talks-dialog"
 import { Wrapper } from "@/app/components/wrapper"
-import { useTalks } from "@/hooks/useTalks"
+import { getPermalinkFromTalk, useTalks } from "@/hooks/useTalks"
 import { SanityImageSource } from "@sanity/asset-utils"
-import { useState } from "react"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { MouseEventHandler } from "react"
+import { Talk } from "../../../../sanity/lib/client"
 
 export const Agenda = () => {
   const { data: talks } = useTalks()
-  const [selectedTalkIndex, setSelectedTalkIndex] = useState<number>()
-  const selectedTalkIndexOrNan = selectedTalkIndex ?? NaN
-  const selectedTalk = talks?.[selectedTalkIndex ?? -1]
-  const prevTalkTitle = talks?.[selectedTalkIndexOrNan - 1]?.title
-  const nextTalkTitle = talks?.[selectedTalkIndexOrNan + 1]?.title
+  const router = useRouter()
+  const getOnClickHandler =
+    (talk: Talk): MouseEventHandler =>
+    (event) => {
+      event.preventDefault()
+      router.push(getPermalinkFromTalk(talk), {
+        scroll: false,
+      })
+    }
 
   return (
     <Container className="w-full max-w-[--ory-max-content-width] gap-y-16 @container md:gap-y-24">
@@ -36,51 +42,50 @@ export const Agenda = () => {
             <li
               key={talk._id}
               className="group cursor-pointer border-b border-solid border-blue-500 px-2 py-8 first:border-t hover:bg-gray-50 dark:border-rose-500 dark:hover:bg-indigo-950"
-              onClick={() => setSelectedTalkIndex(talkIndex)}
             >
-              <article className="grid grid-cols-[max-content,1fr] gap-x-8 gap-y-4">
-                <time
-                  dateTime={start.toString()}
-                  aria-label={start.toString()}
-                  className="self-start border border-blue-500 bg-rose-50 p-1 dark:border-rose-500 dark:bg-transparent"
-                >
-                  <span aria-hidden>
-                    {start.getHours().toString().padStart(2, "0")}:
-                    {start.getMinutes().toString().padStart(2, "0")}
-                  </span>
-                </time>
-                <h3 className="self-center leading-tight">{talk.title}</h3>
-                <address className="col-start-2">
-                  <ul className="flex flex-col gap-1" aria-label="Speakers">
-                    {talk.speakers.map((speaker) => (
-                      <li key={speaker._id} className="flex items-center gap-4">
-                        <SanityImage
-                          imageSource={
-                            speaker.profilePicture as SanityImageSource
-                          }
-                          sizes="(min-width: 1px) 24px"
-                          alt=""
-                          aria-hidden
-                          className="aspect-square w-6 rounded-full border border-gray-900 object-cover dark:border-white"
-                        />
-                        {speaker.name}
-                      </li>
-                    ))}
-                  </ul>
-                </address>
-              </article>
+              <Link
+                href={getPermalinkFromTalk(talk)}
+                onClick={getOnClickHandler(talk)}
+              >
+                <article className="grid grid-cols-[max-content,1fr] gap-x-8 gap-y-4">
+                  <time
+                    dateTime={start.toString()}
+                    aria-label={start.toString()}
+                    className="self-start border border-blue-500 bg-rose-50 p-1 dark:border-rose-500 dark:bg-transparent"
+                  >
+                    <span aria-hidden>
+                      {start.getHours().toString().padStart(2, "0")}:
+                      {start.getMinutes().toString().padStart(2, "0")}
+                    </span>
+                  </time>
+                  <h3 className="self-center leading-tight">{talk.title}</h3>
+                  <address className="col-start-2">
+                    <ul className="flex flex-col gap-1" aria-label="Speakers">
+                      {talk.speakers.map((speaker) => (
+                        <li
+                          key={speaker._id}
+                          className="flex items-center gap-4"
+                        >
+                          <SanityImage
+                            imageSource={
+                              speaker.profilePicture as SanityImageSource
+                            }
+                            sizes="(min-width: 1px) 24px"
+                            alt=""
+                            aria-hidden
+                            className="aspect-square w-6 rounded-full border border-gray-900 object-cover dark:border-white"
+                          />
+                          {speaker.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </address>
+                </article>
+              </Link>
             </li>
           )
         })}
       </ul>
-      <TalksDialog
-        talks={selectedTalk && [selectedTalk]}
-        onClose={() => setSelectedTalkIndex(undefined)}
-        prevItemTitle={prevTalkTitle}
-        nextItemTitle={nextTalkTitle}
-        onSelectNextItem={() => setSelectedTalkIndex(selectedTalkIndex! + 1)}
-        onSelectPrevItem={() => setSelectedTalkIndex(selectedTalkIndex! - 1)}
-      />
     </Container>
   )
 }

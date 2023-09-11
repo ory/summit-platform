@@ -1,6 +1,7 @@
 import { Agenda } from "@/app/(summit-pages)/blocks/agenda"
 import { Speakers } from "@/app/(summit-pages)/blocks/speakers"
 import { Venue } from "@/app/(summit-pages)/blocks/venue"
+import { TalksDialog } from "@/app/components/talks-dialog"
 import bgDarkStill from "@/assets/background-dark-still.webp"
 import bgLightStill from "@/assets/background-light-still.webp"
 import { cn } from "@/utils/cn"
@@ -32,6 +33,7 @@ export default function Page() {
 
   return (
     <main className={cn("flex flex-1 flex-col")}>
+      <TalksDialog />
       <div
         className={cn(
           dividerStyles,

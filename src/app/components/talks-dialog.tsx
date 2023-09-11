@@ -1,12 +1,25 @@
+"use client"
+
 import { SanityImage } from "@/app/components/SanityImage"
 import { dividerStyles } from "@/app/components/dividerStyles"
-import { getSpeakersFromTalks } from "@/hooks/useTalks"
+import { LinkIcon } from "@/assets/icon/link-icon"
+import { LinkedinIcon } from "@/assets/icon/linkedin-icon"
+import { TwitterIcon } from "@/assets/icon/twitter-icon"
+import { getPermalinkFromSpeaker, useSpeakers } from "@/hooks/useSpeakers"
+import {
+  getPermalinkFromTalk,
+  getSpeakersFromTalks,
+  useTalks,
+  useTalksBySpeakerId,
+} from "@/hooks/useTalks"
 import { cn } from "@/utils/cn"
 import { Dialog } from "@headlessui/react"
 import { SanityImageSource } from "@sanity/asset-utils"
-import { useRef } from "react"
+import Link from "next/link"
+import { useRouter, useSearchParams } from "next/navigation"
+import { MouseEventHandler, useRef } from "react"
 import ReactMarkdown from "react-markdown"
-import { match } from "ts-pattern"
+import { match, P } from "ts-pattern"
 import { Talk } from "../../../sanity/lib/client"
 import { Speaker } from "../../../sanity.config"
 
@@ -14,27 +27,112 @@ type PropTypes = {
   onClose: () => void
   talks?: Talk[]
   selectedSpeaker?: Speaker
-  nextItemTitle?: string
   prevItemTitle?: string
-  onSelectPrevItem: () => void
-  onSelectNextItem: () => void
+  nextItemTitle?: string
+  prevItemLink?: string
+  nextItemLink?: string
 }
+// TODO: add socials
 
 const sectionLayout =
   "grid grid-cols-1 gap-4 lg:grid-cols-[272px,1fr] lg:items-start"
 const sectionPadding = "px-4 py-6 sm:px-16 sm:py-12"
 const customProse = "prose dark:prose-invert"
 
-export const TalksDialog = ({
-  talks,
-  selectedSpeaker,
-  onClose,
-  prevItemTitle,
-  nextItemTitle,
-  onSelectPrevItem,
-  onSelectNextItem,
-}: PropTypes) => {
+const getReadableSpeakerList = (talk: Talk) => {
+  const speakerNames = talk.speakers.map((speaker) => speaker.name)
+  const firstSpeakers = speakerNames.slice(0, -1)
+  const lastSpeaker = speakerNames.at(-1)
+  return [firstSpeakers.join(", "), lastSpeaker].join(" and ")
+}
+
+const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
+  const searchParams = useSearchParams()
+  const { data: allTalks } = useTalks()
+  const { data: allSpeakers } = useSpeakers()
+  const router = useRouter()
+  const talksBySpeakerId = useTalksBySpeakerId()
+
+  if (!allTalks || !allSpeakers) {
+    return undefined
+  }
+
+  const speakerSlug = searchParams.get("viewSpeaker")
+  const talkSlug = searchParams.get("viewSession")
+
+  return match([talkSlug, speakerSlug])
+    .with([P.string.select(), P._], (talkSlug) => {
+      const talkIndex =
+        allTalks?.findIndex((talk) => talk.slug.current === talkSlug) ?? NaN
+      const talk = allTalks[talkIndex]
+      if (!talk) return undefined
+      const prevTalk = allTalks[talkIndex - 1]
+      const nextTalk = allTalks[talkIndex + 1]
+      return {
+        talks: [talk],
+        selectedSpeaker: undefined,
+        onClose: () => {
+          router.push("/#agenda", {
+            scroll: false,
+          })
+        },
+        prevItemTitle: prevTalk?.title,
+        prevItemLink: prevTalk ? getPermalinkFromTalk(prevTalk) : undefined,
+        nextItemTitle: nextTalk?.title,
+        nextItemLink: nextTalk ? getPermalinkFromTalk(nextTalk) : undefined,
+      } satisfies PropTypes
+    })
+    .with([P._, P.string.select()], (speakerSlug) => {
+      const speakerIndex =
+        allSpeakers?.findIndex(
+          (speaker) => speaker.slug.current === speakerSlug,
+        ) ?? NaN
+      const speaker = allSpeakers[speakerIndex]
+      if (!speaker) return undefined
+      const prevSpeaker = allSpeakers[speakerIndex - 1]
+      const nextSpeaker = allSpeakers[speakerIndex + 1]
+      return {
+        talks: talksBySpeakerId[speaker._id],
+        selectedSpeaker: speaker,
+        onClose: () => {
+          router.push("/#speakers", {
+            scroll: false,
+          })
+        },
+        prevItemTitle: prevSpeaker?.name,
+        prevItemLink: prevSpeaker
+          ? getPermalinkFromSpeaker(prevSpeaker)
+          : undefined,
+        nextItemTitle: nextSpeaker?.name,
+        nextItemLink: nextSpeaker
+          ? getPermalinkFromSpeaker(nextSpeaker)
+          : undefined,
+      } satisfies PropTypes
+    })
+    .otherwise(() => undefined)
+}
+
+export const TalksDialog = () => {
+  const focussedTalkOrSpeaker = useFocussedTalkOrSpeaker()
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
+
+  if (!focussedTalkOrSpeaker) {
+    return null
+  }
+
+  const {
+    talks,
+    selectedSpeaker,
+    onClose,
+    prevItemTitle,
+    nextItemTitle,
+    prevItemLink,
+    nextItemLink,
+  } = focussedTalkOrSpeaker
+
   const speakersFromTalks: Speaker[] = talks ? getSpeakersFromTalks(talks) : []
+
   const speakers = selectedSpeaker
     ? [
         selectedSpeaker,
@@ -43,14 +141,27 @@ export const TalksDialog = ({
         ),
       ]
     : speakersFromTalks
-  const dialogRef = useRef<HTMLDivElement>(null)
   const elementType = selectedSpeaker ? "Speaker" : "Agenda Item"
 
-  const withScrollReset = (fn: () => void) => () => {
-    dialogRef.current?.scrollTo({
-      top: 0,
-    })
-    fn()
+  const createLocalLinkClickHandler =
+    (url?: string): MouseEventHandler =>
+    (event) => {
+      event.preventDefault()
+      dialogRef.current?.scrollTo({
+        top: 0,
+      })
+      if (url) {
+        router.push(url, {
+          scroll: false,
+        })
+      }
+    }
+
+  const copyToClipboard = (message: string) => {
+    navigator.clipboard
+      .writeText(message)
+      .then(console.log)
+      .catch(console.error)
   }
 
   return (
@@ -92,15 +203,7 @@ export const TalksDialog = ({
                     Details about the talks
                     <ul>
                       {talks?.map((talk) => {
-                        const speakerNames = talk.speakers.map(
-                          (speaker) => speaker.name,
-                        )
-                        const firstSpeakers = speakerNames.slice(0, -1)
-                        const lastSpeaker = speakerNames.at(-1)
-                        const speakersList = [
-                          firstSpeakers.join(", "),
-                          lastSpeaker,
-                        ].join(" and ")
+                        const speakersList = getReadableSpeakerList(talk)
                         return (
                           <li key={talk._id}>
                             &quot;{talk.title}&quot; by {speakersList}
@@ -116,6 +219,13 @@ export const TalksDialog = ({
             </Dialog.Title>
             {talks?.map((talk) => {
               const start = new Date(talk.startTime)
+              const shareToSocialMediaMessage = `Check out this talk on "${
+                talk.title
+              }" that will be held by ${getReadableSpeakerList(
+                talk,
+              )} at Ory Summit 2023
+
+${getPermalinkFromTalk(talk)}`
               return (
                 <article key={talk._id} className="flex flex-col">
                   <section
@@ -168,9 +278,30 @@ export const TalksDialog = ({
                   >
                     <div className="flex flex-col gap-4">
                       <h3 className="font-bold uppercase leading-tight text-blue-500 dark:text-rose-500">
-                        Session details
+                        Share this session
                       </h3>
-                      <ul className="flex">Socials</ul>
+                      <ul className="flex gap-2">
+                        <li>
+                          <TwitterIcon className="fill-blue-500" aria-hidden />
+                          <span className="sr-only">Share on Twitter</span>
+                        </li>
+                        <li>
+                          <LinkedinIcon className="fill-blue-500" aria-hidden />
+                          <span className="sr-only">Share on LinkedIn</span>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() =>
+                              copyToClipboard(shareToSocialMediaMessage)
+                            }
+                          >
+                            <LinkIcon className="fill-blue-500" aria-hidden />
+                            <span className="sr-only">
+                              Copy link to clipboard
+                            </span>
+                          </button>
+                        </li>
+                      </ul>
                     </div>
                     <div className={customProse}>
                       <ReactMarkdown>{talk.summary}</ReactMarkdown>
@@ -231,34 +362,48 @@ export const TalksDialog = ({
                 "relative flex flex-col justify-between gap-8 sm:flex-row",
               )}
             >
-              <button
-                className="group flex flex-col gap-2 p-2"
-                disabled={prevItemTitle === undefined}
-                onClick={withScrollReset(onSelectPrevItem)}
+              <Link
+                href={prevItemLink ?? ""}
+                className={cn("group flex flex-col items-start gap-2 p-2", {
+                  "cursor-default": !prevItemLink,
+                })}
+                onClick={createLocalLinkClickHandler(prevItemLink)}
               >
                 <span
                   aria-hidden
-                  className="text-3xl font-medium leading-tight text-blue-500 group-disabled:text-gray-500 dark:text-rose-500"
+                  className={cn(
+                    "text-3xl font-medium leading-tight text-blue-500 dark:text-rose-500",
+                    {
+                      "text-gray-500": !prevItemLink,
+                    },
+                  )}
                 >
                   &lt;-
                 </span>
                 <span className="sr-only">View</span>
                 {prevItemTitle ?? `No previous ${elementType}`}
-              </button>
-              <button
-                className="group flex flex-col items-end gap-2 p-2"
-                disabled={nextItemTitle === undefined}
-                onClick={withScrollReset(onSelectNextItem)}
+              </Link>
+              <Link
+                href={prevItemLink ?? ""}
+                className={cn("group flex flex-col items-end gap-2 p-2", {
+                  "cursor-default": !nextItemLink,
+                })}
+                onClick={createLocalLinkClickHandler(nextItemLink)}
               >
                 <span
                   aria-hidden
-                  className="text-3xl font-medium leading-tight text-blue-500 group-disabled:text-gray-500 dark:text-rose-500"
+                  className={cn(
+                    "text-3xl font-medium leading-tight text-blue-500 dark:text-rose-500",
+                    {
+                      "text-gray-500": !nextItemLink,
+                    },
+                  )}
                 >
                   -&gt;
                 </span>
                 <span className="sr-only">View</span>
                 {nextItemTitle ?? `No next ${elementType}`}
-              </button>
+              </Link>
             </div>
           </Dialog.Panel>
         </div>

@@ -4,10 +4,8 @@ import { Container } from "@/app/components/container"
 import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
 import { SpeakerCard } from "@/app/components/speaker-card"
-import { TalksDialog } from "@/app/components/talks-dialog"
 import { Wrapper } from "@/app/components/wrapper"
 import { useSpeakers } from "@/hooks/useSpeakers"
-import { useTalksBySpeakerId } from "@/hooks/useTalks"
 import { cn } from "@/utils/cn"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { match } from "ts-pattern"
@@ -15,18 +13,6 @@ import { match } from "ts-pattern"
 export const Speakers = () => {
   const speakersContainerRef = useRef<HTMLUListElement>(null)
   const { data: speakers } = useSpeakers()
-  const talksBySpeakerId = useTalksBySpeakerId()
-
-  const [selectedSpeakerIndex, setSelectedSpeakerIndex] = useState<number>()
-  const selectedSpeaker = speakers?.[selectedSpeakerIndex ?? -1]
-  const selectedTalks =
-    selectedSpeakerIndex !== undefined
-      ? talksBySpeakerId[selectedSpeaker?._id ?? ""]
-      : undefined
-
-  const selectedSpeakerIndexOrNan = selectedSpeakerIndex ?? NaN
-  const prevSpeakerName = speakers?.[selectedSpeakerIndexOrNan - 1]?.name
-  const nextSpeakerName = speakers?.[selectedSpeakerIndexOrNan + 1]?.name
 
   const useScroller = (direction: "left" | "right") =>
     useCallback(() => {
@@ -126,31 +112,12 @@ export const Speakers = () => {
       >
         {/*/!* effectively adds left padding back, accounting for flex gap *!/*/}
         <li className="w-[calc(var(--total-padding)-1rem)] shrink-0 grow-0 snap-start" />
-        {speakers?.map((speaker, index) => (
-          // Will hopefully be fixed by https://github.com/saiichihashimoto/sanity-typed/issues/242
-          // @ts-ignore
-          <SpeakerCard
-            key={speaker._id}
-            onClick={() => setSelectedSpeakerIndex(index)}
-            {...speaker}
-          />
+        {speakers?.map((speaker) => (
+          <SpeakerCard key={speaker._id} {...speaker} />
         ))}
         {/* effectively adds right padding back, accounting for flex gap */}
         <li className="w-[calc(var(--total-padding)-1rem)] shrink-0 grow-0 snap-start" />
       </ul>
-      <TalksDialog
-        talks={selectedTalks}
-        selectedSpeaker={selectedSpeaker}
-        onClose={() => setSelectedSpeakerIndex(undefined)}
-        prevItemTitle={prevSpeakerName}
-        nextItemTitle={nextSpeakerName}
-        onSelectPrevItem={() =>
-          setSelectedSpeakerIndex(selectedSpeakerIndex! - 1)
-        }
-        onSelectNextItem={() =>
-          setSelectedSpeakerIndex(selectedSpeakerIndex! + 1)
-        }
-      />
     </Container>
   )
 }

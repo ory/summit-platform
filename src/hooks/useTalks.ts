@@ -38,3 +38,6 @@ export const getSpeakersFromTalks = (talks: Talk[]) => {
   const speakers: Speaker[] = Object.values(speakersMap)
   return speakers
 }
+
+export const getPermalinkFromTalk = (talk: Talk) =>
+  `${location.origin}/?viewSession=${talk.slug.current}#agenda`

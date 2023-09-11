@@ -12,6 +12,17 @@ const speakerSchema = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description:
+        "Will be used to link to the details view of this speaker, e.g. https://summit.ory.sh/?viewSpeaker=thomas-curran#speakers. Will auto-generate from name",
+      options: {
+        source: "name",
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "position",
       title: "Position",
       type: "string",
@@ -42,6 +53,17 @@ const talkSchema = defineType({
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description:
+        "Will be used to link to the details view of this talk, e.g. https://summit.ory.sh/?viewSession=my-awesome-talks-title#agenda. Will auto-generate from title.",
+      options: {
+        source: "title",
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
