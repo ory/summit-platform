@@ -35,7 +35,7 @@ export const Agenda = () => {
         </Content>
       </Wrapper>
       <ul className="col-span-full">
-        {talks?.map((talk, talkIndex) => {
+        {talks?.map((talk) => {
           const start = new Date(talk.startTime)
 
           return (

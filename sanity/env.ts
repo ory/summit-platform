@@ -17,6 +17,12 @@ export const useCdn =
     "Missing environment variable: NEXT_PUBLIC_PRODUCTION",
   ).toLowerCase() !== "false"
 
+export const withCredentials =
+  assertValue(
+    process.env.NEXT_PUBLIC_PRODUCTION,
+    "Missing environment variable: NEXT_PUBLIC_PRODUCTION",
+  ).toLowerCase() === "false"
+
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {
     throw new Error(errorMessage)

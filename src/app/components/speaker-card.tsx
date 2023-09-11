@@ -31,7 +31,7 @@ export const SpeakerCard = (speaker: Speaker) => {
             {...profileImageProps}
             alt={`Profile picture of ${name}`}
             sizes="(min-width: 1px) 272px"
-            className="absolute inset-0 bg-blue-500 object-cover mix-blend-normal"
+            className="absolute inset-0 h-full w-full bg-blue-500 object-cover mix-blend-normal"
           />
           <div className="absolute inset-0 bg-blue-500 mix-blend-screen dark:bg-rose-500" />
         </div>

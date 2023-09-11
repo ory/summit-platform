@@ -1,5 +1,5 @@
 import { createClient } from "@sanity-typed/client"
-import { apiVersion, dataset, projectId, useCdn } from "../env"
+import { apiVersion, dataset, projectId, useCdn, withCredentials } from "../env"
 import { SanityValues, Speaker } from "../../sanity.config"
 
 export const client = createClient<SanityValues>()({
@@ -7,7 +7,7 @@ export const client = createClient<SanityValues>()({
   dataset,
   projectId,
   useCdn,
-  withCredentials: true,
+  withCredentials,
 })
 
 export const getSpeakers = async () => client.fetch(`*[_type == "speaker"]`)
