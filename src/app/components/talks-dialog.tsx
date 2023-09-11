@@ -176,11 +176,11 @@ export const TalksDialog = () => {
       onClose={onClose}
     >
       <div className="fixed inset-0 z-50 bg-black/30" aria-hidden="true" />
-      <div className="fixed inset-0 z-50 flex w-screen flex-col items-center justify-center px-6 py-12 sm:px-12 md:py-24 lg:px-24">
-        <div className="flex h-full w-full max-w-[--ory-max-content-width] flex-col items-center justify-center p-2">
+      <div className="fixed inset-0 z-50 flex w-screen flex-col items-center justify-center px-6 py-12 sm:px-12 md:py-24  xl:px-24">
+        <div className="flex h-full w-full flex-col items-center justify-center p-2">
           <Dialog.Panel
             ref={dialogRef}
-            className="relative flex h-full w-full flex-grow flex-col overflow-auto bg-white py-4 dark:bg-indigo-950 sm:py-6"
+            className="relative flex h-full w-full max-w-[--ory-max-content-width] flex-grow flex-col overflow-auto bg-white py-4 dark:bg-indigo-950 sm:py-6"
           >
             <button
               className="absolute right-2 top-2 z-10 text-blue-500 dark:text-rose-500"
