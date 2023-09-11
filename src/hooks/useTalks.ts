@@ -40,4 +40,8 @@ export const getSpeakersFromTalks = (talks: Talk[]) => {
 }
 
 export const getPermalinkFromTalk = (talk: Talk) =>
-  `${location.origin}/?viewSession=${talk.slug.current}#agenda`
+  `https://${
+    window?.location?.host ??
+    process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL ??
+    process.env.NEXT_PUBLIC_VERCEL_URL
+  }/?viewSession=${talk.slug.current}#agenda`
