@@ -1,4 +1,4 @@
-import { getDeploymentOrigin } from "@/utils/get-deployment-origin"
+import { getDeploymentBaseUrl } from "@/utils/get-deployment-base-url"
 import Iframe from "sanity-plugin-iframe-pane"
 import { DefaultDocumentNodeResolver } from "sanity/lib/exports/desk"
 
@@ -8,7 +8,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S) => {
     S.view
       .component(Iframe)
       .options({
-        url: `${getDeploymentOrigin()}/preview`,
+        url: `${getDeploymentBaseUrl()}/preview`,
       })
       .title("Preview"),
   ])

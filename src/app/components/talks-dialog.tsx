@@ -13,6 +13,7 @@ import {
   useTalksBySpeakerId,
 } from "@/hooks/useTalks"
 import { cn } from "@/utils/cn"
+import { getDeploymentBaseUrl } from "@/utils/get-deployment-base-url"
 import { getReadableSpeakerList } from "@/utils/talk-utils"
 import { Dialog } from "@headlessui/react"
 import { SanityImageSource } from "@sanity/asset-utils"
@@ -65,7 +66,8 @@ const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
         talks: [talk],
         selectedSpeaker: undefined,
         onClose: () => {
-          router.push("/#agenda", {
+          // getDeploymentBaseUrl in order to handle preview correctly
+          router.push(`${getDeploymentBaseUrl()}/#agenda`, {
             scroll: false,
           })
         },
@@ -88,7 +90,8 @@ const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
         talks: talksBySpeakerId[speaker._id],
         selectedSpeaker: speaker,
         onClose: () => {
-          router.push("/#speakers", {
+          // getDeploymentBaseUrl in order to handle preview correctly
+          router.push(`${getDeploymentBaseUrl()}/#speakers`, {
             scroll: false,
           })
         },
