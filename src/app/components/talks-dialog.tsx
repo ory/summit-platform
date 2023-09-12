@@ -21,7 +21,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import { MouseEventHandler, useRef } from "react"
 import ReactMarkdown from "react-markdown"
 import { match, P } from "ts-pattern"
-import { Talk } from "../../../sanity/lib/client"
+import { Talk } from "../../../sanity/lib/sanityClient"
 import { Speaker } from "../../../sanity.config"
 
 type PropTypes = {
@@ -41,8 +41,8 @@ const customProse = "prose dark:prose-invert"
 
 const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
   const searchParams = useSearchParams()
-  const { data: allTalks } = useTalks()
-  const { data: allSpeakers } = useSpeakers()
+  const allTalks = useTalks()
+  const allSpeakers = useSpeakers()
   const router = useRouter()
   const talksBySpeakerId = useTalksBySpeakerId()
 

@@ -1,11 +1,10 @@
 "use client"
 
+import { useSanityContext } from "@/contexts/sanity-context"
 import { getDeploymentOrigin } from "@/utils/get-deployment-origin"
-import useSWR from "swr"
-import { getSpeakers } from "../../sanity/lib/client"
 import { Speaker } from "../../sanity.config"
 
-export const useSpeakers = () => useSWR("speakers", getSpeakers)
+export const useSpeakers = () => useSanityContext().speakers
 
 export const getPermalinkFromSpeaker = (speaker: Speaker) =>
   `${getDeploymentOrigin()}/?viewSpeaker=${speaker.slug?.current}#speakers`

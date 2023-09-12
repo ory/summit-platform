@@ -1,5 +1,5 @@
 import { match } from "ts-pattern"
-import { Talk } from "../../sanity/lib/client"
+import { Talk } from "../../sanity/lib/sanityClient"
 
 export const getReadableSpeakerList = (
   talk: Talk,

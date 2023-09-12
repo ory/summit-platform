@@ -2,7 +2,7 @@ import { SanityImageSource } from "@sanity/asset-utils"
 import { useNextSanityImage, UseNextSanityImageProps } from "next-sanity-image"
 import Image from "next/image"
 import { ComponentProps } from "react"
-import { client } from "../../../sanity/lib/client"
+import { sanityClient } from "../../../sanity/lib/sanityClient"
 
 export const SanityImage = ({
   imageSource,
@@ -10,6 +10,6 @@ export const SanityImage = ({
 }: Omit<ComponentProps<typeof Image>, keyof UseNextSanityImageProps> & {
   imageSource: SanityImageSource
 }) => {
-  const image = useNextSanityImage(client, imageSource)
+  const image = useNextSanityImage(sanityClient, imageSource)
   return <Image {...image} {...otherProps} />
 }

@@ -1,9 +1,9 @@
 "use client"
 
+import { SanityProvider } from "@/contexts/sanity-context"
 import { ThemeProvider } from "next-themes"
 import { PropsWithChildren } from "react"
-import { SWRConfig } from "swr"
-import { Talk } from "../../../sanity/lib/client"
+import { Talk } from "../../../sanity/lib/sanityClient"
 import { Speaker } from "../../../sanity.config"
 
 export const Providers = ({
@@ -11,7 +11,7 @@ export const Providers = ({
   speakers,
   talks,
 }: PropsWithChildren<{ speakers: Speaker[]; talks: Talk[] }>) => (
-  <SWRConfig value={{ fallback: { speakers, talks } }}>
+  <SanityProvider value={{ talks, speakers }}>
     <ThemeProvider attribute="class">{children}</ThemeProvider>
-  </SWRConfig>
+  </SanityProvider>
 )

@@ -1,7 +1,7 @@
 import { Footer } from "@/app/(summit-pages)/footer"
 import { Navigation } from "@/app/(summit-pages)/navigation"
 import { Providers } from "@/app/(summit-pages)/providers"
-import { getSpeakers, getTalks } from "../../../sanity/lib/client"
+import { getSpeakers, getTalks } from "../../../sanity/lib/sanityClient"
 
 export const metadata = {
   title: {

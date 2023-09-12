@@ -1,14 +1,14 @@
 "use client"
 
+import { useSanityContext } from "@/contexts/sanity-context"
 import { getDeploymentOrigin } from "@/utils/get-deployment-origin"
-import useSWR from "swr"
-import { getTalks, Talk } from "../../sanity/lib/client"
+import { Talk } from "../../sanity/lib/sanityClient"
 import { Speaker } from "../../sanity.config"
 
-export const useTalks = () => useSWR("talks", getTalks)
+export const useTalks = () => useSanityContext().talks
 
 export const useTalksBySpeakerId = () => {
-  const { data: talks } = useTalks()
+  const talks = useTalks()
   const res: Record<string, Talk[]> = {}
 
   for (let talk of talks ?? []) {

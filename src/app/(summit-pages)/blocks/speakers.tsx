@@ -12,7 +12,7 @@ import { match } from "ts-pattern"
 
 export const Speakers = () => {
   const speakersContainerRef = useRef<HTMLUListElement>(null)
-  const { data: speakers } = useSpeakers()
+  const speakers = useSpeakers()
 
   const useScroller = (direction: "left" | "right") =>
     useCallback(() => {

@@ -10,8 +10,8 @@ import { Metadata } from "next"
 import { IconDescriptor } from "next/dist/lib/metadata/types/metadata-types"
 import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types"
 import { match, P } from "ts-pattern"
-import { getSpeakers, getTalks } from "../../../sanity/lib/client"
 import { urlForImage } from "../../../sanity/lib/image"
+import { getSpeakers, getTalks } from "../../../sanity/lib/sanityClient"
 import { dividerStyles } from "../components/dividerStyles"
 import { About } from "./blocks/about"
 import { Hero } from "./blocks/hero"
@@ -95,7 +95,7 @@ export const generateMetadata = async ({ searchParams }): Promise<Metadata> => {
 
 export const revalidate = 600 // every 10 minutes
 
-export default async function Page() {
+export default async function DefaultSummitPage() {
   const paddingClassnames = "p-[--ory-global-padding] md:py-24"
   const talks = await getTalks()
   const speakers = await getSpeakers()

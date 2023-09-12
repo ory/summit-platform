@@ -10,10 +10,10 @@ import { SanityImageSource } from "@sanity/asset-utils"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { MouseEventHandler } from "react"
-import { Talk } from "../../../../sanity/lib/client"
+import { Talk } from "../../../../sanity/lib/sanityClient"
 
 export const Agenda = () => {
-  const { data: talks } = useTalks()
+  const talks = useTalks()
   const router = useRouter()
   const getOnClickHandler =
     (talk: Talk): MouseEventHandler =>

@@ -4,13 +4,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { MouseEventHandler } from "react"
-import { client } from "../../../sanity/lib/client"
+import { sanityClient } from "../../../sanity/lib/sanityClient"
 import { Speaker } from "../../../sanity.config"
 
 export const SpeakerCard = (speaker: Speaker) => {
   const { name, position, profilePicture } = speaker
   const router = useRouter()
-  const profileImageProps = useNextSanityImage(client, profilePicture)
+  const profileImageProps = useNextSanityImage(sanityClient, profilePicture)
   const onClick: MouseEventHandler = (event) => {
     event.preventDefault()
     router.push(getPermalinkFromSpeaker(speaker), {
