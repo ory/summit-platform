@@ -6,6 +6,7 @@ import bgDarkStill from "@/assets/background-dark-still.webp"
 import bgLightStill from "@/assets/background-light-still.webp"
 import { cn } from "@/utils/cn"
 import { IconDescriptor } from "next/dist/lib/metadata/types/metadata-types"
+import { getSpeakers, getTalks } from "../../../sanity/lib/client"
 import { dividerStyles } from "../components/dividerStyles"
 import { About } from "./blocks/about"
 import { Hero } from "./blocks/hero"
@@ -28,8 +29,10 @@ export const metadata = {
   },
 }
 
-export default function Page() {
+export default async function Page() {
   const paddingClassnames = "p-[--ory-global-padding] md:py-24"
+  const talks = await getTalks()
+  const speakers = await getSpeakers()
 
   return (
     <main className={cn("flex flex-1 flex-col")}>
@@ -50,27 +53,31 @@ export default function Page() {
       >
         <About />
       </div>
-      <div
-        id="speakers"
-        className={cn(
-          paddingClassnames,
-          dividerStyles,
-          "flex justify-center py-32 md:py-32 lg:py-32 lg:[--ory-global-padding:6rem]",
-        )}
-      >
-        <Speakers />
-      </div>
-      <div
-        id="agenda"
-        className={cn(
-          paddingClassnames,
-          dividerStyles,
-          "flex justify-center py-16",
-          "bg-gray-100 dark:bg-indigo-900",
-        )}
-      >
-        <Agenda />
-      </div>
+      {speakers.length > 0 ? (
+        <div
+          id="speakers"
+          className={cn(
+            paddingClassnames,
+            dividerStyles,
+            "flex justify-center py-32 md:py-32 lg:py-32 lg:[--ory-global-padding:6rem]",
+          )}
+        >
+          <Speakers />
+        </div>
+      ) : null}
+      {talks?.length > 0 ? (
+        <div
+          id="agenda"
+          className={cn(
+            paddingClassnames,
+            dividerStyles,
+            "flex justify-center py-16",
+            "bg-gray-100 dark:bg-indigo-900",
+          )}
+        >
+          <Agenda />
+        </div>
+      ) : null}
       <div className={cn(dividerStyles, "relative isolate")} id="venue">
         <Venue />
       </div>
