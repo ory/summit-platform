@@ -39,7 +39,7 @@ export const Speakers = () => {
 
       if (target) {
         speakersContainer.scrollTo({
-          left: target.offsetLeft,
+          left: target.offsetLeft - leftPadding,
           behavior: "smooth",
         })
       }
@@ -48,7 +48,7 @@ export const Speakers = () => {
   const scrollLeft = useScroller("left")
   const scrollRight = useScroller("right")
   const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
+  const [canScrollRight, setCanScrollRight] = useState(false)
 
   useEffect(() => {
     const speakersContainer = speakersContainerRef.current
@@ -57,18 +57,28 @@ export const Speakers = () => {
     }
 
     const rightmostChild = speakersContainer.lastChild as HTMLElement
-    const handler = () => {
+    const updateScrollButtonsEnablement = () => {
       setCanScrollLeft(speakersContainer.scrollLeft > 0)
       setCanScrollRight(
-        speakersContainer.scrollLeft + speakersContainer.offsetWidth <
-          rightmostChild.offsetLeft + rightmostChild.offsetWidth,
+        // Allow for some margin on the right due to rounding issues etc
+        rightmostChild.offsetLeft +
+          rightmostChild.offsetWidth -
+          (speakersContainer.scrollLeft + speakersContainer.offsetWidth) >=
+          8,
       )
     }
 
-    speakersContainer.addEventListener("scroll", handler)
-    return () => speakersContainer.removeEventListener("scroll", handler)
+    // Correctly initialize state when speakers change
+    updateScrollButtonsEnablement()
+
+    speakersContainer.addEventListener("scroll", updateScrollButtonsEnablement)
+    return () =>
+      speakersContainer.removeEventListener(
+        "scroll",
+        updateScrollButtonsEnablement,
+      )
     // eslint-disable-next-line
-  }, [speakersContainerRef.current])
+  }, [speakersContainerRef.current, speakers])
 
   return (
     <Container className="w-full max-w-[--ory-max-content-width] gap-y-24 @container">
