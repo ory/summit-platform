@@ -13,6 +13,7 @@ import {
   useTalksBySpeakerId,
 } from "@/hooks/useTalks"
 import { cn } from "@/utils/cn"
+import { getReadableSpeakerList } from "@/utils/talk-utils"
 import { Dialog } from "@headlessui/react"
 import { SanityImageSource } from "@sanity/asset-utils"
 import Link from "next/link"
@@ -37,20 +38,6 @@ const sectionLayout =
   "grid grid-cols-1 gap-4 lg:grid-cols-[272px,1fr] lg:items-start"
 const sectionPadding = "px-4 py-6 sm:px-16 sm:py-12"
 const customProse = "prose dark:prose-invert"
-
-const getReadableSpeakerList = (talk: Talk, media?: "twitter") => {
-  const speakerNames = talk.speakers.map(
-    (speaker) =>
-      match(media)
-        .with("twitter", () =>
-          speaker.twitterHandle ? `@${speaker.twitterHandle}` : undefined,
-        )
-        .otherwise(() => undefined) ?? speaker.name,
-  )
-  const firstSpeakers = speakerNames.slice(0, -1)
-  const lastSpeaker = speakerNames.at(-1)
-  return [firstSpeakers.join(", "), lastSpeaker].join(" and ")
-}
 
 const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
   const searchParams = useSearchParams()
