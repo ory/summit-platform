@@ -93,7 +93,7 @@ export const generateMetadata = async ({ searchParams }): Promise<Metadata> => {
   }
 }
 
-export const revalidate = 1
+export const revalidate = 600 // every 10 minutes
 
 export default async function Page() {
   const paddingClassnames = "p-[--ory-global-padding] md:py-24"
