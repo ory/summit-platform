@@ -1,6 +1,6 @@
 "use client"
 
-import { getDeploymentUrl } from "@/utils/get-deployment-url"
+import { getDeploymentOrigin } from "@/utils/get-deployment-origin"
 import useSWR from "swr"
 import { getTalks, Talk } from "../../sanity/lib/client"
 import { Speaker } from "../../sanity.config"
@@ -41,4 +41,4 @@ export const getSpeakersFromTalks = (talks: Talk[]) => {
 }
 
 export const getPermalinkFromTalk = (talk: Talk) =>
-  `https://${getDeploymentUrl()}/?viewSession=${talk.slug.current}#agenda`
+  `${getDeploymentOrigin()}/?viewSession=${talk.slug.current}#agenda`
