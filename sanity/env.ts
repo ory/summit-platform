@@ -11,11 +11,7 @@ export const projectId = assertValue(
   "Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID",
 )
 
-export const useCdn =
-  assertValue(
-    process.env.NEXT_PUBLIC_PRODUCTION,
-    "Missing environment variable: NEXT_PUBLIC_PRODUCTION",
-  ).toLowerCase() !== "false"
+export const useCdn = false
 
 export const withCredentials =
   assertValue(
