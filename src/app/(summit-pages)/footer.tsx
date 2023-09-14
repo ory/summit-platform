@@ -1,7 +1,7 @@
 import { cn } from "@/utils/cn"
-import { Container } from "./components/container"
-import { LinkItem } from "./components/link-item"
-import { Wrapper } from "./components/wrapper"
+import { Container } from "../components/container"
+import { LinkItem } from "../components/link-item"
+import { Wrapper } from "../components/wrapper"
 
 export const Footer = () => (
   <footer
@@ -10,7 +10,7 @@ export const Footer = () => (
       "sm:px-12 xl:px-24",
     )}
   >
-    <Container className="mx-auto max-w-[1344px]">
+    <Container className="mx-auto max-w-[--ory-max-content-width]">
       <Wrapper>
         <div className="col-span-full flex flex-col justify-between gap-8 lg:flex-row">
           <span>

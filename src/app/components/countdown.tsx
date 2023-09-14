@@ -50,6 +50,7 @@ const Countdown = ({ className, targetDate }: CountdownProps) => {
           width={15}
           height={12}
           className="text-blue-500 dark:text-rose-500"
+          aria-hidden
         />
       </div>
       <div>

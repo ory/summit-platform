@@ -1,11 +1,11 @@
 import { cn } from "@/utils/cn"
 import Link from "next/link"
-import { Button } from "../components/button"
-import { Container } from "../components/container"
-import { Content } from "../components/content"
-import Countdown from "../components/countdown"
-import { dividerStyles } from "../components/dividerStyles"
-import { Wrapper } from "../components/wrapper"
+import { Button } from "../../components/button"
+import { Container } from "../../components/container"
+import { Content } from "../../components/content"
+import Countdown from "../../components/countdown"
+import { dividerStyles } from "../../components/dividerStyles"
+import { Wrapper } from "../../components/wrapper"
 import { summitStartingDate } from "../startingDate"
 
 export default function SeeYouSoon() {
@@ -16,7 +16,7 @@ export default function SeeYouSoon() {
         "flex flex-1 flex-col items-center justify-end p-6 sm:p-12 md:justify-start md:py-24 lg:p-24",
       )}
     >
-      <Container className="w-full max-w-[1344px]">
+      <Container className="w-full max-w-[--ory-max-content-width]">
         <Wrapper>
           <Content className="col-span-full max-w-[420px]">
             <div className="flex flex-col gap-4 md:gap-6">

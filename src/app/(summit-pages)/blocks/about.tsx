@@ -2,10 +2,10 @@ import CalendarPinIcon from "@/assets/icon/CalendarPinIcon"
 import MountainIcon from "@/assets/icon/MountainIcon"
 import RocketIcon from "@/assets/icon/RocketIcon"
 import SunriseIcon from "@/assets/icon/SunriseIcon"
-import { Container } from "../components/container"
-import { Content } from "../components/content"
-import { Overline } from "../components/overline"
-import { Wrapper } from "../components/wrapper"
+import { Container } from "../../components/container"
+import { Content } from "../../components/content"
+import { Overline } from "../../components/overline"
+import { Wrapper } from "../../components/wrapper"
 
 type StatIcon =
   | typeof SunriseIcon
@@ -22,7 +22,10 @@ type InfoCardProps = {
 const InfoCard = ({ StatIcon, statTitle, statDescription }: InfoCardProps) => (
   <div className="flex flex-col gap-1 bg-gray-100  p-6 dark:bg-indigo-900">
     <em className="mb-4 text-4xl font-bold not-italic leading-normal text-blue-500 dark:text-rose-500">
-      <StatIcon className="h-12 w-12 fill-none stroke-blue-500 stroke-2 dark:stroke-rose-500" />
+      <StatIcon
+        className="h-12 w-12 fill-none stroke-blue-500 stroke-2 dark:stroke-rose-500"
+        aria-hidden
+      />
     </em>
     <div className="flex flex-col gap-2">
       <em className="text-base font-bold not-italic">{statTitle}</em>
@@ -33,7 +36,7 @@ const InfoCard = ({ StatIcon, statTitle, statDescription }: InfoCardProps) => (
 
 export const About = () => {
   return (
-    <Container className="w-full max-w-[1344px] flex-1 md:gap-y-24 xl:grid-cols-2">
+    <Container className="w-full max-w-[--ory-max-content-width] flex-1 md:gap-y-24 xl:grid-cols-2">
       <Wrapper className="content-start max-md:items-end xl:col-span-1">
         <Content className="col-span-full max-w-[420px]">
           <div className="flex flex-col gap-2">

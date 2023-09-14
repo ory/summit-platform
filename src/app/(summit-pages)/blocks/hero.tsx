@@ -1,12 +1,12 @@
 "use client"
 
 import { useIsRegistered } from "@/hooks/useRegistration"
-import BackgroundMountains from "../components/background-video"
-import { Banner } from "../components/banner"
-import { Container } from "../components/container"
-import { Content } from "../components/content"
-import Countdown from "../components/countdown"
-import { GetTicketButton } from "../components/get-ticket-button"
+import BackgroundMountains from "../../components/background-video"
+import { Banner } from "../../components/banner"
+import { Container } from "../../components/container"
+import { Content } from "../../components/content"
+import Countdown from "../../components/countdown"
+import { GetTicketButton } from "../../components/get-ticket-button"
 import { summitStartingDate } from "../startingDate"
 import { HERO_GET_TICKET_BUTTON_ID } from "./heroGetTicketButtonId"
 
@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <>
       <BackgroundMountains />
-      <Container className="flex min-h-full w-full max-w-[1344px] flex-1 flex-col">
+      <Container className="flex min-h-full w-full max-w-[--ory-max-content-width] flex-1 flex-col">
         <Content className="col-span-full mt-auto flex max-w-[420px] bg-white/30 p-2 backdrop-blur-md backdrop-filter dark:bg-black/30 md:mt-0 lg:bg-transparent">
           <Banner
             target="_blank"

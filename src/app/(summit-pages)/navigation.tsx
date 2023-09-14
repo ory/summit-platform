@@ -1,9 +1,9 @@
 import { cn } from "@/utils/cn"
 import Link from "next/link"
-import { Container } from "./components/container"
-import { dividerStyles } from "./components/dividerStyles"
-import { Logo } from "./components/logo"
-import { Wrapper } from "./components/wrapper"
+import { Container } from "../components/container"
+import { dividerStyles } from "../components/dividerStyles"
+import { Logo } from "../components/logo"
+import { Wrapper } from "../components/wrapper"
 import { NavigationRightHandSide } from "./navigation-right"
 
 export const Navigation = async () => {
@@ -17,7 +17,7 @@ export const Navigation = async () => {
         "sticky",
       )}
     >
-      <Container className="max-w-[1344px] flex-1">
+      <Container className="max-w-[--ory-max-content-width] flex-1">
         <Wrapper className="py-2">
           <div className="col-span-full flex">
             <div>

@@ -4,9 +4,9 @@ import { ThemeToggleIcon } from "@/assets/icon/theme-toggle-icon"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useTheme } from "next-themes"
 import { useCallback, useEffect, useRef, useState } from "react"
+import { GetTicketButton } from "../components/get-ticket-button"
+import UserMenu from "../components/user-menu/user-menu"
 import { HERO_GET_TICKET_BUTTON_ID } from "./blocks/heroGetTicketButtonId"
-import { GetTicketButton } from "./components/get-ticket-button"
-import UserMenu from "./components/user-menu/user-menu"
 
 export const NavigationRightHandSide = () => {
   const { data: isRegistered } = useIsRegistered()
