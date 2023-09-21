@@ -18,12 +18,6 @@ export function Hero() {
       <BackgroundMountains />
       <Container className="flex min-h-full w-full max-w-[--ory-max-content-width] flex-1 flex-col">
         <Content className="col-span-full mt-auto flex max-w-[420px] bg-white/30 p-2 backdrop-blur-md backdrop-filter dark:bg-black/30 md:mt-0 lg:bg-transparent">
-          <Banner
-            target="_blank"
-            href="https://docs.google.com/forms/d/11UeyJE59djiaA21Llsa9jxe2Z3VCRdJU0saa6cNixyc/edit"
-          >
-            Speak at ory/summit-23
-          </Banner>
           <div className="flex flex-col gap-4 md:gap-6">
             <h1 className="text-4xl font-medium uppercase leading-tight">
               {!isRegistered ? (
