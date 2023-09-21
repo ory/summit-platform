@@ -80,7 +80,7 @@ export const Agenda = () => {
                               aria-hidden
                               className="aspect-square w-6 rounded-full border border-gray-900 object-cover dark:border-white"
                             />
-                            {speaker.name}
+                            <span className="not-italic">{speaker.name}</span>
                           </li>
                         ))}
                       </ul>
