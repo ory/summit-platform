@@ -258,7 +258,7 @@ ${getPermalinkFromTalk(talk)}`
                           {talk.speakers.map((speaker) => (
                             <li
                               key={speaker._id}
-                              className="flex items-center gap-4"
+                              className="flex items-center gap-4 not-italic"
                             >
                               <SanityImage
                                 imageSource={
