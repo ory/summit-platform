@@ -166,7 +166,7 @@ export const TalksDialog = () => {
       onClose={onClose}
     >
       <div className="fixed inset-0 z-50 bg-black/30" aria-hidden="true" />
-      <div className="fixed inset-0 z-50 flex w-screen flex-col items-center justify-center px-6 py-12 sm:px-12 md:py-24  xl:px-24">
+      <div className="fixed inset-0 z-50 flex w-screen flex-col items-center justify-center sm:p-12 md:py-24  xl:px-24">
         <div className="flex h-full w-full flex-col items-center justify-center p-2">
           <Dialog.Panel
             ref={dialogRef}
@@ -384,14 +384,17 @@ ${getPermalinkFromTalk(talk)}`
               className={cn(
                 sectionPadding,
                 "pb-0 pt-4 sm:pb-0 sm:pt-4 md:pb-0 md:pt-4 lg:pb-0 lg:pt-4 xl:pb-0 xl:pt-4 2xl:pb-0 2xl:pt-4",
-                "relative flex flex-col justify-between gap-8 sm:flex-row",
+                "relative flex flex-row justify-between gap-8",
               )}
             >
               <Link
                 href={prevItemLink ?? ""}
-                className={cn("group flex flex-col items-start gap-2 p-2", {
-                  "cursor-default": !prevItemLink,
-                })}
+                className={cn(
+                  "group flex flex-1 flex-col items-start gap-2 p-2",
+                  {
+                    "cursor-default": !prevItemLink,
+                  },
+                )}
                 onClick={createLocalLinkClickHandler(prevItemLink)}
               >
                 <span
@@ -410,9 +413,12 @@ ${getPermalinkFromTalk(talk)}`
               </Link>
               <Link
                 href={prevItemLink ?? ""}
-                className={cn("group flex flex-col items-end gap-2 p-2", {
-                  "cursor-default": !nextItemLink,
-                })}
+                className={cn(
+                  "group flex flex-1 flex-col items-end gap-2 p-2",
+                  {
+                    "cursor-default": !nextItemLink,
+                  },
+                )}
                 onClick={createLocalLinkClickHandler(nextItemLink)}
               >
                 <span
