@@ -247,7 +247,7 @@ ${getPermalinkFromTalk(talk)}`
                       </time>
                     </div>
                     <div className="flex flex-col gap-8">
-                      <h3 className="text-5xl font-bold leading-normal">
+                      <h3 className="text-4xl font-bold leading-normal">
                         {talk.title}
                       </h3>
                       <address>
