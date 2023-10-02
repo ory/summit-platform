@@ -292,7 +292,7 @@ ${getPermalinkFromTalk(talk)}`
                             target="_blank"
                           >
                             <TwitterIcon
-                              className="fill-blue-500"
+                              className="fill-blue-500 dark:fill-rose-500"
                               aria-hidden
                             />
                             <span className="sr-only">Share on Twitter</span>
@@ -306,7 +306,7 @@ ${getPermalinkFromTalk(talk)}`
                             target="_blank"
                           >
                             <LinkedinIcon
-                              className="fill-blue-500"
+                              className="fill-blue-500 dark:fill-rose-500"
                               aria-hidden
                             />
                             <span className="sr-only">Share on LinkedIn</span>
@@ -320,7 +320,10 @@ ${getPermalinkFromTalk(talk)}`
                               copyToClipboard(getShareMessageForMedia())
                             }}
                           >
-                            <LinkIcon className="fill-blue-500" aria-hidden />
+                            <LinkIcon
+                              className="fill-blue-500 dark:fill-rose-500"
+                              aria-hidden
+                            />
                             <span className="sr-only">
                               Copy link to clipboard
                             </span>
