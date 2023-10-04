@@ -23,19 +23,15 @@ export const Venue = () => (
           or white + target color -> darken).
        */}
       <div className="relative w-full border-b border-b-blue-500 dark:border-b-rose-500 xl:col-start-2">
-        <a
-          className="h-full w-full mix-blend-darken invert dark:mix-blend-lighten dark:invert-0"
-          href={googleMapsLink}
-          target="_blank"
-        >
+        <div className="h-full w-full bg-black mix-blend-darken invert dark:mix-blend-lighten dark:invert-0">
           <Image
             src={venueMap}
             alt="View the location on Google Maps"
-            className="h-full w-full bg-black object-cover object-center"
+            className="h-full w-full object-cover object-center "
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-blue-500 mix-blend-multiply invert dark:bg-[#F5538D] dark:invert-0"></div>
-        </a>
+        </div>
       </div>
     </div>
 
