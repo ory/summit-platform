@@ -23,6 +23,14 @@ const speakerSchema = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "priority",
+      title: "Priority (range [1, 1000])",
+      description:
+        "Will be used for sorting in speakers list. Higher = will be shown first. Speakers with equal prio will be sorted by name ASC. Defaults to 500 if not set.",
+      type: "number",
+      validation: (Rule) => Rule.min(1).max(1000),
+    }),
+    defineField({
       name: "position",
       title: "Position",
       type: "string",
