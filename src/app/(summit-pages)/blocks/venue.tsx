@@ -54,7 +54,7 @@ export const Venue = () => (
               <h2 className="text-4xl font-medium uppercase leading-tight md:text-5xl md:leading-tight">
                 The venue
               </h2>
-              <address className="text-base not-italic leading-tight">
+              <address className="text-base not-italic leading-normal">
                 Ory Corp <br />
                 August-Everding-Str 25 <br />
                 81671 München <br />
