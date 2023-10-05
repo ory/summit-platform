@@ -11,5 +11,5 @@ export const SanityImage = ({
   imageSource: SanityImageSource
 }) => {
   const image = useNextSanityImage(sanityClient, imageSource)
-  return <Image {...image} {...otherProps} />
+  return <Image {...image} {...otherProps} alt={otherProps.alt} />
 }

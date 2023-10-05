@@ -6,9 +6,6 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
-  experimental: {
-    appDir: true,
-  },
   async headers() {
     return [
       // Prevent Google Search video indexing report for background animations
