@@ -27,13 +27,14 @@ export const SpeakerCard = (speaker: Speaker) => {
       >
         <div className="relative aspect-square w-[272px] self-center overflow-hidden rounded-full border-2 border-gray-900 dark:border-white">
           <div className="absolute inset-0 bg-gray-300" />
+
           <Image
             {...profileImageProps}
             alt={`Profile picture of ${name}`}
             sizes="(min-width: 1px) 272px"
-            className="absolute inset-0 h-full w-full bg-blue-500 object-cover mix-blend-normal"
+            className="absolute inset-0 h-full w-full object-cover mix-blend-normal dark:contrast-125"
           />
-          <div className="absolute inset-0 bg-blue-500 mix-blend-screen dark:bg-rose-500" />
+          <div className="absolute inset-0 bg-gradient-to-tl from-blue-600 from-45% to-rose-500 to-90% mix-blend-screen dark:from-blue-800 dark:to-rose-500" />
         </div>
         <div className="h-[114px]">
           <p className="flex flex-col gap-2 leading-normal">
