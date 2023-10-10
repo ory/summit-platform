@@ -260,15 +260,19 @@ ${getPermalinkFromTalk(talk)}`
                               key={speaker._id}
                               className="flex items-center gap-4 not-italic"
                             >
-                              <SanityImage
-                                imageSource={
-                                  speaker.profilePicture as SanityImageSource
-                                }
-                                sizes="(min-width: 1px) 24px"
-                                alt=""
-                                aria-hidden
-                                className="aspect-square w-6 rounded-full border border-gray-900 object-cover dark:border-white"
-                              />
+                              <div className="relative aspect-square w-8 shrink-0 overflow-hidden rounded-full border border-gray-900 dark:border-white">
+                                <div className="absolute inset-0 bg-gray-300" />
+                                <SanityImage
+                                  imageSource={
+                                    speaker.profilePicture as SanityImageSource
+                                  }
+                                  sizes="(min-width: 1px) 64px"
+                                  alt=""
+                                  aria-hidden
+                                  className="absolute inset-0 h-full w-full bg-blue-500 object-cover mix-blend-normal"
+                                />
+                                <div className="absolute inset-0  bg-gradient-to-tl from-blue-600 from-45% to-rose-500 to-90% mix-blend-screen dark:from-blue-800 dark:to-rose-500" />
+                              </div>
                               {speaker.name}, {speaker.position}
                             </li>
                           ))}
@@ -346,7 +350,7 @@ ${getPermalinkFromTalk(talk)}`
                 {speakers.map((speaker) => (
                   <li key={speaker._id} className={cn(sectionLayout)}>
                     <div className="flex items-center gap-2">
-                      <div className="relative aspect-square w-16 overflow-hidden rounded-full border-2 border-gray-900 dark:border-white">
+                      <div className="relative aspect-square w-12 shrink-0 overflow-hidden rounded-full border-2 border-gray-900 dark:border-white">
                         <div className="absolute inset-0 bg-gray-300" />
                         <SanityImage
                           imageSource={
@@ -357,7 +361,7 @@ ${getPermalinkFromTalk(talk)}`
                           aria-hidden
                           className="absolute inset-0 h-full w-full bg-blue-500 object-cover mix-blend-normal"
                         />
-                        <div className="absolute inset-0 bg-blue-500 mix-blend-screen dark:bg-rose-500" />
+                        <div className="absolute inset-0  bg-gradient-to-tl from-blue-600 from-45% to-rose-500 to-90% mix-blend-screen dark:from-blue-800 dark:to-rose-500" />
                       </div>
                       <div className="flex flex-col">
                         <span className="font-bold leading-tight">
