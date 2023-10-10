@@ -71,15 +71,19 @@ export const Agenda = () => {
                             key={speaker._id}
                             className="flex items-center gap-4"
                           >
-                            <SanityImage
-                              imageSource={
-                                speaker.profilePicture as SanityImageSource
-                              }
-                              sizes="(min-width: 1px) 24px"
-                              alt=""
-                              aria-hidden
-                              className="aspect-square w-6 rounded-full border border-gray-900 object-cover dark:border-white"
-                            />
+                            <div className="relative aspect-square w-8 overflow-hidden rounded-full border border-gray-900 dark:border-white">
+                              <div className="absolute inset-0 bg-gray-300" />
+                              <SanityImage
+                                imageSource={
+                                  speaker.profilePicture as SanityImageSource
+                                }
+                                sizes="(min-width: 1px) 64px"
+                                alt=""
+                                aria-hidden
+                                className="absolute inset-0 h-full w-full bg-blue-500 object-cover mix-blend-normal"
+                              />
+                              <div className="absolute inset-0  bg-gradient-to-tl from-blue-600 from-45% to-rose-500 to-90% mix-blend-screen dark:from-blue-800 dark:to-rose-500" />
+                            </div>
                             <span className="not-italic">{speaker.name}</span>
                           </li>
                         ))}
