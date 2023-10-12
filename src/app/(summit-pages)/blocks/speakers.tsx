@@ -30,10 +30,10 @@ export const Speakers = () => {
         .with("left", () =>
           children
             // Reverse to search from right to left
-            .findLast((el) => el.offsetLeft < currScrollOffset),
+            .findLast((el) => el.offsetLeft - currScrollOffset < -1),
         )
         .with("right", () =>
-          children.find((el) => el.offsetLeft > currScrollOffset),
+          children.find((el) => el.offsetLeft - currScrollOffset > 1),
         )
         .exhaustive()
 
