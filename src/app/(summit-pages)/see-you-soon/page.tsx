@@ -21,7 +21,7 @@ export default function SeeYouSoon() {
           <Content className="col-span-full max-w-[420px]">
             <div className="flex flex-col gap-4 md:gap-6">
               <h1 className="text-4xl font-medium uppercase leading-tight">
-                You're in!
+                You{"'"}re in!
               </h1>
               <p>
                 Add Ory Summit to your calendar on{" "}
