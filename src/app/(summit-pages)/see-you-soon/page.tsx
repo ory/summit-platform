@@ -25,15 +25,24 @@ export default function SeeYouSoon() {
               </h1>
               <p>
                 Add Ory Summit to your calendar on{" "}
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20231109T083000Z%2F20231109T160000Z&details=Clear%20your%20schedule%20for%20Ory%20Summit%202023%21%0A%0AJoin%20us%20to%20learn%20the%20latest%20in%20Ory%2C%20get%20demos%20of%20key%20features%2C%20and%20interact%20with%20presenters%20and%20the%20Ory%20community%20%40%20https%3A%2F%2Fsummit.ory.sh%2F%0A%0AStart%20chatting%20with%20fellow%20attendees%20today%3A%20https%3A%2F%2Fslack.ory.sh%2F&location=August-Everding-Str%2025%2C%2081671%20M%C3%BCnchen&text=Ory%20Summit%202023">
+                <a
+                  className="underline"
+                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20231109T083000Z%2F20231109T160000Z&details=Clear%20your%20schedule%20for%20Ory%20Summit%202023%21%0A%0AJoin%20us%20to%20learn%20the%20latest%20in%20Ory%2C%20get%20demos%20of%20key%20features%2C%20and%20interact%20with%20presenters%20and%20the%20Ory%20community%20%40%20https%3A%2F%2Fsummit.ory.sh%2F%0A%0AStart%20chatting%20with%20fellow%20attendees%20today%3A%20https%3A%2F%2Fslack.ory.sh%2F&location=August-Everding-Str%2025%2C%2081671%20M%C3%BCnchen&text=Ory%20Summit%202023"
+                >
                   Google
                 </a>
                 ,{" "}
-                <a href="https://outlook.live.com/calendar/0/action/compose?allday=false&body=Clear%20your%20schedule%20for%20Ory%20Summit%202023%21%0A%0AJoin%20us%20to%20learn%20the%20latest%20in%20Ory%2C%20get%20demos%20of%20key%20features%2C%20and%20interact%20with%20presenters%20and%20the%20Ory%20community%20%40%20https%3A%2F%2Fsummit.ory.sh%2F%0A%0AStart%20chatting%20with%20fellow%20attendees%20today%3A%20https%3A%2F%2Fslack.ory.sh%2F&enddt=2023-11-09T16%3A00%3A00%2B00%3A00&location=August-Everding-Str%2025%2C%2081671%20M%C3%BCnchen&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2023-11-09T08%3A30%3A00%2B00%3A00&subject=Ory%20Summit%202023">
+                <a
+                  className="underline"
+                  href="https://outlook.live.com/calendar/0/action/compose?allday=false&body=Clear%20your%20schedule%20for%20Ory%20Summit%202023%21%0A%0AJoin%20us%20to%20learn%20the%20latest%20in%20Ory%2C%20get%20demos%20of%20key%20features%2C%20and%20interact%20with%20presenters%20and%20the%20Ory%20community%20%40%20https%3A%2F%2Fsummit.ory.sh%2F%0A%0AStart%20chatting%20with%20fellow%20attendees%20today%3A%20https%3A%2F%2Fslack.ory.sh%2F&enddt=2023-11-09T16%3A00%3A00%2B00%3A00&location=August-Everding-Str%2025%2C%2081671%20M%C3%BCnchen&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2023-11-09T08%3A30%3A00%2B00%3A00&subject=Ory%20Summit%202023"
+                >
                   Outlook
                 </a>
                 , or{" "}
-                <a href="https://outlook.office.com/calendar/action/compose?allday=false&body=Clear%20your%20schedule%20for%20Ory%20Summit%202023%21%0A%0AJoin%20us%20to%20learn%20the%20latest%20in%20Ory%2C%20get%20demos%20of%20key%20features%2C%20and%20interact%20with%20presenters%20and%20the%20Ory%20community%20%40%20https%3A%2F%2Fsummit.ory.sh%2F%0A%0AStart%20chatting%20with%20fellow%20attendees%20today%3A%20https%3A%2F%2Fslack.ory.sh%2F&enddt=2023-11-09T16%3A00%3A00%2B00%3A00&location=August-Everding-Str%2025%2C%2081671%20M%C3%BCnchen&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2023-11-09T08%3A30%3A00%2B00%3A00&subject=Ory%20Summit%202023">
+                <a
+                  className="underline"
+                  href="https://outlook.office.com/calendar/action/compose?allday=false&body=Clear%20your%20schedule%20for%20Ory%20Summit%202023%21%0A%0AJoin%20us%20to%20learn%20the%20latest%20in%20Ory%2C%20get%20demos%20of%20key%20features%2C%20and%20interact%20with%20presenters%20and%20the%20Ory%20community%20%40%20https%3A%2F%2Fsummit.ory.sh%2F%0A%0AStart%20chatting%20with%20fellow%20attendees%20today%3A%20https%3A%2F%2Fslack.ory.sh%2F&enddt=2023-11-09T16%3A00%3A00%2B00%3A00&location=August-Everding-Str%2025%2C%2081671%20M%C3%BCnchen&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2023-11-09T08%3A30%3A00%2B00%3A00&subject=Ory%20Summit%202023"
+                >
                   Office365
                 </a>
                 .
