@@ -5,27 +5,14 @@ import { Content } from "@/app/components/content"
 import { Overline } from "@/app/components/overline"
 import { SpeakerCard } from "@/app/components/speaker-card"
 import { Wrapper } from "@/app/components/wrapper"
-import { useSpeakers } from "@/hooks/useSpeakers"
+import { useSortedSpeakers } from "@/hooks/useSpeakers"
 import { cn } from "@/utils/cn"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { match } from "ts-pattern"
-import { Speaker } from "../../../../sanity.config"
-
-// Prepare for lexicographic sorting by generating important -> less important feature string.
-// We want to sort by name ASC, so other features must have corresponding sorting
-// (i.e. should appear first -> lower value)
-const toSortableString = (speaker: Speaker) =>
-  `${(1000 - (speaker.priority ?? 500)).toString().padStart(3, "0")}${
-    speaker.name
-  }`
 
 export const Speakers = () => {
   const speakersContainerRef = useRef<HTMLUListElement>(null)
-  const speakers = useSpeakers()
-  const sortedSpeakers = speakers
-    // Create a copy so we don't mutate original
-    ?.slice()
-    .sort((a, b) => toSortableString(a).localeCompare(toSortableString(b)))
+  const speakers = useSortedSpeakers()
 
   const useScroller = (direction: "left" | "right") =>
     useCallback(() => {
@@ -135,7 +122,7 @@ export const Speakers = () => {
       >
         {/*/!* effectively adds left padding back, accounting for flex gap *!/*/}
         <li className="w-[calc(var(--total-padding)-1rem)] shrink-0 grow-0 snap-start" />
-        {sortedSpeakers?.map((speaker) => (
+        {speakers?.map((speaker) => (
           <SpeakerCard key={speaker._id} {...speaker} />
         ))}
         {/* effectively adds right padding back, accounting for flex gap */}

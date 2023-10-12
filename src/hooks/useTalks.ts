@@ -12,7 +12,7 @@ export const useTalksBySpeakerId = () => {
   const res: Record<string, Talk[]> = {}
 
   for (let talk of talks ?? []) {
-    for (let speaker of talk.speakers) {
+    for (let speaker of talk.speakers ?? []) {
       const prev = res[speaker._id] ?? []
       res[speaker._id] = [...prev, talk]
     }
@@ -26,7 +26,7 @@ export const getSpeakersFromTalks = (talks: Talk[]) => {
     talks?.reduce(
       (allSpeakers, talk) => ({
         ...allSpeakers,
-        ...talk.speakers.reduce(
+        ...(talk.speakers ?? []).reduce(
           (talkSpeakers, curr) => ({
             ...talkSpeakers,
             [curr._id]: curr,

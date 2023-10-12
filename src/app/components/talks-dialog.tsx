@@ -5,7 +5,7 @@ import { dividerStyles } from "@/app/components/dividerStyles"
 import { LinkIcon } from "@/assets/icon/link-icon"
 import { LinkedinIcon } from "@/assets/icon/linkedin-icon"
 import { TwitterIcon } from "@/assets/icon/twitter-icon"
-import { getPermalinkFromSpeaker, useSpeakers } from "@/hooks/useSpeakers"
+import { getPermalinkFromSpeaker, useSortedSpeakers } from "@/hooks/useSpeakers"
 import {
   getPermalinkFromTalk,
   getSpeakersFromTalks,
@@ -43,7 +43,7 @@ const customProse = "prose dark:prose-invert"
 const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
   const searchParams = useSearchParams()
   const allTalks = useTalks()
-  const allSpeakers = useSpeakers()
+  const allSpeakers = useSortedSpeakers()
   const router = useRouter()
   const talksBySpeakerId = useTalksBySpeakerId()
 
@@ -202,7 +202,8 @@ export const TalksDialog = () => {
                         const speakersList = getReadableSpeakerList(talk)
                         return (
                           <li key={talk._id}>
-                            &quot;{talk.title}&quot; by {speakersList}
+                            &quot;{talk.title}&quot;
+                            {speakersList && <> by {speakersList}</>}
                           </li>
                         )
                       })}
@@ -216,18 +217,19 @@ export const TalksDialog = () => {
             {talks?.map((talk) => {
               const start = new Date(talk.startTime)
 
-              const getShareMessageForMedia = (
-                media?: "twitter",
-              ) => `Check out this talk on "${
-                talk.title
-              }" that will be held by ${getReadableSpeakerList(
-                talk,
-                media,
-              )} at ${match(media)
-                .with("twitter", () => "@OryCorp")
-                .otherwise(() => "Ory")} Summit 2023
-
-${getPermalinkFromTalk(talk)}`
+              const getShareMessageForMedia = (media?: "twitter") => {
+                const speakerList = getReadableSpeakerList(talk, media)
+                const authorText = speakerList
+                  ? ""
+                  : ` by ${getReadableSpeakerList(talk, media)}`
+                return `Check out this talk on "${
+                  talk.title
+                }" that will be held${authorText} at ${match(media)
+                  .with("twitter", () => "@OryCorp")
+                  .otherwise(() => "Ory")} Summit 2023
+  
+  ${getPermalinkFromTalk(talk)}`
+              }
 
               return (
                 <article key={talk._id} className="flex flex-col">
@@ -250,34 +252,36 @@ ${getPermalinkFromTalk(talk)}`
                       <h3 className="text-4xl font-bold leading-normal">
                         {talk.title}
                       </h3>
-                      <address>
-                        <ul
-                          className="flex flex-col gap-2"
-                          aria-label="Speakers"
-                        >
-                          {talk.speakers.map((speaker) => (
-                            <li
-                              key={speaker._id}
-                              className="flex items-center gap-4 not-italic"
-                            >
-                              <div className="relative aspect-square w-8 shrink-0 overflow-hidden rounded-full border border-gray-900 dark:border-white">
-                                <div className="absolute inset-0 bg-gray-300" />
-                                <SanityImage
-                                  imageSource={
-                                    speaker.profilePicture as SanityImageSource
-                                  }
-                                  sizes="(min-width: 1px) 64px"
-                                  alt=""
-                                  aria-hidden
-                                  className="absolute inset-0 h-full w-full bg-blue-500 object-cover mix-blend-normal"
-                                />
-                                <div className="absolute inset-0  bg-gradient-to-tl from-blue-600 from-45% to-rose-500 to-90% mix-blend-screen dark:from-blue-800 dark:to-rose-500" />
-                              </div>
-                              {speaker.name}, {speaker.position}
-                            </li>
-                          ))}
-                        </ul>
-                      </address>
+                      {talk.speakers?.length > 0 && (
+                        <address>
+                          <ul
+                            className="flex flex-col gap-2"
+                            aria-label="Speakers"
+                          >
+                            {talk.speakers.map((speaker) => (
+                              <li
+                                key={speaker._id}
+                                className="flex items-center gap-4 not-italic"
+                              >
+                                <div className="relative aspect-square w-8 shrink-0 overflow-hidden rounded-full border border-gray-900 dark:border-white">
+                                  <div className="absolute inset-0 bg-gray-300" />
+                                  <SanityImage
+                                    imageSource={
+                                      speaker.profilePicture as SanityImageSource
+                                    }
+                                    sizes="(min-width: 1px) 64px"
+                                    alt=""
+                                    aria-hidden
+                                    className="absolute inset-0 h-full w-full bg-blue-500 object-cover mix-blend-normal"
+                                  />
+                                  <div className="absolute inset-0  bg-gradient-to-tl from-blue-600 from-45% to-rose-500 to-90% mix-blend-screen dark:from-blue-800 dark:to-rose-500" />
+                                </div>
+                                {speaker.name}, {speaker.position}
+                              </li>
+                            ))}
+                          </ul>
+                        </address>
+                      )}
                     </div>
                   </section>
                   <section

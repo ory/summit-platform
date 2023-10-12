@@ -104,7 +104,6 @@ const talkSchema = defineType({
           to: [{ type: "speaker" } as const],
         }),
       ],
-      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
       name: "startTime",
