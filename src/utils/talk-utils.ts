@@ -4,7 +4,10 @@ import { Talk } from "../../sanity/lib/sanityClient"
 export const getReadableSpeakerList = (
   talk: Talk,
   media?: "twitter",
-): string => {
+): string | undefined => {
+  if (!talk.speakers) {
+    return undefined
+  }
   const speakerNames = talk.speakers.map(
     (speaker) =>
       match(media)

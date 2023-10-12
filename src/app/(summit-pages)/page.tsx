@@ -76,10 +76,11 @@ export const generateMetadata = async ({ searchParams }): Promise<Metadata> => {
           if (!talk) return undefined
 
           const speakerList = getReadableSpeakerList(talk)
+          const authorText = speakerList ? "" : ` by ${speakerList}`
 
           return {
             ...defaultOpenGraphProps,
-            title: `"${talk.title}" by ${speakerList} at Ory Summit 2023`,
+            title: `"${talk.title}"${authorText} at Ory Summit 2023`,
             description: talk.summary,
           }
         },
