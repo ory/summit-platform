@@ -5,7 +5,7 @@ import { dividerStyles } from "@/app/components/dividerStyles"
 import { LinkIcon } from "@/assets/icon/link-icon"
 import { LinkedinIcon } from "@/assets/icon/linkedin-icon"
 import { TwitterIcon } from "@/assets/icon/twitter-icon"
-import { getPermalinkFromSpeaker, useSpeakers } from "@/hooks/useSpeakers"
+import { getPermalinkFromSpeaker, useSortedSpeakers } from "@/hooks/useSpeakers"
 import {
   getPermalinkFromTalk,
   getSpeakersFromTalks,
@@ -43,7 +43,7 @@ const customProse = "prose dark:prose-invert"
 const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
   const searchParams = useSearchParams()
   const allTalks = useTalks()
-  const allSpeakers = useSpeakers()
+  const allSpeakers = useSortedSpeakers()
   const router = useRouter()
   const talksBySpeakerId = useTalksBySpeakerId()
 
