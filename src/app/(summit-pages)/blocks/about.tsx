@@ -47,10 +47,10 @@ export const About = () => {
               </h2>
               <p>
                 Join engineers, security experts, thought leaders, open source
-                maintainers, and executives from around the world for a of day
-                of conversations on the future of Ory. Register now for your
-                pass to presentations, interactive sessions, technical deep
-                dives, product news, and more.
+                maintainers, and executives from around the world for a day of
+                conversations on the future of Ory. Register now for your pass
+                to presentations, interactive sessions, technical deep dives,
+                product news, and more.
               </p>
             </div>
             {/* <ArrowButton href="https://ory.sh">FAQ</ArrowButton> */}
