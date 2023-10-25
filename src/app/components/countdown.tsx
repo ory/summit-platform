@@ -13,7 +13,7 @@ type CountdownProps = {
 const getDelta = (targetDate: string) => {
   const now = new Date().valueOf()
   const target = new Date(targetDate).valueOf()
-  const delta = target - now
+  const delta = Math.max(0, target - now)
   const totalSeconds = Math.floor(delta / 1_000)
   const seconds = totalSeconds % 60
   const totalMinutes = Math.floor(totalSeconds / 60)
