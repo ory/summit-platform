@@ -18,5 +18,7 @@ export const useSortedSpeakers = () =>
     ?.slice()
     .sort((a, b) => toSortableString(a).localeCompare(toSortableString(b)))
 
-export const getPermalinkFromSpeaker = (speaker: Speaker) =>
-  `${getDeploymentBaseUrl()}/?viewSpeaker=${speaker.slug?.current}#speakers`
+export const getPermalinkFromSpeaker = (speaker: Speaker, path: string) =>
+  `${getDeploymentBaseUrl()}${path}?viewSpeaker=${
+    speaker.slug?.current
+  }#speakers`
