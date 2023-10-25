@@ -1,5 +1,6 @@
 "use client"
 
+import { CurrentTalk } from "@/app/(summit-pages)/live/current-talk"
 import { Container } from "@/app/components/container"
 import { useIsLive } from "@/hooks/useIsLive"
 import { useLoginUrl } from "@/hooks/useLoginUrl"
@@ -21,7 +22,7 @@ export const LivestreamHero = () => {
   }
 
   return (
-    <Container className="flex min-h-full w-full max-w-[--ory-max-content-width] flex-1 flex-col">
+    <Container className="flex min-h-full w-full max-w-[--ory-max-content-width] flex-1 flex-col gap-y-0 lg:gap-y-0">
       <iframe
         className={cn("aspect-video")}
         src={`https://www.youtube-nocookie.com/embed/${process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID}`}
@@ -30,6 +31,7 @@ export const LivestreamHero = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
+      <CurrentTalk className="py-8" />
     </Container>
   )
 }
