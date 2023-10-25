@@ -5,6 +5,7 @@ import { ThemeToggleIcon } from "@/assets/icon/theme-toggle-icon"
 import { useIsLive } from "@/hooks/useIsLive"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useTheme } from "next-themes"
+import Link from "next/link"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { GetTicketButton } from "../components/get-ticket-button"
 import UserMenu from "../components/user-menu/user-menu"
@@ -48,10 +49,10 @@ export const NavigationRightHandSide = () => {
       ) : (
         <div className="flex text-base font-normal leading-tight">
           {isLive ? (
-            <div className={"flex items-center gap-1 uppercase"}>
+            <Link href="live" className={"flex items-center gap-1 uppercase"}>
               <LiveIndicator />
               Live
-            </div>
+            </Link>
           ) : (
             <span>9th Nov, 23</span>
           )}
