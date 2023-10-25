@@ -9,6 +9,7 @@ import { getReadableSpeakerList } from "@/utils/talk-utils"
 import { SanityImageSource } from "@sanity/asset-utils"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useRef } from "react"
 import ReactMarkdown from "react-markdown"
 import { match } from "ts-pattern"
 import { Talk } from "../../../sanity/lib/sanityClient"
@@ -26,6 +27,7 @@ export const TalkDetails = ({
   timeClassName,
   withReadMore = false,
   noSectionPadding = false,
+  hideShareLegend = false,
 }: {
   talk: Talk
   className?: string
@@ -34,6 +36,7 @@ export const TalkDetails = ({
   timeClassName?: string
   withReadMore?: boolean
   noSectionPadding?: boolean
+  hideShareLegend?: boolean
 }) => {
   const path = usePathname()
   const start = new Date(talk.startTime)
@@ -41,8 +44,8 @@ export const TalkDetails = ({
   const getShareMessageForMedia = (media?: "twitter") => {
     const speakerList = getReadableSpeakerList(talk, media)
     const authorText = speakerList
-      ? ""
-      : ` by ${getReadableSpeakerList(talk, media)}`
+      ? ` by ${getReadableSpeakerList(talk, media)}`
+      : ""
     return `Check out this talk on "${
       talk.title
     }" that will be held${authorText} at ${match(media)
@@ -56,8 +59,20 @@ export const TalkDetails = ({
     navigator.clipboard.writeText(message).catch(console.error)
   }
 
+  // Detect summary ellipsis
+  const summaryElementRef = useRef<HTMLDivElement | null>(null)
+  const el = summaryElementRef.current
+  const summaryHasEllipsis =
+    el && Math.abs(el.offsetHeight - el.scrollHeight) > 0
+
   return (
-    <article className={cn("flex", asRow ? "flex-row" : "flex-col", className)}>
+    <article
+      className={cn(
+        "flex",
+        asRow ? "flex-col md:flex-row" : "flex-col",
+        className,
+      )}
+    >
       <section
         className={cn(
           !withoutDividers && dividerStyles,
@@ -121,12 +136,14 @@ export const TalkDetails = ({
         <div
           className={cn(
             "flex gap-4",
-            asRow ? "flex-row items-center justify-end" : "flex-col",
+            asRow ? "flex-row items-center md:justify-end" : "flex-col",
           )}
         >
-          <h3 className="font-bold uppercase leading-tight text-blue-500 dark:text-rose-500">
-            Share this session
-          </h3>
+          {!hideShareLegend && (
+            <h3 className="font-bold uppercase leading-tight text-blue-500 dark:text-rose-500">
+              Share this session
+            </h3>
+          )}
           <ul className="flex gap-2">
             <li>
               <Link
@@ -178,10 +195,11 @@ export const TalkDetails = ({
             className={cn({
               "line-clamp-5 text-ellipsis": withReadMore,
             })}
+            ref={summaryElementRef}
           >
             <ReactMarkdown>{talk.summary}</ReactMarkdown>
           </div>
-          {withReadMore && (
+          {withReadMore && summaryHasEllipsis && (
             <Link
               href={getPermalinkFromTalk(talk, path)}
               className="text-blue-500 no-underline dark:text-rose-500"

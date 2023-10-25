@@ -5,7 +5,9 @@ export const useCurrentTalk = () => {
   const talks = useTalks()
   const now = useCurrentDate()
 
-  return talks.findLast(
-    ({ startTime }) => new Date(startTime).getTime() <= now.getTime(),
+  return (
+    talks.findLast(
+      ({ startTime }) => new Date(startTime).getTime() <= now.getTime(),
+    ) ?? talks[0]
   )
 }
