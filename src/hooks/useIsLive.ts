@@ -1,3 +1,5 @@
-import { useCurrentTalk } from "@/hooks/useCurrentTalk"
+import { summitStartingDate } from "@/app/(summit-pages)/startingDate"
+import { useCurrentDate } from "@/hooks/useCurrentDate"
 
-export const useIsLive = () => Boolean(useCurrentTalk())
+const dayOfSummit = new Date(summitStartingDate).toDateString()
+export const useIsLive = () => useCurrentDate().toDateString() === dayOfSummit
