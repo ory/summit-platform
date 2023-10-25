@@ -1,6 +1,8 @@
 "use client"
 
+import { LiveIndicator } from "@/app/components/live-indicator"
 import { ThemeToggleIcon } from "@/assets/icon/theme-toggle-icon"
+import { useIsLive } from "@/hooks/useIsLive"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import { useTheme } from "next-themes"
 import { useCallback, useEffect, useRef, useState } from "react"
@@ -15,6 +17,7 @@ export const NavigationRightHandSide = () => {
     useState(false)
   const { setTheme, theme } = useTheme()
   const oppositeTheme = theme === "dark" ? "light" : "dark"
+  const isLive = useIsLive()
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,8 +46,15 @@ export const NavigationRightHandSide = () => {
       {!isRegistered && isBeneathGetTicketButton ? (
         <GetTicketButton />
       ) : (
-        <div className="text-base font-normal leading-tight">
-          <span className="">9th Nov, 23</span>
+        <div className="flex text-base font-normal leading-tight">
+          {isLive ? (
+            <div className={"flex items-center gap-1 uppercase"}>
+              <LiveIndicator />
+              Live
+            </div>
+          ) : (
+            <span>9th Nov, 23</span>
+          )}
           <span className="hidden sm:inline-block">
             <span className="text-blue-500 dark:text-rose-500">
               &nbsp;-&nbsp;
