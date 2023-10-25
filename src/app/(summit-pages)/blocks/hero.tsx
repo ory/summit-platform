@@ -1,9 +1,8 @@
 "use client"
 
-import { Button } from "@/app/components/button"
+import { ViewLiveButton } from "@/app/components/view-live-button"
 import { useIsLive } from "@/hooks/useIsLive"
 import { useIsRegistered } from "@/hooks/useRegistration"
-import Link from "next/link"
 import BackgroundMountains from "../../components/background-video"
 import { Container } from "../../components/container"
 import { Content } from "../../components/content"
@@ -40,13 +39,7 @@ export function Hero() {
             </p>
           </div>
           {isLive ? (
-            <Button
-              as={Link}
-              href="live"
-              className="flex items-center gap-1 self-start"
-            >
-              View live stream
-            </Button>
+            <ViewLiveButton className="flex items-center gap-1 self-start" />
           ) : (
             <GetTicketButton
               className="self-start"

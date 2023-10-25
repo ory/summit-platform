@@ -44,7 +44,7 @@ export const NavigationRightHandSide = () => {
 
   return (
     <div ref={navRef} className="flex shrink-0 items-center gap-4">
-      {!isRegistered && isBeneathGetTicketButton ? (
+      {!isRegistered && isBeneathGetTicketButton && !isLive ? (
         <GetTicketButton />
       ) : (
         <div className="flex text-base font-normal leading-tight">
