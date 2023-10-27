@@ -6,8 +6,7 @@ import { Wrapper } from "../components/wrapper"
 export const Footer = () => (
   <footer
     className={cn(
-      "w-full border-t border-blue-500 px-6 py-2 text-sm leading-none dark:border-rose-500",
-      "sm:px-12 xl:px-24",
+      "w-full border-t border-blue-500 px-[--ory-global-padding] py-2 text-sm leading-none dark:border-rose-500",
     )}
   >
     <Container className="mx-auto max-w-[--ory-max-content-width]">

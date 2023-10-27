@@ -1,8 +1,9 @@
 "use client"
 
+import { ViewLiveButton } from "@/app/components/view-live-button"
+import { useIsLive } from "@/hooks/useIsLive"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import BackgroundMountains from "../../components/background-video"
-import { Banner } from "../../components/banner"
 import { Container } from "../../components/container"
 import { Content } from "../../components/content"
 import Countdown from "../../components/countdown"
@@ -12,6 +13,7 @@ import { HERO_GET_TICKET_BUTTON_ID } from "./heroGetTicketButtonId"
 
 export function Hero() {
   const { data: isRegistered } = useIsRegistered()
+  const isLive = useIsLive()
 
   return (
     <>
@@ -36,10 +38,14 @@ export function Hero() {
               security based on zero trust principles.
             </p>
           </div>
-          <GetTicketButton
-            className="self-start"
-            id={HERO_GET_TICKET_BUTTON_ID}
-          />
+          {isLive ? (
+            <ViewLiveButton className="flex items-center gap-1 self-start" />
+          ) : (
+            <GetTicketButton
+              className="self-start"
+              id={HERO_GET_TICKET_BUTTON_ID}
+            />
+          )}
           <Countdown targetDate={summitStartingDate} />
         </Content>
       </Container>

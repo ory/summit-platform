@@ -8,18 +8,19 @@ import { Wrapper } from "@/app/components/wrapper"
 import { getPermalinkFromTalk, useTalks } from "@/hooks/useTalks"
 import { SanityImageSource } from "@sanity/asset-utils"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { MouseEventHandler } from "react"
 import { Talk } from "../../../../sanity/lib/sanityClient"
 
 export const Agenda = () => {
+  const path = usePathname()
   const talks = useTalks()
   const router = useRouter()
   const getOnClickHandler =
     (talk: Talk): MouseEventHandler =>
     (event) => {
       event.preventDefault()
-      router.push(getPermalinkFromTalk(talk), {
+      router.push(getPermalinkFromTalk(talk, path), {
         scroll: false,
       })
     }
@@ -49,7 +50,7 @@ export const Agenda = () => {
                 className="group cursor-pointer border-b border-solid border-blue-500 px-2 py-8 first:border-t hover:bg-gray-50 dark:border-rose-500 dark:hover:bg-indigo-950"
               >
                 <Link
-                  href={getPermalinkFromTalk(talk)}
+                  href={getPermalinkFromTalk(talk, path)}
                   onClick={getOnClickHandler(talk)}
                 >
                   <article className="grid grid-cols-[max-content,1fr] gap-x-8 gap-y-4">

@@ -40,5 +40,5 @@ export const getSpeakersFromTalks = (talks: Talk[]) => {
   return speakers
 }
 
-export const getPermalinkFromTalk = (talk: Talk) =>
-  `${getDeploymentBaseUrl()}/?viewSession=${talk.slug.current}#agenda`
+export const getPermalinkFromTalk = (talk: Talk, path: string) =>
+  `${getDeploymentBaseUrl()}${path}?viewSession=${talk.slug.current}#agenda`

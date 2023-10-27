@@ -1,10 +1,7 @@
 "use client"
 
 import { SanityImage } from "@/app/components/SanityImage"
-import { dividerStyles } from "@/app/components/dividerStyles"
-import { LinkIcon } from "@/assets/icon/link-icon"
-import { LinkedinIcon } from "@/assets/icon/linkedin-icon"
-import { TwitterIcon } from "@/assets/icon/twitter-icon"
+import { TalkDetails } from "@/app/components/talk-details"
 import { getPermalinkFromSpeaker, useSortedSpeakers } from "@/hooks/useSpeakers"
 import {
   getPermalinkFromTalk,
@@ -18,7 +15,7 @@ import { getReadableSpeakerList } from "@/utils/talk-utils"
 import { Dialog } from "@headlessui/react"
 import { SanityImageSource } from "@sanity/asset-utils"
 import Link from "next/link"
-import { useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { MouseEventHandler, useRef } from "react"
 import ReactMarkdown from "react-markdown"
 import { match, P } from "ts-pattern"
@@ -41,6 +38,7 @@ const sectionPadding = "px-4 py-6 sm:px-16 sm:py-12"
 const customProse = "prose dark:prose-invert"
 
 const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
+  const path = usePathname()
   const searchParams = useSearchParams()
   const allTalks = useTalks()
   const allSpeakers = useSortedSpeakers()
@@ -67,14 +65,18 @@ const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
         selectedSpeaker: undefined,
         onClose: () => {
           // getDeploymentBaseUrl in order to handle preview correctly
-          router.push(`${getDeploymentBaseUrl()}/#agenda`, {
+          router.push(`${getDeploymentBaseUrl()}${path}#agenda`, {
             scroll: false,
           })
         },
         prevItemTitle: prevTalk?.title,
-        prevItemLink: prevTalk ? getPermalinkFromTalk(prevTalk) : undefined,
+        prevItemLink: prevTalk
+          ? getPermalinkFromTalk(prevTalk, path)
+          : undefined,
         nextItemTitle: nextTalk?.title,
-        nextItemLink: nextTalk ? getPermalinkFromTalk(nextTalk) : undefined,
+        nextItemLink: nextTalk
+          ? getPermalinkFromTalk(nextTalk, path)
+          : undefined,
       } satisfies PropTypes
     })
     .with([P._, P.string.select()], (speakerSlug) => {
@@ -91,17 +93,17 @@ const useFocussedTalkOrSpeaker = (): PropTypes | undefined => {
         selectedSpeaker: speaker,
         onClose: () => {
           // getDeploymentBaseUrl in order to handle preview correctly
-          router.push(`${getDeploymentBaseUrl()}/#speakers`, {
+          router.push(`${getDeploymentBaseUrl()}${path}#speakers`, {
             scroll: false,
           })
         },
         prevItemTitle: prevSpeaker?.name,
         prevItemLink: prevSpeaker
-          ? getPermalinkFromSpeaker(prevSpeaker)
+          ? getPermalinkFromSpeaker(prevSpeaker, path)
           : undefined,
         nextItemTitle: nextSpeaker?.name,
         nextItemLink: nextSpeaker
-          ? getPermalinkFromSpeaker(nextSpeaker)
+          ? getPermalinkFromSpeaker(nextSpeaker, path)
           : undefined,
       } satisfies PropTypes
     })
@@ -152,13 +154,6 @@ export const TalksDialog = () => {
         })
       }
     }
-
-  const copyToClipboard = (message: string) => {
-    navigator.clipboard
-      .writeText(message)
-      .then(console.log)
-      .catch(console.error)
-  }
 
   return (
     <Dialog
@@ -214,138 +209,9 @@ export const TalksDialog = () => {
                   <>Details about {selectedSpeaker.name}</>
                 ))}
             </Dialog.Title>
-            {talks?.map((talk) => {
-              const start = new Date(talk.startTime)
-
-              const getShareMessageForMedia = (media?: "twitter") => {
-                const speakerList = getReadableSpeakerList(talk, media)
-                const authorText = speakerList
-                  ? ""
-                  : ` by ${getReadableSpeakerList(talk, media)}`
-                return `Check out this talk on "${
-                  talk.title
-                }" that will be held${authorText} at ${match(media)
-                  .with("twitter", () => "@OryCorp")
-                  .otherwise(() => "Ory")} Summit 2023
-  
-  ${getPermalinkFromTalk(talk)}`
-              }
-
-              return (
-                <article key={talk._id} className="flex flex-col">
-                  <section
-                    className={cn(dividerStyles, sectionLayout, sectionPadding)}
-                  >
-                    <div>
-                      <time
-                        dateTime={start.toString()}
-                        aria-label={start.toString()}
-                        className="inline-block border border-blue-500 bg-rose-50 p-1 text-xl font-bold leading-normal dark:border-rose-500 dark:bg-indigo-900"
-                      >
-                        <span aria-hidden>
-                          {start.getHours().toString().padStart(2, "0")}:
-                          {start.getMinutes().toString().padStart(2, "0")}
-                        </span>
-                      </time>
-                    </div>
-                    <div className="flex flex-col gap-8">
-                      <h3 className="text-4xl font-bold leading-normal">
-                        {talk.title}
-                      </h3>
-                      {talk.speakers?.length > 0 && (
-                        <address>
-                          <ul
-                            className="flex flex-col gap-2"
-                            aria-label="Speakers"
-                          >
-                            {talk.speakers.map((speaker) => (
-                              <li
-                                key={speaker._id}
-                                className="flex items-center gap-4 not-italic"
-                              >
-                                <div className="relative aspect-square w-8 shrink-0 overflow-hidden rounded-full border border-gray-900 dark:border-white">
-                                  <div className="absolute inset-0 bg-gray-300" />
-                                  <SanityImage
-                                    imageSource={
-                                      speaker.profilePicture as SanityImageSource
-                                    }
-                                    sizes="(min-width: 1px) 64px"
-                                    alt=""
-                                    aria-hidden
-                                    className="absolute inset-0 h-full w-full bg-blue-500 object-cover mix-blend-normal"
-                                  />
-                                  <div className="absolute inset-0  bg-gradient-to-tl from-blue-600 from-45% to-rose-500 to-90% mix-blend-screen dark:from-blue-800 dark:to-rose-500" />
-                                </div>
-                                {speaker.name}, {speaker.position}
-                              </li>
-                            ))}
-                          </ul>
-                        </address>
-                      )}
-                    </div>
-                  </section>
-                  <section
-                    className={cn(dividerStyles, sectionLayout, sectionPadding)}
-                  >
-                    <div className="flex flex-col gap-4">
-                      <h3 className="font-bold uppercase leading-tight text-blue-500 dark:text-rose-500">
-                        Share this session
-                      </h3>
-                      <ul className="flex gap-2">
-                        <li>
-                          <Link
-                            href={`https://x.com/intent/tweet?text=${encodeURIComponent(
-                              getShareMessageForMedia("twitter"),
-                            )}`}
-                            target="_blank"
-                          >
-                            <TwitterIcon
-                              className="fill-blue-500 dark:fill-rose-500"
-                              aria-hidden
-                            />
-                            <span className="sr-only">Share on Twitter</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                              getPermalinkFromTalk(talk),
-                            )}`}
-                            target="_blank"
-                          >
-                            <LinkedinIcon
-                              className="fill-blue-500 dark:fill-rose-500"
-                              aria-hidden
-                            />
-                            <span className="sr-only">Share on LinkedIn</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <a
-                            href={getPermalinkFromTalk(talk)}
-                            onClick={(event) => {
-                              event.preventDefault()
-                              copyToClipboard(getShareMessageForMedia())
-                            }}
-                          >
-                            <LinkIcon
-                              className="fill-blue-500 dark:fill-rose-500"
-                              aria-hidden
-                            />
-                            <span className="sr-only">
-                              Copy link to clipboard
-                            </span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={customProse}>
-                      <ReactMarkdown>{talk.summary}</ReactMarkdown>
-                    </div>
-                  </section>
-                </article>
-              )
-            })}
+            {talks?.map((talk) => (
+              <TalkDetails talk={talk} key={talk._id} />
+            ))}
             {speakers.length > 0 && (
               <ul
                 aria-label="Speaker details"

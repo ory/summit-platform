@@ -1,6 +1,8 @@
-import { Agenda } from "@/app/(summit-pages)/blocks/agenda"
-import { Speakers } from "@/app/(summit-pages)/blocks/speakers"
-import { Venue } from "@/app/(summit-pages)/blocks/venue"
+import { About } from "@/app/(summit-pages)/blocks/about"
+import {
+  ContentBelowHero,
+  contentBlockPaddingClassname,
+} from "@/app/(summit-pages)/content-below-hero"
 import { TalksDialog } from "@/app/components/talks-dialog"
 import bgDarkStill from "@/assets/background-dark-still.webp"
 import bgLightStill from "@/assets/background-light-still.webp"
@@ -13,7 +15,6 @@ import { match, P } from "ts-pattern"
 import { urlForImage } from "../../../sanity/lib/image"
 import { getSpeakers, getTalks } from "../../../sanity/lib/sanityClient"
 import { dividerStyles } from "../components/dividerStyles"
-import { About } from "./blocks/about"
 import { Hero } from "./blocks/hero"
 
 export const generateMetadata = async ({ searchParams }): Promise<Metadata> => {
@@ -97,17 +98,13 @@ export const generateMetadata = async ({ searchParams }): Promise<Metadata> => {
 export const revalidate = 600 // every 10 minutes
 
 export default async function DefaultSummitPage() {
-  const paddingClassnames = "p-[--ory-global-padding] md:py-24"
-  const talks = await getTalks()
-  const speakers = await getSpeakers()
-
   return (
     <main className={cn("flex flex-1 flex-col")}>
       <TalksDialog />
       <div
         className={cn(
           dividerStyles,
-          paddingClassnames,
+          contentBlockPaddingClassname,
           "relative flex flex-col items-center justify-end md:justify-start",
           "min-h-[calc(100vh-68px-1px)]",
         )}
@@ -115,39 +112,16 @@ export default async function DefaultSummitPage() {
         <Hero />
       </div>
       <div
-        className={cn(paddingClassnames, dividerStyles, "flex justify-center")}
+        className={cn(
+          contentBlockPaddingClassname,
+          dividerStyles,
+          "flex justify-center",
+        )}
         id="about"
       >
         <About />
       </div>
-      {speakers.length > 0 ? (
-        <div
-          id="speakers"
-          className={cn(
-            paddingClassnames,
-            dividerStyles,
-            "flex justify-center py-32 md:py-32 lg:py-32 lg:[--ory-global-padding:6rem]",
-          )}
-        >
-          <Speakers />
-        </div>
-      ) : null}
-      {talks?.length > 0 ? (
-        <div
-          id="agenda"
-          className={cn(
-            paddingClassnames,
-            dividerStyles,
-            "flex justify-center py-16",
-            "bg-gray-100 dark:bg-indigo-900",
-          )}
-        >
-          <Agenda />
-        </div>
-      ) : null}
-      <div className={cn(dividerStyles, "relative isolate")} id="venue">
-        <Venue />
-      </div>
+      <ContentBelowHero />
     </main>
   )
 }

@@ -2,18 +2,19 @@ import { getPermalinkFromSpeaker } from "@/hooks/useSpeakers"
 import { useNextSanityImage } from "next-sanity-image"
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { MouseEventHandler } from "react"
 import { sanityClient } from "../../../sanity/lib/sanityClient"
 import { Speaker } from "../../../sanity.config"
 
 export const SpeakerCard = (speaker: Speaker) => {
+  const path = usePathname()
   const { name, position, profilePicture } = speaker
   const router = useRouter()
   const profileImageProps = useNextSanityImage(sanityClient, profilePicture)
   const onClick: MouseEventHandler = (event) => {
     event.preventDefault()
-    router.push(getPermalinkFromSpeaker(speaker), {
+    router.push(getPermalinkFromSpeaker(speaker, path), {
       scroll: false,
     })
   }
@@ -21,7 +22,7 @@ export const SpeakerCard = (speaker: Speaker) => {
   return (
     <li className="h-[531px] w-[calc((100cqw-16px*(var(--num-of-cards)-1))/var(--num-of-cards))] shrink-0 snap-start [--num-of-cards:1] last:mr-[--total-padding] sm:[--num-of-cards:2] xl:[--num-of-cards:3]">
       <Link
-        href={getPermalinkFromSpeaker(speaker)}
+        href={getPermalinkFromSpeaker(speaker, path)}
         onClick={onClick}
         className="flex h-full w-full flex-col justify-between border border-transparent bg-gray-100 p-8 text-start hover:border-blue-500 hover:bg-gray-50 dark:bg-indigo-900 dark:hover:border-rose-500 dark:hover:bg-indigo-950"
       >
