@@ -62,7 +62,7 @@ export const About = () => {
           <InfoCard
             StatIcon={MountainIcon}
             statTitle="How can I attend?"
-            statDescription="You can attend Ory Summit 2023 on November 9th in person at the Ory Headquarters in Munich, Germany or watch the sessions online, here at summit.ory.sh."
+            statDescription="The registration for in-person attendance for Ory Summit 2023 on November 9th at the Ory Headquarters in Munich, Germany is now closed. Sign up to watch the sessions online, here at summit.ory.sh."
           />
           <InfoCard
             StatIcon={SunriseIcon}
