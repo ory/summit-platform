@@ -1,8 +1,8 @@
 "use client"
 
+import { useCurrentDate } from "@/hooks/useCurrentDate"
 import { cn } from "@/utils/cn"
 import dynamic from "next/dynamic"
-import { useEffect, useState } from "react"
 import { RightArrow } from "./right-arrow"
 
 type CountdownProps = {
@@ -10,9 +10,9 @@ type CountdownProps = {
   targetDate: string
 }
 
-const getDelta = (targetDate: string) => {
-  const now = new Date().valueOf()
-  const target = new Date(targetDate).valueOf()
+const useDelta = (nowDate: Date, targetDate: Date) => {
+  const now = nowDate.valueOf()
+  const target = targetDate.valueOf()
   const delta = Math.max(0, target - now)
   const totalSeconds = Math.floor(delta / 1_000)
   const seconds = totalSeconds % 60
@@ -28,15 +28,8 @@ const getDelta = (targetDate: string) => {
 const toTwoDigits = (n: number) => n.toString().padStart(2, "0")
 
 const Countdown = ({ className, targetDate }: CountdownProps) => {
-  const [{ days, hours, minutes, seconds }, setDelta] = useState(
-    getDelta(targetDate),
-  )
-
-  useEffect(() => {
-    const request = requestAnimationFrame(() => setDelta(getDelta(targetDate)))
-
-    return () => cancelAnimationFrame(request)
-  })
+  const now = useCurrentDate()
+  const { days, hours, minutes, seconds } = useDelta(now, new Date(targetDate))
 
   return (
     <div
