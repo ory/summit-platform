@@ -7,6 +7,8 @@ import { getSpeakers, getTalks } from "../../../sanity/lib/sanityClient"
 
 export const contentBlockPaddingClassname = "p-[--ory-global-padding] md:py-24"
 
+export const revalidate = 600 // every 10 minutes
+
 export const ContentBelowHero = async () => {
   const talks = await getTalks()
   const speakers = await getSpeakers()
