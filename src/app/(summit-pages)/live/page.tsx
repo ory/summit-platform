@@ -7,6 +7,8 @@ import { dividerStyles } from "@/app/components/dividerStyles"
 import { TalksDialog } from "@/app/components/talks-dialog"
 import { cn } from "@/utils/cn"
 
+export const revalidate = 600 // every 10 minutes
+
 export default async function LivePage() {
   return (
     <main className={cn("flex flex-1 flex-col")}>
