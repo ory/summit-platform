@@ -1,15 +1,10 @@
 "use client"
 
-import { ViewLiveButton } from "@/app/components/view-live-button"
 import { useIsLive } from "@/hooks/useIsLive"
 import { useIsRegistered } from "@/hooks/useRegistration"
 import BackgroundMountains from "../../components/background-video"
 import { Container } from "../../components/container"
 import { Content } from "../../components/content"
-import Countdown from "../../components/countdown"
-import { GetTicketButton } from "../../components/get-ticket-button"
-import { summitStartingDate } from "../startingDate"
-import { HERO_GET_TICKET_BUTTON_ID } from "./heroGetTicketButtonId"
 
 export function Hero() {
   const { data: isRegistered } = useIsRegistered()
@@ -38,15 +33,7 @@ export function Hero() {
               security based on zero trust principles.
             </p>
           </div>
-          {isLive ? (
-            <ViewLiveButton className="flex items-center gap-1 self-start" />
-          ) : (
-            <GetTicketButton
-              className="self-start"
-              id={HERO_GET_TICKET_BUTTON_ID}
-            />
-          )}
-          <Countdown targetDate={summitStartingDate} />
+          The summit has ended, the recordings will be available soon.
         </Content>
       </Container>
     </>
