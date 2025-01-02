@@ -18,7 +18,7 @@ const executeAsSoonAsPossible = (condition: () => boolean, fn: () => void) => {
   }
 }
 
-const createForm = (afterSubmitted: () => void, session: Session) => {
+const createForm = (afterSubmitted: () => void, session?: Session) => {
   executeAsSoonAsPossible(
     () => Boolean((window as any)?.hbspt?.forms?.create),
     () => {
@@ -29,6 +29,10 @@ const createForm = (afterSubmitted: () => void, session: Session) => {
         target: `#${registrationFormId}`,
         onFormSubmitted: afterSubmitted,
         onFormReady: (form: HTMLFormElement) => {
+          if (!session) {
+            return
+          }
+
           const { email, name }: { email: string; name: string } =
             session.identity.traits
           const names = name.split(" ")
@@ -77,7 +81,7 @@ export const HubspotRegistrationForm = ({
   className,
 }: HubspotRegistrationFormProps) => {
   const router = useRouter()
-  const { data: session } = useSession()
+  const { data: session, isLoading: sessionIsLoading } = useSession()
   const { mutate: mutateRegistration } = useRegistration()
 
   const mutateRegistrationRef = useRef(mutateRegistration)
@@ -90,7 +94,7 @@ export const HubspotRegistrationForm = ({
       router.push("see-you-soon")
     }
 
-    if (!formHasRendered && session) {
+    if (!formHasRendered && !sessionIsLoading) {
       createForm(afterSubmitted, session)
       setFormHasRendered(true)
     }
