@@ -9,14 +9,12 @@
 ## Local Development
 
 ```bash
+export NEXT_PUBLIC_ORY_SDK_URL=https://practical-swirles-whg26u2ofh.projects.oryapis.com
 npm run dev
-```
-
-export
-NEXT_PUBLIC_ORY_SDK_URL=https://practical-swirles-whg26u2ofh.projects.oryapis.com
 
 ory tunnel --dev --project practical-swirles-whg26u2ofh \
  http://localhost:3000
+```
 
 ## Development
 
